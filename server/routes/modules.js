@@ -1,14 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-const ordersDb = require('../db/orders')
+const modulesDb = require('../db/modules')
 
-// POST /api/orders
-router.post('/', (req,res) => {
-  const order = req.body
-  ordersDb.createOrder(order)
-    .then(order => {
-      res.json(order)
+// GET /api/products
+router.get('/', (req,res) => {
+  modulesDb.getAllModules()
+    .then(modules => {
+      res.json(modules)
     })
     .catch(err => {
       console.log(err)
