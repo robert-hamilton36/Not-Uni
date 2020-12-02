@@ -59,7 +59,23 @@ Profile\
 |---|---|---|---|
 
 
-##Global State
+## Global State
+
+user{
+  name: str,
+  saved:[module_id,module_id],
+  created:[module_id,module_id]
+}
+
+modules{
+  id: int,    //module_id
+  author: str,
+  time: str,
+  numOfElements: int,
+  elements:[{element_id:int, title:str, link: str, txt: str},{element_id:int, title:str, link: str, txt: str}]
+
+
+}
 
 ## Auth
 
