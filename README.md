@@ -87,9 +87,20 @@ modules{
   author: str,
   time: str,
   numOfElements: int,
-  elements:[{element_id:int, title:str, link: str, txt: str},{element_id:int, title:str, link: str, txt: str}]
-
-
+  elements:[
+    {
+      element_id:int,
+      title:str,
+      link: str,
+      txt: str
+    },
+    {
+      element_id:int, 
+      title:str,
+      link: str,
+      txt: str
+    }
+  ]
 }
 ```
 ## Auth
