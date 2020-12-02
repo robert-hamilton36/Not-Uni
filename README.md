@@ -1,3 +1,21 @@
+#### Major Components
+
+| Route | Component | Notes |
+|---|---|---|
+| / | App | Root Component |
+| / | Nav | Shows on all pages |
+| / | Search Modules | 
+| /categories | View All Categories |
+| /categories/:name | View all modules for selected category
+| /module | View individual module 
+| /login | Login | NOT Authenticated |
+| /register | Register | NOT Authenticated |
+| /userID | User profile, view saved and created modules | Authenticated |
+| /create | Authenticated |
+|---|---|---|
+
+
+
 #### Components & Children
 
 App\
