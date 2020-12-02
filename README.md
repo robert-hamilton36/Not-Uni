@@ -75,6 +75,7 @@ Profile\
 
 ## Global State
 
+
 ```javascript
 user{
   name: str,
