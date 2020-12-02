@@ -1,4 +1,5 @@
 import React from 'react'
+import Register from './Register'
 import { connect } from 'react-redux'
 
 import { fetchProducts } from '../actions'
@@ -14,10 +15,7 @@ export class App extends React.Component {
   render () {
     return (
       <div className='app'>
-        <h1>Let's Go Shopping!</h1>
-        <Products/>
-        <Cart/>
-        <Orders/>
+        <Register/>
       </div>
     )
   }
