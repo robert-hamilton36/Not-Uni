@@ -36,11 +36,25 @@ Profile\
 -- Module-Card\
 -- Create-Module
 
+## Wire Frames
+
+
+
+![login and register](/pics/login-register.png)
+
+![homepage and search page](/pics/homepage-search.png)
+
+![create module](/pics/create.png)
+
+![view module](/pics/moduleView.png)
+
+![user profile](/pics/profile.png)
+
 
 
 ## Database
 
-![database diagram](/database-diagram.png)
+![database diagram](/pics/database-diagram.png)
 
 
 
@@ -59,8 +73,36 @@ Profile\
 |---|---|---|---|
 
 
-##Global State
+## Global State
 
+```javascript
+user{
+  name: str,
+  saved:[module_id,module_id],
+  created:[module_id,module_id]
+}
+
+modules{
+  id: int,    //module_id
+  author: str,
+  time: str,
+  numOfElements: int,
+  elements:[
+    {
+      element_id:int,
+      title:str,
+      link: str,
+      txt: str
+    },
+    {
+      element_id:int, 
+      title:str,
+      link: str,
+      txt: str
+    }
+  ]
+}
+```
 ## Auth
 
 Helper info: https://medium.com/firebase-developers/how-to-setup-firebase-authentication-with-react-in-5-minutes-maybe-10-bb8bb53e8834
