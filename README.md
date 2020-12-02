@@ -36,11 +36,25 @@ Profile\
 -- Module-Card\
 -- Create-Module
 
+## Wire Frames
+
+
+
+![login and register](/pics/login-register.png)
+
+![homepage and search page](/pics/homepage-search.png)
+
+![create module](/pics/create.png)
+
+![view module](/pics/moduleView.png)
+
+![user profile](/pics/profile.png)
+
 
 
 ## Database
 
-![database diagram](/database-diagram.png)
+![database diagram](/pics/database-diagram.png)
 
 
 
