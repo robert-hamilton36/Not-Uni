@@ -45,7 +45,7 @@ class Module extends React.Component {
       {
         type: "external-link",
         content: "https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76"
-      },
+      }
     ]
     
   }
@@ -54,7 +54,7 @@ class Module extends React.Component {
     return (
       <div className="module">
 
-        {this.fakeProps.blocks.map((item) => {
+        {this.fakeProps.elements.map((item) => {
           switch (item.type) {
             case "heading":
               return <h3> {item.content} </h3>

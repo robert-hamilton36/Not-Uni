@@ -21,11 +21,10 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/register" component={Register }/> 
             <Route exact path="/login" component={Login}/> 
-            <Route exact path="/categories/javascript" component={ModulesFeed} />
+            <Route exact path="/categories/:name" component={ModulesFeed} />
             <Route exact path="/module/:id" component={Module} />
             <Route exact path="/create" component={CreateModule} />
           </Switch>
-          
         </Router>
       </div>
     )

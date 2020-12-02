@@ -8,7 +8,7 @@ class Nav extends React.Component {
     return (
       <>
         <nav className="top-nav">
-          <Link to="/register"> 
+          <Link to="/"> 
             <img src="/images/not_uni.png" />
           </Link>
 
