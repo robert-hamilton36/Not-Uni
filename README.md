@@ -1,4 +1,10 @@
 
+## Database
+
+![database diagram](/database-diagram.png)
+
+
+
 ##Routes
 
 | Method | Path | Description | NOTES |
