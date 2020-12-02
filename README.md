@@ -2,19 +2,19 @@
 
 App\
 \
--- Nav
--- -- Login 
--- -- Register
+-- Nav\
+-- -- Login\
+-- -- Register\
 Home\
 \
 Categories\
 \
--- Module-Card
--- -- Module
+-- Module-Card\
+-- -- Module\
 Profile\
 \
--- Module-Card
--- Create-Module
+-- Module-Card\
+-- Create-Module\
 
 
 
