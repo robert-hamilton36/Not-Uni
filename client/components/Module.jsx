@@ -7,7 +7,8 @@ class Module extends React.Component {
   render () {
     return (
       <div className="module">
-
+        <h1>Module View</h1>
+{/* 
         <h1> {this.fakeProps.title} </h1>
         <h5> author: {this.fakeProps.author} </h5>
         <h5> duration: {this.fakeProps.duration} </h5>
@@ -33,7 +34,7 @@ class Module extends React.Component {
                 <iframe width="560" height="315" src={item.content} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               )
           }
-        })}
+        })} */}
 
       </div> 
     )

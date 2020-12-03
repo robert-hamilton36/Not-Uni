@@ -6,14 +6,20 @@ import ModuleCard from './ModuleCard'
 
 class SearchResults extends React.Component {
   
+
+
+
+
+
   render () {
+
     return (
       <>
       <h1>Results Page</h1>
       <ul>
         {this.props.searchModules.map(module => 
       
-          <ModuleCard  module={module} />   
+          <ModuleCard key={module.id} module={module} />   
         )}
       </ul>
       </>
