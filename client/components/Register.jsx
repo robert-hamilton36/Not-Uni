@@ -1,6 +1,5 @@
 import React, {useRef, useState} from 'react'
 // import { setConstantValue } from 'typescript'
-import { useAuth } from '../Contexts/AuthContext'
 import { auth } from '../firebase'
 import { setUser } from '../actions'
 import { connect } from 'react-redux'
