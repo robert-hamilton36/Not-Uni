@@ -1,6 +1,8 @@
 import { getAllModulesAPI } from "../apis/modules"
 import { getSavedModulesAPI } from '../apis/modules'
 
+// do we need to import request from 'superagent
+
 export const SET_MODULES = 'SET_MODULES'
 export const SET_SEARCH_MODULES ='SET_SEARCH_MODULES'
 
@@ -43,6 +45,9 @@ export const fetchSavedModules = () => {
     return getSavedModulesAPI()
       .then(modules=> {
         dispatch(setSavedModules(modules))
+      })
+      .catch(err => {
+        console.log(err)
       })
   }
 }
