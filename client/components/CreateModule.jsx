@@ -52,12 +52,7 @@ class CreateModule extends React.Component {
         return <input    onChange={(evt) => this.elementChangeHandler(evt, i)} type="text" placeholder="youtube embed link"/>
     }
   }
-
-  submitHandler = () => {
-    console.log(this.state)
-    createModuleAPI(this.state)
-  }
-
+  
   titleChangeHandler = (evt) => {
     this.setState({
       title: evt.target.value
@@ -69,7 +64,7 @@ class CreateModule extends React.Component {
       duration: evt.target.value
     })
   }
-
+  
   categoryChangeHandler = (evt) => {
     console.log(evt.currentTarget.value)
     this.setState({
@@ -77,6 +72,11 @@ class CreateModule extends React.Component {
     })
   }
 
+  submitHandler = () => {
+    console.log(this.state)
+    createModuleAPI(this.state)
+  }
+  
   render () {
 
     return (
