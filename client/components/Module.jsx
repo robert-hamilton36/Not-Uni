@@ -7,7 +7,7 @@ class Module extends React.Component {
     id: 4,
     userId: "Jesus Christ",
     title: "React Basics",
-    duration: "3 hours",
+    duration: 120,
     difficulty: "Novice",
     elements: [
       {

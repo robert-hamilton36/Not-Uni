@@ -37,6 +37,7 @@ class CreateModule extends React.Component {
 
     return (
       <div className='create-module'>
+        <h1> Create A Module </h1>
         <input type="text" placeholder="title"/>
         <br/>
 
