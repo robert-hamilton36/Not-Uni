@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class Login extends React.Component {
+  state={
+    email:'',
+    password:'',
+  }
 
   render () {
     return (
@@ -22,3 +26,5 @@ class Login extends React.Component {
 }
 
 export default Login
+
+// En8nRWX2pvzMUYP

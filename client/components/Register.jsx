@@ -1,11 +1,12 @@
 import React, {useRef, useState} from 'react'
-import { setConstantValue } from 'typescript'
+// import { setConstantValue } from 'typescript'
 import { useAuth } from '../Contexts/AuthContext'
+import { auth } from '../firebase'
 
 export default class Register extends React.Component {
   state={
     error:'',
-    loading:false,
+    loading: false,
     email:'',
     password:'',
     passwordConfirm:'',
@@ -32,15 +33,26 @@ export default class Register extends React.Component {
     })
   }
 
-   handleSubmit = (event) => {
-    event.preventDefault()
+    handleSubmit = async(event) => {
+   event.preventDefault()
     console.log("hello")
     console.log(this.state)
     if (this.state.password !== this.state.passwordConfirm){
-      this.setState({password:'',
-      passwordConfirm:''})
+      this.setState(
+        {password:'',
+        passwordConfirm:''})
       return this.setError("Passwords do not match")
     }
+     try {
+      this.setError('')
+      this.setLoading(true)
+
+      await auth.createUserWithEmailAndPassword(this.state.email, this.state.password)
+    } catch {
+      this.setError("Failed to create an account")
+    }
+    this.setLoading(false)
+
     // try {
     //   setError('')
     //   setLoading(true)
@@ -60,7 +72,7 @@ export default class Register extends React.Component {
           <input type="text" name="email" onChange={this.handleChange} value={this.state.email} placeholder="email"/>
           <input type="password"name="password"  onChange={this.handleChange} value={this.state.password} placeholder="password"/>
           <input type="password" name="passwordConfirm" onChange={this.handleChange} value={this.state.passwordConfirm} placeholder="password-confirmation"/>
-          <input type="submit" value="Register"/>
+          <input type="submit" disabled={this.state.loading} value="Register"/>
         </form>
   
         <div> 
