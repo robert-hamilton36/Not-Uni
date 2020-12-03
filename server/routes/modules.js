@@ -1,3 +1,4 @@
+const { response } = require('express')
 const express = require('express')
 const router = express.Router()
 
@@ -36,6 +37,45 @@ router.get('/saved', (req, res) => {
       console.log(err)
       res.status(500).json({ message: 'Something is broken' })
     })
+})
+
+// CREATE A MODULE
+router.post('/', (req, res) => {
+  let { title, user_id, category, duration, number_of_elements, elements} = req.body
+
+  let moduleMeta = {
+    title, 
+    user_id, 
+    category, 
+    duration, 
+    number_of_elements
+  }
+
+  let moduleElements = [...elements]
+  
+  return modulesDb.createModuleMeta(moduleMeta)
+    .then(module_id => {
+      moduleElements.map((item, i) => {
+        item.module_id = module_id[0]
+        item.order_num = i
+      })
+
+      moduleElements.map((element) => {
+        return modulesDb.createModuleElement(element)
+          .catch(err => {
+            console.log(err)
+            res.status(500).json({ message: 'Something is broken' })
+          })
+      })
+    })
+    .then(response => {
+      res.json(response)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Something is broken' })
+    })
+  
 })
 
 module.exports = router
