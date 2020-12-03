@@ -4,6 +4,7 @@ const router = express.Router()
 
 const modulesDb = require('../db/modulesDb')
 const savedModulesDb = require('../db/savedModulesDb')
+const usersDb = require('../db/usersDb')
 
 // GET /api/modules
 router.get('/', (req, res) => {
@@ -37,6 +38,18 @@ router.get('/saved', (req, res) => {
       console.log(err)
       res.status(500).json({ message: 'Something is broken' })
     })
+})
+
+router.post('/saved', (req, res) => {
+  const newSave = req.body
+  return savedModulesDb.addSavedModule(newSave)
+  .then((whatever) => {
+    res.json(whatever)
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({ message: 'Something is broken' })
+  })
 })
 
 // CREATE A MODULE

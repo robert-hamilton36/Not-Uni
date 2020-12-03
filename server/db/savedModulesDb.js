@@ -7,6 +7,14 @@ function getSavedModules (id, db = connection) {
     .select('*')
     .where('saved_modules.user_id', id)
 }
+
+// add a module to a users saved modules
+function addSavedModule (newSave, db = connection) {
+  return db ('saved_modules')
+  .insert(newSave)
+
+}
 module.exports = {
-  getSavedModules
+  getSavedModules,
+  addSavedModule
 }
