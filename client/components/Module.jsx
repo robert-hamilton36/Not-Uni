@@ -8,6 +8,11 @@ class Module extends React.Component {
     return (
       <div className="module">
 
+        <h1> {this.fakeProps.title} </h1>
+        <h5> author: {this.fakeProps.author} </h5>
+        <h5> duration: {this.fakeProps.duration} </h5>
+        <h5> difficulty: {this.fakeProps.difficulty} </h5>
+
         {this.fakeProps.elements.map((item) => {
           switch (item.type) {
             case "heading":
@@ -25,7 +30,7 @@ class Module extends React.Component {
 
             case "video":
               return (
-                <iframe width="560" height="315" src={item.content} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src={item.content} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               )
           }
         })}
