@@ -8,7 +8,7 @@ import searchModules from './searchModules'
 
 export default combineReducers({
   modules,
-  user
+  user,
   savedModules,
   searchModules
 })
