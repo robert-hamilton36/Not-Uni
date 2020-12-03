@@ -1,46 +1,34 @@
-import { createOrder } from "../apis/orders"
-import { getProducts } from "../apis/products"
 
-export const SET_PRODUCTS = 'SET_PRODUCTS'
-export const ADD_TO_CART = 'ADD_TO_CART'
-export const ADD_TO_ORDERS = 'ADD_TO_ORDERS'
+import { getAllModulesAPI} from "../apis/modules"
 
-export const setProducts = (products) => {
+export const SET_MODULES = 'SET_MODULES'
+export const SET_SEARCH_MODULES ='SET_SEARCH_MODULES'
+
+
+export const setModules = (modules) => {
   return {
-    type: SET_PRODUCTS,
-    products
+    type: SET_MODULES,
+    modules
   }
 }
 
-export const addToCart = (product_id, quantity = 1) => {
-  return {
-    type: ADD_TO_CART,
-    product_id,
-    quantity
+export const setSearchedModules = (modules) =>{
+  return{
+    type: SET_SEARCH_MODULES,
+    modules
   }
 }
 
-export const addToOrders = (order) => {
-  return {
-    type: ADD_TO_ORDERS,
-    order
-  }
-}
 
-export const fetchProducts = () => {
+
+
+export const fetchModules = () => {
   return dispatch => {
-    return getProducts()
-      .then(products => {
-        dispatch(setProducts(products))
+    return getAllModulesAPI()
+      .then(modules=> {
+        dispatch(setModules(modules))
       })
   }
 }
 
-export const checkoutOrder = (order) => {
-  return dispatch => {
-    return createOrder(order)
-      .then(order => {
-        dispatch(addToOrders(order))
-      })
-  }
-}
+
