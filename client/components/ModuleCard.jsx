@@ -6,22 +6,27 @@ class ModuleCard extends React.Component {
  
 
   render () {
-    return (
+
+    const findHeader = this.props.module.elements.filter((element)=>{
+      return(element.type === 'heading')})
+     
+    
+      return (
+        <>
+      
       <div className='module-card'>
         <li>
-        <h1>{this.props.module.title}</h1>
-        <p> short desription</p>
-        <ul className="steps-list">
-          <li> Exercise 1</li> 
-          <li> Exercise 2</li> 
-          <li> Exercise 3</li> 
-          <li> Exercise 4</li> 
-        </ul>
+          <h1>{this.props.module.title}</h1>
+          <p> short desription</p>
+            <ul className="steps-list">
+              {findHeader.map((header)=> 
+                <li key={header.id}> {header.content}</li> 
+              )}   
+          </ul>
         </li>
-        {/* <Link to={"/module/" + this.fakeprops.id}> 
-          <div> Learn </div>
-        </Link> */}
       </div>
+      <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
+      </>
     )
   }
 }
