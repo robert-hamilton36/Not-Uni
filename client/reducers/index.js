@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 
 import modules from './modules'
-import savedModules from './savedModules'
+import user from './user'
 
 
 export default combineReducers({
   modules,
-  savedModules
+  user
 })
