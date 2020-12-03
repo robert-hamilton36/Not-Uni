@@ -4,6 +4,7 @@ import { getProducts } from "../apis/products"
 export const SET_PRODUCTS = 'SET_PRODUCTS'
 export const ADD_TO_CART = 'ADD_TO_CART'
 export const ADD_TO_ORDERS = 'ADD_TO_ORDERS'
+export const SET_USER = 'SET_USER'
 
 export const setProducts = (products) => {
   return {
@@ -42,5 +43,13 @@ export const checkoutOrder = (order) => {
       .then(order => {
         dispatch(addToOrders(order))
       })
+  }
+}
+
+
+export const setUser = (user) => {
+  return {
+    type: SET_USER,
+    user: user
   }
 }
