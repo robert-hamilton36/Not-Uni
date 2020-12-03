@@ -1,9 +1,9 @@
-import { SET_SAVED_MODULES, SET_USER } from '../actions'
+import { SET_SAVED_MODULES, SET_USER, ADD_TO_SAVED_MODULES } from '../actions'
 
 const initialState = 
  {
   name: 'Robbie',
-  saved: '101',
+  saved: [101, 102],
   created: ''
 }
 
@@ -14,11 +14,13 @@ const reducer = (state = initialState, action) => {
       return action.SET_USER
     case SET_SAVED_MODULES:
       let preSavedModuleState = state
-      console.log(preSavedModuleState)
       preSavedModuleState.saved = action.modules
-      console.log(preSavedModuleState)
       return preSavedModuleState
     case ADD_TO_SAVED_MODULES:
+      let preAddToSavedModuleState = state
+      preAddToSavedModuleState.saved.push(action.module)
+      return preAddToSavedModuleState
+
       default:
         return state
   }
