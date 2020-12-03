@@ -11,7 +11,17 @@ function getModuleElements (id, db = connection) {
     .select()
 }
 
+function saveModuleMeta (moduleMeta, db = connection) {
+  console.log("module meta: " + moduleMeta)
+}
+
+function saveModuleElements (moduleElements) {
+  console.log("moduleElements: " + moduleElements)
+}
+
 module.exports = {
   getAllModules,
-  getModuleElements
+  getModuleElements,
+  saveModuleMeta,
+  saveModuleElements
 }
