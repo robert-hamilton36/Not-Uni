@@ -10,9 +10,13 @@ import Register from './Register'
 import CreateModule from './CreateModule'
 import Profile from './Profile'
 import HomePage from './Homepage'
+import { fetchModules } from '../actions'
 
 
 class App extends React.Component {
+  componentDidMount (){
+    this.props.dispatch(fetchModules())
+  }
 
   render () {
     return (

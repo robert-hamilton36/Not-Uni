@@ -19,13 +19,16 @@ class ModuleCard extends React.Component {
           <h1>{this.props.module.title}</h1>
           <p> short desription</p>
             <ul className="steps-list">
-              {findHeader.map((header)=> 
-                <li key={header.id}> {header.content}</li> 
-              )}   
+              {findHeader.map((header)=> {
+              return(
+
+                <li key={header.id}> {header.content}</li>,
+                <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
+              )
+              })}   
           </ul>
         </li>
       </div>
-      <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
       </>
     )
   }
