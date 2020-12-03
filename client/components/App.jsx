@@ -8,6 +8,7 @@ import ModulesFeed from './ModulesFeed'
 import Module from './Module'
 import Register from './Register'
 import CreateModule from './CreateModule'
+import AuthProvider from '../Contexts/AuthContext'
 
 
 class App extends React.Component {
@@ -16,15 +17,17 @@ class App extends React.Component {
     return (
       <div className='app'>
         <Router>
-          <Route path="/" component={Nav}/> 
+          <AuthProvider>
+            <Route path="/" component={Nav}/> 
 
-          <Switch>
-            <Route exact path="/register" component={Register }/> 
-            <Route exact path="/login" component={Login}/> 
-            <Route exact path="/categories/:name" component={ModulesFeed} />
-            <Route exact path="/module/:id" component={Module} />
-            <Route exact path="/create" component={CreateModule} />
-          </Switch>
+            <Switch>
+              <Route exact path="/register" component={Register }/> 
+              <Route exact path="/login" component={Login}/> 
+              <Route exact path="/categories/:name" component={ModulesFeed} />
+              <Route exact path="/module/:id" component={Module} />
+              <Route exact path="/create" component={CreateModule} />
+            </Switch>
+          </AuthProvider>
         </Router>
       </div>
     )
