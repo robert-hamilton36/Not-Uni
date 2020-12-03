@@ -38,4 +38,26 @@ router.get('/saved', (req, res) => {
     })
 })
 
+// CREATE A MODULE
+router.post('/', (req, res) => {
+  let { title, user_id, category, duration, number_of_elements, elements} = req.body
+
+  let moduleMeta = {
+    title, 
+    user_id, 
+    category, 
+    duration, 
+    number_of_elements
+  }
+
+  let moduleElements = [...elements]
+  
+  console.log("Meta: ");
+  console.log(moduleMeta)
+
+  console.log("Elements: ");
+  console.log(moduleElements)
+
+})
+
 module.exports = router
