@@ -67,32 +67,39 @@ https://www.figma.com/file/viw35yDcmX5tLEWZEVabHJ/Dev-Final-Project?node-id=30%3
 
 
 ```javascript
-user{
+user: {
   name: str,
   saved:[module_id,module_id],
   created:[module_id,module_id]
 }
 
-modules{
-  id: int,    //module_id
-  author: str,
-  time: str,
-  numOfElements: int,
-  elements:[
-    {
-      element_id:int,
-      title:str,
-      link: str,
-      txt: str
-    },
-    {
-      element_id:int, 
-      title:str,
-      link: str,
-      txt: str
-    }
-  ]
-}
+modules: [
+  {
+    id: 101,
+    title: 'Intro To JavaScript',
+    user_id: 10001,
+    category: 'JavaScript',
+    duration: 15,
+    number_of_elements: 5,
+    elements: [
+      {
+        id: 900000,
+        module_id: 101,
+        type: 'heading',
+        content: 'heading 1',
+        order_num: 1
+      },
+      {
+        id: 900001,
+        module_id: 101,
+        type: 'paragraph',
+        content: 'lorum ispum belatio relatio conflatio',
+        order_num: 2
+      }     
+    ]
+  }
+]
+    
 ```
 ## Auth
 
