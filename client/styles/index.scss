@@ -14,7 +14,15 @@ h1 {
   display: flex;
   flex: 1 1 auto;
   flex-direction: row;
+  height: 60px;
+  width: 1440px;
 
+
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
+  background: rgba(252, 252, 252, 1);
+
+
+  
   div {
     height: 100%;
     display: flex;
@@ -24,8 +32,42 @@ h1 {
     margin: auto 20px;
     align-items: center;
   }
-
+  
   img {
-    height: 50pt;
+    // height: 50pt;
+    height: 29.909408569335938px;
+    width: 74px;
+    // left: 56px;
+    // top: 29px;
+    // border-radius: 0px;
+
   }
+
+  .search{
+    height: 42px;
+    width: 630px;
+    left: 28.12%;
+    right: 28.12%;
+    top: 25.84%;
+    bottom: 26.97%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+          
+    }
+
+  .text a {
+    text-decoration: none;
+
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    color: rgba(42, 136, 27, 1);
+
+    
+}
+
+
 }
