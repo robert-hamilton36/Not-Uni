@@ -15,7 +15,7 @@ h1 {
   flex: 1 1 auto;
   flex-direction: row;
   height: 60px;
-  width: 1440px;
+  width: fill;
 
 
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
@@ -89,9 +89,30 @@ h1 {
     line-height: 25px;
     letter-spacing: 0em;
     color: rgba(42, 136, 27, 1);
-
-    
 }
 
 
+.create-module {
+  margin: 0 30%;
+  background-color: rgb(203, 255, 255);
+}
 
+.element-input-div {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  background-color: rgb(205, 232, 255);
+}
+
+.element-input {
+display: block
+}
+
+.delete-element {
+  display: block;
+  background-color: green;
+}
+
+.button {
+  background-color: ;
+}
