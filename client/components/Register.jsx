@@ -33,7 +33,7 @@ export class Register extends React.Component {
   }
 
 
-  handleSubmit = async(event) => {
+  handleSubmit = async (event) => {
    event.preventDefault()
     console.log("hello")
     console.log(this.state)
@@ -44,13 +44,16 @@ export class Register extends React.Component {
       return this.setError("Passwords do not match")
     }
      try {
+      // unsubscribe = auth.onAuthStateChanged(user => this.props.dispatch(setUser(user)))
       this.setError('')
       this.setLoading(true)
   
 
       await auth.createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then(user => this.props.dispatch(setUser(user)))
 
-      unsubscribe()
+      // this.unsubscribe()
+
     } catch {
       this.setError("Failed to create an account")
     }
