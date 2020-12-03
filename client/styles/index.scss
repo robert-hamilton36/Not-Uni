@@ -45,6 +45,30 @@ h1 {
     // border-radius: 0px;
 
   }
+}
+
+.create-module, 
+.create-module .elements {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.create-module {
+
+  .category-container {
+    display: flex;
+    flex-direction: row;
+
+    .category-card {
+      background-color: #dddddd;;
+      margin: 10px;
+      padding: 10px;
+    }
+  }
+}
+
+
 
   .search{
     height: 42px;
@@ -71,7 +95,7 @@ h1 {
     
  }
 
-}
+
 
 // register
 
@@ -113,7 +137,7 @@ h1{
     border-radius: 2px;
     color: #FFFFFF;
     border: none;
+  }
     
 
-  }
-}
+ }
