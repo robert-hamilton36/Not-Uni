@@ -1,9 +1,8 @@
 import request from 'superagent'
 
-const rootUrl = '/api/products'
 
 export function getAllModulesAPI () {
-  return request.get(rootUrl)
+  return request.get('/api/modules')
     .then(res => res.body)
 }
 

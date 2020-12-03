@@ -8,6 +8,7 @@ import ModulesFeed from './ModulesFeed'
 import Module from './Module'
 import Register from './Register'
 import CreateModule from './CreateModule'
+import HomePage from './Homepage'
 
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
           <Route path="/" component={Nav}/> 
 
           <Switch>
+            <Route exact path='/' component={HomePage}/>
             <Route exact path="/register" component={Register }/> 
             <Route exact path="/login" component={Login}/> 
             <Route exact path="/categories/:name" component={ModulesFeed} />
