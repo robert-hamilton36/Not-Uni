@@ -1,5 +1,4 @@
 import React from 'react'
-import Register from './Register'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
