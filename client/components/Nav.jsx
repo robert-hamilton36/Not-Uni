@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Search from './Search'
 
 
 
@@ -12,8 +13,7 @@ class Nav extends React.Component {
             <img src="/images/not_uni.png" />
           </Link>
 
-          <input type="text" />
-          <input type="button" value="search" />
+          <Search/>
           
           {/* if user is NOT signed in */}
           <Link to="/register"> 

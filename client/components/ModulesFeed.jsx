@@ -5,12 +5,12 @@ import Login from './Login'
 import ModuleCard from './ModuleCard'
 
 class ModulesFeed extends React.Component {
-  arr = [ 0, 0, 0 ]
+  
   render () {
     return (
       <>
-        {this.arr.map(() => {
-          return <ModuleCard />
+        {this.props.module.map((module) => {
+          return <ModuleCard  module={module} />
         })}
       </>
     )
