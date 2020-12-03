@@ -10,6 +10,9 @@ h1 {
   font-size: 200%;
 }
 
+
+// Nav Bar
+
 .top-nav {
   display: flex;
   flex: 1 1 auto;
@@ -89,9 +92,53 @@ h1 {
     line-height: 25px;
     letter-spacing: 0em;
     color: rgba(42, 136, 27, 1);
-
     
+ }
+
 }
 
+// register
 
+.Register-card{
+background-color: rgba(252, 252, 252, 1);
+height: 352px;
+width: 643px;
+border-radius: 3px;
+flex: left 50%;
+margin: auto;
+
+h1{
+  margin-left: 5%;
+  text-align: center;
+ }
+  
+  .Input-R{
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 1);
+    height: 50px;
+    width: 205px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    font-size:20px;
+  
+
+
+  }
+  .button{
+    height: 43px;
+    width: 149px;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
+    margin-left: 42%;
+    margin-top: 10px;
+  
+    
+    background: #2A881B;
+    border-radius: 2px;
+    color: #FFFFFF;
+    border: none;
+    
+
+  }
+}
 
