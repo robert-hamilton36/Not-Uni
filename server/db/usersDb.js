@@ -39,8 +39,10 @@ function getUserByName (userName, db = connection) {
     .first()
 }
 
+
+
 module.exports = {
   createUser,
   getUserByName,
-  userExists
+  userExists,
 }

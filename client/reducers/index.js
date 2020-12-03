@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 
 import modules from './modules'
-import savedModules from './savedModules'
+import user from './user'
 import searchModules from './searchModules'
 
 
 export default combineReducers({
   modules,
-  savedModules,
+  user,
   searchModules
 })
