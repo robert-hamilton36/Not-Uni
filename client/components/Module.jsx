@@ -19,7 +19,7 @@ class Module extends React.Component {
         content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptas accusamus autem ipsa inventore nulla molestias, est, sequi laudantium vitae odio fuga maxime doloribus incidunt libero illum deleniti architecto illo."
       },
       {
-        type: "external-link",
+        type: "link",
         content: "https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76"
       },
       {
@@ -35,7 +35,7 @@ class Module extends React.Component {
         content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptas accusamus autem ipsa inventore nulla molestias, est, sequi laudantium vitae odio fuga maxime doloribus incidunt libero illum deleniti architecto illo."
       },
       {
-        type: "external-link",
+        type: "link",
         content: "https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76"
       },
       {
@@ -43,7 +43,7 @@ class Module extends React.Component {
         content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptas accusamus autem ipsa inventore nulla molestias, est, sequi laudantium vitae odio fuga maxime doloribus incidunt libero illum deleniti architecto illo."
       },
       {
-        type: "external-link",
+        type: "link",
         content: "https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76"
       }
     ]

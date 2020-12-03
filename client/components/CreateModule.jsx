@@ -12,8 +12,8 @@ class CreateModule extends React.Component {
     title: "",
     user_id: "",
     category: "",
-    duration: null,
-    number_of_elements: null, // this is calculated later
+    duration: "",
+    number_of_elements: "", // this is calculated later
     elements: []
   }
 
@@ -39,11 +39,11 @@ class CreateModule extends React.Component {
 
   renderElement = (element, i) => {
     switch (element.type) {
-      case "text":
-        return <textarea onChange={(evt) => this.elementChangeHandler(evt, i)} placeholder="text" />
-
       case "heading":
         return <input    onChange={(evt) => this.elementChangeHandler(evt, i)} type="text" placeholder="Heading" />
+        
+      case "paragraph":
+        return <textarea onChange={(evt) => this.elementChangeHandler(evt, i)} placeholder="text" />
 
       case "link":
         return <input    onChange={(evt) => this.elementChangeHandler(evt, i)} type="text" placeholder="Link"/>
@@ -66,14 +66,12 @@ class CreateModule extends React.Component {
   }
   
   categoryChangeHandler = (evt) => {
-    console.log(evt.currentTarget.value)
     this.setState({
       category: evt.currentTarget.value
     })
   }
 
   submitHandler = () => {
-    console.log(this.state)
     createModuleAPI(this.state)
   }
   
@@ -116,8 +114,8 @@ class CreateModule extends React.Component {
         </div>
         
         <div className="add-element-button">
-          <input type="button" value="Add Text"            onClick={() => this.addElementHandler("text")} />
           <input type="button" value="Add Heading"         onClick={() => this.addElementHandler("heading")} />
+          <input type="button" value="Add Text"            onClick={() => this.addElementHandler("paragraph")} />
           <input type="button" value="Add External Link"   onClick={() => this.addElementHandler("link")} />
           <input type="button" value="Add Video"           onClick={() => this.addElementHandler("video")} />
         </div>
