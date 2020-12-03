@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchModules, setSearchedModules} from '../actions/index'
-import ModulesFeed from './ModulesFeed'
+import ModulesFeed from './SearchResults'
 import Search from './Search'
 
 class HomePage extends React.Component{
@@ -12,7 +12,7 @@ class HomePage extends React.Component{
       <>
         
         <Search/>
-        <ModulesFeed modules={this.props.searchModules}/>
+      
 
       </>
     )

@@ -1,11 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchModules, setSearchedModules} from '../actions/index'
+import {Redirect} from 'react-router'
 
 class Search extends React.Component{
 
   state={
-    searchValue: ''
+    searchValue: '',
+    fireRedirect: false
   }
 
   componentDidMount (){
@@ -27,8 +29,11 @@ class Search extends React.Component{
       return (module.title.toLowerCase().includes(this.state.searchValue.toLowerCase())
       )
     }) 
-    console.log(filteredModules)
+    
     this.props.dispatch(setSearchedModules(filteredModules))
+    this.setState({
+      fireRedirect:true
+    })
     }
   
   
@@ -45,6 +50,9 @@ class Search extends React.Component{
         <input type="text" value={this.props.searchValue} onChange={this.handleChange}/>
         <input type="submit"/>
         </form>
+        {this.state.fireRedirect && (
+          <Redirect to='/categories/results'/>
+        )}
 
       </>
     )
