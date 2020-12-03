@@ -13,7 +13,7 @@ export class Nav extends React.Component {
 
   handleClick= () =>{
     auth.signOut()
-    .then(this.props.dispatch(setUser("anon")))
+    .then(() => this.props.dispatch(setUser("anon")))
   }
 
   render() {

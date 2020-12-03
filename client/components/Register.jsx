@@ -14,9 +14,9 @@ export class Register extends React.Component {
     passwordConfirm:'',
   }
 
-  componentDidMount(){
-    let unsubscribe = auth.onAuthStateChanged(user => this.props.dispatch(setUser(user)))
-  }
+  // componentDidMount(){
+  //   let unsubscribe = auth.onAuthStateChanged(user => this.props.dispatch(setUser(user)))
+  // }
 
   setLoading = (boolean) => {
     this.setState({loading:boolean})

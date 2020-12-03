@@ -1,6 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { auth } from '../firebase'
+import { setUser } from '../actions'
+
+
 
 class Login extends React.Component {
   state={
@@ -25,8 +29,7 @@ class Login extends React.Component {
   
       try {
        await auth.signInWithEmailAndPassword(this.state.email, this.state.password)
-       .then(user => console.log(user))
-      //  .then(user => this.props.dispatch(setUser(user)))
+       .then(user => this.props.dispatch(setUser(user)))
        .catch((error) => {
         console.log(error.message)
         console.log(error.code)})
@@ -37,7 +40,20 @@ class Login extends React.Component {
        this.setError("Failed to create an account")
      }
  
-   }
+  }
+
+  // handleSubmit = (event) => {
+  //   event.preventDefault()
+  //   console.log("signing in")
+  
+
+  //   auth.signInWithEmailAndPassword(this.state.email, this.state.password)
+  //   .then(user => this.props.dispatch(setUser(user)))
+  //   .catch((error) => {
+  //     console.log(error.message)
+  //     console.log(error.code)
+  //   }) 
+  // }
 
   render () {
     return (
@@ -58,7 +74,13 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+// function mapStateToProps (globalState) {
+//   return {
+//     dispatch: globalState.dispatch
+//   }
+// }
+
+export default connect()(Login)
 
 // En8nRWX2pvzMUYP\
 //https://firebase.google.com/docs/auth/web/start
