@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Search from './Search'
 
 
 
@@ -21,6 +22,8 @@ class Nav extends React.Component {
 
           {/* <input type="button" value="search" /> */}
 
+          <Search/>
+          
           {/* if user is NOT signed in */}
 
          <div className='text' >
