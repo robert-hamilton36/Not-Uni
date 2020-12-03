@@ -7,6 +7,7 @@ export const SET_MODULES = 'SET_MODULES'
 export const SET_SEARCH_MODULES ='SET_SEARCH_MODULES'
 
 export const SET_SAVED_MODULES = 'SET_SAVED_MODULES'
+export const SET_USER = 'SET_USER'
 
 
 export const setModules = (modules) => {
@@ -49,5 +50,12 @@ export const fetchSavedModules = () => {
       .catch(err => {
         console.log(err)
       })
+  }
+}
+
+export const setUser = (user) => {
+  return {
+    type: SET_USER,
+    user: user
   }
 }
