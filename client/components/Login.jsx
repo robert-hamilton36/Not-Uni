@@ -8,12 +8,18 @@ class Login extends React.Component {
     password:'',
   }
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]:event.target.value
+    })
+  }
+
   render () {
     return (
       <div className='login-card'>
         <h1>Login</h1>
-        <input type="text" placeholder="email"/>
-        <input type="password" placeholder="password"/>
+        <input type="text" name="email" onChange={this.handleChange} value={this.state.email} placeholder="email"/>
+        <input type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="password"/>
         <input type="button" value="Login"/>
 
         <div> 

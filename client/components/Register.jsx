@@ -2,8 +2,10 @@ import React, {useRef, useState} from 'react'
 // import { setConstantValue } from 'typescript'
 import { useAuth } from '../Contexts/AuthContext'
 import { auth } from '../firebase'
+import { setUser } from '../actions'
+import { connect } from 'react-redux'
 
-export default class Register extends React.Component {
+export class Register extends React.Component {
   state={
     error:'',
     loading: false,
@@ -11,13 +13,10 @@ export default class Register extends React.Component {
     password:'',
     passwordConfirm:'',
   }
-  // const emailRef = useRef()
-  // const passwordRef = useRef()
-  // const passwordConfirmRef = useRef()
-  // const [error, setError] = useState('')
-  // const [loading, setLoading] = useState(false)
-  
-  // signUp  = useAuth()
+
+  componentDidMount(){
+    let unsubscribe = auth.onAuthStateChanged(user => this.props.dispatch(setUser(user)))
+  }
 
   setLoading = (boolean) => {
     this.setState({loading:boolean})
@@ -33,7 +32,8 @@ export default class Register extends React.Component {
     })
   }
 
-    handleSubmit = async(event) => {
+
+  handleSubmit = async(event) => {
    event.preventDefault()
     console.log("hello")
     console.log(this.state)
@@ -46,23 +46,24 @@ export default class Register extends React.Component {
      try {
       this.setError('')
       this.setLoading(true)
+  
 
       await auth.createUserWithEmailAndPassword(this.state.email, this.state.password)
+
+      unsubscribe()
     } catch {
       this.setError("Failed to create an account")
     }
     this.setLoading(false)
 
-    // try {
-    //   setError('')
-    //   setLoading(true)
-
-    //   await signUp(emailRef.current.value, passwordRef.current.value)
-    // } catch {
-    //   setError("Failed to create an account")
-    // }
-    // setLoading(false)
+  
   }
+
+  componentWillUnmount(){
+    this.unsubscribe()
+  }
+
+
   render(){
     return (
       <div className='Register-card'>
@@ -83,3 +84,12 @@ export default class Register extends React.Component {
     )
   }
 }
+
+
+function mapStateToProps (globalState) {
+  return {
+    dispatch: globalState.dispatch
+  }
+}
+
+export default connect()(Register)
