@@ -7,7 +7,7 @@
 | / | Search Modules | 
 | /categories | View All Categories |
 | /categories/:name | View all modules for selected category
-| /module | View individual module 
+| /module/:id | View individual module 
 | /login | Login | NOT Authenticated |
 | /register | Register | NOT Authenticated |
 | /userID | User profile, view saved and created modules | Authenticated |
@@ -74,6 +74,7 @@ Profile\
 
 
 ## Global State
+
 
 ```javascript
 user{
