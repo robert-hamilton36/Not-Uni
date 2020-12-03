@@ -36,20 +36,10 @@ Profile\
 -- Module-Card\
 -- Create-Module
 
-## Wire Frames
 
+## Design 
 
-
-![login and register](/pics/login-register.png)
-
-![homepage and search page](/pics/homepage-search.png)
-
-![create module](/pics/create.png)
-
-![view module](/pics/moduleView.png)
-
-![user profile](/pics/profile.png)
-
+https://www.figma.com/file/viw35yDcmX5tLEWZEVabHJ/Dev-Final-Project?node-id=30%3A0
 
 
 ## Database
