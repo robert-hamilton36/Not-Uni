@@ -29,3 +29,26 @@ h1 {
     height: 50pt;
   }
 }
+
+.create-module, 
+.create-module .elements {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.create-module {
+
+  .category-container {
+    display: flex;
+    flex-direction: row;
+
+    .category-card {
+      background-color: #dddddd;;
+      margin: 10px;
+      padding: 10px;
+    }
+  }
+}
+
+

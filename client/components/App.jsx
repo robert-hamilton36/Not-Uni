@@ -8,6 +8,7 @@ import ModulesFeed from './ModulesFeed'
 import Module from './Module'
 import Register from './Register'
 import CreateModule from './CreateModule'
+import Profile from './Profile'
 
 
 class App extends React.Component {
@@ -19,11 +20,12 @@ class App extends React.Component {
           <Route path="/" component={Nav}/> 
 
           <Switch>
-            <Route exact path="/register" component={Register }/> 
-            <Route exact path="/login" component={Login}/> 
+            <Route exact path="/register" component={Register} /> 
+            <Route exact path="/login" component={Login} /> 
             <Route exact path="/categories/:name" component={ModulesFeed} />
             <Route exact path="/module/:id" component={Module} />
             <Route exact path="/create" component={CreateModule} />
+            <Route exact path="/profile" component={Profile} />
           </Switch>
         </Router>
       </div>
