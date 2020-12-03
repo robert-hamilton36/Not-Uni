@@ -62,9 +62,6 @@ export class Register extends React.Component {
   
   }
 
-  componentWillUnmount(){
-    this.unsubscribe()
-  }
 
 
   render(){
