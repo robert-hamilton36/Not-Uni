@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Login from './Login'
 import ModuleCard from './ModuleCard'
 
-class ModulesFeed extends React.Component {
+class SavedModules extends React.Component {
   arr = [ 0, 0, 0 ]
   render () {
     return (
@@ -19,4 +19,4 @@ class ModulesFeed extends React.Component {
 
 }
 
-export default ModulesFeed
+export default SavedModules
