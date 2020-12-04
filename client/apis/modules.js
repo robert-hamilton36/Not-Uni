@@ -21,3 +21,11 @@ export function createModuleAPI (module) {
   return request.post('/api/modules').send(module)
     .then(res => res.body)
 }
+
+export function addSavedModuleAPI (user_id, module_id) {
+  const module = {user_id: user_id, module_id: module_id}
+  return request.post('/api/modules/saved').send(module)
+    .then(res=>res.body)
+}
+
+// get created modules API?

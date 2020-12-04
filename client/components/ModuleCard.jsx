@@ -21,9 +21,13 @@ class ModuleCard extends React.Component {
        <div className='s-c-info'>
           <p> The person I have in mind will give us should be able to give some good insights in so many thing that we will need to think about.</p>
             <ul className="steps-list">
-              {findHeader.map((header)=> 
-                <li key={header.id}> {header.content}</li> 
-              )}   
+              {findHeader.map((header)=> {
+              return(
+
+                <li key={header.id}> {header.content}</li>,
+                <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
+              )
+              })}   
           </ul>
           </div>
       <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
