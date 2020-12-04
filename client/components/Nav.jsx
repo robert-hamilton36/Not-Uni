@@ -17,8 +17,8 @@ class Nav extends React.Component {
 
          {/* Need to add enter click for search */}
           <div>
-          <Search>
-          <input className="search" type="text"  />
+          <Search className ='search'>
+          {/* <input className="search" type="text"  /> */}
           </Search>
           </div>
           

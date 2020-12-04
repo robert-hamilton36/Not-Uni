@@ -18,6 +18,7 @@ const reducer = (state = initialState, action) => {
       preSavedModuleState.saved = action.modules
       console.log(preSavedModuleState)
       return preSavedModuleState
+    // case ADD_TO_SAVED_MODULES:
       default:
         return state
   }
