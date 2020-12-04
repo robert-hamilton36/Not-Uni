@@ -13,7 +13,6 @@ import 'firebase/auth'
 
 
 
-
 export const app = firebase.initializeApp(firebaseConfig);
 
 

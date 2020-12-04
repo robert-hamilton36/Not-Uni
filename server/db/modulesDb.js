@@ -19,9 +19,16 @@ function createModuleElement (element, db = connection) {
   return db('module_elements').insert(element)
 }
 
+function getModulesByUserId (user_id, db = connection) {
+  return db('modules')
+  .where('user_id', user_id)
+  .select()
+}
+
 module.exports = {
   getAllModules,
   getModuleElements,
   createModuleMeta,
-  createModuleElement
+  createModuleElement,
+  getModulesByUserId
 }

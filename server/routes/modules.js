@@ -4,6 +4,7 @@ const router = express.Router()
 
 const modulesDb = require('../db/modulesDb')
 const savedModulesDb = require('../db/savedModulesDb')
+const usersDb = require('../db/usersDb')
 
 // GET /api/modules
 router.get('/', (req, res) => {
@@ -27,6 +28,23 @@ router.get('/', (req, res) => {
     })
 })
 
+//  GET /api/modules/created
+// shows modules created by logged-in user
+router.get('/created', (req, res) => {
+  const user_id = 10001
+  return modulesDb.getModulesByUserId(user_id)
+  .then( createdModules => {
+    res.json(createdModules)
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({ message: 'Something is broken' })
+  })
+})
+
+
+//  GET /api/modules/saved
+// shows the logged in person saved modules
 router.get('/saved', (req, res) => {
   const id = 10001 // hard coded for now
   return savedModulesDb.getSavedModules(id)
@@ -37,6 +55,20 @@ router.get('/saved', (req, res) => {
       console.log(err)
       res.status(500).json({ message: 'Something is broken' })
     })
+})
+
+// POST a saved module to the savedModulesDb
+// saves a module to the users profile
+router.post('/saved', (req, res) => {
+  const newSave = req.body
+  return savedModulesDb.addSavedModule(newSave)
+  .then((whatever) => {
+    res.json(whatever)
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({ message: 'Something is broken' })
+  })
 })
 
 // CREATE A MODULE

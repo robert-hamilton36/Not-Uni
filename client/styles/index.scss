@@ -18,7 +18,7 @@ h1 {
   flex: 1 1 auto;
   flex-direction: row;
   height: 60px;
-  width: 1440px;
+  width: fill;
 
 
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
@@ -93,6 +93,32 @@ h1 {
     letter-spacing: 0em;
     color: rgba(42, 136, 27, 1);
     
+ }
+
+// register
+
+.Register-card{
+background-color: rgba(252, 252, 252, 1);
+height: 352px;
+width: 643px;
+border-radius: 3px;
+flex: left 50%;
+margin: auto;
+
+  h1{
+    margin-left: 5%;
+    text-align: center;
+  }
+  .Input-R{
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 1);
+    height: 50px;
+    width: 205px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    font-size:20px;
+  }
 }
 
 
@@ -107,11 +133,11 @@ border-radius: 3px;
 flex: left 50%;
 margin: auto;
 
-h1{
-  margin-left: 5%;
-  text-align: center;
- }
-  
+  h1{
+    margin-left: 5%;
+    text-align: center;
+  }
+    
   .Input-R{
     border: 1px solid rgba(0, 0, 0, 0.4);
     background: rgba(255, 255, 255, 1);
@@ -121,24 +147,51 @@ h1{
     margin-right: 5%;
     margin-top: 10px;
     font-size:20px;
-  
-
-
-  }
-  .button{
-    height: 43px;
-    width: 149px;
-    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
-    margin-left: 42%;
-    margin-top: 10px;
-  
-    
-    background: #2A881B;
-    border-radius: 2px;
-    color: #FFFFFF;
-    border: none;
-    
-
   }
 }
 
+.button{
+  height: 43px;
+  width: 149px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
+  margin-left: 42%;
+  margin-top: 10px;
+
+  
+  background: #2A881B;
+  border-radius: 2px;
+  color: #FFFFFF;
+  border: none;
+  
+
+}
+
+.element-input-div {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  background-color: rgb(205, 232, 255);
+}
+
+.button {
+  height: 43px;
+  width: 149px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
+  margin-left: 42%;
+  margin-top: 10px;
+
+  
+  background: #2A881B;
+  border-radius: 2px;
+  color: #FFFFFF;
+  border: none;
+}
+
+.element-input {
+  display: block;
+}
+
+.delete-element {
+  display: block;
+  background-color: green;
+}

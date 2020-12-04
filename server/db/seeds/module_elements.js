@@ -50,7 +50,13 @@ exports.seed = function (knex) {
         { id: 900036, module_id: 108, type: 'paragraph', content: 'lorum ispum belatio relatio conflatio', order_num: 2 },
         { id: 900037, module_id: 108, type: 'paragraph', content: 'kick', order_num: 3 },
         { id: 900038, module_id: 108, type: 'link', content: 'www.medium.com', order_num: 4 },
-        { id: 900039, module_id: 108, type: 'video', content: 'https://www.youtube.com/embed/y1gaWl8EllQ', order_num: 5 }
+        { id: 900039, module_id: 108, type: 'video', content: 'https://www.youtube.com/embed/y1gaWl8EllQ', order_num: 5 },
+
+        { id: 900040, module_id: 108, type: 'heading', content: 'Step 1: Warm Up', order_num: 1 },
+        { id: 900041, module_id: 108, type: 'paragraph', content: 'lorum ispum belatio relatio conflatio', order_num: 2 },
+        { id: 900042, module_id: 108, type: 'paragraph', content: 'kick', order_num: 3 },
+        { id: 900043, module_id: 108, type: 'link', content: 'www.medium.com', order_num: 4 },
+        { id: 900044, module_id: 108, type: 'video', content: 'https://www.youtube.com/embed/y1gaWl8EllQ', order_num: 5 }
       ])
     })
 }
