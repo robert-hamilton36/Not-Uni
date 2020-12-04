@@ -1,5 +1,6 @@
 const connection = require('./connection')
 
+// get all modules saved by a user
 // id will come somewhere from auth/global state
 function getSavedModules (id, db = connection) {
   return db('saved_modules')
