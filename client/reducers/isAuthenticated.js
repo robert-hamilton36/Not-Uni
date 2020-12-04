@@ -1,6 +1,6 @@
 import {IS_AUTHENTICATED} from '../actions/authenticated'
 
-const intialState = false
+const intialState = null
 
 const reducer = (state = intialState, action) => {
   switch(action.type){
