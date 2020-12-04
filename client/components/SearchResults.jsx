@@ -44,13 +44,23 @@ class SearchResults extends React.Component {
       <>
 
         <div className='categories-table'>
-          <h4>Categories</h4>
+          <div className='title'>
+           <h4>Categories</h4>
+          </div>
           <ul>
-            <li><Link to={'/categories/results/HTML'}>HTML</Link></li>
-            <li><Link to={'/categories/results/CSS'}>CSS</Link></li>
-            <li><Link to={'/categories/results/JavaScript'}>JavaScript</Link></li>
-            <li><Link to={'/categories/results/Ruby'}>Ruby</Link></li>
-            <li><Link to={'/categories/results/Python'}>Python</Link></li>
+            <div>
+              <li><Link to={'/categories/results/HTML'}> <img src='/images/html-icon.png'/>HTML</Link></li>
+            </div>
+            <div>
+              <li><Link to={'/categories/results/CSS'}><img src='/images/css-icon.png'/>CSS</Link></li>
+            </div>
+            <div>
+              <li><Link to={'/categories/results/JavaScript'}><img src='/images/javascript-icon.png'/>JavaScript</Link></li>
+            </div>
+            <div>
+              <li><Link to={'/categories/results/Ruby'}><img src='/images/ruby-icon.png'/>Ruby</Link></li>
+            </div>
+            <li><Link to={'/categories/results/Python'}><img src='/images/python-icon.png'/>Python</Link></li>
           </ul>
         </div>
 

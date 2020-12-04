@@ -16,8 +16,8 @@ class ModuleCard extends React.Component {
         <>
       
       <div className='module-card'>
-       {this.props.module.category ==='javascript' &&  }
-       
+
+
        <div className= 's-c-heading'>
           <h1>{this.props.module.title}</h1>
        </div>
