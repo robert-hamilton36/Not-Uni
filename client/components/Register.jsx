@@ -3,6 +3,8 @@ import React, {useRef, useState} from 'react'
 import { auth } from '../firebase'
 import { setUser } from '../actions'
 import { connect } from 'react-redux'
+import { register } from '../actions/authenticated'
+
 
 export class Register extends React.Component {
   state={
@@ -12,10 +14,6 @@ export class Register extends React.Component {
     password:'',
     passwordConfirm:'',
   }
-
-  // componentDidMount(){
-  //   let unsubscribe = auth.onAuthStateChanged(user => this.props.dispatch(setUser(user)))
-  // }
 
   setLoading = (boolean) => {
     this.setState({loading:boolean})
@@ -31,35 +29,53 @@ export class Register extends React.Component {
     })
   }
 
-
   handleSubmit = async (event) => {
-   event.preventDefault()
-    console.log("hello")
-    console.log(this.state)
+    event.preventDefault()
     if (this.state.password !== this.state.passwordConfirm){
       this.setState(
         {password:'',
         passwordConfirm:''})
       return this.setError("Passwords do not match")
     }
-     try {
-      // unsubscribe = auth.onAuthStateChanged(user => this.props.dispatch(setUser(user)))
-      this.setError('')
+    console.log("registrating")
+    try{
       this.setLoading(true)
-  
 
-      await auth.createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(user => this.props.dispatch(setUser(user)))
-
-      // this.unsubscribe()
-
-    } catch {
-      this.setError("Failed to create an account")
+      this.props.dispatch(register(this.state.email, this.state.password))
+    }catch {
+      return "Failed to registrate"
     }
     this.setLoading(false)
+  }
+
+  // handleSubmit = async (event) => {
+  //  event.preventDefault()
+  //   console.log("hello")
+  //   console.log(this.state)
+  //   if (this.state.password !== this.state.passwordConfirm){
+  //     this.setState(
+  //       {password:'',
+  //       passwordConfirm:''})
+  //     return this.setError("Passwords do not match")
+  //   }
+  //    try {
+  //     // unsubscribe = auth.onAuthStateChanged(user => this.props.dispatch(setUser(user)))
+  //     this.setError('')
+  //     this.setLoading(true)
+  
+
+  //     await auth.createUserWithEmailAndPassword(this.state.email, this.state.password)
+  //     .then(user => this.props.dispatch(setUser(user)))
+
+  //     // this.unsubscribe()
+
+  //   } catch {
+  //     this.setError("Failed to create an account")
+  //   }
+  //   this.setLoading(false)
 
   
-  }
+  // }
 
 
 

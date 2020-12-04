@@ -19,18 +19,37 @@ export const isAuthenticated = (boolean) => {
 
 export const  signIn = (email, password) => {
   return dispatch => {
-    console.log("I made it")
+  console.log("I made it")
   auth.signInWithEmailAndPassword(email, password)
   .then((user) => {
     console.log("signIn return")
     return user
   })
-  .then(() => dispatch(isAuthenticated(true)))
   .then(user => dispatch(setUser(user)))
+  .then(() => dispatch(isAuthenticated(true)))
   .catch((error) => {
     console.log(error.message)
     console.log(error.code)
       return error
     })
+  }
+}
+
+export const register = (email, password) => {
+  return dispatch => {
+    console.log("I made it")
+    auth.createUserWithEmailAndPassword(email, password)
+    .then((user) => {
+      console.log("create return")
+      return user
+    })
+    .then(user => dispatch(setUser(user)))
+    .then(() => dispatch(isAuthenticated(true)))
+    .catch((error) => {
+      console.log(error.message)
+      console.log(error.code)
+        return error
+      })
+
   }
 }
