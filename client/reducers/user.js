@@ -11,7 +11,7 @@ const initialState =
 const reducer = (state = initialState, action) => {
   switch(action.type) {
     case SET_USER:
-      return action.user
+      return action.SET_USER
     case SET_SAVED_MODULES:
       let preSavedModuleState = state
       preSavedModuleState.saved = action.modules

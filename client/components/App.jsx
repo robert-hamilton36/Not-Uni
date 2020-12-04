@@ -10,15 +10,13 @@ import Register from './Register'
 import CreateModule from './CreateModule'
 import Profile from './Profile'
 import HomePage from './Homepage'
-import { fetchModules } from '../actions'
-import { fetchUser } from '../actions/authenticated'
-
+import { fetchModules, fetchSavedModules } from '../actions'
 
 
 class App extends React.Component {
   componentDidMount (){
     this.props.dispatch(fetchModules())
-    this.props.dispatch(fetchUser())
+    this.props.dispatch(fetchSavedModules())
   }
 
   render () {

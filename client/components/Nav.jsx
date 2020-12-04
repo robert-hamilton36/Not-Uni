@@ -1,23 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { auth } from '../firebase'
-import { setUser } from '../actions'
-import { connect } from 'react-redux'
 import Search from './Search'
-import { signOut } from '../actions/authenticated'
 
 
 
-
-
-
-
-export class Nav extends React.Component {
-
-  handleClick= () =>{
-    this.props.dispatch(signOut())
-  }
-
+class Nav extends React.Component {
   render() {
     return (
       <>
