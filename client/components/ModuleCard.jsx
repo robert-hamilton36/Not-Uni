@@ -15,9 +15,11 @@ class ModuleCard extends React.Component {
         <>
       
       <div className='module-card'>
-        <li>
+       <div className= 's-c-heading'>
           <h1>{this.props.module.title}</h1>
-          <p> short desription</p>
+       </div>
+       <div className='s-c-info'>
+          <p> The person I have in mind will give us should be able to give some good insights in so many thing that we will need to think about.</p>
             <ul className="steps-list">
               {findHeader.map((header)=> {
               return(
@@ -27,7 +29,8 @@ class ModuleCard extends React.Component {
               )
               })}   
           </ul>
-        </li>
+          </div>
+      <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
       </div>
       </>
     )
