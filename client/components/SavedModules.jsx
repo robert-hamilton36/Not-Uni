@@ -10,7 +10,7 @@ class SavedModules extends React.Component {
     return (
       <>
         {this.arr.map(() => {
-          return <ModuleCard />
+          return <ModuleCard  />
         })}
       </>
     )
