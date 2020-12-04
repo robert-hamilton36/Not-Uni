@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { auth } from '../firebase'
 import { setUser } from '../actions'
+import { signIn } from '../actions/authenticated'
 
 
 
@@ -26,20 +27,12 @@ class Login extends React.Component {
   handleSubmit = async (event) => {
     event.preventDefault()
     console.log("signing in")
-  
-      try {
-       await auth.signInWithEmailAndPassword(this.state.email, this.state.password)
-       .then(user => this.props.dispatch(setUser(user)))
-       .catch((error) => {
-        console.log(error.message)
-        console.log(error.code)})
- 
-       // this.unsubscribe()
- 
-     } catch {
-       this.setError("Failed to create an account")
-     }
- 
+    try{
+      this.props.dispatch(signIn(this.state.email, this.state.password))
+    }catch {
+      return "Failed to login"
+    }
+    // .then(error => this.setState({error: error}))
   }
 
   // handleSubmit = (event) => {

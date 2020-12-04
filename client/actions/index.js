@@ -8,7 +8,7 @@ export const SET_SEARCH_MODULES ='SET_SEARCH_MODULES'
 
 export const SET_SAVED_MODULES = 'SET_SAVED_MODULES'
 export const SET_USER = 'SET_USER'
-export const IS_AUTHENTICATED = 'IS_AUTHENTICATED'
+
 
 
 export const setModules = (modules) => {
@@ -58,12 +58,5 @@ export const setUser = (user) => {
   return {
     type: SET_USER,
     user: user
-  }
-}
-
-export const isAuthenticated = (boolean) => {
-  return {
-    type: IS_AUTHENTICATED,
-    auth: boolean  
   }
 }
