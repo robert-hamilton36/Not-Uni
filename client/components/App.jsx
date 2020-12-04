@@ -11,11 +11,14 @@ import CreateModule from './CreateModule'
 import Profile from './Profile'
 import HomePage from './Homepage'
 import { fetchModules } from '../actions'
+import { fetchUser } from '../actions/authenticated'
+
 
 
 class App extends React.Component {
   componentDidMount (){
     this.props.dispatch(fetchModules())
+    this.props.dispatch(fetchUser())
   }
 
   render () {
