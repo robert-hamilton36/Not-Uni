@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 
 let firebaseConfig = {
-  apiKey: process.env.apiKey,
+  apiKey: process.env.API_KEY,
   authDomain: process.env.authDomain,
   databaseURL: process.env.databaseURL,
   projectId: process.env.projectId,
