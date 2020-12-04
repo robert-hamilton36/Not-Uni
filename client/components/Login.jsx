@@ -28,7 +28,7 @@ class Login extends React.Component {
     event.preventDefault()
     console.log("signing in")
     try{
-      this.props.dispatch(signIn(this.state.email, this.state.password))
+      await this.props.dispatch(signIn(this.state.email, this.state.password))
     }catch {
       return "Failed to login"
     }

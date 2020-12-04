@@ -4,6 +4,8 @@ import { auth } from '../firebase'
 import { setUser } from '../actions'
 import { connect } from 'react-redux'
 import Search from './Search'
+import { signOut } from '../actions/authenticated'
+
 
 
 
@@ -13,8 +15,7 @@ import Search from './Search'
 export class Nav extends React.Component {
 
   handleClick= () =>{
-    auth.signOut()
-    .then(() => this.props.dispatch(setUser("anon")))
+    this.props.dispatch(signOut())
   }
 
   render() {

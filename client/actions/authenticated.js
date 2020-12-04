@@ -53,3 +53,11 @@ export const register = (email, password) => {
 
   }
 }
+
+export const signOut = () => {
+  return dispatch => {
+    auth.signOut()
+    .then(() => dispatch(setUser("")))
+    .then(() => dispatch(isAuthenticated(false)))
+  }
+}
