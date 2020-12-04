@@ -74,3 +74,18 @@ export const fetchUser = () => {
     })
   }
 }
+
+export const signInWithOutsideProvider = (provider) => {
+  return dispatch => {
+    auth.signInWithPopup(provider)
+    .then( result => {
+      dispatch(setUser(result.user))
+    })
+    .then(() => dispatch(isAuthenticated(true)))
+    .catch((error) => {
+      console.log(error.message)
+      console.log(error.code)
+        return error
+      })
+  }
+}
