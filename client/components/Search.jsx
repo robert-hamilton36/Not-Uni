@@ -10,9 +10,7 @@ class Search extends React.Component{
     fireRedirect: false
   }
 
-  componentDidMount (){
-    this.props.dispatch(fetchModules())
-  }
+ 
 
   handleChange = (event)=>{
     this.setState({
