@@ -10,15 +10,19 @@ class ModuleCard extends React.Component {
     const findHeader = this.props.module.elements.filter((element)=>{
       return(element.type === 'heading')})
      
+     
     
       return (
         <>
       
       <div className='module-card'>
+       {this.props.module.category ==='javascript' &&  }
+       
        <div className= 's-c-heading'>
           <h1>{this.props.module.title}</h1>
        </div>
        <div className='s-c-info'>
+       
           <p> The person I have in mind will give us should be able to give some good insights in so many thing that we will need to think about.</p>
             <ul className="steps-list">
               {findHeader.map((header)=> {
