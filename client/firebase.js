@@ -11,23 +11,14 @@ import 'firebase/auth'
 //   appId: process.env.appId
 // }
 
-let firebaseConfig = {
-  apiKey: "AIzaSyDUKATVsTjwI-miVHIlzPLn-KzqG4DjBog",
-  authDomain: "not-uni.firebaseapp.com",
-  databaseURL: "https://not-uni.firebaseio.com",
-  projectId: "not-uni",
-  storageBucket: "not-uni.appspot.com",
-  messagingSenderId: "50295764986",
-  appId: "1:50295764986:web:6354c187238fe45b801643"
-};
 
 
 
 export const app = firebase.initializeApp(firebaseConfig);
 
-// export const google = new firebase.auth.GoogleAuthProvider()
+export const google = new firebase.auth.GoogleAuthProvider()
+// export const github = new firebase.auth.GithubAuthProvider()
 
 export const auth = app.auth()
 auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-// export const github = new firebase.auth.GithubAuthProvider()
 export default app

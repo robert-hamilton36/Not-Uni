@@ -79,6 +79,7 @@ export const signInWithOutsideProvider = (provider) => {
   return dispatch => {
     auth.signInWithPopup(provider)
     .then( result => {
+      console.log(result)
       dispatch(setUser(result.user))
     })
     .then(() => dispatch(isAuthenticated(true)))
@@ -89,3 +90,4 @@ export const signInWithOutsideProvider = (provider) => {
       })
   }
 }
+
