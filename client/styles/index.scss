@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
-html, 
-body {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 22pt;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
 
 h1 {
   font-size: 200%;
+  font-family: roboto;
+  text-align: center;
 }
 
 
@@ -18,11 +18,13 @@ h1 {
   flex: 1 1 auto;
   flex-direction: row;
   height: 60px;
+  width: 100vw;
   width: fill;
 
 
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
   background: rgba(252, 252, 252, 1);
+  font-family: roboto;
 
 
   
@@ -148,7 +150,7 @@ margin: auto;
     margin-top: 10px;
     font-size:20px;
   }
-}
+
 
 .button{
   height: 43px;
@@ -181,15 +183,98 @@ margin: auto;
   margin-top: 10px;
 
   
-  background: #2A881B;
-  border-radius: 2px;
-  color: #FFFFFF;
-  border: none;
-}
+    
+    background: #2A881B;
+    border-radius: 2px;
+    color: #FFFFFF;
+    border: none;
+  }
+    
 
-.element-input {
-  display: block;
-}
+  }
+
+  // Module Card
+
+  .module-card{
+    height: auto;
+    width: 523px;
+    border-radius: 3px;
+    margin-left: 30%;
+    background: rgba(252, 252, 252, 1);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    
+    .s-c-heading{
+      width: 523px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      // padding-left: 10px;
+      background: rgba(0, 130, 127, 1);
+      border-radius: 3px 3px 0 0
+
+      
+      }
+      
+      .s-c-info{
+        margin-bottom: 10px;
+      }
+
+      .steps-list{
+        padding-left: 10px;
+      }
+
+   h1{
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #ffffff;
+    margin: 0;
+    padding: 10px;
+  }
+  li{
+    list-style-type: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 10px;
+    font-family: roboto;
+  }
+  p{
+    font-family: Roboto;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+    
+
+  a{
+    font-family: roboto;
+    text-decoration: none;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    color: rgba(42, 136, 27, 1);
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }  
+  }
 
 .delete-element {
   display: block;

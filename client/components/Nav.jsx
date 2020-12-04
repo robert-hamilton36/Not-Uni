@@ -30,12 +30,10 @@ export class Nav extends React.Component {
 
          {/* Need to add enter click for search */}
           <div>
-          <input className="search" type="text" />
+          <Search className ='search'>
+          {/* <input className="search" type="text"  /> */}
+          </Search>
           </div>
-
-          {/* <input type="button" value="search" /> */}
-
-          <Search/>
           
           {/* if user is NOT signed in */}
 
