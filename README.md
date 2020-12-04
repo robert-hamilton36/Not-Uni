@@ -10,7 +10,7 @@
 | /module/:id | View individual module 
 | /login | Login | NOT Authenticated |
 | /register | Register | NOT Authenticated |
-| /userID | User profile, view saved and created modules | Authenticated |
+| /profile | User profile, view saved and created modules | Authenticated |
 | /create | Authenticated |
 |---|---|---|
 
@@ -59,7 +59,7 @@ https://www.figma.com/file/viw35yDcmX5tLEWZEVabHJ/Dev-Final-Project?node-id=30%3
 | GET | /api/v1/modules/saved | shows the logged in persons saved modules
 | GET | /api/v1/modules/created | shows modules created by logged-in user
 | POST | /api/v1/modules/saved/:id | saves a module to users profile
-| GET | /api/v1/user | Get the user information
+| GET | /api/v1/profile (?) | Get the user information
 |---|---|---|---|
 
 
