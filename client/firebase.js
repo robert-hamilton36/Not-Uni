@@ -11,6 +11,8 @@ import 'firebase/auth'
 //   appId: process.env.appId
 // }
 
+
+
 export const app = firebase.initializeApp(firebaseConfig);
 
 
