@@ -6,7 +6,7 @@ import {Redirect} from 'react-router'
 class Search extends React.Component{
 
   state={
-    searchValue: this.props.searchTerm,
+    searchValue: ''
  
   }
 
@@ -37,9 +37,9 @@ class Search extends React.Component{
 
     return(
       <>
-        <form onSubmit={this.handleSubmit}>
+        <form  onSubmit={this.handleSubmit}>
         <label htmlFor="search"></label>
-        <input type="text" value={this.props.searchValue} onChange={this.handleChange} placeholder='What would you like to learn about today?'/>
+        <input className='search' type="text" value={this.props.searchValue} onChange={this.handleChange}/>
         </form>
       
 
