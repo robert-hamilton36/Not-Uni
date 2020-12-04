@@ -44,6 +44,7 @@ router.get('/created', (req, res) => {
 
 
 //  GET /api/modules/saved
+// shows the logged in person saved modules
 router.get('/saved', (req, res) => {
   const id = 10001 // hard coded for now
   return savedModulesDb.getSavedModules(id)
@@ -57,6 +58,7 @@ router.get('/saved', (req, res) => {
 })
 
 // POST a saved module to the savedModulesDb
+// saves a module to the users profile
 router.post('/saved', (req, res) => {
   const newSave = req.body
   return savedModulesDb.addSavedModule(newSave)
