@@ -41,30 +41,29 @@ class CreateModule extends React.Component {
     switch (element.type) {
       case "heading":
         return (
-          <div className="heading">
-            <input className="element-input" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Heading" /> 
-          </div>
+          <input className="input-box heading-input" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Heading" /> 
         )
         
       case "paragraph":
         return (
-          <div className="heading">
-            <textarea onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} placeholder="text" />
-          </div>
+          <textarea className="input-box paragraph-input" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} placeholder="text" />
         )
-
+        
       case "link":
         return (
-          <div className="heading">
-            <input className="element-input" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Link"/>
+          <div className="link-input input-box">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+            <input className="" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Link"/>
           </div>
         )
 
       case "video":
         return (
-          <div className="heading">
-            <input className="element-input" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="youtube embed link"/>
+          <div className="link-input input-box">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>
+            <input className="" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Youtube video link"/>
           </div>
+
         )
     }
   }
@@ -81,9 +80,9 @@ class CreateModule extends React.Component {
     })
   }
   
-  categoryChangeHandler = (evt) => {
+  categoryChangeHandler = (category) => {
     this.setState({
-      category: evt.currentTarget.value
+      category: category
     })
   }
 
@@ -120,27 +119,47 @@ class CreateModule extends React.Component {
       <div className='create-module'>
         <div className="meta-input">
           <h1> Create A Module </h1>
-          <input onChange={this.titleChangeHandler} type="text" placeholder="title"/>
+          
+          <input className="input-box title-input" onChange={this.titleChangeHandler} type="text" placeholder="title"/>
+        
           <div className="category-container">
-            <div className="category-card">
-              <label > <input onChange={this.categoryChangeHandler} type="radio" value="javascript" name="category" /> javascript </label>
+
+            {/* TODO: make these into a component
+            */}
+
+            <div className={this.state.category === "javascript" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("javascript")} > 
+              <img src="/images/javascript-icon.png" />
+              <span> JavaScript </span> 
             </div>
 
-            <div className="category-card">
-              <label > <input onChange={this.categoryChangeHandler} type="radio" value="python" name="category" /> python  </label>
+            <div className={this.state.category === "html" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("html")} > 
+              <img src="/images/html-icon.png" />
+              <span> HTML </span> 
             </div>
 
-            <div className="category-card">
-              <label > <input onChange={this.categoryChangeHandler} type="radio" value="other" name="category" /> other </label>
+            <div className={this.state.category === "css" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("css")} > 
+              <img src="/images/css-icon.png" />
+              <span> CSS </span> 
             </div>
+
+            <div className={this.state.category === "python" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("python")} > 
+              <img src="/images/python-icon.png" />
+              <span> Python </span> 
+            </div>
+
+            <div className={this.state.category === "Ruby" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("Ruby")} > 
+              <img src="/images/Ruby-icon.png" />
+              <span> Ruby </span> 
+            </div>
+
           </div>
-          <input onChange={this.durationChangeHandler} type="number" placeholder="duration in minutes"/>
+          <input className="input-box duration-input" onChange={this.durationChangeHandler} type="number" placeholder="duration in minutes"/>
         </div>
 
         <div className="element-input-div-container" >
           {this.state.elements.map((element, i) => {
 
-            const spacer = <div className="spacer" style={{height: "20px"}}/>
+            const spacer = <div className="step-spacer"/>
             let needsSpacer = false
 
             if (i > 0 && element.type == 'heading') {
@@ -152,20 +171,33 @@ class CreateModule extends React.Component {
                 {needsSpacer && spacer}
                 <div className="element-input-div" style={{display: "flex", flexDirection: "row"}}>
                   {this.renderElement(element, i)}
-                  <input onClick={() => this.positionChanger('up', i)} type="button" value="<" />
-                  <input onClick={() => this.positionChanger('down', i)} type="button" value=">" />
-                  <input className="delete-element" onClick={() => this.deleteElementHandler(i)} type="button" value="delete"/>
+                  <div className="edit-element-div">
+                    <div className="edit-element-button" onClick={() => this.positionChanger('up', i)}> Up </div>
+                    <div className="edit-element-button" onClick={() => this.positionChanger('down', i)}> Down </div>
+                    <div className="edit-element-button" onClick={() => this.deleteElementHandler(i)}> Delete</div>
+                  </div>
                 </div>
               </>
             ) 
           })}
         </div>
         
-        <div className="add-element-buttons">
-          <input type="button" value="Add Step"          onClick={() => this.addElementHandler("heading")} />
-          <input type="button" value="Add Text"          onClick={() => this.addElementHandler("paragraph")} />
-          <input type="button" value="Add External Link" onClick={() => this.addElementHandler("link")} />
-          <input type="button" value="Add Video"         onClick={() => this.addElementHandler("video")} />
+        <div className="add-element-button-div">
+          <div className="add-element-button" onClick={() => this.addElementHandler("heading")}> 
+            + Add step
+          </div>
+
+          <div className="add-element-button" onClick={() => this.addElementHandler("paragraph")} > 
+            + Add paragraph
+          </div>
+
+          <div className="add-element-button" onClick={() => this.addElementHandler("link")} > 
+            + Add link
+          </div>
+
+          <div className="add-element-button" onClick={() => this.addElementHandler("video")} > 
+            + Add video
+          </div>
         </div>
 
         <input type="button" value="submit" onClick={this.submitHandler}/>

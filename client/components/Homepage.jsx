@@ -11,7 +11,7 @@ class HomePage extends React.Component{
     return(
       <>
         
-        <Search/>
+        {/* <Search/> */}
       
 
       </>
