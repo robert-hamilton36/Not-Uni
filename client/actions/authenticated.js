@@ -61,3 +61,16 @@ export const signOut = () => {
     .then(() => dispatch(isAuthenticated(false)))
   }
 }
+
+export const fetchUser = () => {
+  return dispatch => {
+    auth.onAuthStateChanged(user => {
+      if(user) {
+        dispatch(setUser(user))
+        dispatch(isAuthenticated(true))
+      } else {
+        
+      }
+    })
+  }
+}
