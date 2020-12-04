@@ -16,6 +16,7 @@ const reducer = (state = initialState, action) => {
       let preSavedModuleState = state
       preSavedModuleState.saved = action.modules
       return preSavedModuleState
+    // case ADD_TO_SAVED_MODULES:
     case ADD_TO_SAVED_MODULES:
       let preAddToSavedModuleState = state
       preAddToSavedModuleState.saved.push(action.module)
