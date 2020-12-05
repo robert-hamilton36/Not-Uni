@@ -85,7 +85,7 @@ router.post('/', (req, res) => {
   }
 
   let moduleElements = [...elements]
-  
+
   return modulesDb.createModuleMeta(moduleMeta)
     .then(module_id => {
       moduleElements.map((item, i) => {
@@ -94,6 +94,12 @@ router.post('/', (req, res) => {
       })
 
       moduleElements.map((element) => {
+  // function to replace 'watch?v=' with 'embed/'
+        if (element.type = 'video'){
+          element.content.replace("watch?v=", "embed/")
+          console.log('something changed!')
+          }
+
         return modulesDb.createModuleElement(element)
           .catch(err => {
             console.log(err)
