@@ -15,13 +15,11 @@ class Nav extends React.Component {
           </Link>
           </div>
 
-         {/* Need to add enter click for search */}
-          <div >
-        
-          {/* <input className="search" type="text"  /> */}
-          <Route path = '/' component={Search}/>
-          </div>
-          
+         {this.props.location.pathname === '/' ?  
+           '': <div >
+           <Route path = '/' component={Search}/>
+         </div>
+          }
           {/* if user is NOT signed in */}
 
          <div className='text' >
