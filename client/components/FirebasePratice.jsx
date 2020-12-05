@@ -31,8 +31,7 @@ export default function FirebasePratice() {
   }
 
   useEffect(() => {
-    getUsersDynamic(),
-    // getUsersStatic()
+    getUsersDynamic()
   },[])
   
   if (loading) {
@@ -49,3 +48,6 @@ export default function FirebasePratice() {
     </div>
   )
 }
+
+
+//https://www.youtube.com/playlist?list=PLpPVLI0A0OkJ-bu1zSiknRYEUIy33gCwp
