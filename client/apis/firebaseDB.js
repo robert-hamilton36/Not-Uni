@@ -4,7 +4,7 @@ import firebase from '../firebase'
 const ref = firebase.firestore().collection("users")
 
 //Create
-export function addUser(newUser) {
+export function addUserToFirestore(newUser) {
     console.log("adding..")
     ref
     .doc(newUser.id)

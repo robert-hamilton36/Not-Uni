@@ -1,6 +1,7 @@
 //todo refactor auth to actions not components add reducer to a
 export const SET_USER = 'SET_USER'
 export const IS_AUTHENTICATED = 'IS_AUTHENTICATED'
+import { addUserToFirestore } from '../apis/firebaseDB'
 import { auth } from '../firebase'
 
 export const setUser = (user) => {
@@ -35,12 +36,22 @@ export const  signIn = (email, password) => {
   }
 }
 
-export const register = (email, password) => {
+export const register = (userName, email, password) => {
   return dispatch => {
     console.log("I made it")
     auth.createUserWithEmailAndPassword(email, password)
     .then((user) => {
       console.log("create return")
+      console.log(user.user.uid)
+      return user
+    })
+    .then(user => {
+      let userObj = {
+        id: user.user.uid,
+        userName: userName,
+        email: email,
+      }
+      addUserToFirestore(userObj)
       return user
     })
     .then(user => dispatch(setUser(user)))

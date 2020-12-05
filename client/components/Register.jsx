@@ -10,6 +10,7 @@ export class Register extends React.Component {
   state={
     error:'',
     loading: false,
+    userName:'',
     email:'',
     password:'',
     passwordConfirm:'',
@@ -37,49 +38,16 @@ export class Register extends React.Component {
         passwordConfirm:''})
       return this.setError("Passwords do not match")
     }
-    console.log("registrating")
     try{
       this.setLoading(true)
 
-      this.props.dispatch(register(this.state.email, this.state.password))
+      this.props.dispatch(register(this.state.userName, this.state.email, this.state.password))
       this.props.history.push("/")
     }catch {
       return "Failed to registrate"
     }
     this.setLoading(false)
   }
-
-  // handleSubmit = async (event) => {
-  //  event.preventDefault()
-  //   console.log("hello")
-  //   console.log(this.state)
-  //   if (this.state.password !== this.state.passwordConfirm){
-  //     this.setState(
-  //       {password:'',
-  //       passwordConfirm:''})
-  //     return this.setError("Passwords do not match")
-  //   }
-  //    try {
-  //     // unsubscribe = auth.onAuthStateChanged(user => this.props.dispatch(setUser(user)))
-  //     this.setError('')
-  //     this.setLoading(true)
-  
-
-  //     await auth.createUserWithEmailAndPassword(this.state.email, this.state.password)
-  //     .then(user => this.props.dispatch(setUser(user)))
-
-  //     // this.unsubscribe()
-
-  //   } catch {
-  //     this.setError("Failed to create an account")
-  //   }
-  //   this.setLoading(false)
-
-  
-  // }
-
-
-
   render(){
     return (
 
@@ -88,6 +56,7 @@ export class Register extends React.Component {
         <h1>Register</h1>
         {this.state.error && <h1>{this.state.error}</h1>}
         <form onSubmit={this.handleSubmit}>
+          <input type="text" name="userName" onChange={this.handleChange} value={this.state.userName} placeholder="userName"/>
           <input type="text" name="email" onChange={this.handleChange} value={this.state.email} placeholder="email"/>
           <input type="password"name="password"  onChange={this.handleChange} value={this.state.password} placeholder="password"/>
           <input type="password" name="passwordConfirm" onChange={this.handleChange} value={this.state.passwordConfirm} placeholder="password-confirmation"/>
