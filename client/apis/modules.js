@@ -17,6 +17,7 @@ export function getSavedModulesAPI () {
 
 export function createModuleAPI (module) {
   module.number_of_elements = module.elements.length
+  
 
   return request.post('/api/modules').send(module)
     .then(res => res.body)
