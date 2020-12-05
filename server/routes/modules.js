@@ -73,12 +73,13 @@ router.post('/saved', (req, res) => {
 
 // CREATE A MODULE
 router.post('/', (req, res) => {
-  let { title, user_id, category, duration, number_of_elements, elements} = req.body
+  let { title, user_id, category, description, duration, number_of_elements, elements} = req.body
 
   let moduleMeta = {
     title, 
     user_id, 
     category, 
+    description,
     duration, 
     number_of_elements
   }
