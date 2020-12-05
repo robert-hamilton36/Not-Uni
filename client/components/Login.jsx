@@ -1,10 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, } from 'react-router-dom'
 import { auth } from '../firebase'
 import { setUser } from '../actions'
 import { signIn } from '../actions/authenticated'
-
 
 
 class Login extends React.Component {
@@ -29,24 +28,13 @@ class Login extends React.Component {
     console.log("signing in")
     try{
       await this.props.dispatch(signIn(this.state.email, this.state.password))
+      this.props.history.push("/")
     }catch {
       return "Failed to login"
     }
-    // .then(error => this.setState({error: error}))
+    
   }
 
-  // handleSubmit = (event) => {
-  //   event.preventDefault()
-  //   console.log("signing in")
-  
-
-  //   auth.signInWithEmailAndPassword(this.state.email, this.state.password)
-  //   .then(user => this.props.dispatch(setUser(user)))
-  //   .catch((error) => {
-  //     console.log(error.message)
-  //     console.log(error.code)
-  //   }) 
-  // }
 
   render () {
     return (
