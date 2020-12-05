@@ -75,29 +75,28 @@ h1 {
 
 // register
 
-.Register-card{
-background-color: rgba(252, 252, 252, 1);
-height: 352px;
-width: 643px;
-border-radius: 3px;
-flex: left 50%;
-margin: auto;
+// .Register-card{
+//   background-color: rgba(252, 252, 252, 1);
+//   height: 352px;
+//   width: 643px;
+//   border-radius: 3px;
+//   flex: left 50%;
+//   margin: auto;
 
-  h1{
-    margin-left: 5%;
-    text-align: center;
-  }
-  .Input-R{
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    background: rgba(255, 255, 255, 1);
-    height: 50px;
-    width: 205px;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 10px;
-    font-size:20px;
-  }
-}
+//   .h1style{
+//     margin-left: 5%;
+//   }
+//   .Input-R{
+//     border: 1px solid rgba(0, 0, 0, 0.4);
+//     background: rgba(255, 255, 255, 1);
+//     height: 50px;
+//     width: 205px;
+//     margin-left: 5%;
+//     margin-right: 5%;
+//     margin-top: 10px;
+//     font-size:20px;
+//   }
+// }
 
 
 
@@ -113,7 +112,6 @@ margin: auto;
 
   h1{
     margin-left: 5%;
-    text-align: center;
   }
     
   .Input-R{
@@ -170,7 +168,7 @@ margin: auto;
   }
 
   .steps-list{
-    padding-left: 10px;
+    padding-left: 20px;
   }
 
 
@@ -184,7 +182,7 @@ margin: auto;
     text-align: left;
     color: #ffffff;
     margin: 0;
-    padding: 10px;
+    padding-left: 20px;
   }
 
   li{
@@ -195,18 +193,19 @@ margin: auto;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
 
   }
 
   ul {
     list-style-type: none;
-    padding-left: 10px;
     font-family: roboto;
   } 
 
   p {
     font-family: Roboto;
-    padding-left: 10px;
+    padding-left: 20px;
     padding-right: 10px;
 
   }
@@ -221,7 +220,7 @@ margin: auto;
     line-height: 25px;
     letter-spacing: 0em;
     color: rgba(42, 136, 27, 1);
-    padding-left: 10px;
+    padding-left: 20px;
     padding-right: 10px;
     display: block;
     margin-top: 20px;

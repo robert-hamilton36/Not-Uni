@@ -8,8 +8,8 @@ class Register extends React.Component {
     return (
 
       <div className='Register-card'>
-
-        <h1>Register</h1>
+        
+        <h1 className ='h1style' >Register</h1>
 
         <div>
         <input className='Input-R' type="First Name" placeholder="First Name"/>
