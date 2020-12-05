@@ -6,21 +6,21 @@ import SavedModules from './SavedModules'
 
 class Profile extends React.Component {
 
-  fakeProps = {
-    auth: {
-      name: "Gary"
-    }
-  }
-
   render() {
     return (
     <>
-      <div className="profile">
+      <div className="profile-page">
+        <div className="left-sidebar" >
+          
+        </div>
 
-        <h1> Welcome, {this.fakeProps.auth.name} </h1>
+        <div className="mid-column" >
 
-        <h1> Saved Modules </h1>
-        <SavedModules />
+        </div>
+
+        <div className="right-sidebar" >
+
+        </div>
       </div>
     </>
     )

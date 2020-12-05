@@ -11,6 +11,7 @@ import CreateModule from './CreateModule'
 import Profile from './Profile'
 import HomePage from './Homepage'
 import { fetchModules, fetchSavedModules } from '../actions'
+import ModuleCreated from './ModuleCreated'
 
 
 class App extends React.Component {
@@ -32,6 +33,7 @@ class App extends React.Component {
             <Route exact path="/categories/results" component={SearchResults} />
             <Route exact path="/module/:id" component={Module} />
             <Route exact path="/create" component={CreateModule} />
+            <Route exact path="/modulecreated" component={ModuleCreated} />
             <Route exact path="/profile" component={Profile} />
           </Switch>
         </Router>

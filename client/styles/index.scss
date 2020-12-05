@@ -4,10 +4,14 @@
 
 
 
+
 h1 {
   font-size: 200%;
   font-family: roboto;
-  text-align: center;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-bottom: 20px;
+  color: #424242;
 }
 
 
@@ -246,10 +250,20 @@ margin: auto;
   margin: 30px auto;
   background: #f5f5f5;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);  
-  padding: 20px;
+  padding: 60px 70px;
+  display: flex;
+  flex-direction: column;
 
   .title-input {
+    width: 100%;
     font-size: 30pt;
+    margin-bottom: 20px;
+  }
+
+  .description-input {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    min-height: 100px;
     margin-bottom: 20px;
   }
 
@@ -265,6 +279,7 @@ margin: auto;
       flex-direction: row;
       align-items: center;
       padding: 10px;
+      cursor: pointer;
       background: #dfdfdf;
       box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
       border-radius: 3px;
@@ -275,10 +290,10 @@ margin: auto;
         margin-right: 10px;
       }
     }
-
     .category-radio:hover {
       background-color: #c9c9c9;
     }
+
 
     .selected {
       background-color: rgb(255, 255, 255) !important;
@@ -303,6 +318,7 @@ margin: auto;
     margin: 20px 0px;
 
     .add-element-button {
+      cursor: pointer;
       padding: 10px;
       background: #FFFFFF;
       box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
@@ -333,17 +349,17 @@ margin: auto;
 
   .heading-input{
     font-size: 18pt;
-    margin-bottom: 10px;
+    margin: 5px 0px;
   }
 
   .paragraph-input{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     min-height: 100px;
-    margin-bottom: 10px;
+    margin: 5px 0px;
   }
 
   .link-input {
-    margin-bottom: 10px;
+    margin: 5px 0px;
 
     input {
       display: block;
@@ -374,6 +390,7 @@ margin: auto;
     flex-direction: row;
     
     .edit-element-button {
+      cursor: pointer;
       margin: 10px 10px 20px ;
       color: grey;
     }
@@ -383,4 +400,35 @@ margin: auto;
       font: 600;
     }
   }
+
+  .submit-button {
+    background-color: rgba(42, 136, 27, 1);
+    width: fit-content;
+    padding: 20px;
+    font-size: 30px;
+    color: white;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
+    align-self: flex-end;
+    cursor: pointer;
+  }
+}
+
+
+
+// MODULE CREATED
+
+.module-created-card {
+    margin-top: 200px;
+    border: 1px black solid;
+    padding: 60px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-created {
+  display: flex;
+  justify-content: center;
 }
