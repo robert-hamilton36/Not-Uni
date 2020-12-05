@@ -58,7 +58,7 @@ export const signOut = () => {
   return dispatch => {
     auth.signOut()
     .then(() => dispatch(setUser("")))
-    .then(() => dispatch(isAuthenticated(false)))
+    .then(() => dispatch(isAuthenticated(null)))
   }
 }
 

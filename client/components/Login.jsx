@@ -6,7 +6,6 @@ import { setUser } from '../actions'
 import { signIn, signInWithOutsideProvider } from '../actions/authenticated'
 
 
-
 class Login extends React.Component {
   state={
     email:'',
@@ -29,6 +28,7 @@ class Login extends React.Component {
     console.log("signing in")
     try{
       await this.props.dispatch(signIn(this.state.email, this.state.password))
+      this.props.history.push("/")
     }catch {
       return "Failed to login"
     }

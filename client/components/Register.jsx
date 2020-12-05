@@ -42,6 +42,7 @@ export class Register extends React.Component {
       this.setLoading(true)
 
       this.props.dispatch(register(this.state.email, this.state.password))
+      this.props.history.push("/")
     }catch {
       return "Failed to registrate"
     }

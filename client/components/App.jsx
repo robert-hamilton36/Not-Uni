@@ -26,9 +26,9 @@ class App extends React.Component {
   render () {
     return (
       <div className='app'>
-        <AddUser/>
-        <FirebasePratice/>
-        {/* <Router>
+        {/* <AddUser/>
+        <FirebasePratice/> */}
+        <Router>
           <Route path="/" component={Nav}/> 
 
           <Switch>
@@ -40,7 +40,7 @@ class App extends React.Component {
             <Route exact path="/create" component={CreateModule} />
             <Route exact path="/profile" component={Profile} />
           </Switch>
-        </Router> */}
+        </Router>
       </div>
     )
   }
