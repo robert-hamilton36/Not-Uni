@@ -85,21 +85,22 @@ router.post('/', (req, res) => {
   }
 
   let moduleElements = [...elements]
+  // function to replace 'watch?v=' with 'embed/'
 
   return modulesDb.createModuleMeta(moduleMeta)
     .then(module_id => {
       moduleElements.map((item, i) => {
         item.module_id = module_id[0]
         item.order_num = i
+        // converts video links to "embed/"
+        if (item.type = 'video'){
+          let oldURL = item.content
+          let newURL = oldURL.replace("watch?v=", "embed/")
+          item.content = newURL
+        }
       })
 
       moduleElements.map((element) => {
-  // function to replace 'watch?v=' with 'embed/'
-        if (element.type = 'video'){
-          element.content.replace("watch?v=", "embed/")
-          console.log('something changed!')
-          }
-
         return modulesDb.createModuleElement(element)
           .catch(err => {
             console.log(err)
