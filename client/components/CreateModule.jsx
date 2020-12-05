@@ -171,6 +171,10 @@ class CreateModule extends React.Component {
               <span> Ruby </span> 
             </div>
 
+            <div className={this.state.category === "Martial Arts" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("Martial Arts")} > 
+              <span> 🥋 Martal Arts </span> 
+            </div>
+
           </div>
           <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type="number" placeholder="duration in minutes"/>
         </div>

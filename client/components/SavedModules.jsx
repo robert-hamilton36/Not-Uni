@@ -9,7 +9,7 @@ class SavedModules extends React.Component {
     return (
       <>
         {this.props.savedModules.map((module) => {
-          return <ModcoduleCard module={module} />
+          return <ModuleCard module={module} />
         })}
       </>
     )
