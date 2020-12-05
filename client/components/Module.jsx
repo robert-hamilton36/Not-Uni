@@ -5,31 +5,42 @@ import { connect } from 'react-redux'
 const Module = (props) => {
 
 
+  
   const currentModule = props.modules
-    .find((module) => module.id == props.match.params.id)
+  .find((module) => module.id == props.match.params.id)
+  
+  // Wanted to make the step numbers going up in value @oli need to know more about how your funcation works. 
 
+  // const numberonStep = (i)=> {
+  //   for (i = 1, i > numberonStep.content.content, i++ ) {
+  //   }
+  //   return(
+  //   console.log(i)
+  //   )
+  // } 
+  
   return (
 
-    currentModule ? <div className="module">
-      <h1>Module View</h1>
+    currentModule ? <div className = 'module' >
+      {/* <h1>Module View</h1> */}
 
 
-      <div>
+      <div className='h-module' >
         <h1> {currentModule.title} </h1>
-        <h5> duration: {currentModule.duration} </h5>
+        <h5> {currentModule.duration} mins</h5>
       </div>
 
 
 
-      {console.log(props.modules)}
-      {console.log(currentModule)}
+      {/* {console.log(props.modules)} */}
+      {/* {console.log(currentModule)} */}
 
-
+    <div className="B-I-module">
 
       {currentModule.elements.map((item) => {
         switch (item.type) {
           case "heading":
-            return <h3> {item.content} </h3>
+        return <h3> {item.content} </h3>
 
           case "paragraph":
             return <p> {item.content} </p>
@@ -37,7 +48,7 @@ const Module = (props) => {
           case "link":
             return (
               <a href={item.content}>
-                <div>Click here </div>
+                <div className = 'text'>Click here </div>
               </a>
             )
           case "video":
@@ -46,6 +57,7 @@ const Module = (props) => {
             )
         }
       })}
+      </div>
 
     </div> : ""
   )
