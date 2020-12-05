@@ -7,31 +7,20 @@ class Search extends React.Component{
 
   state={
     searchValue: ''
- 
   }
-
- 
 
   handleChange = (event)=>{
     this.setState({
       searchValue: event.target.value
-    })
-   
+    }) 
   }
   
   handleSubmit = (event)=>{
-    
     event.preventDefault()
-    
     this.props.history.push('/categories/results/' + this.state.searchValue)
-    
-   
     }
   
-  
 
-  
-  
   render (){
     
 
@@ -41,8 +30,6 @@ class Search extends React.Component{
         <label htmlFor="search"></label>
         <input className='search' type="text" value={this.props.searchValue} onChange={this.handleChange}/>
         </form>
-      
-
       </>
     )
   }

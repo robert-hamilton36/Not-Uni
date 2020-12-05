@@ -41,45 +41,46 @@ class SearchResults extends React.Component {
 
 
     return (
-      <>
+      <div className='results-page'>
 
         <div className='categories-table'>
           <div className='title'>
            <h4>Categories</h4>
           </div>
-          <ul>
-            <div>
-              <li><Link to={'/categories/results/HTML'}> <img src='/images/html-icon.png'/>HTML</Link></li>
+       
+            <div className='category'>
+              <Link to={'/categories/results/HTML'}> <img src='/images/html-icon.png'/>HTML</Link>
             </div>
-            <div>
-              <li><Link to={'/categories/results/CSS'}><img src='/images/css-icon.png'/>CSS</Link></li>
+            <div className='category'>
+              <Link to={'/categories/results/CSS'}><img src='/images/css-icon.png'/>CSS</Link>
             </div>
-            <div>
-              <li><Link to={'/categories/results/JavaScript'}><img src='/images/javascript-icon.png'/>JavaScript</Link></li>
+            <div className='category'>
+              <Link to={'/categories/results/JavaScript'}><img src='/images/javascript-icon.png'/>JavaScript</Link>
             </div>
-            <div>
-              <li><Link to={'/categories/results/Ruby'}><img src='/images/ruby-icon.png'/>Ruby</Link></li>
+            <div className='category'>
+              <Link to={'/categories/results/Ruby'}><img src='/images/ruby-icon.png'/>Ruby</Link>
             </div>
-            <li><Link to={'/categories/results/Python'}><img src='/images/python-icon.png'/>Python</Link></li>
-          </ul>
+            <div className='category'>
+              <Link to={'/categories/results/Python'}><img src='/images/python-icon.png'/><span>Python</span></Link>
+            </div>
         </div>
 
         <div className='search-results'>
-          <ul>
-            {this.props.searchModules.length === 0 ? <div><h5>Sorry, we couldn't find a module that matches your search</h5>
-              <h5>Here are some other modules you might be interested in:</h5>
-
-              {this.props.modules.map(module =>
-                <ModuleCard key={module.id} module={module} />)}</div>
-
-
+          
+            {this.props.searchModules.length === 0 ? 
+              <>
+                <div className='no-matches-message'>
+                  <h5>Sorry, we couldn't find a module that matches your search</h5>
+                  <h5>Here are some other modules you might be interested in:</h5>
+                </div>
+                {this.props.modules.map(module =>
+                  <ModuleCard key={module.id} module={module} />)}
+              </>
               : this.props.searchModules.map(module =>
                 <ModuleCard key={module.id} module={module} />
-              )}
-
-          </ul>
+              )}  
         </div>
-      </>
+      </div>
     )
   }
 
