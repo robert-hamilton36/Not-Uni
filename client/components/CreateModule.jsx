@@ -11,6 +11,7 @@ class CreateModule extends React.Component {
   state = {
     title: "",
     user_id: "",
+    description: "",
     category: "",
     duration: "",
     number_of_elements: "", // this is calculated later
@@ -67,7 +68,9 @@ class CreateModule extends React.Component {
         )
     }
   }
-  
+
+
+  // TODO: make these three into one function
   titleChangeHandler = (evt) => {
     this.setState({
       title: evt.target.value
@@ -85,6 +88,14 @@ class CreateModule extends React.Component {
       category: category
     })
   }
+  //
+
+  metaChangeHandler = (evt, propType) => {
+    this.setState({
+      [propType]: evt.target.value
+    })
+  }
+
 
   deleteElementHandler = (i) => {
     let tempElements = this.state.elements
@@ -111,6 +122,12 @@ class CreateModule extends React.Component {
 
   submitHandler = () => {
     createModuleAPI(this.state)
+      .then(() => {
+        setTimeout(() => {
+          this.props.history.push(`/modulecreated`)
+          console.log("2")
+        }, 1500)
+      })
   }
   
   render () {
@@ -120,7 +137,9 @@ class CreateModule extends React.Component {
         <div className="meta-input">
           <h1> Create A Module </h1>
           
-          <input className="input-box title-input" onChange={this.titleChangeHandler} type="text" placeholder="title"/>
+          <input className="input-box title-input" onChange={(evt) => this.metaChangeHandler(evt, 'title')} type="text" placeholder="title"/>
+          
+          <textarea className="input-box description-input" onChange={(evt) => this.metaChangeHandler(evt, 'description')} placeholder="short desciption" /> 
         
           <div className="category-container">
 
@@ -153,13 +172,13 @@ class CreateModule extends React.Component {
             </div>
 
           </div>
-          <input className="input-box duration-input" onChange={this.durationChangeHandler} type="number" placeholder="duration in minutes"/>
+          <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type="number" placeholder="duration in minutes"/>
         </div>
 
         <div className="element-input-div-container" >
           {this.state.elements.map((element, i) => {
 
-            const spacer = <div className="step-spacer"/>
+            const spacer = <div className="step-spacer"> <div/> </div>
             let needsSpacer = false
 
             if (i > 0 && element.type == 'heading') {
@@ -200,7 +219,10 @@ class CreateModule extends React.Component {
           </div>
         </div>
 
-        <input type="button" value="submit" onClick={this.submitHandler}/>
+        <div className="submit-button" onClick={() => this.submitHandler()} > 
+          Create Module
+        </div>
+
       </div>
     )
   }
