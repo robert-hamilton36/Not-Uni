@@ -9,14 +9,14 @@ class Register extends React.Component {
 
       <div className='Register-card'>
         
-        <h1 className ='h1style' >Register</h1>
+        <h1>Register</h1>
 
         <div>
-        <input className='Input-R' type="First Name" placeholder="First Name"/>
-        <input className='Input-R' type="Last Name" placeholder="Last Name"/>
-        <input className='Input-R' type="text" placeholder="email"/>
-
-        <input className='Input-R' type="password" placeholder="password"/>
+        <input className='Input-R' type="First Name" placeholder="User Name"/>
+        <input className='Input-R' type="text" placeholder="Email"/>
+        
+        <input className='Input-R' type="password" placeholder="Password"/>
+        <input className='Input-R' type="password" placeholder="Confirm Password"/>
       
         <input className='button' type="button" value="Register"/>
 
