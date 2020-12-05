@@ -2,7 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-
+body{
+  font-family: roboto;
+}
 
 
 h1 {
@@ -164,7 +166,9 @@ h1 {
     padding-top: 5px;
     padding-bottom: 5px;
     // padding-left: 10px;
-    background: rgba(0, 130, 127, 1);
+    // background: rgba(0, 130, 127, 1);
+    // background: #FA502E;
+    background-color: #002482;
     border-radius: 3px 3px 0 0
   }
 
@@ -509,7 +513,7 @@ h1 {
   grid-column-end: line1;
 
   display: block;
-  height: auto;
+  height: 33vh;
 
 
  ul{
@@ -520,14 +524,18 @@ h1 {
   .title {
     margin-top: 0;
     background-color: #002482;
+    border-radius: 3px 3px 0 0
+    
    
   }
   h4{
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 10px;
     color: white;
     margin-top:0;
     margin-left: 5px;
+    font-size: 20px;
     }
   
   
@@ -552,6 +560,10 @@ h1 {
       a:visited {
         color: black;
       }
+      a:hover{
+        font-size: 120%;
+        
+      }
     }
 
 }
@@ -559,7 +571,7 @@ h1 {
 .results-page{
   display: grid;
   grid-template-columns: [start]33.33% [line1] 33.33% [line2]33.33%[end];
-  // grid-template-rows: [start] auto [line1] 50vh [end];
+
 
 }
 
@@ -567,9 +579,9 @@ h1 {
 .search-results{
   grid-column-start: line1 ;
   grid-column-end: line2;
+  margin-top: 20%;
 
-  // grid-row-start: line1;
-  // grid-row-end: end;
+
 
   .no-matches-message{
     margin-top:10vh;
@@ -586,15 +598,16 @@ h1 {
 // MODULE CREATED
 
 .module-created-card {
-    margin-top: 200px;
-    border: 1px black solid;
-    padding: 60px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  margin-top: 200px;
+  border: 1px black solid;
+  padding: 60px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .module-created {
   display: flex;
   justify-content: center;
 }
+
