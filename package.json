@@ -57,7 +57,7 @@
   "dependencies": {
     "dotenv-webpack": "^6.0.0",
     "express": "^4.17.1",
-    "firebase": "^8.1.1",
+    "firebase": "^8.1.2",
     "knex": "^0.21.12",
     "pg": "^8.5.1",
     "react-tag-input": "^6.4.3",
