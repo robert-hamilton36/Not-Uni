@@ -54,7 +54,13 @@ exports.seed = function (knex) {
         { id: 900040, module_id: 108, type: 'heading', content: 'Step 2: Find Something To Kick', order_num: 6 },
         { id: 900041, module_id: 108, type: 'paragraph', content: 'Kick, Kick, Kick some more', order_num: 7 },
         { id: 900042, module_id: 108, type: 'paragraph', content: 'Move on to Roundhouse Kikcs', order_num: 8},{ id: 900043, module_id: 108, type: 'link', content: 'https://breakingmuscle.com/fitness/muay-thai-workout-how-to-train-the-roundhouse-kick', order_num: 9 },
-        { id: 900044, module_id: 108, type: 'video', content: 'https://www.youtube.com/embed/y1gaWl8EllQ', order_num: 10 }
+        { id: 900044, module_id: 108, type: 'video', content: 'https://www.youtube.com/embed/y1gaWl8EllQ', order_num: 10 },
+
+        { id: 900045, module_id: 109, type: 'heading', content: 'Step 1: Overcoming Your Fear Of CSS', order_num: 1 },
+        { id: 900046, module_id: 109, type: 'paragraph', content: "There are three ways to apply CSS to HTML: Inline, internal, and external. \n Inline: \n Inline styles are plonked straight into the HTML tags using the style attribute. \n Internal \n Embedded, or internal, styles are used for the whole page. Inside the head element, the style tags surround all of the styles for the page. \n Although preferable to soiling our HTML with inline presentation, it is similarly usually preferable to keep the HTML and the CSS files separate, and so we are left with our savior… \n External \n External styles are used for the whole, multiple-page website. There is a separate CSS file, If this file is saved as “style.css” in the same directory as your HTML page then it can be linked to in the HTML", order_num: 2 },
+        { id: 900047, module_id: 109, type: 'paragraph', content: 'CSS (Cascading Style Sheets) was a technology recommended by the World Wide Web Consortium (W3C) in 1996. An easy way to understand the purpose of CSS is to view it as an addition to HTML that helps simplify and improve web page design. In fact, some CSS effects are not possible via HTML alone. \n Another advantage of CSS is that it allows you to specify a style once, but the browser can apply that style many times in a document. For example, if you want some of the pictures displayed in your website to have a thin, blue frame around them, you can define this frame as a style in your CSS. Then, instead of having to repeat an HTML definition of the thin and blue frame — each and every time you want that particular frame — you can merely insert the CSS style as an attribute for each graphic element that you want framed.', order_num: 3 },
+        { id: 900048, module_id: 109, type: 'link', content: 'https://www.dummies.com/web-design-development/site-development/css-web-design-for-dummies-cheat-sheet/', order_num: 4 },
+        { id: 900049, module_id: 109, type: 'video', content: 'https://www.youtube.com/watch?v=1Rs2ND1ryYc', order_num: 5 }
       ])
     })
 }

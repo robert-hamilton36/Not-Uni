@@ -11,7 +11,8 @@ exports.seed = function (knex) {
         { id: 105, title: 'Intro To Python', user_id: 10005, category: 'Python', duration: 15, description: 'Python - more than just a snake', number_of_elements: 5 },
         { id: 106, title: 'JavaScript with React', user_id: 10001, category: 'JavaScript', duration: 15, description: 'Start Using React Now!', number_of_elements: 5 },
         { id: 107, title: 'JavaScript and Redux', user_id: 10001, category: 'JavaScript', duration: 15, description: 'Some great introductory resources for anyone interested in Redux', number_of_elements: 5 },
-        { id: 108, title: 'How to do a Roundhouse Kick', user_id: 10001, category: 'JavaScript', duration: 120, description: "Be the highlight of all your friend's parties", number_of_elements: 10 }
+        { id: 108, title: 'How to do a Roundhouse Kick', user_id: 10001, category: 'JavaScript', duration: 120, description: "Be the highlight of all your friend's parties", number_of_elements: 10 },
+        { id: 109, title: "CSS - It's Probably Time To Actually Learn It", user_id: 10002, category: 'CSS', duration: 45, description: "Learn how to make your blog or personal project POP", number_of_elements: 5 }
       ])
     })
 }
