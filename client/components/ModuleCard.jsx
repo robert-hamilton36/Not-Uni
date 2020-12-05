@@ -3,26 +3,39 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 
 class ModuleCard extends React.Component {
-  fakeprops = {
-    id: 3
-  }
+ 
 
   render () {
-    return (
-      <div className='module-card'>
-        <h1>Header</h1>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos error vel voluptate sit sint rerum libero ex, odio voluptatum fuga consequatur? Culpa expedita beatae ex aliquid quam, pariatur cumque aut.</p>
-        <ul className="steps-list">
-          <a href=""> <li> Exercise 1</li> </a> 
-          <a href=""> <li> Exercise 2</li> </a> 
-          <a href=""> <li> Exercise 3</li> </a> 
-          <a href=""> <li> Exercise 4</li> </a> 
-        </ul>
 
-        <Link to={"/module/" + this.fakeprops.id}> 
-          <div> Learn </div>
-        </Link>
+    const findHeader = this.props.module.elements.filter((element)=>{
+      return(element.type === 'heading')})
+     
+     
+    
+      return (
+        <>
+      
+      <div className='module-card'>
+
+
+       <div className= 's-c-heading'>
+          <h1>{this.props.module.title}</h1>
+       </div>
+       <div className='s-c-info'>
+       
+          <p> The person I have in mind will give us should be able to give some good insights in so many thing that we will need to think about.</p>
+            <ul className="steps-list">
+              {findHeader.map((header)=> {
+              return(
+
+                <li key={header.id}> {header.content}</li>
+              )
+              })}   
+          </ul>
+          </div>
+        <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
       </div>
+      </>
     )
   }
 }

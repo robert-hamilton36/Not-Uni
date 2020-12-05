@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux'
 
-import products from './products'
-import cart from './cart'
-import orders from './orders'
+import modules from './modules'
+import user from './user'
+import searchModules from './searchModules'
+
 
 export default combineReducers({
-  products,
-  cart,
-  orders,
+  modules,
+  user,
+  searchModules
 })

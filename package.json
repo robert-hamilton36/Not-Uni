@@ -43,12 +43,15 @@
     ]
   },
   "dependencies": {
+    "dotenv-webpack": "^6.0.0",
     "express": "^4.17.1",
     "firebase": "^8.1.1",
     "knex": "^0.21.12",
     "pg": "^8.5.1",
     "react-tag-input": "^6.4.3",
-    "superagent": "^6.1.0"
+    "react-time-picker": "^4.1.1",
+    "superagent": "^6.1.0",
+    "uuidv4": "^6.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -76,7 +79,7 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "sass": "^1.29.0",
+    "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
     "sqlite3": "^5.0.0",
     "style-loader": "^2.0.0",

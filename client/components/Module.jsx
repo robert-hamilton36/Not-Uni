@@ -1,84 +1,73 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-class Module extends React.Component {
-  fakeProps = {
-    id: 4,
-    author: "Jesus Christ",
-    title: "React Basics",
-    duration: "3 hours",
-    difficulty: "Novice",
-    elements: [
-      {
-        type: "heading",
-        content: "How to set up React"
-      },
-      {
-        type: "paragraph",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptas accusamus autem ipsa inventore nulla molestias, est, sequi laudantium vitae odio fuga maxime doloribus incidunt libero illum deleniti architecto illo."
-      },
-      {
-        type: "external-link",
-        content: "https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76"
-      },
-      {
-        type: "video",
-        content: "https://www.youtube.com/embed/egUtw5pumYg"
-      },
-      {
-        type: "paragraph",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptas accusamus autem ipsa inventore nulla molestias, est, sequi laudantium vitae odio fuga maxime doloribus incidunt libero illum deleniti architecto illo."
-      },
-      {
-        type: "paragraph",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptas accusamus autem ipsa inventore nulla molestias, est, sequi laudantium vitae odio fuga maxime doloribus incidunt libero illum deleniti architecto illo."
-      },
-      {
-        type: "external-link",
-        content: "https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76"
-      },
-      {
-        type: "paragraph",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptas accusamus autem ipsa inventore nulla molestias, est, sequi laudantium vitae odio fuga maxime doloribus incidunt libero illum deleniti architecto illo."
-      },
-      {
-        type: "external-link",
-        content: "https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76"
-      },
-    ]
-    
-  }
 
-  render () {
-    return (
-      <div className="module">
+const Module = (props) => {
 
-        {this.fakeProps.blocks.map((item) => {
-          switch (item.type) {
-            case "heading":
-              return <h3> {item.content} </h3>
 
-            case "paragraph":
-              return <p> {item.content} </p>
+  
+  const currentModule = props.modules
+  .find((module) => module.id == props.match.params.id)
+  
+  // Wanted to make the step numbers going up in value @oli need to know more about how your funcation works. 
 
-            case "external-link":
-              return (
-                <a href={item.content}>
-                  <div>Click here </div>
-                </a>
-              )
+  // const numberonStep = (i)=> {
+  //   for (i = 1, i > numberonStep.content.content, i++ ) {
+  //   }
+  //   return(
+  //   console.log(i)
+  //   )
+  // } 
+  
+  return (
 
-            case "video":
-              return (
-                <iframe width="560" height="315" src={item.content} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              )
-          }
-        })}
+    currentModule ? <div className = 'module' >
+      {/* <h1>Module View</h1> */}
 
-      </div> 
-    )
-  }
+
+      <div className='h-module' >
+        <h1> {currentModule.title} </h1>
+        <h5> {currentModule.duration} mins</h5>
+      </div>
+
+
+
+      {/* {console.log(props.modules)} */}
+      {/* {console.log(currentModule)} */}
+
+    <div className="B-I-module">
+
+      {currentModule.elements.map((item) => {
+        switch (item.type) {
+          case "heading":
+        return <h3> {item.content} </h3>
+
+          case "paragraph":
+            return <p> {item.content} </p>
+
+          case "link":
+            return (
+              <a href={item.content}>
+                <div className = 'text'>Click here </div>
+              </a>
+            )
+          case "video":
+            return (
+              <iframe width="560" height="315" src={item.content} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            )
+        }
+      })}
+      </div>
+
+    </div> : ""
+  )
+
 }
 
-export default Module
+
+function mapStateToProps(globalState) {
+  return {
+    modules: globalState.modules
+  }
+}
+export default connect(mapStateToProps)(Module)
