@@ -12,6 +12,7 @@ import Profile from './Profile'
 import HomePage from './Homepage'
 import { fetchModules } from '../actions'
 import { fetchUser } from '../actions/authenticated'
+import FirebasePratice from './FirebasePratice'
 
 
 
@@ -24,7 +25,8 @@ class App extends React.Component {
   render () {
     return (
       <div className='app'>
-        <Router>
+        <FirebasePratice/>
+        {/* <Router>
           <Route path="/" component={Nav}/> 
 
           <Switch>
@@ -36,7 +38,7 @@ class App extends React.Component {
             <Route exact path="/create" component={CreateModule} />
             <Route exact path="/profile" component={Profile} />
           </Switch>
-        </Router>
+        </Router> */}
       </div>
     )
   }

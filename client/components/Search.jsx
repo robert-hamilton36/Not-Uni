@@ -20,6 +20,8 @@ class Search extends React.Component{
   }
   
   handleSubmit = (event)=>{
+    console.log("hello")
+    this.setState({fireRedirect: false})
     console.log('handle submit')
     event.preventDefault()
     
