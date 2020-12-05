@@ -53,8 +53,7 @@ h1 {
     // border-radius: 0px;
 
   }
-}
-
+  
   .search{
     height: 42px;
     width: 630px;
@@ -67,19 +66,20 @@ h1 {
     box-sizing: border-box;
           
     }
+}
 
-  .text a {
-    text-decoration: none;
 
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 25px;
-    letter-spacing: 0em;
-    color: rgba(42, 136, 27, 1);
-    
- }
-
+.text a {
+  text-decoration: none;
+  
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  color: rgba(42, 136, 27, 1);
+  
+}
 // register
 
 // .Register-card{
@@ -116,9 +116,13 @@ h1 {
   border-radius: 3px;
   flex: left 50%;
   margin: auto;
+  margin-top: 50px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+
 
   h1{
     margin-left: 5%;
+    padding-top: 10px;
   }
     
   .Input-R{
@@ -130,6 +134,12 @@ h1 {
     margin-right: 5%;
     margin-top: 10px;
     font-size:20px;
+    padding-left: 15px;
+    // input{
+
+
+
+    // }
   }
 }
 
@@ -138,14 +148,20 @@ h1 {
   height: 43px;
   width: 149px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
-  margin-left: 42%;
-  margin-top: 10px;
+  margin-left: 62%;
+  margin-top: 20px;
 
   
   background: #2A881B;
   border-radius: 2px;
   color: #FFFFFF;
   border: none;
+
+  button :hover {
+    
+  }
+
+
 }
 
 
@@ -570,7 +586,7 @@ h1 {
 
 .results-page{
   display: grid;
-  grid-template-columns: [start]33.33% [line1] 33.33% [line2]33.33%[end];
+  grid-template-columns: [start]30% [line1] 40% [line2]30%[end];
 
 
 }
@@ -580,6 +596,7 @@ h1 {
   grid-column-start: line1 ;
   grid-column-end: line2;
   margin-top: 20%;
+  margin-left :23%;
 
 
 
@@ -587,6 +604,7 @@ h1 {
     margin-top:10vh;
     margin-bottom: 20%;
     text-align: center;
+    font-size: 20px;
   }
  
 
@@ -610,4 +628,50 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+
+//HomePage
+
+.homepage{
+  // display: grid;
+  // grid-template-columns: [start]30% [line1] 40% [line2]30%[end];
+  // grid-template-rows: [start]30% [line1] 40% [line2]30%[end];;
+
+
+  .search{
+    height: 42px;
+    width: 630px;
+    left: 28.12%;
+    right: 28.12%;
+    top: 25.84%;
+    bottom: 26.97%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    // grid-column-start: line1;
+    // grid-column-end: line2;
+    // grid-row-start: line1;
+    // grid-row-end: line2;
+
+    margin-top: 50px;
+    text-align: center;
+    margin-left: 33vw;
+    border-radius: 3px;
+    }
+
+    h1{
+      margin-top: 30vh;
+    
+      text-align: center;
+    }
+
+
+
+}
+
+input{
+  font-family: roboto;
+  font-size: 20px;
+}
+
 
