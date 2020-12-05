@@ -4,7 +4,7 @@ import { addUser } from '../../apis/firebaseDB'
 import FirebasePratice from './FirebasePratice'
 
 
-export default class AddSchool extends Component {
+export default class AddUser extends Component {
     state = {
         userName: '',
         email: '',

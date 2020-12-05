@@ -30,8 +30,8 @@ export function addUser(newUser) {
 
 //Update
 
-function editUser(updatedUser) {
-    setLoading();
+export function editUser(updatedUser) {
+    console.log(updatedUser)
     ref
       .doc(updatedUser.id)
       .update(updatedUser)

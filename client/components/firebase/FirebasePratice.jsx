@@ -3,10 +3,12 @@ import { useStore } from 'react-redux'
 import firebase from '../../firebase'
 
 import { deleteUser, getUsers } from '../../apis/firebaseDB'
+import EditUser from './EditUser'
 
 export default function FirebasePratice() {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
+  const [editing, setEditing] = useState(false)
 
   const ref = firebase.firestore().collection("users")
 
@@ -36,6 +38,10 @@ export default function FirebasePratice() {
     deleteUser(user)
   }
 
+  function editUser() {
+    setEditing(true)
+  }
+
   useEffect(() => {
     setLoading(true)
     getUsers(setUsers)
@@ -54,6 +60,7 @@ export default function FirebasePratice() {
         <div key={user.id}>
           <h2>{user.email}</h2>
           <button onClick={() => deleterUser(user)}>Delete</button>
+          {!editing ? <button onClick={() => editUser()}>Edit</button>:<EditUser user={user} setEditing={setEditing}/>}
         </div>
       ))}
     </div>

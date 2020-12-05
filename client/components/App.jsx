@@ -12,7 +12,7 @@ import Profile from './Profile'
 import HomePage from './Homepage'
 import { fetchModules } from '../actions'
 import { fetchUser } from '../actions/authenticated'
-import AddSchool from './firebase/AddSchool'
+import AddUser from './firebase/AddUser'
 import FirebasePratice from './firebase/FirebasePratice'
 
 
@@ -26,7 +26,7 @@ class App extends React.Component {
   render () {
     return (
       <div className='app'>
-        <AddSchool/>
+        <AddUser/>
         <FirebasePratice/>
         {/* <Router>
           <Route path="/" component={Nav}/> 
