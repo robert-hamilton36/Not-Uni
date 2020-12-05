@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import Search from './Search'
 
 
@@ -16,10 +16,10 @@ class Nav extends React.Component {
           </div>
 
          {/* Need to add enter click for search */}
-          <div>
-          <Search className ='search'>
+          <div >
+        
           {/* <input className="search" type="text"  /> */}
-          </Search>
+          <Route path = '/' component={Search}/>
           </div>
           
           {/* if user is NOT signed in */}
