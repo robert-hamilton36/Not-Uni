@@ -36,7 +36,6 @@ class App extends React.Component {
             <Route exact path="/create" component={CreateModule} />
             <Route exact path="/modulecreated" component={ModuleCreated} />
           </Switch>
-
           <Route exact path="/profile" component={Profile} />
         </Router>
       </div>
