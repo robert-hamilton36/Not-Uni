@@ -47,12 +47,12 @@ class Profile extends React.Component {
                 </div>
                 <div onClick={() => {this.sidebarClickHandler("saved modules")}} className="single-option">
                   <img src="/images/folder-24px-green.svg"/>
-                  <span> Create A Module </span>
+                  <span> Saved Modules </span>
                 </div>
                 <Link to="/create" >
                   <div className="single-option">
                     <img src="/images/add_box-24px.svg"/>
-                    <span> Saved Modules </span>
+                    <span> Create A Module </span>
                   </div>
                 </Link>
               </div>
