@@ -56,14 +56,14 @@ export const setSavedModules = (modules) => {
   }
 }
 
-export const fetchSavedModules = () => {
+export const fetchSavedModules = (userID) => {
   return dispatch => {
-    return getSavedModulesAPI()
-    .then(modules=> {
-      dispatch(setSavedModules(modules))
-    })
-    .catch(err => {
-      console.log(err)
+    return getSavedModulesAPI(userID)
+      .then(modules=> {
+        dispatch(setSavedModules(modules))
+      })
+      .catch(err => {
+        console.log(err)
       })
     }
   }

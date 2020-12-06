@@ -52,6 +52,7 @@
     "pg": "^8.5.1",
     "react-tag-input": "^6.4.3",
     "react-time-picker": "^4.1.1",
+    "react-tiny-link": "^3.6.0",
     "superagent": "^6.1.0",
     "uuidv4": "^6.2.5"
   },
