@@ -125,10 +125,7 @@ class CreateModule extends React.Component {
   submitHandler = () => {
     createModuleAPI(this.state)
       .then(() => {
-        setTimeout(() => {
-          this.props.history.push(`/modulecreated`)
-          console.log("2")
-        }, 1500)
+        this.props.history.push(`/modulecreated`)
       })
   }
   
@@ -144,9 +141,6 @@ class CreateModule extends React.Component {
           <textarea className="input-box description-input" onChange={(evt) => this.metaChangeHandler(evt, 'description')} placeholder="short desciption" /> 
         
           <div className="category-container">
-
-            {/* TODO: make these into a component
-            */}
 
             <CategoryCard displayName="Javascript" category="Javascript" isActive = {this.state.category === "Javascript" ? true : false} callBack={() => this.categoryChangeHandler("Javascript")}/>
             <CategoryCard displayName="Python" category="Python" isActive = {this.state.category === "Python" ? true : false} callBack={() => this.categoryChangeHandler("Python")}/>
