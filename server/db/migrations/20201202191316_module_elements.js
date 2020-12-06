@@ -2,7 +2,7 @@ exports.up = function (knex) {
   return knex.schema.createTable('module_elements', table => {
     table.increments('id')
     table.integer('module_id')
-    table.string('type')
+    table.text('type')
     table.text('content')
     table.integer('order_num')
   })
