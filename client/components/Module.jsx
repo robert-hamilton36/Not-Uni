@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Likes from './Likes'
+
 import { ReactTinyLink } from 'react-tiny-link'
 
 class Module extends React.Component {

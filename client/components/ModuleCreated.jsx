@@ -7,7 +7,7 @@ class ModuleCreated extends React.Component {
     return (
       <div className='module-created'>
         <div className="module-created-card" >
-          <h1>WooHoo!</h1>
+          <h1>Success!</h1>
           <span> Your module has been created</span>
           <Link to="profile"><span> See all your modules</span> </Link>
         </div>

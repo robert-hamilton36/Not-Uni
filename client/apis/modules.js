@@ -27,4 +27,43 @@ export function addSavedModuleAPI (user_id, module_id) {
     .then(res=>res.body)
 }
 
+
+export function increaseLikesAPI(module){
+  let updatedModule ={
+    id: module.id,
+    title:module.title,
+    user_id:module.user_id,
+    category:module.category,
+    duration:module.duration,
+    description:module.description,
+    number_of_elements:module.number_of_elements,
+    likes: module.likes + 1
+  }
+  return request
+  .patch('/api/modules/' + updatedModule.id)
+  .send(updatedModule)
+  .then (res => res.body)
+}
+
+
+
+export function decreaseLikesAPI(module){
+  console.log(module)
+  let updatedModule ={
+    id: module.id,
+    title:module.title,
+    user_id:module.user_id,
+    category:module.category,
+    duration:module.duration,
+    description:module.description,
+    number_of_elements:module.number_of_elements,
+    likes: module.likes -1
+  }
+  return request
+  .patch('/api/modules/' + updatedModule.id)
+  .send(updatedModule)
+  .then (res => res.body)
+}
+
+
 // get created modules API?
