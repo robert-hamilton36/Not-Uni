@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { updateModuleLikes } from '../actions'
+import { decreaseModuleLikes, increaseModuleLikes } from '../actions'
+
 
 
 
@@ -12,16 +13,20 @@ class Likes extends React.Component{
   }
 
   clickHandler=()=>{
-    console.log('click')
-    console.log(this.props.module)
-    let newCount = this.state.likes +1
+    
     this.setState({
-      likes: newCount,
-      imageSRC: "/images/favorite-black.svg"
+      likes: (this.state.likes === 0) ? 1 :0,
+      imageSRC: (this.state.likes === 0) ?  "/images/favorite-black.svg" : "/images/favorite-border.svg"
+    }, () => {
+      this.afterSetStateFinished();
     })
-    this.props.dispatch(updateModuleLikes(this.props.module))
-
   }
+
+  afterSetStateFinished = () =>{
+
+    this.state.likes === 1 ? this.props.dispatch(increaseModuleLikes(this.props.module)) : this.props.dispatch(decreaseModuleLikes(this.props.module))
+  }
+
 
  
 

@@ -70,7 +70,7 @@ h1 {
 
 
 .text a {
-  text-decoration: none;
+  text-decoration: none ;
   
   font-size: 22px;
   font-style: normal;
@@ -179,12 +179,67 @@ h1 {
     width: 523px;
     padding-top: 5px;
     padding-bottom: 5px;
-    // padding-left: 10px;
-    // background: rgba(0, 130, 127, 1);
-    // background: #FA502E;
-    background-color: #002482;
+    background-color: rgba(0, 130, 127, 1);
     border-radius: 3px 3px 0 0
   }
+
+  .HTML{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: red;
+    border-radius: 3px 3px 0 0
+  }
+
+  .JavaScript{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(223, 219, 29);
+    border-radius: 3px 3px 0 0
+  }
+
+  .Python{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(34, 79, 163);
+    border-radius: 3px 3px 0 0
+  }
+
+  .Ruby{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(165, 16, 16);
+    border-radius: 3px 3px 0 0
+  }
+
+  .Cplus{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(98, 0, 128);
+    border-radius: 3px 3px 0 0
+  }
+
+  .C{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(144, 163, 199) ;
+    border-radius: 3px 3px 0 0
+  }
+
+
+  .CSS{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:#002482;
+    border-radius: 3px 3px 0 0
+  }
+
 
   .s-c-info{
     margin-bottom: 10px;
