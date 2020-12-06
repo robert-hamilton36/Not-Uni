@@ -13,9 +13,8 @@ import HomePage from './Homepage'
 import { fetchModules, fetchSavedModules } from '../actions'
 import ModuleCreated from './ModuleCreated'
 
-
 class App extends React.Component {
-  componentDidMount (){
+  componentDidMount () {
     this.props.dispatch(fetchModules())
     this.props.dispatch(fetchSavedModules())
   }
@@ -24,18 +23,18 @@ class App extends React.Component {
     return (
       <div className='app'>
         <Router>
-          <Route path="/" component={Nav}/> 
+          <Route path="/" component={Nav}/>
 
           <Switch>
             <Route exact path='/' component={HomePage}/>
-            <Route exact path="/register" component={Register }/> 
-            <Route exact path="/login" component={Login}/> 
+            <Route exact path="/register" component={Register }/>
+            <Route exact path="/login" component={Login}/>
             <Route exact path="/categories/results/:q" component={SearchResults} />
             <Route exact path="/module/:id" component={Module} />
             <Route exact path="/create" component={CreateModule} />
             <Route exact path="/modulecreated" component={ModuleCreated} />
           </Switch>
-          
+
           <Route exact path="/profile" component={Profile} />
         </Router>
       </div>
@@ -43,7 +42,7 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   return {
     user: globalState.user,
     modules: globalState.modules

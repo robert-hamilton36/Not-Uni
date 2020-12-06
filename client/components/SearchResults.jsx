@@ -5,9 +5,7 @@ import { setSearchedModules } from '../actions'
 import ModuleCard from './ModuleCard'
 import Search from './Search'
 
-
 class SearchResults extends React.Component {
-
 
   componentDidMount() {
 
@@ -16,11 +14,7 @@ class SearchResults extends React.Component {
       return (module.title.toLowerCase().includes(q.toLowerCase())
       )
     })
-    this.props.dispatch(setSearchedModules(filteredModules))
-
-  }
-
-
+    this.props.dispatch(setSearchedModules(filteredModules)) }
 
   componentDidUpdate(prevProps) {
 
@@ -83,8 +77,6 @@ class SearchResults extends React.Component {
       </div>
     )
   }
-
-
 }
 
 function mapStateToProps(globalState) {
