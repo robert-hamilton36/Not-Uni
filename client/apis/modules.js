@@ -30,3 +30,13 @@ export function addSavedModuleAPI (user_id, module_id) {
 }
 
 // get created modules API?
+
+// display all comments on a module
+
+// export function displaydCommentAPI (content, user_id, module_id) {
+//   const comment = {content: content, user_id: user_id, module_id:module_id}
+//   return request.get('/api/co')
+// }
+
+
+// Write a post on a module
