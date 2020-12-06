@@ -2,7 +2,6 @@
 export const SET_USER = 'SET_USER'
 export const IS_AUTHENTICATED = 'IS_AUTHENTICATED'
 export const REMOVE_USER = 'REMOVE_USER'
-import { addUserToFirestore } from '../apis/firebaseDB'
 import { auth } from '../firebase'
 
 export const setUser = (user) => {
@@ -80,59 +79,6 @@ export const register = (userName, email, password) => {
     })
   }
 }
-
-// export const register = (userName, email, password) => {
-//   return dispatch => {
-//   console.log("I made it")
-//   auth.createUserWithEmailAndPassword(email, password)
-//   .then((user) => {
-//     console.log("Register return")
-//     return user
-//   })
-//   .then(user => {
-//       user.user.updateProfile({
-//       displayName: userName
-//     })
-//     return user
-//   })
-//   .then((user) => {
-//     console.log("User")
-//     console.log(user)
-//     return user
-//   })
-//   .then(user => {
-//     console.log(user)
-//     dispatch(setUser({
-//     userName: user.user.displayName,
-//     uid: user.user.uid,
-//     email: user.user.email
-//     }))
-//   })
-//   .then(() => dispatch(isAuthenticated(true)))
-//   .catch((error) => {
-//     console.log(error.message)
-//     console.log(error.code)
-//       return error
-//     })
-//   }
-// }
-
-// export async function register(userName, email, password){
-//   console.log("I made it")
-//   let user = await auth.createUserWithEmailAndPassword(email, password)
-//   await user.user.updateProfile({
-//       displayName: userName
-//     })
-
-//   return await user
-    // return dispatch => {
-    //   dispatch(setUser(
-    //     {displayName: user.displayName,
-    //       email: user.email,
-    //       uid: user.uid
-    //     }))
-    // }
-// }
 
 export const signOut = () => {
   return dispatch => {

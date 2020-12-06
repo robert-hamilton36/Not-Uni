@@ -1,24 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { auth } from '../firebase'
-import { setUser } from '../actions'
-import { connect } from 'react-redux'
+import { Route, Link } from 'react-router-dom'
 import Search from './Search'
-import { signOut } from '../actions/authenticated'
+import {connect} from 'react-redux'
 
-
-
-
-
-
-
-export class Nav extends React.Component {
-
-  handleClick= () =>{
-    this.props.dispatch(signOut())
-  }
-
-  render() {
+class Nav extends React.Component {
+  render () {
     return (
       <>
         <nav className="top-nav">
@@ -28,12 +14,11 @@ export class Nav extends React.Component {
             </Link>
           </div>
 
-         {/* Need to add enter click for search */}
-          <div>
-            <Search className ='search'>
-            {/* <input className="search" type="text"  /> */}
-            </Search>
-          </div>
+          {this.props.location.pathname === '/'
+            ? '' : <div >
+              <Route path = '/' component={Search}/>
+            </div>
+          }
           
           {/* if user is NOT signed in */}
           

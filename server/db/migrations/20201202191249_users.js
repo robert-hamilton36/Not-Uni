@@ -1,7 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable('users', table => {
-    table.increments('id').primary()
-    table.string('hash')
+    table.increments('id')
+    table.text('hash')
     table.string('user_name')
     table.string('email')
   })

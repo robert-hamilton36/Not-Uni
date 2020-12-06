@@ -5,12 +5,11 @@ import Login from './Login'
 import ModuleCard from './ModuleCard'
 
 class SavedModules extends React.Component {
-  arr = [ 0, 0, 0 ]
   render () {
     return (
       <>
-        {this.arr.map(() => {
-          return <ModuleCard />
+        {this.props.savedModules.map((module) => {
+          return <ModuleCard module={module} />
         })}
       </>
     )
@@ -19,4 +18,4 @@ class SavedModules extends React.Component {
 
 }
 
-export default SavedModules
+export default connect()(SavedModules)

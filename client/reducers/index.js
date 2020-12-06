@@ -9,6 +9,6 @@ import isAuthenticated from './isAuthenticated'
 export default combineReducers({
   isAuthenticated,
   modules,
-  searchModules,
   user,
+  searchModules
 })

@@ -60,20 +60,10 @@ class Login extends React.Component {
         </div> 
         {/* <div>
         <span><button onClick={() => this.handleGoogle(github)}>Continue with Github</button> </span>
-
         </div> */}
       </div>
     )
   }
 }
 
-// function mapStateToProps (globalState) {
-//   return {
-//     dispatch: globalState.dispatch
-//   }
-// }
-
-export default connect()(Login)
-
-// En8nRWX2pvzMUYP\
-//https://firebase.google.com/docs/auth/web/start
+export default Login

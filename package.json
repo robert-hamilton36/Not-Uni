@@ -22,24 +22,12 @@
   },
   "babel": {
     "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "browsers": [
-              ">0.25%",
-              "not ie 11",
-              "not op_mini all"
-            ]
-          }
-        }
-      ],
+      "@babel/preset-env",
       "@babel/preset-react"
     ],
     "plugins": [
       "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread",
-      "@babel/plugin-transform-runtime"
+      "@babel/plugin-proposal-object-rest-spread"
     ]
   },
   "jest": {
@@ -62,19 +50,18 @@
     "pg": "^8.5.1",
     "react-tag-input": "^6.4.3",
     "react-time-picker": "^4.1.1",
-    "superagent": "^6.1.0",
     "transform-runtime": "0.0.0",
+    "react-tiny-link": "^3.6.0",
+    "superagent": "^6.1.0",
     "uuidv4": "^6.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
-    "@babel/plugin-transform-runtime": "^7.12.1",
-    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
     "@babel/register": "^7.12.1",
-    "@babel/runtime": "^7.12.5",
     "babel-loader": "^8.2.1",
     "css-loader": "^5.0.1",
     "enzyme": "^3.11.0",
@@ -94,7 +81,7 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "sass": "^1.29.0",
+    "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
     "sqlite3": "^5.0.0",
     "style-loader": "^2.0.0",

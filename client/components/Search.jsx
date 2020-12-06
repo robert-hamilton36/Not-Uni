@@ -6,17 +6,13 @@ import {Redirect} from 'react-router'
 class Search extends React.Component{
 
   state={
-    searchValue: '',
-    fireRedirect: false
+    searchValue: ''
   }
-
- 
 
   handleChange = (event)=>{
     this.setState({
       searchValue: event.target.value
-    })
-   
+    }) 
   }
   
   handleSubmit = (event)=>{
@@ -24,35 +20,20 @@ class Search extends React.Component{
     this.setState({fireRedirect: false})
     console.log('handle submit')
     event.preventDefault()
-    
-    const filteredModules = this.props.modules.filter(module =>{
-      return (module.title.toLowerCase().includes(this.state.searchValue.toLowerCase())
-      )
-    }) 
-    
-    this.props.dispatch(setSearchedModules(filteredModules))
-    this.setState({
-      fireRedirect:true
-    })
+    this.props.history.push('/categories/results/' + this.state.searchValue)
     }
   
-  
 
-  
-  
   render (){
     
 
     return(
       <>
+   
         <form  onSubmit={this.handleSubmit}>
-        <label htmlFor="search"></label>
-        <input className='search' type="text" value={this.props.searchValue} onChange={this.handleChange}/>
+          <label htmlFor="search"></label>
+          <input className='search' type="text" placeholder='Search' value={this.props.searchValue} onChange={this.handleChange}/>
         </form>
-        {this.state.fireRedirect && (
-          <Redirect to='/categories/results'/>
-        )}
-
       </>
     )
   }
