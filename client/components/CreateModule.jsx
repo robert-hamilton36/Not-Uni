@@ -124,9 +124,12 @@ class CreateModule extends React.Component {
 
   submitHandler = () => {
     createModuleAPI(this.state)
-      .then(() => {
-        this.props.history.push(`/modulecreated`)
-      })
+      // .then(() => {
+      //   setTimeout(() => {
+      //     this.props.history.push(`/modulecreated`)
+          
+      //   }, 1000);
+      // })
   }
   
   render () {

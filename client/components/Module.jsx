@@ -18,6 +18,11 @@ class Module extends React.Component {
 
   componentDidMount () {
     this.setState({currentModule: null})
+
+    const currentModule = this.props.modules.find((module) => module.id == this.props.match.params.id)
+
+    console.log(currentModule);
+    this.setState({currentModule})
   }
 
   componentDidUpdate (prevProps) {
@@ -67,7 +72,7 @@ class Module extends React.Component {
         {this.state.currentModule.elements.map((item) => {
           switch (item.type) {
             case "heading":
-          return <h3> {item.content} </h3>
+              return <h3> {item.content} </h3>
 
             case "paragraph":
               return <p> {item.content} </p>

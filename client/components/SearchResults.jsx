@@ -20,8 +20,6 @@ class SearchResults extends React.Component {
 
   }
 
-
-
   componentDidUpdate(prevProps) {
 
     const q = this.props.match.params.q
@@ -34,35 +32,72 @@ class SearchResults extends React.Component {
     }
   }
 
-
-
-
   render() {
 
 
     return (
       <div className='results-page'>
 
-        <div className='categories-table'>
-          <div className='title'>
-           <h4>Categories</h4>
+        <div className="left column"> 
+          <div className='categories-table'>
+            <div className='title'>
+              <h2>Categories</h2>
+            </div>
+
+            <div className="categories">
+
+              <Link to={'/categories/results/HTML'}>
+                <div className='single-category'>
+                  <img src='/images/icons/html.png'/>
+                  <span> HTML</span> 
+                </div>
+              </Link>
+
+              <Link to={'/categories/results/CSS'}>
+                <div className='single-category'>
+                  <img src='/images/icons/css.png'/>
+                  <span> CSS</span> 
+                </div>
+              </Link>
+
+              <Link to={'/categories/results/JavaScript'}>
+                <div className='single-category'>
+                  <img src='/images/icons/javascript.png'/>
+                  <span> JavaScript</span> 
+                </div>
+              </Link>
+
+              <Link to={'/categories/results/Ruby'}>
+                <div className='single-category'>
+                  <img src='/images/icons/ruby.png'/>
+                  <span> Ruby</span> 
+                </div>
+              </Link>
+
+              <Link to={'/categories/results/Python'}>
+                <div className='single-category'>
+                  <img src='/images/icons/python.png'/>
+                  <span>Python</span>
+                </div>
+              </Link>
+
+              <Link to={'/categories/results/Csharp'}>
+                <div className='single-category'>
+                  <img src='/images/icons/Csharp.png'/>
+                  <span>C#</span>
+                </div>
+              </Link>
+
+              <Link to={'/categories/results/C++'}>
+                <div className='single-category'>
+                  <img src='/images/icons/C++.png'/>
+                  <span>C++</span>
+                </div>
+              </Link>
+
+            </div>
+            
           </div>
-       
-            <div className='category'>
-              <Link to={'/categories/results/HTML'}> <img src='/images/icons/html.png'/>HTML</Link>
-            </div>
-            <div className='category'>
-              <Link to={'/categories/results/CSS'}><img src='/images/icons/css.png'/>CSS</Link>
-            </div>
-            <div className='category'>
-              <Link to={'/categories/results/JavaScript'}><img src='/images/icons/javascript.png'/>JavaScript</Link>
-            </div>
-            <div className='category'>
-              <Link to={'/categories/results/Ruby'}><img src='/images/icons/ruby.png'/>Ruby</Link>
-            </div>
-            <div className='category'>
-              <Link to={'/categories/results/Python'}><img src='/images/icons/python.png'/><span>Python</span></Link>
-            </div>
         </div>
 
         <div className='search-results'>
