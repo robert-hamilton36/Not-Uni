@@ -49,19 +49,19 @@ class SearchResults extends React.Component {
           </div>
        
             <div className='category'>
-              <Link to={'/categories/results/HTML'}> <img src='/images/html-icon.png'/>HTML</Link>
+              <Link to={'/categories/results/HTML'}> <img src='/images/icons/html.png'/>HTML</Link>
             </div>
             <div className='category'>
-              <Link to={'/categories/results/CSS'}><img src='/images/css-icon.png'/>CSS</Link>
+              <Link to={'/categories/results/CSS'}><img src='/images/icons/css.png'/>CSS</Link>
             </div>
             <div className='category'>
-              <Link to={'/categories/results/JavaScript'}><img src='/images/javascript-icon.png'/>JavaScript</Link>
+              <Link to={'/categories/results/JavaScript'}><img src='/images/icons/javascript.png'/>JavaScript</Link>
             </div>
             <div className='category'>
-              <Link to={'/categories/results/Ruby'}><img src='/images/ruby-icon.png'/>Ruby</Link>
+              <Link to={'/categories/results/Ruby'}><img src='/images/icons/ruby.png'/>Ruby</Link>
             </div>
             <div className='category'>
-              <Link to={'/categories/results/Python'}><img src='/images/python-icon.png'/><span>Python</span></Link>
+              <Link to={'/categories/results/Python'}><img src='/images/icons/python.png'/><span>Python</span></Link>
             </div>
         </div>
 
