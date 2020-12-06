@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import { createModuleAPI } from '../apis/modules';
+import CategoryCard from './CatagoryCard';
 
 
 
@@ -84,6 +85,7 @@ class CreateModule extends React.Component {
   }
   
   categoryChangeHandler = (category) => {
+
     this.setState({
       category: category
     })
@@ -145,35 +147,12 @@ class CreateModule extends React.Component {
 
             {/* TODO: make these into a component
             */}
-
-            <div className={this.state.category === "javascript" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("javascript")} > 
-              <img src="/images/javascript-icon.png" />
-              <span> JavaScript </span> 
-            </div>
-
-            <div className={this.state.category === "html" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("html")} > 
-              <img src="/images/html-icon.png" />
-              <span> HTML </span> 
-            </div>
-
-            <div className={this.state.category === "css" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("css")} > 
-              <img src="/images/css-icon.png" />
-              <span> CSS </span> 
-            </div>
-
-            <div className={this.state.category === "python" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("python")} > 
-              <img src="/images/python-icon.png" />
-              <span> Python </span> 
-            </div>
-
-            <div className={this.state.category === "Ruby" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("Ruby")} > 
-              <img src="/images/Ruby-icon.png" />
-              <span> Ruby </span> 
-            </div>
-
-            <div className={this.state.category === "Martial Arts" ? "category-radio selected" : "category-radio"} onClick={() => this.categoryChangeHandler("Martial Arts")} > 
-              <span> 🥋 Martal Arts </span> 
-            </div>
+            <CategoryCard category="Javascript" isActive = {this.state.category === "Javascript" ? true : false} callBack={() => this.categoryChangeHandler("Javascript")}/>
+            <CategoryCard category="Python" isActive = {this.state.category === "Python" ? true : false} callBack={() => this.categoryChangeHandler("Python")}/>
+            <CategoryCard category="CSS" isActive = {this.state.category === "CSS" ? true : false} callBack={() => this.categoryChangeHandler("CSS")}/>
+            <CategoryCard category="Ruby" isActive = {this.state.category === "Ruby" ? true : false} callBack={() => this.categoryChangeHandler("Ruby")}/>
+            <CategoryCard category="C++" isActive = {this.state.category === "C++" ? true : false} callBack={() => this.categoryChangeHandler("C++")}/>
+            <CategoryCard category="C#" isActive = {this.state.category === "C#" ? true : false} callBack={() => this.categoryChangeHandler("C#")}/>
 
           </div>
           <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type="number" placeholder="duration in minutes"/>
