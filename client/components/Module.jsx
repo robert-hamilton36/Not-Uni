@@ -17,13 +17,11 @@ class Module extends React.Component {
   }
 
   componentDidUpdate (prevProps) {
-    console.log('update')
-    console.log(this.props.modules.length)
+    
     if (!prevProps || prevProps.match.params.id !== this.props.match.params.id || prevProps.modules.length !== this.props.modules.length) {
-      console.log('hi')
+      
       const currentModule = this.props.modules.find((module) => module.id === this.props.match.params.id)
 
-      console.log(currentModule)
       this.setState({ currentModule })
     }
   }
