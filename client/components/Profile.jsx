@@ -42,20 +42,28 @@ class Profile extends React.Component {
               </div>
               <div className="options">
                 <div className="single-option">
-                  <img src="/images/files-icon.svg"/>
+                  <img src="/images/folder-24px-blue.svg"/>
                   <span> Your Modules </span>
                 </div>
                 <div onClick={() => {this.sidebarClickHandler("saved modules")}} className="single-option">
-                  <img src="/images/plus-icon.svg"/>
-                  <span> Saved Modules </span>
+                  <img src="/images/folder-24px-green.svg"/>
+                  <span> Create A Module </span>
                 </div>
+                <Link to="/create" >
+                  <div className="single-option">
+                    <img src="/images/add_box-24px.svg"/>
+                    <span> Saved Modules </span>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
 
           <div className="middle column" >
-            {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>
-              }
+            {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
+
+            {/* {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/> */}
+
           </div>
 
           <div className="right column" >
