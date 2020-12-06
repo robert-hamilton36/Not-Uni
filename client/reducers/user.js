@@ -12,20 +12,20 @@ const reducer = (state = initialState, action) => {
       return {...state, ...action.user}
     case REMOVE_USER:
       return {}
-    case SET_SAVED_MODULES:
-      let preSavedModuleState = state
+    // case SET_SAVED_MODULES:
+    //   let preSavedModuleState = state
 
-      preSavedModuleState.saved = []
+    //   preSavedModuleState.saved = []
 
-      action.modules.map((item) => {
-        preSavedModuleState.saved.push(item.id)
-      })
+    //   action.modules.map((item) => {
+    //     preSavedModuleState.saved.push(item.id)
+    //   })
 
-      return preSavedModuleState
-    case ADD_TO_SAVED_MODULES:
-      let preAddToSavedModuleState = state
-      preAddToSavedModuleState.saved.push(action.module)
-      return preAddToSavedModuleState
+    //   return preSavedModuleState
+    // case ADD_TO_SAVED_MODULES:
+    //   let preAddToSavedModuleState = state
+    //   preAddToSavedModuleState.saved.push(action.module)
+    //   return preAddToSavedModuleState
 
       default:
         return state

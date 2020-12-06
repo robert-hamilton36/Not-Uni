@@ -13,15 +13,14 @@ import HomePage from './Homepage'
 import { fetchModules, fetchSavedModules } from '../actions'
 import ModuleCreated from './ModuleCreated'
 import { fetchUser } from '../actions/authenticated'
-import AddUser from './firebase/AddUser'
-import FirebasePratice from './firebase/FirebasePratice'
+
 
 
 
 class App extends React.Component {
   componentDidMount (){
-    this.props.dispatch(fetchModules())
-    this.props.dispatch(fetchSavedModules())
+    // this.props.dispatch(fetchModules())
+    // this.props.dispatch(fetchSavedModules())
   }
 
   render () {
