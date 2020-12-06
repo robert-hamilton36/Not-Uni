@@ -5,23 +5,17 @@ import { setSearchedModules } from '../actions'
 import ModuleCard from './ModuleCard'
 import Search from './Search'
 
-
 class SearchResults extends React.Component {
-
-
-  componentDidMount() {
-
+  componentDidMount () {
     const q = this.props.match.params.q
     const filteredModules = this.props.modules.filter(module => {
       return (module.title.toLowerCase().includes(q.toLowerCase())
       )
     })
     this.props.dispatch(setSearchedModules(filteredModules))
-
   }
 
-  componentDidUpdate(prevProps) {
-
+  componentDidUpdate (prevProps) {
     const q = this.props.match.params.q
     if (q !== prevProps.match.params.q) {
       const filteredModules = this.props.modules.filter(module => {
@@ -32,9 +26,7 @@ class SearchResults extends React.Component {
     }
   }
 
-  render() {
-
-
+  render () {
     return (
       <div className='results-page'>
 
@@ -101,28 +93,26 @@ class SearchResults extends React.Component {
         </div>
 
         <div className='search-results'>
-          
-            {this.props.searchModules.length === 0 ? 
-              <>
-                <div className='no-matches-message'>
-                  <h5>Sorry, we couldn't find a module that matches your search</h5>
-                  <h5>Here are some other modules you might be interested in:</h5>
-                </div>
-                {this.props.modules.map(module =>
-                  <ModuleCard key={module.id} module={module} />)}
-              </>
-              : this.props.searchModules.map(module =>
-                <ModuleCard key={module.id} module={module} />
-              )}  
+
+          {this.props.searchModules.length === 0
+            ? <>
+              <div className='no-matches-message'>
+                <h5>Sorry, We Couldn't Find A Module That Matches Your Search</h5>
+                <h5>Here Are Some Other Modules You Might Be Interested In:</h5>
+              </div>
+              {this.props.modules.map(module =>
+                <ModuleCard key={module.id} module={module} />)}
+            </>
+            : this.props.searchModules.map(module =>
+              <ModuleCard key={module.id} module={module} />
+            )}
         </div>
       </div>
     )
   }
-
-
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   return {
     searchModules: globalState.searchModules,
     modules: globalState.modules

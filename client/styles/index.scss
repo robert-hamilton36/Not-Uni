@@ -6,10 +6,6 @@ body{
   font-family: roboto;
 }
 
-
-
-
-
 // Nav Bar
 
 .top-nav {
@@ -19,14 +15,9 @@ body{
   height: 60px;
   width: 100vw;
   width: fill;
-
-
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
   background: rgba(252, 252, 252, 1);
   font-family: roboto;
-
-
-  
 
   div {
     height: 100%;
@@ -48,7 +39,6 @@ body{
     // left: 56px;
     // top: 29px;
     // border-radius: 0px;
-
   }
   
   .search{
@@ -64,7 +54,6 @@ body{
           
     }
 }
-
 
 .text a {
   text-decoration: none;
@@ -102,8 +91,6 @@ body{
 //   }
 // }
 
-
-
 // register
 
 .Register-card {
@@ -115,7 +102,6 @@ body{
   margin: auto;
   margin-top: 50px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-
 
   h1{
     margin-left: 5%;
@@ -133,13 +119,9 @@ body{
     font-size:20px;
     padding-left: 15px;
     // input{
-
-
-
     // }
   }
 }
-
 
 .button{
   height: 43px;
@@ -147,21 +129,15 @@ body{
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
   margin-left: 62%;
   margin-top: 20px;
-
   
   background: #2A881B;
   border-radius: 2px;
   color: #FFFFFF;
   border: none;
 
-  button :hover {
-    
+  button :hover {  
   }
-
-
 }
-
-
   // Module Card
 
 .module-card {
@@ -220,7 +196,6 @@ body{
     margin: 20px;
   }
     
-
   a{
     font-family: roboto;
     text-decoration: none;
@@ -238,7 +213,6 @@ body{
   }
 }
 
-
 // Module Design
 
 .module{
@@ -250,7 +224,6 @@ body{
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   margin-bottom: 10px;
   padding-bottom: 20px;
-
   
   .h-module{
     background-color: #2A881B;
@@ -266,7 +239,6 @@ body{
   .B-I-module{
     // padding-left: 50px;
   }
-  
 
   h1{
   color: rgba(255, 255, 255, 1);
@@ -311,7 +283,6 @@ body{
   .text{
     padding-left: 50px;
   }
-
   // .video-container{
   //   width: 100%;
   //   height: auto;
@@ -341,7 +312,6 @@ body{
     }
   }
 }
-
 
 //   _____ _____  ______       _______ ______   __  __  ____  _____  _    _ _      ______ 
 //  / ____|  __ \|  ____|   /\|__   __|  ____| |  \/  |/ __ \|  __ \| |  | | |    |  ____|
@@ -535,7 +505,6 @@ body{
     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
     align-self: flex-end;
     cursor: pointer;
-
   }
 
   .submit-button:hover {
@@ -547,10 +516,7 @@ body{
     position: relative;
     top: 2px;
   }
-
 }
-
-
 
 //CATEGORIES TABLE
 
@@ -586,78 +552,76 @@ body{
           color: #FFFFFF;
         }
       }
-
-      
-      .categories {
-        padding: 10px;
-        
-        a {
-          text-decoration: none;
-          color: black;
-          display: flex;
-          align-items: center;
-        }
-
-        .single-category {
-          padding: 10px;
-          margin: 5px;
-          display: flex;
-          align-items: center;
-          border-radius: 2px;
-          width: 100%;
-          
-          span {
-            font-size: 18px;
-            font-weight: bolder;
-            margin-left: 20px;
-            margin-block-start: 0px;
-            margin-block-end: 0px;
-          }
-
-          img {
-            height: 24px;
-          }
-        }
-        
-        .single-category:hover {
-          background-color: rgb(219, 219, 219);
-          cursor: pointer;
-
-        }
+      a:link {
+        text-decoration: none;
+      }
+      a:visited {
+        color: black;
+      }
+      a:hover{
+        font-size: 120%;   
       }
     }
-  }
 
+      
+    .categories {
+      padding: 10px;
+      
+      a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        align-items: center;
+      }
 
+      .single-category {
+        padding: 10px;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        border-radius: 2px;
+        width: 100%;
+        
+        span {
+          font-size: 18px;
+          font-weight: bolder;
+          margin-left: 20px;
+          margin-block-start: 0px;
+          margin-block-end: 0px;
+        }
+
+        img {
+          height: 24px;
+        }
+      }
+      
+      .single-category:hover {
+        background-color: rgb(219, 219, 219);
+        cursor: pointer;
+
+      }
+    }
+  } 
   
-
-  
-
   .search-results{
-    grid-column-start: line1 ;
+    grid-column-start: line1;
     grid-column-end: line2;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px;
-  
+    
     .no-matches-message{
       margin: 100px 40px;
       text-align: center;
       font-size: 20px;
     }
-   
-  
   }
-
 }
-
-
-
+  
 
 
 // MODULE CREATED
-
 .module-created-card {
   margin-top: 200px;
   border: 1px black solid;
@@ -671,7 +635,6 @@ body{
   display: flex;
   justify-content: center;
 }
-
 
 // PROFILE PAGE 
 
@@ -761,11 +724,8 @@ body{
   .column {
     padding: 30px;
     height: 100vw;
-
   }
 }
-
-
 //HomePage
 
 .homepage{
@@ -799,12 +759,15 @@ body{
     }
 
     h1{
-      margin-top: 30vh;
+      // margin-top: 10vh;
     
       text-align: center;
     }
 
-
+    .homepage-logo{
+     text-align: center;
+     margin-top: 5vh;
+    }
 
 }
 
@@ -812,5 +775,3 @@ input{
   font-family: roboto;
   font-size: 20px;
 }
-
-
