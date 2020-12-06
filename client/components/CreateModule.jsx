@@ -1,57 +1,54 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
-import ReactDOM from 'react-dom';
-import { createModuleAPI } from '../apis/modules';
-import CategoryCard from './CatagoryCard';
-
-
+import ReactDOM from 'react-dom'
+import { createModuleAPI } from '../apis/modules'
+import CategoryCard from './CatagoryCard'
 
 class CreateModule extends React.Component {
-
   state = {
-    title: "",
-    user_id: "",
-    description: "",
-    category: "",
-    duration: "",
-    number_of_elements: "", // this is calculated later
+    title: '',
+    user_id: '',
+    description: '',
+    category: '',
+    duration: '',
+    number_of_elements: '', // this is calculated later
     elements: []
   }
 
   addElementHandler = (type) => {
-    let newElement = {
+    const newElement = {
       type: type,
-      content: ""
+      content: ''
     }
 
     this.setState({
-      elements: [...this.state.elements, newElement ]
+      elements: [...this.state.elements, newElement]
     })
   }
 
   elementChangeHandler = (evt, i) => {
-    let newElements = [...this.state.elements]
+    const newElements = [...this.state.elements]
     newElements[i].content = evt.target.value
 
     this.setState({
-      elements: [...this.state.elements, ]
+      elements: [...this.state.elements]
     })
   }
 
   renderElement = (element, i) => {
     switch (element.type) {
-      case "heading":
+      case 'heading':
         return (
-          <input className="input-box heading-input" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Heading" /> 
+          <input className="input-box heading-input" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Heading" />
         )
-        
-      case "paragraph":
+
+      case 'paragraph':
         return (
           <textarea className="input-box paragraph-input" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} placeholder="text" />
         )
-        
-      case "link":
+
+      case 'link':
         return (
           <div className="link-input input-box">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
@@ -59,7 +56,7 @@ class CreateModule extends React.Component {
           </div>
         )
 
-      case "video":
+      case 'video':
         return (
           <div className="link-input input-box">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>
@@ -70,22 +67,20 @@ class CreateModule extends React.Component {
     }
   }
 
-
   // TODO: make these three into one function
   titleChangeHandler = (evt) => {
     this.setState({
       title: evt.target.value
     })
   }
-  
+
   durationChangeHandler = (evt) => {
     this.setState({
       duration: evt.target.value
     })
   }
-  
-  categoryChangeHandler = (category) => {
 
+  categoryChangeHandler = (category) => {
     this.setState({
       category: category
     })
@@ -98,56 +93,54 @@ class CreateModule extends React.Component {
     })
   }
 
-
   deleteElementHandler = (i) => {
-    let tempElements = this.state.elements
+    const tempElements = this.state.elements
     tempElements.splice(i, 1)
     this.setState({
       elements: tempElements
     })
-  } 
+  }
 
   positionChanger = (direction, i) => {
-    let rearrangedElements = [...this.state.elements]
-    if (direction === "down") {
-      this.arrayMove(rearrangedElements, i, i+1 )
-    } else if (direction === "up") {
-      this.arrayMove(rearrangedElements, i, i-1 )
+    const rearrangedElements = [...this.state.elements]
+    if (direction === 'down') {
+      this.arrayMove(rearrangedElements, i, i + 1)
+    } else if (direction === 'up') {
+      this.arrayMove(rearrangedElements, i, i - 1)
     }
-    
-    this.setState({elements: rearrangedElements})
+
+    this.setState({ elements: rearrangedElements })
   }
-  
+
   arrayMove = (arr, oldIndex, newIndex) => {
-    arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0]);
+    arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0])
   }
 
   submitHandler = () => {
     createModuleAPI(this.state)
       .then(() => {
-        this.props.history.push(`/modulecreated`)
+        this.props.history.push('/modulecreated')
       })
   }
-  
-  render () {
 
+  render () {
     return (
       <div className='create-module'>
         <div className="meta-input">
           <h1> Create A Module </h1>
-          
+
           <input className="input-box title-input" onChange={(evt) => this.metaChangeHandler(evt, 'title')} type="text" placeholder="Title"/>
-          
-          <textarea className="input-box description-input" onChange={(evt) => this.metaChangeHandler(evt, 'description')} placeholder="Short Desciption" /> 
-        
+
+          <textarea className="input-box description-input" onChange={(evt) => this.metaChangeHandler(evt, 'description')} placeholder="Short Desciption" />
+
           <div className="category-container">
 
-            <CategoryCard displayName="Javascript" category="Javascript" isActive = {this.state.category === "Javascript" ? true : false} callBack={() => this.categoryChangeHandler("Javascript")}/>
-            <CategoryCard displayName="Python" category="Python" isActive = {this.state.category === "Python" ? true : false} callBack={() => this.categoryChangeHandler("Python")}/>
-            <CategoryCard displayName="CSS" category="CSS" isActive = {this.state.category === "CSS" ? true : false} callBack={() => this.categoryChangeHandler("CSS")}/>
-            <CategoryCard displayName="Ruby" category="Ruby" isActive = {this.state.category === "Ruby" ? true : false} callBack={() => this.categoryChangeHandler("Ruby")}/>
-            <CategoryCard displayName="C++" category="C++" isActive = {this.state.category === "C++" ? true : false} callBack={() => this.categoryChangeHandler("C++")}/>
-            <CategoryCard displayName="C#" category="Csharp" isActive = {this.state.category === "Csharp" ? true : false} callBack={() => this.categoryChangeHandler("Csharp")}/>
+            <CategoryCard displayName="Javascript" category="Javascript" isActive = {this.state.category === 'Javascript'} callBack={() => this.categoryChangeHandler('Javascript')}/>
+            <CategoryCard displayName="Python" category="Python" isActive = {this.state.category === 'Python'} callBack={() => this.categoryChangeHandler('Python')}/>
+            <CategoryCard displayName="CSS" category="CSS" isActive = {this.state.category === 'CSS'} callBack={() => this.categoryChangeHandler('CSS')}/>
+            <CategoryCard displayName="Ruby" category="Ruby" isActive = {this.state.category === 'Ruby'} callBack={() => this.categoryChangeHandler('Ruby')}/>
+            <CategoryCard displayName="C++" category="C++" isActive = {this.state.category === 'C++'} callBack={() => this.categoryChangeHandler('C++')}/>
+            <CategoryCard displayName="C#" category="Csharp" isActive = {this.state.category === 'Csharp'} callBack={() => this.categoryChangeHandler('Csharp')}/>
 
           </div>
           <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type="number" placeholder="Approximate Duration (Minutes)"/>
@@ -155,18 +148,17 @@ class CreateModule extends React.Component {
 
         <div className="element-input-div-container" >
           {this.state.elements.map((element, i) => {
-
             const spacer = <div className="step-spacer"> <div/> </div>
             let needsSpacer = false
 
             if (i > 0 && element.type == 'heading') {
               needsSpacer = true
             }
-          
+
             return (
               <>
                 {needsSpacer && spacer}
-                <div className="element-input-div" style={{display: "flex", flexDirection: "row"}}>
+                <div className="element-input-div" style={{ display: 'flex', flexDirection: 'row' }}>
                   {this.renderElement(element, i)}
                   <div className="edit-element-div">
                     <div className="edit-element-button" onClick={() => this.positionChanger('up', i)}> Up </div>
@@ -175,29 +167,29 @@ class CreateModule extends React.Component {
                   </div>
                 </div>
               </>
-            ) 
+            )
           })}
         </div>
-        
+
         <div className="add-element-button-div">
-          <div className="add-element-button" onClick={() => this.addElementHandler("heading")}> 
+          <div className="add-element-button" onClick={() => this.addElementHandler('heading')}>
             + Add Step
           </div>
 
-          <div className="add-element-button" onClick={() => this.addElementHandler("paragraph")} > 
+          <div className="add-element-button" onClick={() => this.addElementHandler('paragraph')} >
             + Add Paragraph
           </div>
 
-          <div className="add-element-button" onClick={() => this.addElementHandler("link")} > 
+          <div className="add-element-button" onClick={() => this.addElementHandler('link')} >
             + Add Link
           </div>
 
-          <div className="add-element-button" onClick={() => this.addElementHandler("video")} > 
+          <div className="add-element-button" onClick={() => this.addElementHandler('video')} >
             + Add Video
           </div>
         </div>
 
-        <div className="submit-button" onClick={() => this.submitHandler()} > 
+        <div className="submit-button" onClick={() => this.submitHandler()} >
           Create Module
         </div>
 

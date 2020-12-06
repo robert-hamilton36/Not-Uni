@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 class ModuleCreated extends React.Component {
-
   render () {
     return (
       <div className='module-created'>

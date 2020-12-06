@@ -4,15 +4,13 @@ import { connect } from 'react-redux'
 import { textSpanIsEmpty } from 'typescript'
 import SavedModules from './SavedModules'
 
-
-
 class Profile extends React.Component {
   state = {
     activeModules: null
   }
 
   fakeProps = {
-    userName: "Oli"
+    userName: 'Oli'
   }
 
   sidebarClickHandler = (whichButton) => {
@@ -24,8 +22,8 @@ class Profile extends React.Component {
   }
 
   getSavedModules = () => {
-    let savedIDs = this.props.user.saved
-    let savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id))
+    const savedIDs = this.props.user.saved
+    const savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id))
     this.setState({
       savedModules: savedModules
     })
@@ -45,7 +43,7 @@ class Profile extends React.Component {
                   <img src="/images/folder-24px-blue.svg"/>
                   <span> Your Modules </span>
                 </div>
-                <div onClick={() => {this.sidebarClickHandler("saved modules")}} className="single-option">
+                <div onClick={() => { this.sidebarClickHandler('saved modules') }} className="single-option">
                   <img src="/images/folder-24px-green.svg"/>
                   <span> Saved Modules </span>
                 </div>
@@ -64,7 +62,7 @@ class Profile extends React.Component {
             {/* {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/> */}
 
           </div>
-            <div className="right column" >
+          <div className="right column" >
           </div>
         </div>
       </>
