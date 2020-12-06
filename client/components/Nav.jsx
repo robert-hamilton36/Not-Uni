@@ -21,6 +21,7 @@ class Nav extends React.Component {
          </div>
           }
           {/* if user is NOT signed in */}
+          {/* {this.props.isAuthenticated === false ? } */}
 
          <div className='text' >
           <Link to="/register"> 
@@ -35,7 +36,7 @@ class Nav extends React.Component {
           </Link>
 
           {/* if user is signed in */}
-
+          {/* : }  */}
           <Link to="/profile"> 
             <div className ='text' > 
               <span> Account </span>

@@ -13,7 +13,7 @@ class HomePage extends React.Component{
       <div className='homepage'>
         
         <div className='seachBar'>
-          <h1>What Would You Like To Learn?</h1>
+          <h1>What Would You Like To Learn Today?</h1>
           <Route path = '/' component={Search}/>
         </div>
       </div>
