@@ -18,50 +18,39 @@ export const isAuthenticated = (boolean) => {
   }
 }
 
-export const  signIn = (email, password) => {
-  return dispatch => {
-  console.log("I made it")
-  auth.signInWithEmailAndPassword(email, password)
-  .then((user) => {
-    console.log("signIn return")
-    return user
-  })
-  .then(user => dispatch(setUser(user)))
-  .then(() => dispatch(isAuthenticated(true)))
-  .catch((error) => {
-    console.log(error.message)
-    console.log(error.code)
-      return error
-    })
-  }
-}
+// export const  signIn = (email, password) => {
+//   return dispatch => {
+//   console.log("I made it")
+//   auth.signInWithEmailAndPassword(email, password)
+//   .then((user) => {
+//     console.log("signIn return")
+//     return user
+//   })
+//   .then(user => dispatch(setUser(user)))
+//   .then(() => dispatch(isAuthenticated(true)))
+//   .catch((error) => {
+//     console.log(error.message)
+//     console.log(error.code)
+//       return error
+//     })
+//   }
+// }
 
-export const register = (userName, email, password) => {
-  return dispatch => {
-    console.log("I made it")
-    auth.createUserWithEmailAndPassword(email, password)
-    .then((user) => {
-      console.log("create return")
-      console.log(user.user.uid)
-      return user
+export async function register(userName, email, password){
+  console.log("I made it")
+  let user = await auth.createUserWithEmailAndPassword(email, password)
+  await user.user.updateProfile({
+      displayName: userName
     })
-    .then(user => {
-      let currentUser = auth.currentUser
-      console.log(currentUser)
-      currentUser.updateProfile({
-        displayName: userName
-      })
-      console.log(currentUser)
-      return currentUser
-    })
-    .then(user => dispatch(setUser(user)))
-    .then(() => dispatch(isAuthenticated(true)))
-    .catch((error) => {
-      console.log(error.message)
-      console.log(error.code)
-        return error
-      })
-  }
+
+  return await user
+    // return dispatch => {
+    //   dispatch(setUser(
+    //     {displayName: user.displayName,
+    //       email: user.email,
+    //       uid: user.uid
+    //     }))
+    // }
 }
 
 export const signOut = () => {
@@ -72,18 +61,18 @@ export const signOut = () => {
   }
 }
 
-export const fetchUser = () => {
-  return dispatch => {
-    auth.onAuthStateChanged(user => {
-      if(user) {
-        dispatch(setUser(user))
-        dispatch(isAuthenticated(true))
-      } else {
+// export const fetchUser = () => {
+//   return dispatch => {
+//     auth.onAuthStateChanged(user => {
+//       if(user) {
+//         dispatch(setUser(user))
+//         dispatch(isAuthenticated(true))
+//       } else {
         
-      }
-    })
-  }
-}
+//       }
+//     })
+//   }
+// }
 
 export const signInWithOutsideProvider = (provider) => {
   return dispatch => {

@@ -30,7 +30,7 @@ export class Register extends React.Component {
     })
   }
 
-  handleSubmit = async (event) => {
+  handleSubmit = (event) => {
     event.preventDefault()
     if (this.state.password !== this.state.passwordConfirm){
       this.setState(
@@ -41,7 +41,9 @@ export class Register extends React.Component {
     try{
       this.setLoading(true)
 
-      this.props.dispatch(register(this.state.userName, this.state.email, this.state.password))
+      let user = register(this.state.userName, this.state.email, this.state.password)
+      console.log(user)
+      this.props.dispatch(setUser(user))
       this.props.history.push("/")
     }catch {
       return "Failed to registrate"
