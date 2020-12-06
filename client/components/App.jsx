@@ -12,6 +12,10 @@ import Profile from './Profile'
 import HomePage from './Homepage'
 import { fetchModules, fetchSavedModules } from '../actions'
 import ModuleCreated from './ModuleCreated'
+import { fetchUser } from '../actions/authenticated'
+import AddUser from './firebase/AddUser'
+import FirebasePratice from './firebase/FirebasePratice'
+
 
 
 class App extends React.Component {
@@ -23,6 +27,8 @@ class App extends React.Component {
   render () {
     return (
       <div className='app'>
+        {/* <AddUser/>
+        <FirebasePratice/> */}
         <Router>
           <Route path="/" component={Nav}/> 
 
