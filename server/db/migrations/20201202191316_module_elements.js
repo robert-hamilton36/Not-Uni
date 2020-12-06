@@ -3,7 +3,7 @@ exports.up = function (knex) {
     table.increments('id')
     table.integer('module_id')
     table.string('type')
-    table.string('content')
+    table.text('content')
     table.integer('order_num')
   })
 }
