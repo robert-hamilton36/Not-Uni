@@ -58,16 +58,13 @@ class Profile extends React.Component {
               </div>
             </div>
           </div>
-
           <div className="middle column" >
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
 
             {/* {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/> */}
 
           </div>
-
-          <div className="right column" >
-            asdfasdf
+            <div className="right column" >
           </div>
         </div>
       </>

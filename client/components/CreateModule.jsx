@@ -63,7 +63,7 @@ class CreateModule extends React.Component {
         return (
           <div className="link-input input-box">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>
-            <input className="" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Youtube video link"/>
+            <input className="" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Youtube Video Link"/>
           </div>
 
         )
@@ -136,9 +136,9 @@ class CreateModule extends React.Component {
         <div className="meta-input">
           <h1> Create A Module </h1>
           
-          <input className="input-box title-input" onChange={(evt) => this.metaChangeHandler(evt, 'title')} type="text" placeholder="title"/>
+          <input className="input-box title-input" onChange={(evt) => this.metaChangeHandler(evt, 'title')} type="text" placeholder="Title"/>
           
-          <textarea className="input-box description-input" onChange={(evt) => this.metaChangeHandler(evt, 'description')} placeholder="short desciption" /> 
+          <textarea className="input-box description-input" onChange={(evt) => this.metaChangeHandler(evt, 'description')} placeholder="Short Desciption" /> 
         
           <div className="category-container">
 
@@ -150,7 +150,7 @@ class CreateModule extends React.Component {
             <CategoryCard displayName="C#" category="Csharp" isActive = {this.state.category === "Csharp" ? true : false} callBack={() => this.categoryChangeHandler("Csharp")}/>
 
           </div>
-          <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type="number" placeholder="duration in minutes"/>
+          <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type="number" placeholder="Approximate Duration (Minutes)"/>
         </div>
 
         <div className="element-input-div-container" >
@@ -181,19 +181,19 @@ class CreateModule extends React.Component {
         
         <div className="add-element-button-div">
           <div className="add-element-button" onClick={() => this.addElementHandler("heading")}> 
-            + Add step
+            + Add Step
           </div>
 
           <div className="add-element-button" onClick={() => this.addElementHandler("paragraph")} > 
-            + Add paragraph
+            + Add Paragraph
           </div>
 
           <div className="add-element-button" onClick={() => this.addElementHandler("link")} > 
-            + Add link
+            + Add Link
           </div>
 
           <div className="add-element-button" onClick={() => this.addElementHandler("video")} > 
-            + Add video
+            + Add Video
           </div>
         </div>
 

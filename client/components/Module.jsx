@@ -54,7 +54,7 @@ class Module extends React.Component {
 
         <div className='h-module' >
           <h1> {this.state.currentModule.title} </h1>
-          <h5> {this.state.currentModule.duration} mins</h5>
+          <h5> {this.state.currentModule.duration} minutes</h5>
         </div>
 
 
