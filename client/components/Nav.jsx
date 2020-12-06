@@ -2,8 +2,14 @@ import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import Search from './Search'
 import {connect} from 'react-redux'
+import { signOut } from '../actions/authenticated'
 
 class Nav extends React.Component {
+
+  handleClick= () =>{
+    this.props.dispatch(signOut())
+  }
+
   render () {
     return (
       <>

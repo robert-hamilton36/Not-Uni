@@ -24,7 +24,8 @@ export const isAuthenticated = (boolean) => {
   }
 }
 
-export const  signIn = (email, password) => {
+export const  signIn = (email, password, callback) => {
+  console.log('building action')
   return dispatch => {
   console.log("I made it")
   auth.signInWithEmailAndPassword(email, password)
@@ -33,11 +34,15 @@ export const  signIn = (email, password) => {
     return user
   })
   .then(user => dispatch(setUser({
-    userName: userName,
+    // userName: userName,
     uid: user.uid,
     email: user.email
   })))
   .then(() => dispatch(isAuthenticated(true)))
+  .then(() => {
+    console.log('done')
+    callback()
+  })
   .catch((error) => {
     console.log(error.message)
     console.log(error.code)
@@ -46,7 +51,7 @@ export const  signIn = (email, password) => {
   }
 }
 
-export const register = (userName, email, password) => {
+export const register = (userName, email, password, callback) => {
   return dispatch => {
   console.log("I made it")
   auth.createUserWithEmailAndPassword(email, password)
@@ -72,6 +77,10 @@ export const register = (userName, email, password) => {
   }
     )))
   .then(() => dispatch(isAuthenticated(true)))
+  .then(() => {
+    console.log('done')
+    callback()
+  })
   .catch((error) => {
     console.log(error.message)
     console.log(error.code)
@@ -81,6 +90,7 @@ export const register = (userName, email, password) => {
 }
 
 export const signOut = () => {
+  console.log("Signing Out")
   return dispatch => {
     auth.signOut()
     .then(() => dispatch(removeUser({})))

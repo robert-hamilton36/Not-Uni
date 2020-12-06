@@ -27,7 +27,7 @@ export class Register extends React.Component {
     })
   }
 
-  handleSubmit = async (event) => {
+  handleSubmit = (event) => {
     event.preventDefault()
     if (this.state.password !== this.state.passwordConfirm){
       this.setState(
@@ -37,12 +37,13 @@ export class Register extends React.Component {
     }
     try{
       this.setLoading(true)
-
-      await this.props.dispatch(register(this.state.userName, this.state.email, this.state.password))
-
+      console.log("trying")
+      const callback = () => { this.props.history.push("/") }
+      this.props.dispatch(register(this.state.userName, this.state.email, this.state.password, callback))
       // this.props.dispatch(setUser(user))
-      this.props.history.push("/")
-    }catch {
+    }catch (e) {
+      console.log(e)
+      this.setError("Failed to login")
       return "Failed to registrate"
     }
     this.setLoading(false)

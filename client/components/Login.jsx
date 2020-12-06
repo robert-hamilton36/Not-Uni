@@ -8,8 +8,8 @@ import { signIn, signInWithOutsideProvider } from '../actions/authenticated'
 
 class Login extends React.Component {
   state={
-    email:'',
-    password:'',
+    email:'jistross@test.com',
+    password:'gopher',
     error:''
   }
 
@@ -23,31 +23,36 @@ class Login extends React.Component {
     })
   }
 
-  handleSubmit = async (event) => {
+  handleSubmit = (event) => {
     event.preventDefault()
     console.log("signing in")
     try{
-      await this.props.dispatch(signIn(this.state.email, this.state.password))
-      this.props.history.push("/")
-    }catch {
+      console.log("trying")
+      const callback = () => { this.props.history.push("/") }
+      this.props.dispatch(signIn(this.state.email, this.state.password, callback))
+    }catch (e) {
+      console.log(e)
+      this.setError("Failed to login")
       return "Failed to login"
     }
   
   }
 
-  handleGoogle = async (provider) => {
-    try{
-      await this.props.dispatch(signInWithOutsideProvider(provider))
-    }catch {
-      return "Failed to login"
-    }
-  }
+  // handleGoogle = () => {
+  //   try{
+  //     const onSuccess = () => { this.props.history.push("/") }
+  //     this.props.dispatch(signIn(this.state.email, this.state.password, onSuccess))
+  //   }catch {
+  //     return "Failed to login"
+  //   }
+  // }
 
 
   render () {
     return (
       <div className='login-card'>
         <h1>Login</h1>
+        {this.state.error && <h1>{this.state.error}</h1>}
         <form onSubmit={this.handleSubmit}> 
           <input type="text" name="email" onChange={this.handleChange} value={this.state.email} placeholder="email"/>
           <input type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="password"/>
@@ -66,4 +71,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+export default connect()(Login)
