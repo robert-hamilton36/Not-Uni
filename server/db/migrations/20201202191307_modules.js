@@ -1,9 +1,9 @@
 exports.up = function (knex) {
   return knex.schema.createTable('modules', table => {
     table.increments('id')
-    table.string('title')
+    table.text('title')
     table.integer('user_id')
-    table.string('category')
+    table.text('category')
     table.integer('duration')
     table.text('description')
     table.integer('number_of_elements')
