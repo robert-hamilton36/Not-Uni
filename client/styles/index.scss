@@ -2,7 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-
+body{
+  font-family: roboto;
+}
 
 
 
@@ -44,8 +46,7 @@
     // border-radius: 0px;
 
   }
-}
-
+  
   .search{
     height: 42px;
     width: 630px;
@@ -58,19 +59,20 @@
     box-sizing: border-box;
           
     }
+}
 
-  .text a {
-    text-decoration: none;
 
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 25px;
-    letter-spacing: 0em;
-    color: rgba(42, 136, 27, 1);
-    
- }
-
+.text a {
+  text-decoration: none;
+  
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  color: rgba(42, 136, 27, 1);
+  
+}
 // register
 
 // .Register-card{
@@ -107,9 +109,13 @@
   border-radius: 3px;
   flex: left 50%;
   margin: auto;
+  margin-top: 50px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+
 
   h1{
     margin-left: 5%;
+    padding-top: 10px;
   }
     
   .Input-R{
@@ -121,6 +127,12 @@
     margin-right: 5%;
     margin-top: 10px;
     font-size:20px;
+    padding-left: 15px;
+    // input{
+
+
+
+    // }
   }
 }
 
@@ -129,14 +141,20 @@
   height: 43px;
   width: 149px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
-  margin-left: 42%;
-  margin-top: 10px;
+  margin-left: 62%;
+  margin-top: 20px;
 
   
   background: #2A881B;
   border-radius: 2px;
   color: #FFFFFF;
   border: none;
+
+  button :hover {
+    
+  }
+
+
 }
 
 
@@ -157,7 +175,9 @@
     padding-top: 5px;
     padding-bottom: 5px;
     // padding-left: 10px;
-    background: rgba(0, 130, 127, 1);
+    // background: rgba(0, 130, 127, 1);
+    // background: #FA502E;
+    background-color: #002482;
     border-radius: 3px 3px 0 0
   }
 
@@ -523,7 +543,7 @@
   grid-column-end: line1;
 
   display: block;
-  height: auto;
+  height: 33vh;
 
 
  ul{
@@ -534,14 +554,18 @@
   .title {
     margin-top: 0;
     background-color: #002482;
+    border-radius: 3px 3px 0 0
+    
    
   }
   h4{
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 10px;
     color: white;
     margin-top:0;
     margin-left: 5px;
+    font-size: 20px;
     }
   
   
@@ -566,14 +590,18 @@
       a:visited {
         color: black;
       }
+      a:hover{
+        font-size: 120%;
+        
+      }
     }
 
 }
 
 .results-page{
   display: grid;
-  grid-template-columns: [start]33.33% [line1] 33.33% [line2]33.33%[end];
-  // grid-template-rows: [start] auto [line1] 50vh [end];
+  grid-template-columns: [start]30% [line1] 40% [line2]30%[end];
+
 
 }
 
@@ -581,14 +609,17 @@
 .search-results{
   grid-column-start: line1 ;
   grid-column-end: line2;
+  margin-top: 20%;
+  margin-left :25%;
 
-  // grid-row-start: line1;
-  // grid-row-end: end;
+
 
   .no-matches-message{
     margin-top:10vh;
     margin-bottom: 20%;
     text-align: center;
+    font-size: 20px;
+    margin-right:17%
   }
  
 
@@ -600,12 +631,12 @@
 // MODULE CREATED
 
 .module-created-card {
-    margin-top: 200px;
-    border: 1px black solid;
-    padding: 60px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  margin-top: 200px;
+  border: 1px black solid;
+  padding: 60px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .module-created {
@@ -690,3 +721,50 @@
 
   }
 }
+
+
+//HomePage
+
+.homepage{
+  // display: grid;
+  // grid-template-columns: [start]30% [line1] 40% [line2]30%[end];
+  // grid-template-rows: [start]30% [line1] 40% [line2]30%[end];;
+
+
+  .search{
+    height: 42px;
+    width: 630px;
+    left: 28.12%;
+    right: 28.12%;
+    top: 25.84%;
+    bottom: 26.97%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    // grid-column-start: line1;
+    // grid-column-end: line2;
+    // grid-row-start: line1;
+    // grid-row-end: line2;
+
+    margin-top: 50px;
+    text-align: center;
+    margin-left: 33vw;
+    border-radius: 3px;
+    }
+
+    h1{
+      margin-top: 30vh;
+    
+      text-align: center;
+    }
+
+
+
+}
+
+input{
+  font-family: roboto;
+  font-size: 20px;
+}
+
+

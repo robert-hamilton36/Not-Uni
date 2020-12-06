@@ -18,9 +18,4 @@ class SavedModules extends React.Component {
 
 }
 
-function mapStateToProps(globalState) {
-  return {
-    savedModules: globalState.user.saved
-  }
-}
-export default connect(mapStateToProps)(SavedModules)
+export default connect()(SavedModules)

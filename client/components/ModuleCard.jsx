@@ -6,9 +6,10 @@ class ModuleCard extends React.Component {
  
 
   render () {
-
+    console.log(this.props.module);
     const findHeader = this.props.module.elements.filter((element)=>{
-      return(element.type === 'heading')})
+      return(element.type === 'heading')
+    })
      
      
     
