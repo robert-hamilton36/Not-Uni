@@ -118,4 +118,22 @@ router.post('/', (req, res) => {
   
 })
 
+
+//Update a module 
+
+router.patch('/:id',(req,res) =>{
+ 
+  const updatedModule = req.body
+  const id = req.params.id
+
+  modulesDb.updateModule(id, updatedModule)
+    .then(updatedItems =>{
+      res.json({updatedItems})
+    })
+    .catch((err)=>{
+      console.log(err)
+      res.status(500).json({message:'something went wrong'})
+    })
+})
+
 module.exports = router
