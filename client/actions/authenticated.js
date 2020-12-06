@@ -46,13 +46,13 @@ export const register = (userName, email, password) => {
       return user
     })
     .then(user => {
-      let userObj = {
-        id: user.user.uid,
-        userName: userName,
-        email: email,
-      }
-      addUserToFirestore(userObj)
-      return user
+      let currentUser = auth.currentUser
+      console.log(currentUser)
+      currentUser.updateProfile({
+        displayName: userName
+      })
+      console.log(currentUser)
+      return currentUser
     })
     .then(user => dispatch(setUser(user)))
     .then(() => dispatch(isAuthenticated(true)))
@@ -61,7 +61,6 @@ export const register = (userName, email, password) => {
       console.log(error.code)
         return error
       })
-
   }
 }
 
