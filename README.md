@@ -1,6 +1,6 @@
-#### Not-Uni
+# Not-Uni
 
-### Getting Started
+## Getting Started
 
 If you'd like to add to our project here's how to get started:
 ```
