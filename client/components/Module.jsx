@@ -7,40 +7,20 @@ class Module extends React.Component {
     currentModule: null
   }
 
-  // this needs fixing from ross
-  // for some reason i can't figure out how to set state on line 24/26 AFTER global state has loaded in
-
   componentDidMount () {
-    this.setState({currentModule: null})
-
-    const currentModule = this.props.modules.find((module) => module.id == this.props.match.params.id)
-
-    console.log(currentModule);
+    const currentModuleId = Number(this.props.match.params.id)
+    const currentModule = this.props.modules.find((module) => module.id == currentModuleId)
     this.setState({currentModule})
-    this.setState({ currentModule: null })
   }
 
   componentDidUpdate (prevProps) {
-    console.log('update')
-    console.log(this.props.modules.length)
     if (!prevProps || prevProps.match.params.id !== this.props.match.params.id || prevProps.modules.length !== this.props.modules.length) {
-      console.log('hi')
-      const currentModule = this.props.modules.find((module) => module.id === this.props.match.params.id)
 
-      console.log(currentModule)
+      const currentModuleId = Number(this.props.match.params.id)
+      const currentModule = this.props.modules.find((module) => module.id === currentModuleId)
       this.setState({ currentModule })
     }
   }
-
-  // Wanted to make the step numbers going up in value @oli need to know more about how your funcation works.
-
-  // const numberonStep = (i)=> {
-  //   for (i = 1, i > numberonStep.content.content, i++ ) {
-  //   }
-  //   return(
-  //   console.log(i)
-  //   )
-  // }
 
   render () {
     return (
