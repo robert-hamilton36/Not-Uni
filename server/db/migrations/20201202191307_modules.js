@@ -7,6 +7,7 @@ exports.up = function (knex) {
     table.integer('duration')
     table.text('description')
     table.integer('number_of_elements')
+    table.integer('likes')
   })
 }
 
