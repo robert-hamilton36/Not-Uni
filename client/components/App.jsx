@@ -34,14 +34,20 @@ class App extends React.Component {
             <Route exact path="/module/:id" component={Module} />
             <Route exact path="/create" component={CreateModule} />
             <Route exact path="/modulecreated" component={ModuleCreated} />
-            <Route exact path="/profile" component={Profile} />
           </Switch>
+          
+          <Route exact path="/profile" component={Profile} />
         </Router>
       </div>
     )
   }
 }
 
+function mapStateToProps(globalState) {
+  return {
+    user: globalState.user,
+    modules: globalState.modules
+  }
+}
 
-
-export default connect()(App)
+export default connect(mapStateToProps)(App)
