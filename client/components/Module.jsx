@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Likes from './Likes'
+
 
 
 const Module = (props) => {
@@ -57,6 +59,8 @@ const Module = (props) => {
             )
         }
       })}
+    <Likes module={currentModule}/>
+    likes: {currentModule.likes}
       </div>
 
     </div> : ""

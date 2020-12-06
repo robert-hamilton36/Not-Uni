@@ -5,6 +5,8 @@ import ModulesFeed from './SearchResults'
 import Search from './Search'
 import {Route} from 'react-router-dom'
 
+import { isConditionalExpression } from 'typescript'
+
 class HomePage extends React.Component{
   
   render (){
@@ -16,6 +18,7 @@ class HomePage extends React.Component{
           <h1>What Would You Like To Learn?</h1>
           <Route path = '/' component={Search}/>
         </div>
+      
       </div>
     )
   }
