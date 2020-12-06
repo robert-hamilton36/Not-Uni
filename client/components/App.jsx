@@ -20,7 +20,7 @@ import FirebasePratice from './firebase/FirebasePratice'
 class App extends React.Component {
   componentDidMount (){
     this.props.dispatch(fetchModules())
-    // this.props.dispatch(fetchUser())
+    this.props.dispatch(fetchUser())
   }
 
   render () {
