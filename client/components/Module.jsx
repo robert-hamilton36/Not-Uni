@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Likes from './Likes'
+
 import { ReactTinyLink } from 'react-tiny-link'
 
 class Module extends React.Component {
@@ -15,6 +17,7 @@ class Module extends React.Component {
 
   componentDidUpdate (prevProps) {
     if (!prevProps || prevProps.match.params.id !== this.props.match.params.id || prevProps.modules.length !== this.props.modules.length) {
+      console.log('hi')
 
       const currentModuleId = Number(this.props.match.params.id)
       const currentModule = this.props.modules.find((module) => module.id === currentModuleId)

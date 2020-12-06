@@ -56,7 +56,7 @@ body{
 }
 
 .text a {
-  text-decoration: none;
+  text-decoration: none ;
   
   font-size: 22px;
   font-style: normal;
@@ -134,11 +134,10 @@ body{
   border-radius: 2px;
   color: #FFFFFF;
   border: none;
-
-  button :hover {  
-  }
 }
-  // Module Card
+
+
+// Module Card
 
 .module-card {
   height: auto;
@@ -152,6 +151,11 @@ body{
     padding: 10px 20px;
     background: rgba(0, 130, 127, 1);
     border-radius: 3px 3px 0 0;
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(0, 130, 127, 1);
+    border-radius: 3px 3px 0 0
 
     h1 {
       font-family: Roboto;
@@ -166,6 +170,64 @@ body{
       margin: 0;
     }
   }
+
+  .HTML{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: red;
+    border-radius: 3px 3px 0 0
+  }
+
+  .JavaScript{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(223, 219, 29);
+    border-radius: 3px 3px 0 0
+  }
+
+  .Python{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(34, 79, 163);
+    border-radius: 3px 3px 0 0
+  }
+
+  .Ruby{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(165, 16, 16);
+    border-radius: 3px 3px 0 0
+  }
+
+  .Cplus{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(98, 0, 128);
+    border-radius: 3px 3px 0 0
+  }
+
+  .C{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(144, 163, 199) ;
+    border-radius: 3px 3px 0 0
+  }
+
+
+  .CSS{
+    width: 523px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:#002482;
+    border-radius: 3px 3px 0 0
+  }
+
 
   .s-c-info{
     margin-bottom: 10px;
@@ -236,9 +298,6 @@ body{
     border-radius: 3px 3px 0 0
   }
   
-  .B-I-module{
-    // padding-left: 50px;
-  }
 
   h1{
   color: rgba(255, 255, 255, 1);
