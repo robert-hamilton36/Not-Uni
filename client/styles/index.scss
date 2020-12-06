@@ -27,14 +27,18 @@ body{
 
 
   
+
   div {
     height: 100%;
     display: flex;
     flex: 1 1 auto;
-    flex-direction: row;
     align-content: center;
     margin: auto 20px;
     align-items: center;
+  }
+  
+  .text {
+    flex-direction: row-reverse;
   }
   
   img {
@@ -409,6 +413,7 @@ body{
       margin-right: 20px;
       opacity: 70%;
       img {
+        height: 24px;
         opacity: 70%;
         margin-right: 10px;
       }
@@ -416,6 +421,13 @@ body{
 
     .category-radio:hover {
       background-color: #c9c9c9;
+    }
+
+    .category-radio:active {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      position: relative;
+      top: 2px;
     }
 
     .selected {

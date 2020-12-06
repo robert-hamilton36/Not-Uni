@@ -147,12 +147,13 @@ class CreateModule extends React.Component {
 
             {/* TODO: make these into a component
             */}
-            <CategoryCard category="Javascript" isActive = {this.state.category === "Javascript" ? true : false} callBack={() => this.categoryChangeHandler("Javascript")}/>
-            <CategoryCard category="Python" isActive = {this.state.category === "Python" ? true : false} callBack={() => this.categoryChangeHandler("Python")}/>
-            <CategoryCard category="CSS" isActive = {this.state.category === "CSS" ? true : false} callBack={() => this.categoryChangeHandler("CSS")}/>
-            <CategoryCard category="Ruby" isActive = {this.state.category === "Ruby" ? true : false} callBack={() => this.categoryChangeHandler("Ruby")}/>
-            <CategoryCard category="C++" isActive = {this.state.category === "C++" ? true : false} callBack={() => this.categoryChangeHandler("C++")}/>
-            <CategoryCard category="C#" isActive = {this.state.category === "C#" ? true : false} callBack={() => this.categoryChangeHandler("C#")}/>
+
+            <CategoryCard displayName="Javascript" category="Javascript" isActive = {this.state.category === "Javascript" ? true : false} callBack={() => this.categoryChangeHandler("Javascript")}/>
+            <CategoryCard displayName="Python" category="Python" isActive = {this.state.category === "Python" ? true : false} callBack={() => this.categoryChangeHandler("Python")}/>
+            <CategoryCard displayName="CSS" category="CSS" isActive = {this.state.category === "CSS" ? true : false} callBack={() => this.categoryChangeHandler("CSS")}/>
+            <CategoryCard displayName="Ruby" category="Ruby" isActive = {this.state.category === "Ruby" ? true : false} callBack={() => this.categoryChangeHandler("Ruby")}/>
+            <CategoryCard displayName="C++" category="C++" isActive = {this.state.category === "C++" ? true : false} callBack={() => this.categoryChangeHandler("C++")}/>
+            <CategoryCard displayName="C#" category="Csharp" isActive = {this.state.category === "Csharp" ? true : false} callBack={() => this.categoryChangeHandler("Csharp")}/>
 
           </div>
           <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type="number" placeholder="duration in minutes"/>
