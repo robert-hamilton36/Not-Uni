@@ -15,11 +15,6 @@ const firebaseConfig = {
   appId: process.env.appId
 }
 
-// console.log(process.env.API_KEY);
-// console.log(firebaseConfig.API_KEY);
-
-
-
 export const app = firebase.initializeApp(firebaseConfig);
 
 export const google = new firebase.auth.GoogleAuthProvider()

@@ -1,5 +1,6 @@
 import { decreaseLikesAPI, getAllModulesAPI, increaseLikesAPI } from "../apis/modules"
 import { getSavedModulesAPI } from '../apis/modules'
+import { displayCommentsAPi } from '../apis/modules'
 
 
 // do we need to import request from 'superagent
@@ -22,12 +23,7 @@ export const setModules = (modules) => {
   }
 }
 
-export const setSearchedModules = (modules) =>{
-  return{
-    type: SET_SEARCH_MODULES,
-    modules
-  }
-}
+
 
 export const fetchModules = () => {
   return dispatch => {
@@ -37,6 +33,19 @@ export const fetchModules = () => {
       })
   }
 }
+
+
+
+
+export const setSearchedModules = (modules) =>{
+  return{
+    type: SET_SEARCH_MODULES,
+    modules
+  }
+}
+
+
+
 
 
 
@@ -74,6 +83,9 @@ export const fetchSavedModules = (userID) => {
       user: user
     }
   }
+
+
+
 
 
 //Update Module Likes
@@ -117,3 +129,24 @@ export const increaseModuleLikes = (module) => {
         })
       }
     }
+
+  
+  export const commentsFetched = (comment) => {
+    return {
+      type: COMMENT_MODULES,
+      comment
+      }
+    }
+   
+  export const fetchComments = (comment) => {
+    return dispatch => {
+      return displayCommentsAPi(comment)
+      .then((commentsArr) => {
+        // commentsArr.map(commentsArr)dispatch
+        dispatch(commentsFetched(comment))
+      })
+      .catch(err => {
+        console.log(err)
+        })
+    }
+  }

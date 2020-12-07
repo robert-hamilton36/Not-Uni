@@ -5,10 +5,6 @@ export function getAllModulesAPI () {
     .then(res => res.body)
 }
 
-// export function getModulesBySearchAPI () {
-//   return request.get(rootUrl)
-//     .then(res => res.body)
-// }
 
 export function getSavedModulesAPI () {
   return request.get('/api/modules/saved')
@@ -68,3 +64,12 @@ export function decreaseLikesAPI(module){
 
 
 // get created modules API?
+
+
+
+// Get comments on a Module
+
+export function displayCommentsAPi(id){
+  return request.get('/api/comment/' + id)
+  .then(res => res.body)
+  }
