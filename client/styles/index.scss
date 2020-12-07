@@ -29,7 +29,10 @@ body{
   }
   
   .text {
+    flex: 0 0 auto;
     flex-direction: row-reverse;
+    width: 100px;
+    justify-self: right;
   }
   
   img {
