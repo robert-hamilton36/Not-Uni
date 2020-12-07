@@ -9,8 +9,8 @@ export const SET_MODULES = 'SET_MODULES'
 export const SET_SEARCH_MODULES ='SET_SEARCH_MODULES'
 
 export const MODULES_HAVE_LOADED = 'MODULES_HAVE_LOADED'
-export const ADD_TO_SAVED_MODULES = 'ADD_TO_SAVED_MODULES'
-export const SET_SAVED_MODULES = 'SET_SAVED_MODULES'
+// export const ADD_TO_SAVED_MODULES = 'ADD_TO_SAVED_MODULES'
+// export const SET_SAVED_MODULES = 'SET_SAVED_MODULES'
 export const SET_SAVED_MODULES_FROM_DATA_BASE = 'SET_SAVED_MODULES_FROM_DATA_BASE'
 export const ADD_SINGLE_MODULE_TO_SAVED_MODULES = 'ADD_SINGLE_MODULE_TO_SAVED_MODULES'
 export const SET_USER = 'SET_USER'
@@ -74,25 +74,27 @@ export const setSearchedModules = (modules) =>{
 
 // saved Modules
 
-export const addToSavedModules = (module) => {
-  return {
-    type: ADD_TO_SAVED_MODULES,
-    module
-  }
-}
+// export const addToSavedModules = (module) => {
+//   return {
+//     type: ADD_TO_SAVED_MODULES,
+//     module
+//   }
+// }
 
-export const setSavedModules = (modules) => {
-  return {
-    type: SET_SAVED_MODULES,
-    modules
-  }
-}
+// export const setSavedModules = (modules) => {
+//   return {
+//     type: SET_SAVED_MODULES,
+//     modules
+//   }
+// }
 
 export const fetchSavedModules = (userID) => {
   return dispatch => {
     return getSavedModulesAPI(userID)
-      .then(modules=> {
-        dispatch(setSavedModules(modules))
+      .then(modules=>
+        {
+          console.log(modules)
+        return dispatch(setSavedModulesFromDatabase(modules))
       })
       .catch(err => {
         console.log(err)
