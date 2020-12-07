@@ -29,6 +29,9 @@ export class Register extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    if(this.state.userName === ''){
+      return this.setError("Must enter Username")
+    }
     if (this.state.password !== this.state.passwordConfirm){
       this.setState(
         {password:'',
