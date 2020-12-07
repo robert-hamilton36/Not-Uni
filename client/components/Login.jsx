@@ -29,23 +29,22 @@ class Login extends React.Component {
     try{
       console.log("trying")
       const callback = () => { this.props.history.push("/") }
-      this.props.dispatch(signIn(this.state.email, this.state.password, callback))
+      this.props.dispatch(signIn(this.state.email, this.state.password, callback, this.setError))
     }catch (e) {
       console.log(e)
-      this.setError("Failed to login")
+      this.setError(e)
       return "Failed to login"
     }
   
   }
 
-  // handleGoogle = () => {
-  //   try{
-  //     const onSuccess = () => { this.props.history.push("/") }
-  //     this.props.dispatch(signIn(this.state.email, this.state.password, onSuccess))
-  //   }catch {
-  //     return "Failed to login"
-  //   }
-  // }
+  handleGoogle = (provider) => {
+    console.log(provider)
+      const onSuccess = () => { this.props.history.push("/") }
+      console.log("try")
+      this.props.dispatch(signInWithOutsideProvider(provider, onSuccess, this.setError))
+    
+  }
 
 
   render () {

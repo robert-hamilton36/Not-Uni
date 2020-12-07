@@ -24,7 +24,7 @@ export const isAuthenticated = (boolean) => {
   }
 }
 
-export const  signIn = (email, password, callback) => {
+export const  signIn = (email, password, callback, setError) => {
   console.log('building action')
   return dispatch => {
   console.log("I made it")
@@ -44,6 +44,7 @@ export const  signIn = (email, password, callback) => {
     callback()
   })
   .catch((error) => {
+    setError(error.message)
     console.log(error.message)
     console.log(error.code)
       return error
@@ -51,7 +52,7 @@ export const  signIn = (email, password, callback) => {
   }
 }
 
-export const register = (userName, email, password, callback) => {
+export const register = (userName, email, password, callback, setError) => {
   return dispatch => {
   console.log("I made it")
   auth.createUserWithEmailAndPassword(email, password)
@@ -82,6 +83,7 @@ export const register = (userName, email, password, callback) => {
     callback()
   })
   .catch((error) => {
+    setError(error.message)
     console.log(error.message)
     console.log(error.code)
       return error
@@ -124,7 +126,8 @@ export const fetchUser = () => {
   }
 }
 
-export const signInWithOutsideProvider = (provider) => {
+export const signInWithOutsideProvider = (provider, callback, setError) => {
+  console.log("hello")
   return dispatch => {
     auth.signInWithPopup(provider)
     .then( result => {
@@ -136,7 +139,12 @@ export const signInWithOutsideProvider = (provider) => {
       }))
     })
     .then(() => dispatch(isAuthenticated(true)))
+    .then(() => {
+      console.log('done')
+      callback()
+    })
     .catch((error) => {
+      setError(error)
       console.log(error.message)
       console.log(error.code)
         return error

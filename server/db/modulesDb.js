@@ -25,10 +25,16 @@ function getModulesByUserId (user_id, db = connection) {
   .select()
 }
 
+
+function updateModule (id, updatedModule, db = connection){
+  return db('modules').update(updatedModule).where('id', id)
+}
+
 module.exports = {
   getAllModules,
   getModuleElements,
   createModuleMeta,
   createModuleElement,
-  getModulesByUserId
+  getModulesByUserId,
+  updateModule
 }
