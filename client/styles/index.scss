@@ -98,55 +98,93 @@ body{
 
 .Register-card {
   background-color: rgba(252, 252, 252, 1);
-  height: 352px;
-  width: 643px;
+  height: auto;
+  width: fit-content;
   border-radius: 3px;
-  flex: left 50%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 100px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  padding: 50px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  h1{
-    margin-left: 5%;
-    padding-top: 10px;
+  h1 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-bottom: 20px;
   }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+  
+    .Input-R{
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 1);
+      height: 50px;
+      width: 100%;
+      padding-left: 20px;
+      margin-bottom: 20px;
+      font-size:20px;
+    }
+
+    .button{
+      height: 43px;
+      width: 149px;
+      box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      background: #2A881B;
+      border-radius: 2px;
+      color: #FFFFFF;
+      border: none;
+      margin-bottom: 40px;
+    }
     
-  .Input-R{
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    background: rgba(255, 255, 255, 1);
-    height: 50px;
-    width: 205px;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 10px;
-    font-size:20px;
-    padding-left: 15px;
-    // input{
-    // }
+    span {
+      color: #C00
+    }
+
+    .button:disabled{
+      background-color: #cccccc;
+      color: #666666;
+    }
+
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 40px;
+    align-self: flex-start;
+  }
+
+  .google-sign-in-div {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 10%/50%;
+    cursor: pointer;
+    padding: 12px;
+
+    img {
+      height: 30px;
+    }
+
+    span {
+      font-size: 20px;
+      font: bold;
+      margin-left: 20px;
+    }
   }
 }
 
-img{
-  cursor: pointer;
-}
 
-.button{
-  height: 43px;
-  width: 149px;
-  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
-  margin-left: 62%;
-  margin-top: 20px;
-  cursor: pointer;
-  background: #2A881B;
-  border-radius: 2px;
-  color: #FFFFFF;
-  border: none;
-}
 
-.button:disabled{
-  background-color: #cccccc;
-  color: #666666;
-}
 
 
 // Module Card
@@ -266,21 +304,18 @@ img{
 
 .module{
   height: auto;
-  width: 917px;
+  min-width: 900px;
+  width: 40vw;
   background-color: #FCFCFC;
-  margin-left: 20%;
+  margin: 100px auto;
   border-radius: 3px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-  margin-bottom: 10px;
-  padding-bottom: 20px;
   
   .h-module{
     background-color: #2A881B;
     height: 80px;
-    padding-top: 5px;
+    padding-top: 15px;
     padding-bottom: 15px;
-    margin-top: 10px;
-    // padding-left: 10px;
     background: rgba(0, 130, 127, 1);
     border-radius: 3px 3px 0 0
   }
