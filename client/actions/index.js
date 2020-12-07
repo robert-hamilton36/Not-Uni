@@ -93,7 +93,6 @@ export const fetchSavedModules = (userID) => {
     return getSavedModulesAPI(userID)
       .then(modules=>
         {
-          console.log(modules)
         return dispatch(setSavedModulesFromDatabase(modules))
       })
       .catch(err => {
