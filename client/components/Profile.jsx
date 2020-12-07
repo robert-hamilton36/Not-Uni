@@ -10,22 +10,31 @@ class Profile extends React.Component {
     activeModules: null
   }
   componentDidMount = () => {
-    const yourModules = this.props.modules.filter((item) => item.user_id == this.props.user.uid)
-
-    this.setState({yourModules: yourModules})
   }
 
   sidebarClickHandler = (whichButton) => {
     this.setState({
       activeModules: whichButton
     })
+    switch(whichButton){
+      case("saved modules"):
+      this.getSavedModules()
+      case("your modules"):
+      this.getYourModules()
+    }
+  }
 
-    this.getSavedModules()
+  getYourModules = () => {
+    const yourModules = this.props.modules.filter((item) => item.user_id == this.props.user.uid)
+    this.setState({yourModules: yourModules})
   }
 
   getSavedModules = () => {
     const savedIDs = this.props.user.saved
-    const savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id))
+    console.log(this.props.user.saved)
+    console.log(this.props.modules)
+    const savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id)) || null
+    console.log(savedModules)
     this.setState({
       savedModules: savedModules
     })
