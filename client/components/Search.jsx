@@ -13,8 +13,11 @@ class Search extends React.Component {
       searchValue: event.target.value
     })
   }
-
-  handleSubmit = (event) => {
+  
+  handleSubmit = (event)=>{
+    console.log("hello")
+    this.setState({fireRedirect: false})
+    console.log('handle submit')
     event.preventDefault()
     this.props.history.push('/categories/results/' + this.state.searchValue)
   }
