@@ -44,6 +44,7 @@ export const  signIn = (email, password, callback, setError) => {
     email: user.email
   })))
   .then(() => dispatch(isAuthenticated(true)))
+  .then(() => dispatch(authIsLoaded(true)))
   .then(() => {
     callback()
   })
@@ -92,6 +93,7 @@ export const signOut = () => {
     auth.signOut()
     .then(() => dispatch(removeUser({})))
     .then(() => dispatch(isAuthenticated(null)))
+    .then(() => dispatch(authIsLoaded(false)))
   }
 }
 
