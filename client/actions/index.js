@@ -22,12 +22,7 @@ export const setModules = (modules) => {
   }
 }
 
-export const setSearchedModules = (modules) =>{
-  return{
-    type: SET_SEARCH_MODULES,
-    modules
-  }
-}
+
 
 export const fetchModules = () => {
   return dispatch => {
@@ -37,6 +32,19 @@ export const fetchModules = () => {
       })
   }
 }
+
+
+
+
+export const setSearchedModules = (modules) =>{
+  return{
+    type: SET_SEARCH_MODULES,
+    modules
+  }
+}
+
+
+
 
 
 
@@ -74,6 +82,9 @@ export const fetchSavedModules = (userID) => {
       user: user
     }
   }
+
+
+
 
 
 //Update Module Likes
