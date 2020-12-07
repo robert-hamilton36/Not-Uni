@@ -38,7 +38,7 @@ export class Register extends React.Component {
     try{
       this.setLoading(true)
       const callback = () => { this.props.history.push("/") }
-      this.props.dispatch(register(this.state.userName, this.state.email, this.state.password, callback))
+      this.props.dispatch(register(this.state.userName, this.state.email, this.state.password, callback, this.setError))
       // this.props.dispatch(setUser(user))
     }catch (e) {
       console.log(e)
