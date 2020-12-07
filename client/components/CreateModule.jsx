@@ -137,6 +137,7 @@ class CreateModule extends React.Component {
 
           <div className="category-container">
 
+            <CategoryCard displayName="HTML" category="HTML" isActive = {this.state.category === 'HTML'} callBack={() => this.categoryChangeHandler('Javascript')}/>
             <CategoryCard displayName="Javascript" category="Javascript" isActive = {this.state.category === 'Javascript'} callBack={() => this.categoryChangeHandler('Javascript')}/>
             <CategoryCard displayName="Python" category="Python" isActive = {this.state.category === 'Python'} callBack={() => this.categoryChangeHandler('Python')}/>
             <CategoryCard displayName="CSS" category="CSS" isActive = {this.state.category === 'CSS'} callBack={() => this.categoryChangeHandler('CSS')}/>
