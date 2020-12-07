@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 
 class ModuleCard extends React.Component {
-  render() {
-
+  render () {
+    console.log(this.props.module)
     const findHeader = this.props.module.elements.filter((element) => {
       return (element.type === 'heading')
     })
@@ -33,7 +33,7 @@ class ModuleCard extends React.Component {
         cardColor = 'Cplus';
         break;
       default:
-        cardColor = 's-c-heading'
+        cardColor = ''
     }
 
     return (
@@ -41,7 +41,7 @@ class ModuleCard extends React.Component {
 
         <div className='module-card'>
 
-          <div className={cardColor}>
+          <div className={'s-c-heading ' + cardColor}>
             <h1>{this.props.module.title}</h1>
           </div>
           <div className='s-c-info'>

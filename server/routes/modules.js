@@ -93,14 +93,17 @@ router.post('/', (req, res) => {
         item.module_id = module_id[0]
         item.order_num = i
         // converts video links to "embed/"
-        if (item.type = 'video'){
+        if (item.type === 'video'){
           let oldURL = item.content
           let newURL = oldURL.replace("watch?v=", "embed/")
           item.content = newURL
         }
       })
 
+
       moduleElements.map((element) => {
+        console.log(element)
+
         return modulesDb.createModuleElement(element)
           .catch(err => {
             console.log(err)

@@ -38,14 +38,14 @@ class Login extends React.Component {
   
   }
 
-  // handleGoogle = () => {
-  //   try{
-  //     const onSuccess = () => { this.props.history.push("/") }
-  //     this.props.dispatch(signIn(this.state.email, this.state.password, onSuccess))
-  //   }catch {
-  //     return "Failed to login"
-  //   }
-  // }
+  handleGoogle = () => {
+    try{
+      const onSuccess = () => { this.props.history.push("/") }
+      this.props.dispatch(signIn(this.state.email, this.state.password, onSuccess))
+    }catch {
+      return "Failed to login"
+    }
+  }
 
 
   render () {
