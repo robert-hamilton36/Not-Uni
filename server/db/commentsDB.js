@@ -4,11 +4,10 @@ const connection = require('./connection')
 // add a comment to a module
 // Have user name with the comment
 
-
 // STREACH
 
 // Users can like a comment
-// users can update their comment 
+// users can update their comment
 // users can delete a comment
 
 // Add a comment
@@ -22,8 +21,8 @@ function displayComment (id, db = connection) {
 
 // add a comment to a module
 function addComment (newComment, db = connection) {
-  return db ('comments_content')
-  .insert(newComment)
+  return db('comments_content')
+    .insert(newComment)
 }
 
 module.exports = {

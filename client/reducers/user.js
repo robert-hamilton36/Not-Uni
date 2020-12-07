@@ -1,17 +1,17 @@
 import { SET_SAVED_MODULES, SET_USER, ADD_TO_SAVED_MODULES } from '../actions'
-
+import { REMOVE_USER } from '../actions/authenticated'
 const initialState = 
  {
-  name: 'Robbie',
-  saved: [101, 102],
-  created: ''
+
 }
 
 
 const reducer = (state = initialState, action) => {
   switch(action.type) {
     case SET_USER:
-      return action.SET_USER
+      return {...state, ...action.user}
+    case REMOVE_USER:
+      return {}
     case SET_SAVED_MODULES:
       let preSavedModuleState = state
 
