@@ -9,7 +9,7 @@ class SavedModules extends React.Component {
     return (
       <>
         {this.props.savedModules.map((module) => {
-          return <ModcoduleCard module={module} />
+          return <ModuleCard module={module} />
         })}
       </>
     )
@@ -18,9 +18,4 @@ class SavedModules extends React.Component {
 
 }
 
-function mapStateToProps(globalState) {
-  return {
-    savedModules: globalState.user.saved
-  }
-}
-export default connect(mapStateToProps)(SavedModules)
+export default connect()(SavedModules)

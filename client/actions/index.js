@@ -50,9 +50,9 @@ export const setSavedModules = (modules) => {
   }
 }
 
-export const fetchSavedModules = () => {
+export const fetchSavedModules = (userID) => {
   return dispatch => {
-    return getSavedModulesAPI()
+    return getSavedModulesAPI(userID)
       .then(modules=> {
         dispatch(setSavedModules(modules))
       })

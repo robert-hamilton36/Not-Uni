@@ -15,8 +15,8 @@ const connection = require('./connection')
 
 function displayComment (id, db = connection) {
   return db('comments_content')
-    .join('modules', 'comments_content.module_id', 'modules.id')
-    .select('*')
+    // .join('modules', 'comments_content.module_id', 'modules.id')
+    .select()
     .where('comments_content.module_id', id)
 }
 

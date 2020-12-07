@@ -7,18 +7,19 @@ const commentsDB = require('../db/commentsDB')
 
 //  GET /api/comments/created
 
-  router.get('/', (req, res) => {
-    commentsDB.getAllComments()
-      .then(content => {
-        content = content.map(comments => {
-          return commentsDB.getCommentContent(comments.id)
-            .then(elements => {
-              comments.elements = elements
-              return comments
-            })
-        })
-        return Promise.all(content)
-      })
+  router.get('/:id', (req, res) => {
+    const id = req.params.id
+    return commentsDB.displayComment(id)
+      // .then(content => {
+      //   content = content.map(comments => {
+      //     return commentsDB.getCommentContent(comments.id)
+      //       .then(elements => {
+      //         comments.elements = elements
+      //         return comments
+      //       })
+      //   })
+      //   return Promise.all(content)
+      // })
       .then(modules => {
         res.json(modules)
       })
@@ -28,4 +29,4 @@ const commentsDB = require('../db/commentsDB')
       })
   })
 
-  content.exports = router
+  module.exports = router
