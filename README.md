@@ -69,7 +69,7 @@ https://www.figma.com/file/viw35yDcmX5tLEWZEVabHJ/Dev-Final-Project?node-id=30%3
 
 We have used dbdiagram.io for our database design. Check it out below.
 *we have used Firebase for our users table
-![database diagram](/pics/Not-Uni.png)
+![database diagram](/pics/database-diagram.png)
 
 
 
