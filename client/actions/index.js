@@ -46,7 +46,7 @@ export const setSingleModuleToSavedModules = (module) => {
   }
 }
 
-=======
+
 export const setSavedModulesFromDatabase = (modules) => {
   return {
     type:SET_SAVED_MODULES_FROM_DATA_BASE,
