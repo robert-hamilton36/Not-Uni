@@ -2,6 +2,7 @@
 export const SET_USER = 'SET_USER'
 export const IS_AUTHENTICATED = 'IS_AUTHENTICATED'
 export const REMOVE_USER = 'REMOVE_USER'
+export const AUTHENTICATION_HAS_LOADED = 'AUTHENTICATION_HAS_LOADED'
 import { auth } from '../firebase'
 
 export const setUser = (user) => {
@@ -21,6 +22,13 @@ export const isAuthenticated = (boolean) => {
   return {
     type: IS_AUTHENTICATED,
     auth: boolean  
+  }
+}
+
+export const authIsLoaded = (boolean) => {
+  return {
+    type: AUTHENTICATION_HAS_LOADED,
+    loaded: boolean
   }
 }
 
@@ -107,6 +115,8 @@ export const fetchUser = () => {
       } else {
         
       }
+      dispatch(authIsLoaded(true))
+
     })
   }
 }
