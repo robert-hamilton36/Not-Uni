@@ -273,6 +273,7 @@ img{
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   margin-bottom: 10px;
   padding-bottom: 20px;
+  position: relative;
   
   .h-module{
     background-color: #2A881B;
@@ -282,8 +283,22 @@ img{
     margin-top: 10px;
     // padding-left: 10px;
     background: rgba(0, 130, 127, 1);
-    border-radius: 3px 3px 0 0
+    border-radius: 3px 3px 0 0;
+    position: relative;
+
+    .likes{
+      z-index: 50;
+      float: right;
+    }
+    .savedNumber{
+      float: right;
+    }
+
+   
+
   }
+
+
   
 
   h1{
@@ -300,6 +315,9 @@ img{
   // padding-bottom: 10px;
 
   }
+
+
+
 
   h3{
     font-family: roboto;
@@ -357,7 +375,23 @@ img{
       color: black;
     }
   }
+
+  .message-saved{
+    z-index: 100;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -250px;
+    
+  
+    img{
+      height: 500px;
+      width: 500px;
+    }
+  }
 }
+
+
 
 //   _____ _____  ______       _______ ______   __  __  ____  _____  _    _ _      ______ 
 //  / ____|  __ \|  ____|   /\|__   __|  ____| |  \/  |/ __ \|  __ \| |  | | |    |  ____|
@@ -848,11 +882,3 @@ input{
 
 //likes
 
-.likes{
-  z-index: -2;
-}
-
-.heart-saved{
-  z-index: 1git pull;
-  position: absolute;
-}

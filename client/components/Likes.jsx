@@ -10,14 +10,14 @@ class Likes extends React.Component{
   
   state={
     likes: 0,
-    imageSRC: "/images/favorite-border.svg",
+    imageSRC: "/images/bookmark-border.svg",
     savedMessage: ''
   }
 
   clickHandler=()=>{ 
     this.setState({
       likes: (this.state.likes === 0) ? 1 :0,
-      imageSRC: (this.state.likes === 0) ?  "/images/favorite-black.svg" : "/images/favorite-border.svg",
+      imageSRC: (this.state.likes === 0) ?  "/images/bookmark-white.svg" : "/images/bookmark-border.svg",
       savedMessage: (this.state.likes === 0) ? true : false,
     }, () => {
       this.afterSetStateFinished();
@@ -47,7 +47,7 @@ class Likes extends React.Component{
       <div className='likes'>
         <img onClick ={()=>this.clickHandler()} src={this.state.imageSRC} alt="like button"/>
         {this.state.savedMessage && <MessageSaved/>}
-      
+       
       </div>
     )
   }

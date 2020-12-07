@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 class MessageSaved extends React.Component {
   render () {
     return (
-      <div className= 'heart-saved'>
-        <img src="/images/red-heart.png" alt="heart"/>
+      <div className= 'message-saved'>
+        <img src="/images/bookmark-border-black.svg" alt="bookmark"/>
       </div>
     )
   }
