@@ -1,27 +1,21 @@
-const { isFunctionDeclaration } = require("typescript");
-// Steps to build comments function 
-// Data base structer
-// {ID} - {user_id} - {user_id} - {comments_content}
-// Internal API
-// Action [X]
-// Reducer [X]
-// Render [X]
-
 import React from 'react'
 import { connect } from 'react-redux'
-// import api
 
 class Comments extends React.Component {
 
-    render (){ 
+  render (){ 
     return (
- 
-        <div>
-            <h1>hi i'm a comment</h1>
-        </div>
- 
-        )
-    }
+      <div className="comments"> 
+        {this.props.comments.map(comment => {
+          return (
+            <div className="single-comment">
+              <p >{comment.content}</p>
+            </div>
+          )
+        })}
+      </div>
+    )
+  }
 }
 
 export default Comments
