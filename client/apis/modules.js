@@ -64,3 +64,12 @@ export function decreaseLikesAPI(module){
 
 
 // get created modules API?
+
+
+
+// Get comments on a Module
+
+export function displayCommentsAPi(id){
+  return request.get('/api/comment/' + id)
+  .then(res => res.body)
+  }
