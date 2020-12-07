@@ -17,8 +17,7 @@ class Module extends React.Component {
 
   componentDidUpdate (prevProps) {
     if (!prevProps || prevProps.match.params.id !== this.props.match.params.id || prevProps.modules.length !== this.props.modules.length) {
-      console.log('hi')
-
+      
       const currentModuleId = Number(this.props.match.params.id)
       const currentModule = this.props.modules.find((module) => module.id === currentModuleId)
       this.setState({ currentModule })
@@ -75,6 +74,7 @@ class Module extends React.Component {
                 )
             }
           })}
+          <Likes module={this.state.currentModule}/> likes:{this.state.currentModule.likes}
         </div>
       </div> : ''
     )
