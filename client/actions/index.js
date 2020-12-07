@@ -72,7 +72,6 @@ export const setSearchedModules = (modules) =>{
 
 
 
-
 // saved Modules
 
 export const addToSavedModules = (module) => {
@@ -166,8 +165,7 @@ export const increaseModuleLikes = (module) => {
     return dispatch => {
       return displayCommentsAPi(comment)
       .then((commentsArr) => {
-        // commentsArr.map(commentsArr)dispatch
-        dispatch(commentsFetched(comment))
+       commentsArr.map(comment => dispatch(commentsFetched(comment)))
       })
       .catch(err => {
         console.log(err)

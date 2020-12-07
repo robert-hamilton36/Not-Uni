@@ -1,8 +1,19 @@
 const connection = require('./connection')
 
-function getAllModules (db = connection) {
-  return db('modules')
-    .select()
+// function getAllModules (db = connection) {
+//   return db('modules')
+//     .select()
+// }
+
+function getAllModules(db = connection) {
+  return db('modules').select()
+    .then(modules => Promise.all(modules.map(module => {
+      return db('comments_content').where('module_id', module.id)
+        .then(comments => {
+          module.comments = comments
+          return module
+        })
+    })))
 }
 
 function getModuleElements (id, db = connection) {
