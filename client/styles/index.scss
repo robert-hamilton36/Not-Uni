@@ -4,6 +4,7 @@
 
 body{
   font-family: roboto;
+  letter-spacing: 0.05em;
 }
 
 // Nav Bar
@@ -187,7 +188,7 @@ img{
   }
 
   .JavaScript{    
-    background-color: rgb(223, 219, 29);
+    background-color: rgb(232, 181, 14, 1);
   }
 
   .Python{    
@@ -268,11 +269,13 @@ img{
   height: auto;
   width: 917px;
   background-color: #FCFCFC;
-  margin-left: 20%;
+  margin-left: 25%;
   border-radius: 3px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   margin-bottom: 10px;
   padding-bottom: 20px;
+  margin-top: 1em;
+  
   
   .h-module{
     background-color: #2A881B;
@@ -681,11 +684,12 @@ img{
     padding: 30px;
     
     .no-matches-message{
-      margin: 40px 40px;
+      margin-top: 7em;
+      margin-bottom: 7em;
       text-align: center;
       font-size: 20px;
-    }
   }
+}
 }
   
 
