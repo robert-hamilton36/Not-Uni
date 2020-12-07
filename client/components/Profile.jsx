@@ -68,9 +68,15 @@ class Profile extends React.Component {
             </div>
           </div>
           <div className="middle column" >
+            {this.props.hasLoaded.modulesHaveLoaded && <>
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
             {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
+            </>
 
+             }
+
+            {/* {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
+            {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>} */}
             {/* {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/> */}
 
           </div>
@@ -85,7 +91,8 @@ class Profile extends React.Component {
 function mapStateToProps(globalState) {
   return {
     user: globalState.user,
-    modules: globalState.modules
+    modules: globalState.modules,
+    hasLoaded: globalState.hasLoaded
   }
 }
 
