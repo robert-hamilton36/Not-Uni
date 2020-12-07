@@ -141,7 +141,7 @@ body{
 
 .module-card {
   height: auto;
-  width: auto;
+  width: 80%;
   border-radius: 3px;
   background: rgba(252, 252, 252, 1);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -151,11 +151,10 @@ body{
     padding: 10px 20px;
     background: rgba(0, 130, 127, 1);
     border-radius: 3px 3px 0 0;
-    width: 523px;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: rgba(0, 130, 127, 1);
-    border-radius: 3px 3px 0 0
+    border-radius: 3px 3px 0 0;
 
     h1 {
       font-family: Roboto;
@@ -171,61 +170,37 @@ body{
     }
   }
 
-  .HTML{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .HTML{    
     background-color: red;
-    border-radius: 3px 3px 0 0
   }
 
-  .JavaScript{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .JavaScript{    
     background-color: rgb(223, 219, 29);
-    border-radius: 3px 3px 0 0
   }
 
-  .Python{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .Python{    
     background-color: rgb(34, 79, 163);
-    border-radius: 3px 3px 0 0
+    color: white;
   }
 
-  .Ruby{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .Ruby{    
     background-color: rgb(165, 16, 16);
-    border-radius: 3px 3px 0 0
+    color: white;
   }
 
-  .Cplus{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .Cplus{    
     background-color: rgb(98, 0, 128);
-    border-radius: 3px 3px 0 0
+    color: white;
   }
 
-  .C{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .C{    
     background-color: rgb(144, 163, 199) ;
-    border-radius: 3px 3px 0 0
   }
 
 
-  .CSS{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .CSS{    
     background-color:#002482;
-    border-radius: 3px 3px 0 0
+    color: white;
   }
 
 
@@ -671,7 +646,7 @@ body{
     padding: 30px;
     
     .no-matches-message{
-      margin: 100px 40px;
+      margin: 40px 40px;
       text-align: center;
       font-size: 20px;
     }

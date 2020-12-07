@@ -33,7 +33,7 @@ class ModuleCard extends React.Component {
         cardColor = 'Cplus';
         break;
       default:
-        cardColor = 's-c-heading'
+        cardColor = ''
     }
 
     return (
@@ -41,7 +41,7 @@ class ModuleCard extends React.Component {
 
         <div className='module-card'>
 
-          <div className={'s-c-heading', cardColor}>
+          <div className={'s-c-heading ' + cardColor}>
             <h1>{this.props.module.title}</h1>
           </div>
           <div className='s-c-info'>
