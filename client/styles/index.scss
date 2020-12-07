@@ -134,86 +134,73 @@ body{
   border-radius: 2px;
   color: #FFFFFF;
   border: none;
-
-  
-
-
 }
-  // Module Card
+
+
+// Module Card
 
 .module-card {
   height: auto;
-  width: 523px;
+  width: 80%;
   border-radius: 3px;
-  // margin-left: 30%;
   background: rgba(252, 252, 252, 1);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-  padding-bottom: 10px;
   margin-bottom: 30px;
   
   .s-c-heading {
-    width: 523px;
+    padding: 10px 20px;
+    background: rgba(0, 130, 127, 1);
+    border-radius: 3px 3px 0 0;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: rgba(0, 130, 127, 1);
-    border-radius: 3px 3px 0 0
+    border-radius: 3px 3px 0 0;
+
+    h1 {
+      font-family: Roboto;
+      margin-block-start: none;
+      margin-block-end: none;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 42px;
+      letter-spacing: 0em;
+      color: #ffffff;
+      margin: 0;
+    }
   }
 
-  .HTML{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: rgb(255, 72, 0);
-    border-radius: 3px 3px 0 0
+  .HTML{    
+    background-color: red;
   }
 
-  .JavaScript{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .JavaScript{    
     background-color: rgb(223, 219, 29);
-    border-radius: 3px 3px 0 0
   }
 
-  .Python{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .Python{    
     background-color: rgb(34, 79, 163);
-    border-radius: 3px 3px 0 0
+    color: white;
   }
 
-  .Ruby{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .Ruby{    
     background-color: rgb(165, 16, 16);
-    border-radius: 3px 3px 0 0
+    color: white;
   }
 
-  .Cplus{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .Cplus{    
     background-color: rgb(98, 0, 128);
-    border-radius: 3px 3px 0 0
+    color: white;
   }
 
-  .C{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .C{    
     background-color: rgb(144, 163, 199) ;
-    border-radius: 3px 3px 0 0
   }
 
 
-  .CSS{
-    width: 523px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  .CSS{    
     background-color:#002482;
-    border-radius: 3px 3px 0 0
+    color: white;
   }
 
 
@@ -222,24 +209,10 @@ body{
   }
 
   .steps-list{
-    padding-left: 20px;
-  }
-
-  h1{
-    font-family: Roboto;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 42px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #ffffff;
-    margin: 0;
-    padding-left: 20px;
+    margin-left: 20px;
   }
 
   li{
-    list-style-type: none;
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
@@ -257,8 +230,7 @@ body{
 
   p {
     font-family: Roboto;
-    padding-left: 20px;
-    padding-right: 10px;
+    margin: 20px;
   }
     
   a{
@@ -301,7 +273,6 @@ body{
     border-radius: 3px 3px 0 0
   }
   
-
 
   h1{
   color: rgba(255, 255, 255, 1);
@@ -583,52 +554,36 @@ body{
 
 //CATEGORIES TABLE
 
-.categories-table{
+.results-page{
+  display: grid;
+  grid-template-columns: [start]30% [line1] 40% [line2]30%[end];
   
-  background-color: #FCFCFC;
-  width: 15vw;
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);
-  border-radius: 2px;
-  margin-top: 4vh;
-  margin-left: 4vh;
-  grid-column-start: start;
-  grid-column-end: line1;
-  display: block;
-  height: 35vh;
-
- ul{
-    list-style-type: none;
-    padding-left: 5px;
+  .column {
+    padding: 30px;
   }
 
-  .title {
-    margin-top: 0;
-    background-color: #002482;
-    border-radius: 3px 3px 0 0  
-   
-  }
-  h4{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    color: white;
-    margin-top:0;
-    margin-left: 5px;
-    font-size: 20px;
-    }
-  
-    .category{
-      padding-bottom: 20px;
-      a{
+  .left {
+    grid-column-start: start;
+    grid-column-end: line1;
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 10px;
-        margin-left: 5%;
-     
-        img{
-          margin-right: 5px;
+    .categories-table{
+
+      background-color: #FFFFFF;
+      border-radius: 3px;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+
+      width: 60%;
+
+      .title {
+        background-color: rgba(0, 130, 127, 1);
+        padding: 10px;
+        border-radius: 3px 3px 0 0;
+
+        h4, h3, h2, h1 {
+          padding: 10px;
+          margin-block-start: 0px;
+          margin-block-end: 0px;
+          color: #FFFFFF;
         }
       }
       a:link {
@@ -641,28 +596,64 @@ body{
         font-size: 120%;   
       }
     }
-}
 
-.results-page{
-  display: grid;
-  grid-template-columns: [start]30% [line1] 40% [line2]30%[end];
-}
+      
+    .categories {
+      padding: 10px;
+      
+      a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        align-items: center;
+      }
 
-.search-results{
-  grid-column-start: line1 ;
-  grid-column-end: line2;
-  margin-top: 5%;
-  margin-left :20%;
-  // align-items: center;
+      .single-category {
+        padding: 10px;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        border-radius: 2px;
+        width: 100%;
+        
+        span {
+          font-size: 18px;
+          font-weight: bolder;
+          margin-left: 20px;
+          margin-block-start: 0px;
+          margin-block-end: 0px;
+        }
 
-  .no-matches-message{
-    // margin-top: 5vh;
-    margin-bottom: 5vh;
-    text-align: center;
-    font-size: 20px;
-    margin-right:17px
+        img {
+          height: 24px;
+        }
+      }
+      
+      .single-category:hover {
+        background-color: rgb(219, 219, 219);
+        cursor: pointer;
+
+      }
+    }
+  } 
+  
+  .search-results{
+    grid-column-start: line1;
+    grid-column-end: line2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    
+    .no-matches-message{
+      margin: 40px 40px;
+      text-align: center;
+      font-size: 20px;
+    }
   }
 }
+  
+
 
 // MODULE CREATED
 .module-created-card {
@@ -686,15 +677,18 @@ body{
   grid-template-columns: 2fr 4fr 2fr;
   grid-template-areas: "left middle right";
   
+
+
+
+  // -----------
+
   .left {
     grid-area: left;
-    // background-color: rgb(255, 183, 219);
 
     .profile-options-box {
       background-color: #FFFFFF;
       border-radius: 3px;
       box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-
 
       .heading {
         background-color: rgba(0, 130, 127, 1);
@@ -702,8 +696,8 @@ body{
         border-radius: 3px 3px 0 0;
 
         h1 {
-        padding: 10px;
-        margin-block-start: 0px;
+          padding: 10px;
+          margin-block-start: 0px;
           margin-block-end: 0px;
           color: #FFFFFF;
         }
@@ -745,6 +739,8 @@ body{
       }
     }
   }
+
+  //________
 
   .middle {
     display: flex; 
