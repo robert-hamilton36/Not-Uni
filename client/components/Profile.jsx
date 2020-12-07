@@ -9,7 +9,11 @@ class Profile extends React.Component {
   state = {
     activeModules: null
   }
+  componentDidMount = () => {
+    const yourModules = this.props.modules.filter((item) => item.user_id == this.props.user.uid)
 
+    this.setState({yourModules: yourModules})
+  }
 
   sidebarClickHandler = (whichButton) => {
     this.setState({
