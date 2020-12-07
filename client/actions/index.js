@@ -33,6 +33,8 @@ export const modulesHaveLoaded = (boolean) => {
   }
 }
 
+
+=======
 export const setSavedModulesFromDatabase = (modules) => {
   return {
     type:SET_SAVED_MODULES_FROM_DATA_BASE,
@@ -45,6 +47,7 @@ export const setSingleModuleToSavedModules = (module) => {
     modules: module
   }
 }
+
 
 
 export const fetchModules = () => {
