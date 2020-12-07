@@ -3,24 +3,38 @@ import { Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { textSpanIsEmpty } from 'typescript'
 import SavedModules from './SavedModules'
+import YourModules from './YourModules'
 
 class Profile extends React.Component {
   state = {
     activeModules: null
   }
-
+  componentDidMount = () => {
+  }
 
   sidebarClickHandler = (whichButton) => {
     this.setState({
       activeModules: whichButton
     })
+    switch(whichButton){
+      case("saved modules"):
+      this.getSavedModules()
+      case("your modules"):
+      this.getYourModules()
+    }
+  }
 
-    this.getSavedModules()
+  getYourModules = () => {
+    const yourModules = this.props.modules.filter((item) => item.user_id == this.props.user.uid)
+    this.setState({yourModules: yourModules})
   }
 
   getSavedModules = () => {
     const savedIDs = this.props.user.saved
-    const savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id))
+    console.log(this.props.user.saved)
+    console.log(this.props.modules)
+    const savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id)) || null
+    console.log(savedModules)
     this.setState({
       savedModules: savedModules
     })
@@ -33,10 +47,10 @@ class Profile extends React.Component {
           <div className="left column" >
             <div className="profile-options-box">
               <div className="heading">
-                <h1> Welcome {this.props.user} </h1>
+                <h1> Welcome {this.props.user.userName} </h1>
               </div>
               <div className="options">
-                <div className="single-option">
+                <div onClick={() => this.sidebarClickHandler('your modules') }className="single-option">
                   <img src="/images/folder-24px-blue.svg"/>
                   <span> Your Modules </span>
                 </div>
@@ -55,6 +69,7 @@ class Profile extends React.Component {
           </div>
           <div className="middle column" >
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
+            {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
 
             {/* {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/> */}
 

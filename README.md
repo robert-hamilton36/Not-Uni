@@ -92,11 +92,20 @@ We have used dbdiagram.io for our database design. Check it out below.
 
 
 ```javascript
+
+hasLoaded: {
+  authHasLoaded: false,
+  modulesHaveLoaded: false,
+ }
+ 
+isAuthenticated: true
+
 user: {
-  name: str,
+  displayName: str,
+  email: str,
+  uid: str,
   saved:[module_id,module_id],
   created:[module_id,module_id],
-  isAuthenticated: boolean
 }
 
 modules: [
@@ -107,6 +116,7 @@ modules: [
     category: 'JavaScript',
     duration: 15,
     number_of_elements: 5,
+    description: str,
     elements: [
       {
         id: 900000,
@@ -124,6 +134,20 @@ modules: [
       }     
     ]
   }
+]
+
+searchModules:[
+{
+        id: int,
+        title: str
+        user_id: int,
+        catergory: tag, //"javascript"
+        duration: int,
+        description: str,
+        number_of_elements: int,
+        elements: []
+      },
+
 ]
     
 ```
