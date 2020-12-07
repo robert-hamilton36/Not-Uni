@@ -16,7 +16,7 @@ import ModuleCreated from './ModuleCreated'
 class App extends React.Component {
   componentDidMount () {
     this.props.dispatch(fetchModules())
-    this.props.dispatch(fetchSavedModules())
+    // this.props.dispatch(fetchSavedModules())
   }
 
   render () {

@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { setSearchedModules } from '../actions'
 import ModuleCard from './ModuleCard'
-import Search from './Search'
+
 
 class SearchResults extends React.Component {
+
+
   componentDidMount () {
     const q = this.props.match.params.q
     const filteredModules = this.props.modules.filter(module => {
@@ -16,6 +18,7 @@ class SearchResults extends React.Component {
   }
 
   componentDidUpdate (prevProps) {
+    console.log(prevProps)
     const q = this.props.match.params.q
     if (q !== prevProps.match.params.q) {
       const filteredModules = this.props.modules.filter(module => {
