@@ -5,7 +5,7 @@ import { Redirect } from 'react-router'
 
 class Search extends React.Component {
   state={
-    searchValue: ''
+    searchValue: ' '
   }
 
   handleChange = (event) => {

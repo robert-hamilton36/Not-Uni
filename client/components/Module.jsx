@@ -49,26 +49,27 @@ class Module extends React.Component {
 
               case 'link':
                 return (
+
                   <div className="react-tiny-link"key={i}>
-                    <ReactTinyLink
+                    {item.content.includes('http') && <ReactTinyLink
                       cardSize="small"
                       showGraphic={true}
                       maxLine={2}
                       minLine={1}
                       url={item.content}
-                    />
+                    />}
                   </div>
                 )
               case 'video':
                 return (
                   <div className="video-container" key={i}>
-                    <iframe
+                    {item.content.includes("embed") ? <iframe
                       height="auto"
                       src={item.content}
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen>
-                    </iframe>
+                    </iframe> : ""}
                   </div>
                 )
             }

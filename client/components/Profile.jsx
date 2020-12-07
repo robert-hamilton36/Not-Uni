@@ -52,11 +52,11 @@ class Profile extends React.Component {
               <div className="options">
                 <div onClick={() => this.sidebarClickHandler('your modules') }className="single-option">
                   <img src="/images/folder-24px-blue.svg"/>
-                  <span> Your Modules </span>
+                  <span> Your Created Modules </span>
                 </div>
                 <div onClick={() => { this.sidebarClickHandler('saved modules') }} className="single-option">
                   <img src="/images/folder-24px-green.svg"/>
-                  <span> Saved Modules </span>
+                  <span> Your Saved Modules </span>
                 </div>
                 <Link to="/create" >
                   <div className="single-option">
@@ -68,9 +68,15 @@ class Profile extends React.Component {
             </div>
           </div>
           <div className="middle column" >
+            {this.props.hasLoaded.modulesHaveLoaded && <>
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
             {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
+            </>
 
+             }
+
+            {/* {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
+            {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>} */}
             {/* {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/> */}
 
           </div>
@@ -85,7 +91,8 @@ class Profile extends React.Component {
 function mapStateToProps(globalState) {
   return {
     user: globalState.user,
-    modules: globalState.modules
+    modules: globalState.modules,
+    hasLoaded: globalState.hasLoaded
   }
 }
 
