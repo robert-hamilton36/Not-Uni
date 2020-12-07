@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import { createModuleAPI } from '../apis/modules'
-import CategoryCard from './CatagoryCard'
+import CategoryCard from './CategoryCard'
 
 class CreateModule extends React.Component {
   state = {
@@ -52,7 +52,7 @@ class CreateModule extends React.Component {
         return (
           <div className="link-input input-box">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
-            <input className="" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Link"/>
+            <input className="" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="url" placeholder="Link"/>
           </div>
         )
 
@@ -60,7 +60,7 @@ class CreateModule extends React.Component {
         return (
           <div className="link-input input-box">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>
-            <input className="" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="text" placeholder="Youtube Video Link"/>
+            <input className="" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} type="url" placeholder="Youtube Video Link"/>
           </div>
 
         )
@@ -85,7 +85,12 @@ class CreateModule extends React.Component {
       category: category
     })
   }
-  //
+
+  difficultyChangeHandler = (difficulty) => {
+    this.setState({
+      difficulty: difficulty
+    })
+  }
 
   metaChangeHandler = (evt, propType) => {
     this.setState({
@@ -135,17 +140,32 @@ class CreateModule extends React.Component {
 
           <textarea className="input-box description-input" onChange={(evt) => this.metaChangeHandler(evt, 'description')} placeholder="Short Desciption" />
 
-          <div className="category-container">
-
-            <CategoryCard displayName="HTML" category="HTML" isActive = {this.state.category === 'HTML'} callBack={() => this.categoryChangeHandler('Javascript')}/>
+          <h3> Category </h3>
+          <div className="radio-container">
+            <CategoryCard displayName="HTML" category="HTML" isActive = {this.state.category === 'HTML'} callBack={() => this.categoryChangeHandler('HTML')}/>
             <CategoryCard displayName="Javascript" category="Javascript" isActive = {this.state.category === 'Javascript'} callBack={() => this.categoryChangeHandler('Javascript')}/>
             <CategoryCard displayName="Python" category="Python" isActive = {this.state.category === 'Python'} callBack={() => this.categoryChangeHandler('Python')}/>
             <CategoryCard displayName="CSS" category="CSS" isActive = {this.state.category === 'CSS'} callBack={() => this.categoryChangeHandler('CSS')}/>
             <CategoryCard displayName="Ruby" category="Ruby" isActive = {this.state.category === 'Ruby'} callBack={() => this.categoryChangeHandler('Ruby')}/>
             <CategoryCard displayName="C++" category="C++" isActive = {this.state.category === 'C++'} callBack={() => this.categoryChangeHandler('C++')}/>
             <CategoryCard displayName="C#" category="Csharp" isActive = {this.state.category === 'Csharp'} callBack={() => this.categoryChangeHandler('Csharp')}/>
-
           </div>
+
+          <h3> Difficulty </h3>
+          <div className="radio-container"> 
+            <div className={this.state.difficulty === "Beginner" ? 'green radio selected' : 'green radio'} onClick={() => this.difficultyChangeHandler("Beginner")} >
+              <span> {'<>'} Beginner </span>
+            </div>
+
+            <div className={this.state.difficulty === "Intermediate" ? 'yellow radio selected' : 'yellow radio'} onClick={() => this.difficultyChangeHandler("Intermediate")} >
+              <span>  {'<()>'} Intermediate </span>
+            </div>
+
+            <div className={this.state.difficulty === "Advanced" ? 'red radio selected' : 'red radio'} onClick={() => this.difficultyChangeHandler("Advanced")} >
+              <span>  {'<({})>'} Advanced </span>
+            </div>
+          </div>
+
           <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type="number" placeholder="Approximate Duration (Minutes)"/>
         </div>
 
