@@ -93,14 +93,17 @@ router.post('/', (req, res) => {
         item.module_id = module_id[0]
         item.order_num = i
         // converts video links to "embed/"
-        if (item.type = 'video'){
+        if (item.type === 'video'){
           let oldURL = item.content
           let newURL = oldURL.replace("watch?v=", "embed/")
           item.content = newURL
         }
       })
 
+
       moduleElements.map((element) => {
+        console.log(element)
+
         return modulesDb.createModuleElement(element)
           .catch(err => {
             console.log(err)
@@ -116,6 +119,24 @@ router.post('/', (req, res) => {
       res.status(500).json({ message: 'Something is broken' })
     })
   
+})
+
+
+//Update a module 
+
+router.patch('/:id',(req,res) =>{
+ 
+  const updatedModule = req.body
+  const id = req.params.id
+
+  modulesDb.updateModule(id, updatedModule)
+    .then(updatedItems =>{
+      res.json({updatedItems})
+    })
+    .catch((err)=>{
+      console.log(err)
+      res.status(500).json({message:'something went wrong'})
+    })
 })
 
 module.exports = router

@@ -17,6 +17,7 @@ export function getSavedModulesAPI () {
 
 export function createModuleAPI (module) {
   module.number_of_elements = module.elements.length
+  console.log(module);
   return request.post('/api/modules').send(module)
     .then(res => res.body)
 }
@@ -27,14 +28,43 @@ export function addSavedModuleAPI (user_id, module_id) {
     .then(res=>res.body)
 }
 
+
+export function increaseLikesAPI(module){
+  let updatedModule ={
+    id: module.id,
+    title:module.title,
+    user_id:module.user_id,
+    category:module.category,
+    duration:module.duration,
+    description:module.description,
+    number_of_elements:module.number_of_elements,
+    likes: module.likes + 1
+  }
+  return request
+  .patch('/api/modules/' + updatedModule.id)
+  .send(updatedModule)
+  .then (res => res.body)
+}
+
+
+
+export function decreaseLikesAPI(module){
+  console.log(module)
+  let updatedModule ={
+    id: module.id,
+    title:module.title,
+    user_id:module.user_id,
+    category:module.category,
+    duration:module.duration,
+    description:module.description,
+    number_of_elements:module.number_of_elements,
+    likes: module.likes -1
+  }
+  return request
+  .patch('/api/modules/' + updatedModule.id)
+  .send(updatedModule)
+  .then (res => res.body)
+}
+
+
 // get created modules API?
-
-// display all comments on a module
-
-// export function displaydCommentAPI (content, user_id, module_id) {
-//   const comment = {content: content, user_id: user_id, module_id:module_id}
-//   return request.get('/api/co')
-// }
-
-
-// Write a post on a module

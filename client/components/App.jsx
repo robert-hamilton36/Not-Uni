@@ -10,6 +10,7 @@ import Register from './Register'
 import CreateModule from './CreateModule'
 import Profile from './Profile'
 import HomePage from './Homepage'
+import { fetchUser } from '../actions/authenticated'
 import { fetchModules, fetchSavedModules } from '../actions'
 import ModuleCreated from './ModuleCreated'
 
@@ -17,6 +18,7 @@ class App extends React.Component {
   componentDidMount () {
     this.props.dispatch(fetchModules())
     this.props.dispatch(fetchSavedModules())
+    this.props.dispatch(fetchUser())
   }
 
   render () {
@@ -34,7 +36,6 @@ class App extends React.Component {
             <Route exact path="/create" component={CreateModule} />
             <Route exact path="/modulecreated" component={ModuleCreated} />
           </Switch>
-
           <Route exact path="/profile" component={Profile} />
         </Router>
       </div>
