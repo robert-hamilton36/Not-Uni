@@ -48,7 +48,6 @@ export const  signIn = (email, password, callback, setError) => {
   return user
 })
   .then((user)=> {
-    console.log(user.user.uid)
     dispatch(fetchSavedModules(user.user.uid))})
   .then(() => dispatch(isAuthenticated(true)))
   .then(() => dispatch(authIsLoaded(true)))
