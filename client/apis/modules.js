@@ -5,10 +5,6 @@ export function getAllModulesAPI () {
     .then(res => res.body)
 }
 
-// export function getModulesBySearchAPI () {
-//   return request.get(rootUrl)
-//     .then(res => res.body)
-// }
 
 export function getSavedModulesAPI () {
   return request.get('/api/modules/saved')

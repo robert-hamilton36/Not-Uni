@@ -5,14 +5,12 @@ const ref = firebase.firestore().collection("users")
 
 //Create
 export function addUserToFirestore(newUser) {
-    console.log("adding..")
     ref
     .doc(newUser.id)
     .set(newUser)
     .catch((err) => {
         console.error(err)
       });
-      console.log("added?")
 }
 
 //Read
@@ -22,8 +20,6 @@ export function addUserToFirestore(newUser) {
             querySnapshot.forEach((doc) => {
                 items.push(doc.data())
             })
-            console.log("hello")
-            console.log(items)
             setUsers(items)
         })
     }
@@ -31,7 +27,6 @@ export function addUserToFirestore(newUser) {
 //Update
 
 export function editUser(updatedUser) {
-    console.log(updatedUser)
     ref
       .doc(updatedUser.id)
       .update(updatedUser)

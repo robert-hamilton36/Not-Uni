@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 
 class ModuleCard extends React.Component {
   render () {
-    console.log(this.props.module)
+   
     const findHeader = this.props.module.elements.filter((element) => {
       return (element.type === 'heading')
     })

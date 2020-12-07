@@ -9,9 +9,6 @@ class Profile extends React.Component {
     activeModules: null
   }
 
-  fakeProps = {
-    userName: 'Oli'
-  }
 
   sidebarClickHandler = (whichButton) => {
     this.setState({
@@ -36,7 +33,7 @@ class Profile extends React.Component {
           <div className="left column" >
             <div className="profile-options-box">
               <div className="heading">
-                <h1> Welcome {this.fakeProps.userName} </h1>
+                <h1> Welcome {this.props.user.userName} </h1>
               </div>
               <div className="options">
                 <div className="single-option">
