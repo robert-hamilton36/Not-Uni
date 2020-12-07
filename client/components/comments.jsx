@@ -3,9 +3,9 @@ const { isFunctionDeclaration } = require("typescript");
 // Data base structer
 // {ID} - {user_id} - {user_id} - {comments_content}
 // Internal API
-// Action 
-// Reducer
-// Render
+// Action [X]
+// Reducer [X]
+// Render [X]
 
 import React from 'react'
 import { connect } from 'react-redux'
