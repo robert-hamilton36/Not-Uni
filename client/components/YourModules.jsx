@@ -1,13 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 import ModuleCard from './ModuleCard'
 
-class SavedModules extends React.Component {
+class YourModules extends React.Component {
   render () {
     return (
       <>
-        {this.props.savedModules.map((module) => {
+        {this.props.yourModules.map((module) => {
           return <ModuleCard module={module} />
         })}
       </>
@@ -17,4 +16,4 @@ class SavedModules extends React.Component {
 
 }
 
-export default connect()(SavedModules)
+export default connect()(YourModules)

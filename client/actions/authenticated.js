@@ -145,3 +145,20 @@ export const signInWithOutsideProvider = (provider, callback) => {
   }
 }
 
+export const resetPassword = (email, callback, setError) => {
+
+  auth.sendPasswordResetEmail(email)
+  .then((user) => {
+    return user
+  })
+  .then(log => console.log(log))
+  .then(() => {
+    callback()
+  })
+  .catch((error) => {
+    setError(error.message)
+    console.log(error.message)
+    console.log(error.code)
+      return error
+    })
+}

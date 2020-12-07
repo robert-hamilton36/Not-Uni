@@ -3,16 +3,17 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Nav from './Nav'
-import Login from './Login'
+import Login from './UserAuth/Login'
 import SearchResults from './SearchResults'
 import Module from './Module'
-import Register from './Register'
+import Register from './UserAuth/Register'
 import CreateModule from './CreateModule'
 import Profile from './Profile'
 import HomePage from './Homepage'
 import { fetchUser } from '../actions/authenticated'
 import { fetchModules, fetchSavedModules } from '../actions'
 import ModuleCreated from './ModuleCreated'
+import ForgotPassword from './UserAuth/ForgotPassword'
 
 class App extends React.Component {
   componentDidMount () {
@@ -35,6 +36,7 @@ class App extends React.Component {
             <Route exact path="/module/:id" component={Module} />
             <Route exact path="/create" component={CreateModule} />
             <Route exact path="/modulecreated" component={ModuleCreated} />
+            <Route exact path="/forgotpassword" component={ForgotPassword} />
           </Switch>
           <Route exact path="/profile" component={Profile} />
         </Router>
