@@ -7,8 +7,8 @@ class SavedModules extends React.Component {
   render () {
     return (
       <>
-        {this.props.savedModules.map((module) => {
-          return <ModuleCard module={module} />
+        {this.props.savedModules.map((module, idx) => {
+          return <ModuleCard key={idx} module={module} />
         })}
       </>
     )
