@@ -47,20 +47,6 @@ export const setSingleModuleToSavedModules = (module) => {
 }
 
 
-export const setSavedModulesFromDatabase = (modules) => {
-  return {
-    type:SET_SAVED_MODULES_FROM_DATA_BASE,
-    modules: modules
-  }
-}
-export const setSingleModuleToSavedModules = (module) => {
-  return {
-    type:ADD_SINGLE_MODULE_TO_SAVED_MODULES,
-    modules: module
-  }
-}
-
-
 
 export const fetchModules = () => {
   return dispatch => {
