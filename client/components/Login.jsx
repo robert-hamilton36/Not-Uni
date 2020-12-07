@@ -27,10 +27,10 @@ class Login extends React.Component {
     event.preventDefault()
     try{
       const callback = () => { this.props.history.push("/") }
-      this.props.dispatch(signIn(this.state.email, this.state.password, callback))
+      this.props.dispatch(signIn(this.state.email, this.state.password, callback, this.setError))
     }catch (e) {
       console.log(e)
-      this.setError("Failed to login")
+      // this.setError("Failed to login")
       return "Failed to login"
     }
   

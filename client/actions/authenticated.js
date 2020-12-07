@@ -32,7 +32,7 @@ export const authIsLoaded = (boolean) => {
   }
 }
 
-export const  signIn = (email, password, callback) => {
+export const  signIn = (email, password, callback, setError) => {
   return dispatch => {
   auth.signInWithEmailAndPassword(email, password)
   .then((user) => {
@@ -48,6 +48,7 @@ export const  signIn = (email, password, callback) => {
     callback()
   })
   .catch((error) => {
+    setError(error.message)
     console.log(error.message)
     console.log(error.code)
       return error
@@ -55,7 +56,7 @@ export const  signIn = (email, password, callback) => {
   }
 }
 
-export const register = (userName, email, password, callback) => {
+export const register = (userName, email, password, callback, setError) => {
   return dispatch => {
   auth.createUserWithEmailAndPassword(email, password)
   .then((user) => {
@@ -78,6 +79,7 @@ export const register = (userName, email, password, callback) => {
     callback()
   })
   .catch((error) => {
+    setError(error.message)
     console.log(error.message)
     console.log(error.code)
       return error
