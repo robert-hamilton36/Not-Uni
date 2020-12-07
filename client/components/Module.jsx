@@ -74,6 +74,7 @@ class Module extends React.Component {
                 )
             }
           })}
+          <Likes module={this.state.currentModule}/> likes:{this.state.currentModule.likes}
         </div>
       </div> : ''
     )
