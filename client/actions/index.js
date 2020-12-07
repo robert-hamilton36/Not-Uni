@@ -7,6 +7,7 @@ import { getSavedModulesAPI } from '../apis/modules'
 export const SET_MODULES = 'SET_MODULES'
 export const SET_SEARCH_MODULES ='SET_SEARCH_MODULES'
 
+export const MODULES_HAVE_LOADED = 'MODULES_HAVE_LOADED'
 export const ADD_TO_SAVED_MODULES = 'ADD_TO_SAVED_MODULES'
 export const SET_SAVED_MODULES = 'SET_SAVED_MODULES'
 export const SET_USER = 'SET_USER'
@@ -22,6 +23,13 @@ export const setModules = (modules) => {
   }
 }
 
+export const modulesHaveLoaded = (boolean) => {
+  return {
+    type: MODULES_HAVE_LOADED,
+    loaded: boolean
+  }
+}
+
 
 
 export const fetchModules = () => {
@@ -30,6 +38,7 @@ export const fetchModules = () => {
       .then(modules=> {
         dispatch(setModules(modules))
       })
+      .then(() => dispatch(modulesHaveLoaded(true)))
   }
 }
 

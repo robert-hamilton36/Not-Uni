@@ -4,11 +4,11 @@ import modules from './modules'
 import user from './user'
 import searchModules from './searchModules'
 import isAuthenticated from './isAuthenticated'
-import authHasLoaded from './authHasLoaded'
+import hasLoaded from './hasLoaded'
 
 
 export default combineReducers({
-  authHasLoaded,
+  hasLoaded,
   isAuthenticated,
   modules,
   user,
