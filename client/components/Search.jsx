@@ -1,18 +1,17 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {fetchModules, setSearchedModules} from '../actions/index'
-import {Redirect} from 'react-router'
+import { connect } from 'react-redux'
+import { fetchModules, setSearchedModules } from '../actions/index'
+import { Redirect } from 'react-router'
 
-class Search extends React.Component{
-
+class Search extends React.Component {
   state={
     searchValue: ''
   }
 
-  handleChange = (event)=>{
+  handleChange = (event) => {
     this.setState({
       searchValue: event.target.value
-    }) 
+    })
   }
   
   handleSubmit = (event)=>{
@@ -21,27 +20,22 @@ class Search extends React.Component{
     console.log('handle submit')
     event.preventDefault()
     this.props.history.push('/categories/results/' + this.state.searchValue)
-    }
-  
+  }
 
-  render (){
-    
-
-    return(
+  render () {
+    return (
       <>
-   
-        <form  onSubmit={this.handleSubmit}>
+
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="search"></label>
           <input className='search' type="text" placeholder='Search' value={this.props.searchValue} onChange={this.handleChange}/>
         </form>
       </>
     )
   }
-
 }
 
-
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   return {
     modules: globalState.modules
   }
