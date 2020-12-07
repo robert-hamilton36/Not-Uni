@@ -27,7 +27,7 @@ class Nav extends React.Component {
           }
           
           {/* if user is NOT signed in */}
-          {this.props.authHasLoaded &&
+          {this.props.hasLoaded.authHasLoaded &&
          <div className='text' >
            {this.props.isAuthenticated == null && <> 
             <Link to="/register"> 
@@ -64,7 +64,7 @@ class Nav extends React.Component {
 function mapStateToProps(globalState) {
   return {
     isAuthenticated: globalState.isAuthenticated,
-    authHasLoaded: globalState.authHasLoaded
+    hasLoaded: globalState.hasLoaded
   }
 }
 

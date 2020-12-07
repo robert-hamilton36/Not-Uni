@@ -71,8 +71,6 @@ class Login extends React.Component {
           <input className='button' type="submit" disabled={this.state.loading} value="Login"/>
         </form>
 
-        
-
         <div className="google-sign-in-div" onClick={() => this.handleGoogle(google)}> 
           {this.googleIcon}
           <span>Sign In With Google</span>
