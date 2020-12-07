@@ -4,6 +4,7 @@
 
 body{
   font-family: roboto;
+  letter-spacing: 0.05em;
 }
 
 // Nav Bar
@@ -225,7 +226,7 @@ body{
   }
 
   .JavaScript{    
-    background-color: rgb(223, 219, 29);
+    background-color: rgb(232, 181, 14, 1);
   }
 
   .Python{    
@@ -716,11 +717,12 @@ body{
     padding: 30px;
     
     .no-matches-message{
-      margin: 40px 40px;
+      margin-top: 7em;
+      margin-bottom: 7em;
       text-align: center;
       font-size: 20px;
-    }
   }
+}
 }
   
 
@@ -728,7 +730,7 @@ body{
 // MODULE CREATED
 .module-created-card {
   margin-top: 200px;
-  border: 1px black solid;
+  // border: 1px black solid;
   padding: 60px;
   align-items: center;
   display: flex;
@@ -738,6 +740,13 @@ body{
 .module-created {
   display: flex;
   justify-content: center;
+}
+
+.module-created-success {
+  justify-content: center;
+  max-height: 6em;
+  max-width: 6em;
+  margin-bottom: 2em;
 }
 
 // PROFILE PAGE 
@@ -864,7 +873,6 @@ body{
 
     h1{
       // margin-top: 10vh;
-    
       text-align: center;
     }
 

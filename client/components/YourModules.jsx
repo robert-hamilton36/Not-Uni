@@ -6,8 +6,8 @@ class YourModules extends React.Component {
   render () {
     return (
       <>
-        {this.props.yourModules.map((module) => {
-          return <ModuleCard module={module} />
+        {this.props.yourModules.map((module, idx) => {
+          return <ModuleCard key={idx} module={module} />
         })}
       </>
     )

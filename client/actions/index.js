@@ -1,5 +1,6 @@
 import { decreaseLikesAPI, getAllModulesAPI, increaseLikesAPI } from "../apis/modules"
 import { getSavedModulesAPI } from '../apis/modules'
+import { displayCommentsAPi } from '../apis/modules'
 
 
 // do we need to import request from 'superagent
@@ -7,8 +8,11 @@ import { getSavedModulesAPI } from '../apis/modules'
 export const SET_MODULES = 'SET_MODULES'
 export const SET_SEARCH_MODULES ='SET_SEARCH_MODULES'
 
+export const MODULES_HAVE_LOADED = 'MODULES_HAVE_LOADED'
 export const ADD_TO_SAVED_MODULES = 'ADD_TO_SAVED_MODULES'
 export const SET_SAVED_MODULES = 'SET_SAVED_MODULES'
+export const SET_SAVED_MODULES_FROM_DATA_BASE = 'SET_SAVED_MODULES_FROM_DATA_BASE'
+export const ADD_SINGLE_MODULE_TO_SAVED_MODULES = 'ADD_SINGLE_MODULE_TO_SAVED_MODULES'
 export const SET_USER = 'SET_USER'
 export const SET_LIKES = 'SET_LIKES'
 export const DECREASE_LIKES = 'DECREASE_LIKES'
@@ -22,6 +26,26 @@ export const setModules = (modules) => {
   }
 }
 
+export const modulesHaveLoaded = (boolean) => {
+  return {
+    type: MODULES_HAVE_LOADED,
+    loaded: boolean
+  }
+}
+
+export const setSavedModulesFromDatabase = (modules) => {
+  return {
+    type:SET_SAVED_MODULES_FROM_DATA_BASE,
+    modules: modules
+  }
+}
+export const setSingleModuleToSavedModules = (module) => {
+  return {
+    type:ADD_SINGLE_MODULE_TO_SAVED_MODULES,
+    modules: module
+  }
+}
+
 
 
 export const fetchModules = () => {
@@ -30,6 +54,7 @@ export const fetchModules = () => {
       .then(modules=> {
         dispatch(setModules(modules))
       })
+      .then(() => dispatch(modulesHaveLoaded(true)))
   }
 }
 
@@ -42,7 +67,6 @@ export const setSearchedModules = (modules) =>{
     modules
   }
 }
-
 
 
 
@@ -128,3 +152,23 @@ export const increaseModuleLikes = (module) => {
         })
       }
     }
+
+  
+  export const commentsFetched = (comment) => {
+    return {
+      type: COMMENT_MODULES,
+      comment
+      }
+    }
+   
+  export const fetchComments = (comment) => {
+    return dispatch => {
+      return displayCommentsAPi(comment)
+      .then((commentsArr) => {
+       commentsArr.map(comment => dispatch(commentsFetched(comment)))
+      })
+      .catch(err => {
+        console.log(err)
+        })
+    }
+  }
