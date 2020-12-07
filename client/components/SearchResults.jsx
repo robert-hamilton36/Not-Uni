@@ -40,35 +40,35 @@ class SearchResults extends React.Component {
 
               <Link to={'/categories/results/HTML'}>
                 <div className='single-category'>
-                  <img src='/images/icons/html.png'/>
+                  <img src='/images/icons/HTML.png'/>
                   <span> HTML</span> 
                 </div>
               </Link>
 
               <Link to={'/categories/results/CSS'}>
                 <div className='single-category'>
-                  <img src='/images/icons/css.png'/>
+                  <img src='/images/icons/CSS.png'/>
                   <span> CSS</span> 
                 </div>
               </Link>
 
               <Link to={'/categories/results/JavaScript'}>
                 <div className='single-category'>
-                  <img src='/images/icons/javascript.png'/>
+                  <img src='/images/icons/Javascript.png'/>
                   <span> JavaScript</span> 
                 </div>
               </Link>
 
               <Link to={'/categories/results/Ruby'}>
                 <div className='single-category'>
-                  <img src='/images/icons/ruby.png'/>
+                  <img src='/images/icons/Ruby.png'/>
                   <span> Ruby</span> 
                 </div>
               </Link>
 
               <Link to={'/categories/results/Python'}>
                 <div className='single-category'>
-                  <img src='/images/icons/python.png'/>
+                  <img src='/images/icons/Python.png'/>
                   <span>Python</span>
                 </div>
               </Link>
