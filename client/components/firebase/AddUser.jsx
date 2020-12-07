@@ -20,7 +20,6 @@ export default class AddUser extends Component {
     
       handleSubmit = (event) => {
           event.preventDefault()
-          console.log("yeeeyp")
         addUser({email: this.state.email, userName:this.state.userName, id: uuidv4()})
         this.setState({userName: '',
         email: '',

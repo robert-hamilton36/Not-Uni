@@ -25,9 +25,7 @@ class Login extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log("signing in")
     try{
-      console.log("trying")
       const callback = () => { this.props.history.push("/") }
       this.props.dispatch(signIn(this.state.email, this.state.password, callback))
     }catch (e) {
@@ -40,7 +38,6 @@ class Login extends React.Component {
 
   handleGoogle = (google) => {
     try{
-      console.log("i Made it")
       const onSuccess = () => { this.props.history.push("/") }
       this.props.dispatch(signInWithOutsideProvider(google, onSuccess))
     }catch {
