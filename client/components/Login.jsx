@@ -51,13 +51,14 @@ class Login extends React.Component {
 
   render () {
     return (
-      <div className='login-card'>
+      <div className='Register-card'>
+
         <h1>Login</h1>
         {this.state.error && <h1>{this.state.error}</h1>}
         <form onSubmit={this.handleSubmit}> 
-          <input type="text" name="email" onChange={this.handleChange} value={this.state.email} placeholder="email"/>
-          <input type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="password"/>
-          <input type="submit" value="Login"/>
+          <input className='Input-R' type="text" name="email" onChange={this.handleChange} value={this.state.email} placeholder="email"/>
+          <input className='Input-R' type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="password"/>
+          <input className='button' type="submit" value="Login"/>
         </form>
 
         <div> 
