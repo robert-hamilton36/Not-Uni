@@ -45,11 +45,8 @@ router.get('/created', (req, res) => {
 
 //  GET /api/modules/saved
 // shows the logged in person saved modules
-router.get('/saved', (req, res) => {
-  // const id = 10001 // hard coded for now
-  const id = 'MLPxg3mjBRMEKd4WAbS7vAzwkkk1' // hard coded for now ross id
-  
-  return savedModulesDb.getSavedModules(id)
+router.get('/saved/:id', (req, res) => {
+  return savedModulesDb.getSavedModules(req.params.id)
     .then(savedModules => {
       res.json(savedModules)
     })
