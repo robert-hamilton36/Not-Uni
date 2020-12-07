@@ -124,18 +124,22 @@ export const fetchUser = () => {
   }
 }
 
-export const signInWithOutsideProvider = (provider) => {
+export const signInWithOutsideProvider = (provider, callback) => {
   return dispatch => {
     auth.signInWithPopup(provider)
     .then( result => {
       console.log(result)
       dispatch(setUser({
-        userName: user.displayName,
-        uid: user.uid,
-        email: user.email
+        userName: result.displayName,
+        uid: result.uid,
+        email: result.email
       }))
     })
     .then(() => dispatch(isAuthenticated(true)))
+    .then(() => {
+      console.log('done')
+      callback()
+    })
     .catch((error) => {
       console.log(error.message)
       console.log(error.code)

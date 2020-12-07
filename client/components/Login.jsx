@@ -38,10 +38,11 @@ class Login extends React.Component {
   
   }
 
-  handleGoogle = () => {
+  handleGoogle = (google) => {
     try{
+      console.log("i Made it")
       const onSuccess = () => { this.props.history.push("/") }
-      this.props.dispatch(signIn(this.state.email, this.state.password, onSuccess))
+      this.props.dispatch(signInWithOutsideProvider(google, onSuccess))
     }catch {
       return "Failed to login"
     }
