@@ -141,7 +141,7 @@ body{
 
 .module-card {
   height: auto;
-  width: 80%;
+  width: 100%;
   border-radius: 3px;
   background: rgba(252, 252, 252, 1);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -373,6 +373,14 @@ body{
     color: #424242;
   }
 
+  h3 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #424242;
+  }
+
   .title-input {
     width: 100%;
     font-size: 30pt;
@@ -386,50 +394,65 @@ body{
     margin-bottom: 20px;
   }
 
-  .category-container {
+  .radio {
+    width: auto;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background: #dfdfdf;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    margin-right: 20px;
+    opacity: 70%;
+    span {
+      font-weight: bold;
+    }
+    img {
+      height: 24px;
+      opacity: 70%;
+      margin-right: 10px;
+    }
+  }
+
+  .red {
+    color: rgb(216, 0, 0);
+  }
+  
+  .yellow {
+    color: rgb(216, 194, 0);
+  }
+  
+  .green {
+    color: #2A881B;
+  }
+
+  .radio:hover {
+    background-color: #c9c9c9;
+  }
+
+  .radio:active {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    position: relative;
+    top: 2px;
+  }
+
+  .selected {
+    background-color: rgb(255, 255, 255) !important;
+    opacity: 100% !important;
+    
+    img {
+      opacity: 100% !important;
+    }
+  }
+
+  .radio-container {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-
-    .category-radio {
-      width: auto;
-      height: 30px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 10px;
-      cursor: pointer;
-      background: #dfdfdf;
-      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
-      border-radius: 3px;
-      margin-right: 20px;
-      opacity: 70%;
-      img {
-        height: 24px;
-        opacity: 70%;
-        margin-right: 10px;
-      }
-    }
-
-    .category-radio:hover {
-      background-color: #c9c9c9;
-    }
-
-    .category-radio:active {
-      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-      background-color: white;
-      position: relative;
-      top: 2px;
-    }
-
-    .selected {
-      background-color: rgb(255, 255, 255) !important;
-      opacity: 100% !important;
-      
-      img {
-        opacity: 100% !important;
-      }
-    }
   }
 
   .duration-input {
@@ -575,15 +598,15 @@ body{
       width: 60%;
 
       .title {
-        background-color: rgba(0, 130, 127, 1);
-        padding: 10px;
+        padding: 0px 10px;
         border-radius: 3px 3px 0 0;
 
         h4, h3, h2, h1 {
           padding: 10px;
+          font-size: 30px;
           margin-block-start: 0px;
           margin-block-end: 0px;
-          color: #FFFFFF;
+          color: black;
         }
       }
       a:link {
@@ -610,7 +633,7 @@ body{
 
       .single-category {
         padding: 10px;
-        margin: 5px;
+        margin-bottom: 10px;
         display: flex;
         align-items: center;
         border-radius: 2px;

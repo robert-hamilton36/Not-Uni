@@ -4,6 +4,7 @@ exports.up = function (knex) {
     table.text('title')
     table.integer('user_id')
     table.text('category')
+    table.text('difficulty')
     table.integer('duration')
     table.text('description')
     table.integer('number_of_elements')
