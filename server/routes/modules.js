@@ -46,7 +46,9 @@ router.get('/created', (req, res) => {
 //  GET /api/modules/saved
 // shows the logged in person saved modules
 router.get('/saved', (req, res) => {
-  const id = 10001 // hard coded for now
+  // const id = 10001 // hard coded for now
+  const id = 'MLPxg3mjBRMEKd4WAbS7vAzwkkk1' // hard coded for now ross id
+  
   return savedModulesDb.getSavedModules(id)
     .then(savedModules => {
       res.json(savedModules)
@@ -73,12 +75,13 @@ router.post('/saved', (req, res) => {
 
 // CREATE A MODULE
 router.post('/', (req, res) => {
-  let { title, user_id, category, description, duration, number_of_elements, elements} = req.body
+  let { title, user_id, category, description, difficulty, duration, number_of_elements, elements} = req.body
 
   let moduleMeta = {
     title, 
     user_id, 
     category, 
+    difficulty,
     description,
     duration, 
     number_of_elements
