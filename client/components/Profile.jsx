@@ -3,6 +3,7 @@ import { Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { textSpanIsEmpty } from 'typescript'
 import SavedModules from './SavedModules'
+import YourModules from './YourModules'
 
 class Profile extends React.Component {
   state = {
@@ -36,7 +37,7 @@ class Profile extends React.Component {
                 <h1> Welcome {this.props.user.userName} </h1>
               </div>
               <div className="options">
-                <div className="single-option">
+                <div onClick={() => this.sidebarClickHandler('your modules') }className="single-option">
                   <img src="/images/folder-24px-blue.svg"/>
                   <span> Your Modules </span>
                 </div>
@@ -55,6 +56,7 @@ class Profile extends React.Component {
           </div>
           <div className="middle column" >
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
+            {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
 
             {/* {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/> */}
 
