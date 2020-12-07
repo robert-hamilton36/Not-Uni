@@ -33,7 +33,7 @@ class Profile extends React.Component {
           <div className="left column" >
             <div className="profile-options-box">
               <div className="heading">
-                <h1> Welcome {this.props.user} </h1>
+                <h1> Welcome {this.props.user.userName} </h1>
               </div>
               <div className="options">
                 <div className="single-option">
