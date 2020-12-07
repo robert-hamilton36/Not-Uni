@@ -34,10 +34,7 @@ class Module extends React.Component {
           <h1> {this.state.currentModule.title} </h1>
           <h5> {this.state.currentModule.duration} minutes</h5>
         </div>
-
-        {/* {console.log(this.props.modules)} */}
-        {/* {console.log(this.state.currentModule)} */}
-
+        
         <div className="B-I-module">
 
           {this.state.currentModule.elements.map((item, i) => {

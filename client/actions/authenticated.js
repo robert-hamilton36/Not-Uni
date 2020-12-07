@@ -25,12 +25,9 @@ export const isAuthenticated = (boolean) => {
 }
 
 export const  signIn = (email, password, callback) => {
-  console.log('building action')
   return dispatch => {
-  console.log("I made it")
   auth.signInWithEmailAndPassword(email, password)
   .then((user) => {
-    console.log("signIn return")
     return user
   })
   .then(user => dispatch(setUser({
@@ -40,7 +37,6 @@ export const  signIn = (email, password, callback) => {
   })))
   .then(() => dispatch(isAuthenticated(true)))
   .then(() => {
-    console.log('done')
     callback()
   })
   .catch((error) => {
@@ -53,21 +49,14 @@ export const  signIn = (email, password, callback) => {
 
 export const register = (userName, email, password, callback) => {
   return dispatch => {
-  console.log("I made it")
   auth.createUserWithEmailAndPassword(email, password)
   .then((user) => {
-    console.log("Register return")
     return user
   })
   .then(user => {
     user.user.updateProfile({
       displayName: userName
     })
-    return user
-  })
-  .then((user) => {
-    console.log("User")
-    console.log(user)
     return user
   })
   .then(user => dispatch(setUser({
@@ -78,7 +67,6 @@ export const register = (userName, email, password, callback) => {
     )))
   .then(() => dispatch(isAuthenticated(true)))
   .then(() => {
-    console.log('done')
     callback()
   })
   .catch((error) => {
@@ -90,7 +78,6 @@ export const register = (userName, email, password, callback) => {
 }
 
 export const signOut = () => {
-  console.log("Signing Out")
   return dispatch => {
     auth.signOut()
     .then(() => dispatch(removeUser({})))
@@ -128,7 +115,6 @@ export const signInWithOutsideProvider = (provider, callback) => {
   return dispatch => {
     auth.signInWithPopup(provider)
     .then( result => {
-      console.log(result)
       dispatch(setUser({
         userName: result.displayName,
         uid: result.uid,
@@ -137,7 +123,6 @@ export const signInWithOutsideProvider = (provider, callback) => {
     })
     .then(() => dispatch(isAuthenticated(true)))
     .then(() => {
-      console.log('done')
       callback()
     })
     .catch((error) => {
