@@ -31,8 +31,10 @@ class Module extends React.Component {
         {/* <h1>Module View</h1> */}
 
         <div className='h-module' >
+          <Likes module={this.state.currentModule}/> 
           <h1> {this.state.currentModule.title} </h1>
           <h5> {this.state.currentModule.duration} minutes</h5>
+          <h6>{this.state.currentModule.likes} people have saved this module</h6>
         </div>
         
         <div className="B-I-module">
@@ -47,31 +49,32 @@ class Module extends React.Component {
 
               case 'link':
                 return (
+
                   <div className="react-tiny-link"key={i}>
-                    <ReactTinyLink
+                    {item.content.includes('http') && <ReactTinyLink
                       cardSize="small"
                       showGraphic={true}
                       maxLine={2}
                       minLine={1}
                       url={item.content}
-                    />
+                    />}
                   </div>
                 )
               case 'video':
                 return (
                   <div className="video-container" key={i}>
-                    <iframe
+                    {item.content.includes("embed") ? <iframe
                       height="auto"
                       src={item.content}
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen>
-                    </iframe>
+                    </iframe> : ""}
                   </div>
                 )
             }
           })}
-          <Likes module={this.state.currentModule}/> likes:{this.state.currentModule.likes}
+          
         </div>
       </div> : ''
     )

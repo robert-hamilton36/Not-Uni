@@ -47,6 +47,7 @@ export const setSingleModuleToSavedModules = (module) => {
 }
 
 
+
 export const fetchModules = () => {
   return dispatch => {
     return getAllModulesAPI()
@@ -66,7 +67,6 @@ export const setSearchedModules = (modules) =>{
     modules
   }
 }
-
 
 
 
@@ -167,8 +167,7 @@ export const increaseModuleLikes = (module) => {
     return dispatch => {
       return displayCommentsAPi(comment)
       .then((commentsArr) => {
-        // commentsArr.map(commentsArr)dispatch
-        dispatch(commentsFetched(comment))
+       commentsArr.map(comment => dispatch(commentsFetched(comment)))
       })
       .catch(err => {
         console.log(err)
