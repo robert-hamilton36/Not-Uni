@@ -61,12 +61,13 @@ export class Register extends React.Component {
       <div className='Register-card'>
 
         <h1>Register</h1>
-        {this.state.error && <h1>{this.state.error}</h1>}
         <form onSubmit={this.handleSubmit}>
           <input className='Input-R' type="text" name="userName" onChange={this.handleChange} value={this.state.userName} placeholder="userName"/>
           <input className='Input-R' type="text" name="email" onChange={this.handleChange} value={this.state.email} placeholder="email"/>
           <input className='Input-R' type="password"name="password"  onChange={this.handleChange} value={this.state.password} placeholder="password"/>
           <input className='Input-R' type="password" name="passwordConfirm" onChange={this.handleChange} value={this.state.passwordConfirm} placeholder="password-confirmation"/>
+          {this.state.error && <span className="error">{this.state.error}</span>}
+
           <input className='button' type="submit" disabled={this.state.loading} value="Register"/>
         </form>
   

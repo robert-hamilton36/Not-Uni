@@ -146,7 +146,8 @@ body{
     }
     
     span {
-      color: #C00
+      color: #C00;
+      margin-bottom: 20px;
     }
 
     .button:disabled{
@@ -660,15 +661,6 @@ body{
           color: black;
         }
       }
-      a:link {
-        text-decoration: none;
-      }
-      a:visited {
-        color: black;
-      }
-      a:hover{
-        font-size: 120%;   
-      }
     }
 
       
@@ -766,15 +758,15 @@ body{
       box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
 
       .heading {
-        background-color: rgba(0, 130, 127, 1);
-        padding: 10px;
+        padding: 0px 10px;
         border-radius: 3px 3px 0 0;
 
-        h1 {
+        h4, h3, h2, h1 {
           padding: 10px;
+          font-size: 30px;
           margin-block-start: 0px;
           margin-block-end: 0px;
-          color: #FFFFFF;
+          color: black;
         }
       }
 
@@ -835,6 +827,11 @@ body{
     height: 100vw;
   }
 }
+
+
+
+
+
 //HomePage
 
 .homepage{
