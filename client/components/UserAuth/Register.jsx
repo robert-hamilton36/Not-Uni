@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react'
 import { connect } from 'react-redux'
-import { register } from '../actions/authenticated'
+import { register } from '../../actions/authenticated'
 
 
 export class Register extends React.Component {
