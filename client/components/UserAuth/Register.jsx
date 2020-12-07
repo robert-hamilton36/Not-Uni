@@ -17,8 +17,11 @@ export class Register extends React.Component {
     this.setState({loading:boolean})
   }
 
-  setError = (errorMess) => {
-    this.setState({error:errorMess})
+  setError = (error) => {
+    
+    this.setState({error:error})
+    this.setLoading(false)
+
   }
 
   handleChange = (event) => {
@@ -48,12 +51,12 @@ export class Register extends React.Component {
       this.setError("Failed to login")
       return "Failed to registrate"
     }
-    this.setLoading(false)
   }
   render(){
     return (
 
       <div className='Register-card'>
+      <button onClick={() => this.setLoading(!this.state.loading)}>Switch</button>
 
         <h1>Register</h1>
         {this.state.error && <h1>{this.state.error}</h1>}

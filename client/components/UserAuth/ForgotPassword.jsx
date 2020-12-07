@@ -8,10 +8,17 @@ class Login extends React.Component {
     email:'',
     error:'',
     message: '',
+    loading: false,
+  }
+
+  setLoading = (boolean) => {
+    console.log("Loading")
+    this.setState({loading:boolean})
   }
 
   setError = (errorMess) => {
     this.setState({error:errorMess})
+    this.setLoading(false)
   }
 
   handleChange = (event) => {
@@ -44,7 +51,7 @@ class Login extends React.Component {
         {this.state.error && <h1>{this.state.error}</h1>}
         <form onSubmit={this.handleSubmit}> 
           <input className='Input-R' type="text" name="email" onChange={this.handleChange} value={this.state.email} placeholder="email"/>
-          <input className='button' type="submit" value="Reset"/>
+          <input className='button' type="submit" disabled={this.state.loading} value="Reset"/>
         </form>
 
 

@@ -9,11 +9,17 @@ class Login extends React.Component {
   state={
     email:'jistross@test.com',
     password:'gopher',
-    error:''
+    error:'',
+    loading: false,
+  }
+
+  setLoading = (boolean) => {
+    this.setState({loading:boolean})
   }
 
   setError = (errorMess) => {
     this.setState({error:errorMess})
+    this.setLoading(false)
   }
 
   handleChange = (event) => {
@@ -23,6 +29,7 @@ class Login extends React.Component {
   }
 
   handleSubmit = (event) => {
+    this.setLoading(true)
     event.preventDefault()
     try{
       const callback = () => { this.props.history.push("/") }
@@ -32,12 +39,13 @@ class Login extends React.Component {
       // this.setError("Failed to login")
       return "Failed to login"
     }
-  
   }
 
   handleGoogle = (google) => {
     try{
-      const onSuccess = () => { this.props.history.push("/") }
+      const onSuccess = () => { 
+        this.props.history.push("/")
+      }
       this.props.dispatch(signInWithOutsideProvider(google, onSuccess))
     }catch {
       return "Failed to login"
@@ -48,13 +56,12 @@ class Login extends React.Component {
   render () {
     return (
       <div className='Register-card'>
-
         <h1>Login</h1>
-        {this.state.error && <h1>{this.state.error}</h1>}
+        {this.state.error && <h1 >{this.state.error}</h1>}
         <form onSubmit={this.handleSubmit}> 
           <input className='Input-R' type="text" name="email" onChange={this.handleChange} value={this.state.email} placeholder="email"/>
           <input className='Input-R' type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="password"/>
-          <input className='button' type="submit" value="Login"/>
+          <input className='button' type="submit" disabled={this.state.loading} value="Login"/>
         </form>
         <Link to='/forgotpassword'>
           Forgot password?
