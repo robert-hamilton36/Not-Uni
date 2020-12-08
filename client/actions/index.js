@@ -154,23 +154,3 @@ export const increaseModuleLikes = (module) => {
         })
       }
     }
-
-  
-  export const commentsFetched = (comment) => {
-    return {
-      type: COMMENT_MODULES,
-      comment
-      }
-    }
-   
-  export const fetchComments = (comment) => {
-    return dispatch => {
-      return displayCommentsAPi(comment)
-        .then((commentsArr) => {
-          commentsArr.map(comment => dispatch(commentsFetched(comment)))
-        })
-        .catch(err => {
-          console.log(err)
-        })
-    }
-  }

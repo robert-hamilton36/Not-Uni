@@ -9,7 +9,6 @@ class Comments extends React.Component {
         <p className='title'>Comments</p>
         
         {this.props.comments.map((comment, i) => {
-          console.log(comment);
           return (
             <div key={i}>
               <p className="user-name" >{comment.user_name}</p>
@@ -17,9 +16,10 @@ class Comments extends React.Component {
             </div>
           )
         })}
-      </div>
+       </div>
     )
   }
 }
+
 
 export default Comments
