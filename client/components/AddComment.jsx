@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addCommentAPI } from '../apis/modules'
+import { fetchModules } from '../actions'
+
 
 class AddComment extends React.Component {
 
@@ -23,6 +25,10 @@ class AddComment extends React.Component {
     const moduleID = this.props.moduleID
 
     addCommentAPI(moduleID, comment)
+      .then(() => {
+        console.log('then')
+        this.props.dispatch(fetchModules())
+      })
   }
 
   render (){ 
