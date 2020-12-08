@@ -8,10 +8,10 @@ export function getAllModulesAPI () {
 
 export function getSavedModulesAPI (id) {
   return request.get(`/api/modules/saved/${id}`)
-  // .query({id:id})
   .then(res => { 
     return res.body })
 }
+
 
 export function createModuleAPI (module) {
   module.number_of_elements = module.elements.length
@@ -20,10 +20,23 @@ export function createModuleAPI (module) {
     .then(res => res.body)
 }
 
-export function addSavedModuleAPI (user_id, module_id) {
-  const module = {user_id: user_id, module_id: module_id}
-  return request.post('/api/modules/saved').send(module)
+
+export function addSavedModuleAPI (userID, moduleID) {
+  const module = {
+    user_id: userID,
+    module_id: moduleID
+  }
+  return request.post('/api/modules/saved')
+    .send(module)
     .then(res=>res.body)
+}
+
+
+
+export function removeSavedModuleAPI (savedModuleID) {
+  
+  return request.delete('/api/modules/saved/' + savedModuleID)
+    
 }
 
 
