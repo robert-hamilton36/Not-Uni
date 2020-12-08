@@ -318,7 +318,8 @@ body{
     background-color: #2A881B;
     height: 80px;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
     background: rgba(0, 130, 127, 1);
     border-radius: 3px 3px 0 0;
     position: relative;
@@ -343,6 +344,8 @@ body{
   margin-left: 50px;
   font-family: roboto;
   margin-top: 10px;
+  margin-block-end: 5px;
+
   }
 
   h5{
@@ -563,6 +566,7 @@ padding-bottom: 10px;
     margin-bottom: 20px;
   }
 
+  
   .duration-input {
     margin-bottom: 100px;
     width: auto;
@@ -682,6 +686,25 @@ padding-bottom: 10px;
     top: 2px;
   }
 }
+
+
+#duration-and-saved {
+  margin-top: 0;
+}
+  
+  #duration-display {
+    text-align: right;
+    float: right;
+    margin-top: 0;
+    margin-right: 4em;
+
+  }
+  
+  #num-users-saved{
+    text-align: left;
+    float: left;
+    margin-top: 0;
+  }
 
 //CATEGORIES TABLE
 
