@@ -10,15 +10,15 @@ class ModuleCard extends React.Component {
       let difficultyColor = ''
       switch (this.props.module.difficulty) {
         case 'Beginner':
-          moduleDifficulty = '<>';
+          moduleDifficulty = '<Beginner>';
           difficultyColor = '#2A881B';
           break;
         case 'Intermediate':
-          moduleDifficulty = '<()>';
+          moduleDifficulty = '<(Intermediate)>';
           difficultyColor = 'rgb(216, 194, 0)';
           break;
         case 'Advanced':
-          moduleDifficulty = '<({})>';
+          moduleDifficulty = '<({Advanced})>';
           difficultyColor = 'rgb(216, 0, 0)';
           break;
     }
@@ -75,8 +75,7 @@ class ModuleCard extends React.Component {
               })}
             </ul>
             <div className='module-card-difficulty'> 
-              <h5>Difficulty: {this.props.module.difficulty} </h5>
-              <h2 className='colored-difficulty' style={{color: difficultyColor}}> {moduleDifficulty}</h2>
+              <h4 className='colored-difficulty' style={{color: difficultyColor}}> {moduleDifficulty}</h4>
             </div>
           </div>
           <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
