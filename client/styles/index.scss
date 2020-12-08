@@ -122,6 +122,8 @@ body{
     margin-bottom: 20px;
   }
   
+
+
   form {
     display: flex;
     flex-direction: column;
@@ -187,6 +189,7 @@ body{
       font: bold;
       margin-left: 20px;
     }
+
   }
 }
 
@@ -326,7 +329,7 @@ body{
   a{
     font-family: roboto;
     text-decoration: none;
-    font-size: 22px;
+    // font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
@@ -334,12 +337,15 @@ body{
     color: rgba(42, 136, 27, 1);
     padding-left: 20px;
     padding-right: 10px;
+    padding-top: 10px;
     display: block;
     margin-top: 1.5em;
     margin-bottom: 10px;
   }
 
 }
+
+
 
 // Module Design
 
@@ -1118,3 +1124,44 @@ input{
 //     margin-bottom: 40px;
 //   }
 // }
+
+.popup {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(234,215,215,0.9);
+  position: fixed;
+  top:0;
+  left:0; 
+  z-index: 10; 
+  padding: 50px;
+
+
+
+  &-inner{
+    background: #ededed;
+    height:20vh;
+    width:40vw;
+    font-family: roboto;
+    text-align: center;
+  }
+
+  .button{
+    height: 43px;
+    width: 149px;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    background: #ff0000;
+    border-radius: 2px;
+    color: #FFFFFF;
+    border: none;
+    margin-bottom: 40px;
+  }
+  .delete{
+    background: #2A881B;
+
+  }
+
+}

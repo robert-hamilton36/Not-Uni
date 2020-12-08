@@ -20,6 +20,8 @@ const EditProfile = (props) => {
      }
   }
 
+
+
     return (
       <>
       {props.hasLoaded && 
@@ -27,19 +29,18 @@ const EditProfile = (props) => {
       <h1>{error}</h1>
       <div className='Register-card'>
         <form onSubmit={submit}>
-
-        <input className='Input-R' type="text" onChange={e => setUserName(e.target.value)} value={userName}/>
-        <input className='Input-R' type="text" onChange={e => setEmail(e.target.value)} value={email}/>
-        {/* <label>
+        <label>
         Avatar
         <input className='Input-R' type="number" max='898' min='0' onChange={e => setPokemon(e.target.value)} value={pokemon}/>
-        </label> */}
+        </label>
         <input className='button' type='submit' value='Edit'/>
         </form>
         
+      {pokemon && <img className='pokemon' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon}.png`}/>}
+
+        <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("edit")}>Edit profile</p></a>
         <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("password")}>Edit password</p></a>
-        <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("avatar")}>Edit avatar</p></a>
-        <a><p className='link' type='submit' onClick={() => props.setDelete(true)}>Delete profile</p></a>
+      
 
     
       </div>
