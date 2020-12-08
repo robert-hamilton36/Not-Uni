@@ -41,11 +41,22 @@ function updateModule (id, updatedModule, db = connection){
   return db('modules').update(updatedModule).where('id', id)
 }
 
+function deleteModule (id, db = connection){
+  return db('modules')
+  .where('id', id)
+  .then (()=> {
+    return db('modules')
+    .where('id', id)
+    .del()
+  })
+}
+
 module.exports = {
   getAllModules,
   getModuleElements,
   createModuleMeta,
   createModuleElement,
   getModulesByUserId,
-  updateModule
+  updateModule,
+  deleteModule
 }
