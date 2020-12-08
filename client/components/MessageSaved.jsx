@@ -6,7 +6,10 @@ class MessageSaved extends React.Component {
   render () {
     return (
       <div className= 'message-saved'>
-        <img src="/images/bookmark-border-black.svg" alt="bookmark"/>
+        {/* <img src="/images/bookmark-border-black.svg" alt="bookmark"/> */}
+        <div className='message-heading'>
+        </div>
+        <h3>This Module has been saved to your profile</h3>
       </div>
     )
   }
