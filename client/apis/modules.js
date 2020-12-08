@@ -6,9 +6,11 @@ export function getAllModulesAPI () {
 }
 
 
-export function getSavedModulesAPI () {
-  return request.get('/api/modules/saved')
-    .then(res => res.body)
+export function getSavedModulesAPI (id) {
+  return request.get(`/api/modules/saved/${id}`)
+  // .query({id:id})
+  .then(res => { 
+    return res.body })
 }
 
 export function createModuleAPI (module) {
@@ -67,9 +69,18 @@ export function decreaseLikesAPI(module){
 
 
 
+// Create comment on a module
+
+export function addCommentAPI (moduleID, comment) {
+  console.log(moduleID);
+  return request.post('/api/comments/' + moduleID).send(comment)
+    .then(res => res.body)
+}
+
 // Get comments on a Module
 
 export function displayCommentsAPi(id){
-  return request.get('/api/comment/' + id)
-  .then(res => res.body)
+  return request.get('/api/comments/' + id)
+    .then(res => res.body)
   }
+

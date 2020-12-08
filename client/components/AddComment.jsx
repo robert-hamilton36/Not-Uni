@@ -1,18 +1,47 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { addCommentAPI } from '../apis/modules'
 
 class AddComment extends React.Component {
 
+  state = {
+    text: ""
+  }
+
+  textHandler = (evt) => {
+    this.setState({
+      text: evt.target.value
+    })
+  }
+
+  sumbitHandler = () => {
+    const comment = {
+      content: this.state.text,
+      userName: this.props.user.userName
+    }
+
+    const moduleID = this.props.moduleID
+
+    addCommentAPI(moduleID, comment)
+  }
+
   render (){ 
     return (
-      <>
-      <h1> add a comment </h1>
-      <textarea onClick={this.} className="add-comment-input" onChange={(evt) => this.elementChangeHandler(evt, i)} value={this.state.elements[i].content} placeholder="text" />
-      <div className="submit"> Comment </div>
-
-      </>
+      <div className="add-comment">
+        <h1> add a comment </h1>
+        <textarea onChange={this.textHandler} className="add-comment-input" value={this.state.text} placeholder="place a comment..." />
+        <div className="button submit" onClick={this.sumbitHandler}> Comment </div>
+      </div>
     )
   }
 }
 
-export default AddComments
+
+function mapStateToProps (globalState) {
+  return {
+    user: globalState.user,
+    modules: globalState.modules
+  }
+}
+
+export default connect(mapStateToProps)(AddComment)

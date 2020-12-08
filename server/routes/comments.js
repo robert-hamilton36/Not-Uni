@@ -31,10 +31,26 @@ const commentsDB = require('../db/commentsDB')
 
 
 
-  // router.post('/:id', (req, res) =>{
-
-  // }
+router.post('/:id', (req, res) => {
+  let module_id = req.params.id
+  let user_name = req.body.userName
+  let content = req.body.content
   
-  // )
+  let comment = {
+    module_id,
+    user_name,
+    content,
+  }
 
+  console.log(comment);
+
+  return commentsDB.addComment(comment)
+    .then(response => {
+      res.json(response)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Something is broken' })
+    })
+})
   module.exports = router

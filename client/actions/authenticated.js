@@ -4,6 +4,7 @@ export const IS_AUTHENTICATED = 'IS_AUTHENTICATED'
 export const REMOVE_USER = 'REMOVE_USER'
 export const AUTHENTICATION_HAS_LOADED = 'AUTHENTICATION_HAS_LOADED'
 import { auth } from '../firebase'
+import {fetchSavedModules} from './index'
 
 export const setUser = (user) => {
   return {
@@ -38,11 +39,16 @@ export const  signIn = (email, password, callback, setError) => {
   .then((user) => {
     return user
   })
-  .then(user => dispatch(setUser({
+  .then(user => {
+    dispatch(setUser({
     // userName: userName,
     uid: user.uid,
     email: user.email
-  })))
+  }))
+  return user
+})
+  .then((user)=> {
+    dispatch(fetchSavedModules(user.user.uid))})
   .then(() => dispatch(isAuthenticated(true)))
   .then(() => dispatch(authIsLoaded(true)))
   .then(() => {

@@ -36,8 +36,10 @@ class Module extends React.Component {
         {/* <h1>Module View</h1> */}
 
         <div className='h-module' >
+          <Likes module={this.state.currentModule}/> 
           <h1> {this.state.currentModule.title} </h1>
           <h5> {this.state.currentModule.duration} minutes</h5>
+          <h6>{this.state.currentModule.likes} people have saved this module</h6>
         </div>
         
         <div className="B-I-module">
@@ -77,11 +79,9 @@ class Module extends React.Component {
                 )
             }
           })}
-          {/* <Likes module={this.state.currentModule}/> likes:{this.state.currentModule.likes} */}
-
         </div>
 
-        <AddComments />
+        <AddComments moduleID = {this.props.match.params.id}/>
 
         <Comments comments={this.state.currentModule.comments}/>
       </div> : ''
