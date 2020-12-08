@@ -6,11 +6,13 @@ import YourModules from './YourModules'
 import EditProfile from './EditProfile'
 import EditPassword from './EditPassword'
 import EditAvatar from './EditAvatar'
+import Delete from './UserAuth/Delete'
 
 
 class Profile extends React.Component {
   state = {
-    activeModules: ''
+    activeModules: '',
+    deleteProfile: false,
   }
   componentDidMount = () => {
   }
@@ -40,17 +42,13 @@ class Profile extends React.Component {
         })
   }
 
-  // getSavedModules = () => {
-  //   const savedIDs = this.props.user.saved
-  //   console.log(this.props.user.saved)
-  //   console.log(this.props.modules)
-  //   const savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id)) || null
-  //   console.log(savedModules)
-  //   this.setState({
-  //     savedModules: savedModules
-  //   })
-  // }
+  setDelete = (boolean) => {
+    this.setState({
+      deleteProfile:boolean
+    })
+  }
   render() {
+    console.log(this.props)
     return (
       <>
         <div className="profile-page">
@@ -61,11 +59,11 @@ class Profile extends React.Component {
                 {this.props.user.photoURL && <img className='pokemon' src={this.props.user.photoURL}/>}
               </div>
               <div className="options">
-                <div onClick={() => this.sidebarClickHandler('your modules') }className="single-option">
+                <div disbaled={!this.props.hasLoaded.authHasLoaded && !this.props.user} onClick={() => this.sidebarClickHandler('your modules') }className="single-option">
                   <img src="/images/folder-24px-blue.svg"/>
                   <span> Your Created Modules </span>
                 </div>
-                <div onClick={() => { this.sidebarClickHandler('saved modules') }} className="single-option">
+                <div disbaled={!this.props.hasLoaded.authHasLoaded && !this.props.user} onClick={() => { this.sidebarClickHandler('saved modules') }} className="single-option">
                   <img src="/images/folder-24px-green.svg"/>
                   <span> Your Saved Modules </span>
                 </div>
@@ -75,7 +73,7 @@ class Profile extends React.Component {
                     <span> Create A Module </span>
                   </div>
                 </Link>
-                <div onClick={() => this.sidebarClickHandler('edit') }className="single-option">
+                <div disbaled={!this.props.hasLoaded.authHasLoaded && !this.props.user} onClick={() => this.sidebarClickHandler('edit') }className="single-option">
                   <img src="/images/edit-24px.svg"/>
                   <span> Edit Profile </span>
                 </div>
@@ -86,10 +84,10 @@ class Profile extends React.Component {
             {this.props.hasLoaded.modulesHaveLoaded && <>
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
             {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
-            {this.state.activeModules === "edit" && <EditProfile props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
+            {this.state.activeModules === "edit" && <EditProfile props={this.state.user} sidebarClickHandler={this.sidebarClickHandler} setDelete={this.setDelete}/>}
             {this.state.activeModules === "password" && <EditPassword props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
             {this.state.activeModules === "avatar" && <EditAvatar props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
-      
+            {this.state.deleteProfile === true && <Delete setDelete={this.setDelete} dispatch={this.props.dispatch} history={this.props.history}/>}
             </>
 
              }
