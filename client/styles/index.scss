@@ -171,7 +171,7 @@ body{
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
     border-radius: 10%/50%;
     cursor: pointer;
-    padding: 12px;
+    padding: 15px;
 
     img {
       height: 30px;
@@ -431,6 +431,31 @@ body{
   }
 }
 
+.comments{
+padding-bottom: 10px;
+
+.title{
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: bold;
+  font-weight: 400;
+  line-height: 19px;
+
+}
+
+.user-name{
+  font-style: Light;
+  font-weight: 300;
+}
+
+.single-comment{
+  padding-top: 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  }
+}
 
 
 //   _____ _____  ______       _______ ______   __  __  ____  _____  _    _ _      ______ 
