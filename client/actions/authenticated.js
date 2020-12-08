@@ -43,7 +43,8 @@ export const  signIn = (email, password, callback, setError) => {
     dispatch(setUser({
     // userName: userName,
     uid: user.uid,
-    email: user.email
+    email: user.email,
+    photoURL: user.photoURL
   }))
   return user
 })
@@ -63,6 +64,52 @@ export const  signIn = (email, password, callback, setError) => {
   }
 }
 
+export const deleteFirebase = (handler) => {
+  return dispatch =>{
+    let user = auth.currentUser
+    user.delete()
+    dispatch(removeUser({}))
+    dispatch(isAuthenticated(null))
+    dispatch(authIsLoaded(false))
+    handler.push('/')
+  }
+}
+
+export const updateFirebase = (userName, email, pokemon, handler) => {
+  return dispatch =>{
+    let photoURL= null
+    if(pokemon != 0){
+       photoURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon}.png`
+    } 
+    let user = auth.currentUser
+    user.updateProfile({
+        email:email,
+        displayName: userName,
+        photoURL: photoURL
+      })
+
+    dispatch(setUser({
+      userName: userName,
+      email: user.email,
+      photoURL: photoURL
+    }))
+    handler('')
+  }
+}
+
+export const updateFirebasePassword = (password, handler) => {
+    let user = auth.currentUser
+    try{
+      user.updatePassword(password)
+    }
+    catch(e){
+      setError(e)
+    }
+    handler('')
+}
+
+
+
 export const register = (userName, email, password, callback, setError) => {
   return dispatch => {
   auth.createUserWithEmailAndPassword(email, password)
@@ -71,14 +118,16 @@ export const register = (userName, email, password, callback, setError) => {
   })
   .then(user => {
     user.user.updateProfile({
-      displayName: userName
+      displayName: userName,
+      photoURL: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png'
     })
     return user
   })
   .then(user => dispatch(setUser({
     userName: userName,
     uid: user.uid,
-    email: user.email
+    email: user.email,
+    photoURL: user.photoURL
   }
     )))
   .then(() => dispatch(isAuthenticated(true)))
@@ -110,7 +159,8 @@ export const fetchUser = () => {
         dispatch(setUser({
           userName: user.displayName,
           uid: user.uid,
-          email: user.email
+          email: user.email,
+          photoURL: user.photoURL
 
         }
           ))
@@ -159,7 +209,6 @@ export const resetPassword = (email, callback, setError) => {
   .then((user) => {
     return user
   })
-  .then(log => console.log(log))
   .then(() => {
     callback()
   })
