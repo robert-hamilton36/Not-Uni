@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 import Likes from './Likes'
 
 import { ReactTinyLink } from 'react-tiny-link'
+import { commentsFetched } from '../actions'
+
+import Comments from './Comments'
+import AddComments from './AddComment'
 
 class Module extends React.Component {
   state = {
@@ -16,25 +20,28 @@ class Module extends React.Component {
   }
 
   componentDidUpdate (prevProps) {
-    if (!prevProps || prevProps.match.params.id !== this.props.match.params.id || prevProps.modules.length !== this.props.modules.length) {
+    if (!prevProps || prevProps.match.params.id !== this.props.match.params.id || prevProps.modules.length !== this.props.modules.length || prevProps !== this.props) {
       
+      console.log('update if ');
+
       const currentModuleId = Number(this.props.match.params.id)
       const currentModule = this.props.modules.find((module) => module.id === currentModuleId)
       this.setState({ currentModule })
     }
-  }
+  }  
 
   render () {
     return (
 
-      this.state.currentModule ? <div className = 'module' >
-        {/* <h1>Module View</h1> */}
-
+      this.state.currentModule ? 
+      <div className = 'module' >
         <div className='h-module' >
           <Likes module={this.state.currentModule}/> 
           <h1> {this.state.currentModule.title} </h1>
-          <h5> {this.state.currentModule.duration} minutes</h5>
-          <h6>{this.state.currentModule.likes} people have saved this module</h6>
+          <div id='duration-and-saved'>
+            <h5 id='num-users-saved'> {this.state.currentModule.likes ? this.state.currentModule.likes : 0} User(s) Have Saved This Module</h5>
+            <h5 id='duration-display'>Duration: Approximately {this.state.currentModule.duration} minutes </h5>
+          </div>
         </div>
         
         <div className="B-I-module">
@@ -74,8 +81,11 @@ class Module extends React.Component {
                 )
             }
           })}
-          
         </div>
+
+        <AddComments moduleID = {this.props.match.params.id}/>
+
+        <Comments comments={this.state.currentModule.comments}/>
       </div> : ''
     )
   }
