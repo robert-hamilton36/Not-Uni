@@ -6,9 +6,11 @@ export function getAllModulesAPI () {
 }
 
 
-export function getSavedModulesAPI () {
-  return request.get('/api/modules/saved')
-    .then(res => res.body)
+export function getSavedModulesAPI (id) {
+  return request.get(`/api/modules/saved/${id}`)
+  // .query({id:id})
+  .then(res => { 
+    return res.body })
 }
 
 export function createModuleAPI (module) {

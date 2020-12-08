@@ -18,8 +18,10 @@ import ForgotPassword from './UserAuth/ForgotPassword'
 class App extends React.Component {
   componentDidMount () {
     this.props.dispatch(fetchModules())
-    this.props.dispatch(fetchSavedModules())
     this.props.dispatch(fetchUser())
+    // if(this.props.user === {}){
+    //   this.props.dispatch(fetchSavedModules(this.props.user.uid))
+    // }
   }
 
   render () {

@@ -45,11 +45,8 @@ router.get('/created', (req, res) => {
 
 //  GET /api/modules/saved
 // shows the logged in person saved modules
-router.get('/saved', (req, res) => {
-  // const id = 10001 // hard coded for now
-  const id = 'MLPxg3mjBRMEKd4WAbS7vAzwkkk1' // hard coded for now ross id
-  
-  return savedModulesDb.getSavedModules(id)
+router.get('/saved/:id', (req, res) => {
+  return savedModulesDb.getSavedModules(req.params.id)
     .then(savedModules => {
       res.json(savedModules)
     })
@@ -58,6 +55,8 @@ router.get('/saved', (req, res) => {
       res.status(500).json({ message: 'Something is broken' })
     })
 })
+
+
 
 // POST a saved module to the savedModulesDb
 // saves a module to the users profile
@@ -72,6 +71,9 @@ router.post('/saved', (req, res) => {
     res.status(500).json({ message: 'Something is broken' })
   })
 })
+
+
+
 
 // CREATE A MODULE
 router.post('/', (req, res) => {
