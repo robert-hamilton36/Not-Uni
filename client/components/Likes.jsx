@@ -15,15 +15,27 @@ class Likes extends React.Component {
 
 
   componentDidMount() {
+    this.setSaved()
+  }
 
+  componentDidUpdate(prevProps) {
+    if(prevProps.savedModules.length !== this.props.savedModules.length) {
+      this.setSaved()
+    }
+  }
+
+  setSaved = () => {
     this.props.savedModules.map((module) => {
-      if (module.id === this.props.module.id) {
-        this.setState({
+    if (module.id === this.props.module.id) {
+    this.setState({
           saved: true,
         })
       }
     })
   }
+
+
+
 
   clickHandler = () => {
     this.setState({
@@ -46,7 +58,7 @@ class Likes extends React.Component {
 
   afterSetStateFinished = () => {
     const thisModule = this.props.module
-    const alreadySaved = this.props.savedModules.find((module)=>{
+    const alreadySaved = this.props.savedModules.find((module) => {
       return module.module_id === thisModule.id
     })
 
@@ -58,7 +70,7 @@ class Likes extends React.Component {
   }
 
 
-  addToSavedModules = () =>{
+  addToSavedModules = () => {
     const userID = this.props.user.uid
     const thisModule = this.props.module
 
@@ -66,7 +78,7 @@ class Likes extends React.Component {
     this.props.dispatch(increaseModuleLikes(thisModule))
   }
 
-  removeFromSavedModules = () =>{
+  removeFromSavedModules = () => {
     const thisModule = this.props.module
 
     this.props.dispatch(removeSavedModule(thisModule.id))
@@ -78,11 +90,11 @@ class Likes extends React.Component {
 
 
   render() {
-     const imageSource = this.state.saved ? "/images/bookmark-white.svg" : "/images/bookmark-border.svg"
+    const imageSource = this.state.saved ? "/images/bookmark-white.svg" : "/images/bookmark-border.svg"
     return (
       <div className='likes'>
         <img onClick={() => this.clickHandler()} src={imageSource} alt="like button" />
-        {this.state.savedMessage && <MessageSaved />  }
+        {this.state.savedMessage && <MessageSaved />}
 
       </div>
     )
