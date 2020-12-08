@@ -83,9 +83,10 @@ class Module extends React.Component {
           })}
         </div>
 
-        <AddComments moduleID = {this.props.match.params.id}/>
-
+        <div className="comments">
         <Comments comments={this.state.currentModule.comments}/>
+        <AddComments moduleID = {this.props.match.params.id}/>
+        </div>
       </div> : ''
     )
   }

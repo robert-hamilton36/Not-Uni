@@ -5,7 +5,7 @@ class Comments extends React.Component {
 
   render (){ 
     return (
-      <div className="comments"> 
+      <div > 
         <p className='title'>Comments</p>
         
         {this.props.comments.map((comment, i) => {

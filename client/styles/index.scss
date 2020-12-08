@@ -431,31 +431,87 @@ body{
   }
 }
 
+
+// Comments
+
 .comments{
-padding-bottom: 10px;
 
-.title{
-  font-family: Roboto;
-  font-size: 20px;
-  font-style: bold;
-  font-weight: 400;
-  line-height: 19px;
+  .title{
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: bold;
+    font-weight: 400;
+    line-height: 19px;
+    color: #333;
+  }
 
-}
+  .user-name{
+    font-style: Light;
+    font-weight: 300;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    text-decoration: underline;
+  }
 
-.user-name{
-  font-style: Light;
-  font-weight: 300;
-}
+  .single-comment{
+    padding-top: 10px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 10px;
+    }
 
-.single-comment{
-  padding-top: 10px;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 19px;
+  .add-comment{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    }
+ 
+  .add-comment-input{
+    padding-left: 5px;
+    margin-left: 50px;
+    font-family: roboto;
+   
+    
+    overflow: auto;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
+  
+  }
+
+
+  
+  .button{
+
+    height: 35px;
+    width: 149px;
+
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+
+    background: #2A881B;
+    border-radius: 2px;
+    color: #FFFFFF;
+    border: none;
+
+    margin-bottom: 20px;
+    margin-left: 5.5%;
+    margin-top: 10px;
+    
+    padding-top: 16px;
+    
+    text-align: center;
   }
 }
+  
+
+
 
 
 //   _____ _____  ______       _______ ______   __  __  ____  _____  _    _ _      ______ 
@@ -990,18 +1046,18 @@ input{
 }
 
 
-.add-comment {
+// .add-comment {
 
 
-  .button{
-    height: 43px;
-    width: 149px;
-    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    background: #2A881B;
-    border-radius: 2px;
-    color: #FFFFFF;
-    border: none;
-    margin-bottom: 40px;
-  }
-}
+//   .button{
+//     height: 43px;
+//     width: 149px;
+//     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
+//     cursor: pointer;
+//     background: #2A881B;
+//     border-radius: 2px;
+//     color: #FFFFFF;
+//     border: none;
+//     margin-bottom: 40px;
+//   }
+// }
