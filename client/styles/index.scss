@@ -156,7 +156,8 @@ body{
       border-radius: 2px;
       color: #FFFFFF;
       border: none;
-      margin-bottom: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
     
     span {
@@ -1182,7 +1183,7 @@ input{
     border-radius: 2px;
     color: #FFFFFF;
     border: none;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     margin-left: 20px;
   }
   .delete{
@@ -1196,5 +1197,11 @@ input{
 .link{
 
   margin-bottom: 0px;
-
+  p{color: #2A881B;
+    cursor: pointer;
+    text-align: center;
+  }
+a{
+  text-align: center;
+}
 }
