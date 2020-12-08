@@ -6,6 +6,7 @@ import { ReactTinyLink } from 'react-tiny-link'
 import { commentsFetched } from '../actions'
 
 import Comments from './Comments'
+import AddComments from './AddComment'
 
 class Module extends React.Component {
   state = {
@@ -79,6 +80,9 @@ class Module extends React.Component {
           {/* <Likes module={this.state.currentModule}/> likes:{this.state.currentModule.likes} */}
 
         </div>
+
+        <AddComments />
+
         <Comments comments={this.state.currentModule.comments}/>
       </div> : ''
     )
