@@ -79,7 +79,7 @@ export function addCommentAPI (moduleID, comment) {
 
 // Get comments on a Module
 
-export function displayCommentsAPi(id){
+export function displayCommentsAPi(id){;
   return request.get('/api/comments/' + id)
     .then(res => res.body)
   }

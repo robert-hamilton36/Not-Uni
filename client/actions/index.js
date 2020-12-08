@@ -1,3 +1,4 @@
+import { updateLanguageServiceSourceFile } from "typescript"
 import { decreaseLikesAPI, getAllModulesAPI, increaseLikesAPI } from "../apis/modules"
 import { getSavedModulesAPI } from '../apis/modules'
 import { displayCommentsAPi } from '../apis/modules'
@@ -165,11 +166,11 @@ export const increaseModuleLikes = (module) => {
   export const fetchComments = (comment) => {
     return dispatch => {
       return displayCommentsAPi(comment)
-      .then((commentsArr) => {
-       commentsArr.map(comment => dispatch(commentsFetched(comment)))
-      })
-      .catch(err => {
-        console.log(err)
+        .then((commentsArr) => {
+          commentsArr.map(comment => dispatch(commentsFetched(comment)))
+        })
+        .catch(err => {
+          console.log(err)
         })
     }
   }
