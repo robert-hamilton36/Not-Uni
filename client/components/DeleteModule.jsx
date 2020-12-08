@@ -1,12 +1,13 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { connect } from 'react-redux'
 import {deleteModule} from '../apis/modules'
 
-export default function Delete(props) {
+function Delete(props) {
   let history = useHistory()
   function submit(){
     try{
-          deleteModule(props.module)
+        deleteModule(props.module)
           history.push('/')
       }catch (e) {
       console.log(e)
@@ -25,3 +26,5 @@ export default function Delete(props) {
     </div>
   )
 }
+
+export default connect()(Delete)
