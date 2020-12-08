@@ -215,9 +215,8 @@ body{
     
     .message-heading {
       padding: 20px 20px 10px;
-      background: rgba(0, 130, 127, 1);
       border-radius: 3px 3px 0 0;
-      background-color: rgba(0, 130, 127, 1);
+      background: #2A881B;
       border-radius: 3px 3px 0 0;
       position: relative;
     }
@@ -239,6 +238,7 @@ body{
     
     .likes{
       position: absolute;
+      z-index: 50;
       top: 0px;
       right:0px;
     }
@@ -467,9 +467,8 @@ body{
 
     .message-heading {
       padding: 20px 20px 10px;
-      background: rgba(0, 130, 127, 1);
       border-radius: 3px 3px 0 0;
-      background-color: rgba(0, 130, 127, 1);
+      background: #2A881B;
       border-radius: 3px 3px 0 0;
       position: relative;
 
