@@ -4,8 +4,11 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 
 class ModuleCard extends React.Component {
+  
+  isYourModule = this.props.module.user_id === this.props.user.uid
+  
   render () {
-   
+
     const findHeader = this.props.module.elements.filter((element) => {
       return (element.type === 'heading')
     })
@@ -43,6 +46,9 @@ class ModuleCard extends React.Component {
 
           <div className={'s-c-heading ' + cardColor}>
             <h1>{this.props.module.title}</h1>
+            <Link to={'/edit/' + this.props.module.id } >
+              Edit This Module
+            </Link>
           </div>
           <div className='s-c-info'>
 
@@ -50,7 +56,6 @@ class ModuleCard extends React.Component {
             <ul className="steps-list">
               {findHeader.map((header) => {
                 return (
-
                   <li key={header.id}> {header.content}</li>
                 )
               })}
@@ -63,4 +68,11 @@ class ModuleCard extends React.Component {
   }
 }
 
-export default ModuleCard
+function mapStateToProps (globalState) {
+  return {
+    user: globalState.user,
+    modules: globalState.modules
+  }
+}
+
+export default connect(mapStateToProps)(ModuleCard)

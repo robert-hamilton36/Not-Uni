@@ -16,6 +16,30 @@ class CreateModule extends React.Component {
     elements: []
   }
 
+  componentDidMount () {
+    if (this.props.editing) {
+
+      const currentModuleId = Number(this.props.match.params.id)
+      const currentModule = this.props.modules.find((module) => module.id == currentModuleId)
+      if (currentModule) this.setState({ ...currentModule })
+      
+    }
+  }
+
+  componentDidUpdate (prevProps) {
+    if (this.props.editing) {
+      if (!prevProps || prevProps.match.params.id !== this.props.match.params.id || prevProps.modules.length !== this.props.modules.length || prevProps !== this.props) {
+
+        console.log("update if");
+
+        const currentModuleId = Number(this.props.match.params.id)
+        const currentModule = this.props.modules.find((module) => module.id === currentModuleId)
+        this.setState({ ...currentModule })
+      }
+    }
+  }  
+
+
   addElementHandler = (type) => {
     const newElement = {
       type: type,
@@ -133,11 +157,14 @@ class CreateModule extends React.Component {
     return (
       <div className='create-module'>
         <div className="meta-input">
-          <h1> Create A Module </h1>
+          {this.props.editing ?
+            <h1> Edit Your Module </h1> :
+            <h1> Create A Module </h1>
+          }
 
-          <input className="input-box title-input" onChange={(evt) => this.metaChangeHandler(evt, 'title')} type="text" placeholder="Title"/>
+          <input className="input-box title-input" onChange={(evt) => this.metaChangeHandler(evt, 'title')} value={this.state.title} type="text" placeholder="Title"/>
 
-          <textarea className="input-box description-input" onChange={(evt) => this.metaChangeHandler(evt, 'description')} placeholder="Short Desciption" />
+          <textarea className="input-box description-input" onChange={(evt) => this.metaChangeHandler(evt, 'description')} value={this.state.description} placeholder="Short Desciption" />
 
           <h3> Category </h3>
           <div className="radio-container">
@@ -165,7 +192,7 @@ class CreateModule extends React.Component {
             </div>
           </div>
 
-          <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type="number" placeholder="Approximate Duration (Minutes)"/>
+          <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} value={this.state.duration} type="number" placeholder="Approximate Duration (Minutes)"/>
         </div>
 
         <div className="element-input-div-container" >

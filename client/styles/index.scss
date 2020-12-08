@@ -37,12 +37,8 @@ body{
   }
   
   img {
-    // height: 50pt;
     height: 29.909408569335938px;
     width: 74px;
-    // left: 56px;
-    // top: 29px;
-    // border-radius: 0px;
   }
   
   .search{
@@ -70,32 +66,6 @@ body{
   color: rgba(42, 136, 27, 1);
   
 }
-// register
-
-// .Register-card{
-//   background-color: rgba(252, 252, 252, 1);
-//   height: 352px;
-//   width: 643px;
-//   border-radius: 3px;
-//   flex: left 50%;
-//   margin: auto;
-
-//   .h1style{
-//     margin-left: 5%;
-//   }
-//   .Input-R{
-//     border: 1px solid rgba(0, 0, 0, 0.4);
-//     background: rgba(255, 255, 255, 1);
-//     height: 50px;
-//     width: 205px;
-//     margin-left: 5%;
-//     margin-right: 5%;
-//     margin-top: 10px;
-//     font-size:20px;
-//   }
-// }
-
-// register
 
 .Register-card {
   background-color: rgba(252, 252, 252, 1);
@@ -217,6 +187,10 @@ body{
       letter-spacing: 0em;
       color: #ffffff;
       margin: 0;
+    }
+    a {
+      color: white;
+      text-decoration: none;
     }
   }
 
@@ -387,11 +361,6 @@ body{
   .text{
     padding-left: 50px;
   }
-  // .video-container{
-  //   width: 100%;
-  //   height: auto;
-  //   padding-top: 10px;
-  // }
 
   .video-container {
     position: relative;

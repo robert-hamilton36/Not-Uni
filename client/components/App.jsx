@@ -14,6 +14,7 @@ import { fetchUser } from '../actions/authenticated'
 import { fetchModules, fetchSavedModules } from '../actions'
 import ModuleCreated from './ModuleCreated'
 import ForgotPassword from './UserAuth/ForgotPassword'
+import { createModuleAPI } from '../apis/modules'
 
 class App extends React.Component {
   componentDidMount () {
@@ -39,8 +40,11 @@ class App extends React.Component {
             <Route exact path="/create" component={CreateModule} />
             <Route exact path="/modulecreated" component={ModuleCreated} />
             <Route exact path="/forgotpassword" component={ForgotPassword} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/edit/:id" render={(props) => (
+              <CreateModule {...props} editing={true} />
+            )}/>
           </Switch>
-          <Route exact path="/profile" component={Profile} />
         </Router>
       </div>
     )
