@@ -43,8 +43,8 @@ const EditProfile = (props) => {
         <input className='button' type='submit' value='Edit'/>
         </form>
 
-        <a><p className='button' type='submit' onClick={() => props.sidebarClickHandler("edit")}>Edit profile</p></a>
-        <a><p className='button' type='submit' onClick={() => props.sidebarClickHandler("avatar")}>Edit avatar</p></a>
+        <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("edit")}>Edit profile</p></a>
+        <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("avatar")}>Edit avatar</p></a>
       </div>
       </>
       }

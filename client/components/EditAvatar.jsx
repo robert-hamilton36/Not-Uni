@@ -38,8 +38,8 @@ const EditProfile = (props) => {
         
       {pokemon && <img className='pokemon' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon}.png`}/>}
 
-        <a><p className='button' type='submit' onClick={() => props.sidebarClickHandler("edit")}>Edit profile</p></a>
-        <a><p className='button' type='submit' onClick={() => props.sidebarClickHandler("password")}>Edit password</p></a>
+        <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("edit")}>Edit profile</p></a>
+        <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("password")}>Edit password</p></a>
       
 
     
