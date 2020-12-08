@@ -32,7 +32,7 @@ const EditProfile = (props) => {
 
         <input className='Input-R' type="text" onChange={e => setUserName(e.target.value)} value={userName}/>
         <input className='Input-R' type="text" onChange={e => setEmail(e.target.value)} value={email}/>
-        <input className='Input-R' type="number" onChange={e => setPokemon(e.target.value)} value={pokemon}/>
+        <input className='Input-R' type="number" max='898' min='0' onChange={e => setPokemon(e.target.value)} value={pokemon}/>
         <input className='button' type='submit' value='Edit'/>
         </form>
         
