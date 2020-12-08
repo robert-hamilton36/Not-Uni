@@ -25,7 +25,6 @@ const App = (props) => {
       
   useEffect(() => {
     props.dispatch(fetchModules())
-    console.log('Imma do a thing!')
   }, [])
 
   useEffect(() => {

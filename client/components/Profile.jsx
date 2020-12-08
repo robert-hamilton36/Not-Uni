@@ -3,10 +3,13 @@ import { Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import SavedModules from './SavedModules'
 import YourModules from './YourModules'
+import EditProfile from './EditProfile'
+import EditPassword from './EditPassword'
+
 
 class Profile extends React.Component {
   state = {
-    activeModules: null
+    activeModules: ''
   }
   componentDidMount = () => {
   }
@@ -53,7 +56,8 @@ class Profile extends React.Component {
           <div className="left column" >
             <div className="profile-options-box">
               <div className="heading">
-                <h1> Welcome {this.props.user.userName} </h1>
+                <h1 className='Welcome'> Welcome {this.props.user.userName} </h1>
+                {this.props.user.photoURL && <img className='pokemon' src={this.props.user.photoURL}/>}
               </div>
               <div className="options">
                 <div onClick={() => this.sidebarClickHandler('your modules') }className="single-option">
@@ -70,6 +74,10 @@ class Profile extends React.Component {
                     <span> Create A Module </span>
                   </div>
                 </Link>
+                <div onClick={() => this.sidebarClickHandler('edit') }className="single-option">
+                  <img src="/images/edit-24px.svg"/>
+                  <span> Edit Profile </span>
+                </div>
               </div>
             </div>
           </div>
@@ -77,6 +85,8 @@ class Profile extends React.Component {
             {this.props.hasLoaded.modulesHaveLoaded && <>
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
             {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
+            {this.state.activeModules === "edit" && <EditProfile props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
+            {this.state.activeModules === "password" && <EditPassword props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
             </>
 
              }
