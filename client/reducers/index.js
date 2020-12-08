@@ -7,7 +7,6 @@ import savedModules from './savedModules'
 import isAuthenticated from './isAuthenticated'
 import hasLoaded from './hasLoaded'
 
-
 export default combineReducers({
   hasLoaded,
   isAuthenticated,

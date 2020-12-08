@@ -4,45 +4,29 @@ const router = express.Router()
 
 const commentsDB = require('../db/commentsDB')
 
-
 //  GET /api/comments/created
-
-  router.get('/:id', (req, res) => {
-    const id = req.params.id
-    return commentsDB.displayComment(id)
-      // .then(content => {
-      //   content = content.map(comments => {
-      //     return commentsDB.getCommentContent(comments.id)
-      //       .then(elements => {
-      //         comments.elements = elements
-      //         return comments
-      //       })
-      //   })
-      //   return Promise.all(content)
-      // })
-      .then(modules => {
-        res.json(modules)
-      })
-      .catch(err => {
-        console.log(err)
-        res.status(500).json({ message: 'Something is broken' })
-      })
-  })
-
-
+router.get('/:id', (req, res) => {
+  const id = req.params.id
+  return commentsDB.displayComment(id)
+    .then(modules => {
+      res.json(modules)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Something is broken' })
+    })
+})
 
 router.post('/:id', (req, res) => {
-  let module_id = req.params.id
-  let user_name = req.body.userName
-  let content = req.body.content
-  
-  let comment = {
+  const module_id = req.params.id
+  const user_name = req.body.userName
+  const content = req.body.content
+  const comment = {
     module_id,
     user_name,
-    content,
+    content
   }
-
-  console.log(comment);
+  console.log(comment)
 
   return commentsDB.addComment(comment)
     .then(response => {
@@ -53,4 +37,4 @@ router.post('/:id', (req, res) => {
       res.status(500).json({ message: 'Something is broken' })
     })
 })
-  module.exports = router
+module.exports = router

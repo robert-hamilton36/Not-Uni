@@ -1,10 +1,5 @@
 const connection = require('./connection')
 
-// function getAllModules (db = connection) {
-//   return db('modules')
-//     .select()
-// }
-
 function getAllModules(db = connection) {
   return db('modules').select()
     .then(modules => Promise.all(modules.map(module => {
@@ -32,12 +27,11 @@ function createModuleElement (element, db = connection) {
 
 function getModulesByUserId (user_id, db = connection) {
   return db('modules')
-  .where('user_id', user_id)
-  .select()
+    .where('user_id', user_id)
+    .select()
 }
 
-
-function updateModule (id, updatedModule, db = connection){
+function updateModule (id, updatedModule, db = connection) {
   return db('modules').update(updatedModule).where('id', id)
 }
 

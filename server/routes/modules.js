@@ -33,15 +33,14 @@ router.get('/', (req, res) => {
 router.get('/created', (req, res) => {
   const user_id = 10001
   return modulesDb.getModulesByUserId(user_id)
-  .then( createdModules => {
-    res.json(createdModules)
-  })
-  .catch(err => {
-    console.log(err)
-    res.status(500).json({ message: 'Something is broken' })
-  })
+    .then( createdModules => {
+      res.json(createdModules)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Something is broken' })
+    })
 })
-
 
 //  GET /api/modules/saved
 // shows the logged in person saved modules
@@ -56,60 +55,50 @@ router.get('/saved/:id', (req, res) => {
     })
 })
 
-
-
 // POST a saved module to the savedModulesDb
 // saves a module to the users profile
 router.post('/saved', (req, res) => {
   const newSave = req.body
   return savedModulesDb.addSavedModule(newSave)
-  .then((id) => {
-    newSave.id = id[0]
-    res.json(newSave)
-  })
-  .catch(err => {
-    console.log(err)
-    res.status(500).json({ message: 'Something is broken' })
-  })
+    .then((id) => {
+      newSave.id = id[0]
+      res.json(newSave)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Something is broken' })
+    })
 })
-
-
-
 
 // CREATE A MODULE
 router.post('/', (req, res) => {
-  let { title, user_id, category, description, difficulty, duration, number_of_elements, elements} = req.body
+  const { title, user_id, category, description, difficulty, duration, number_of_elements, elements } = req.body
 
-  let moduleMeta = {
-    title, 
-    user_id, 
-    category, 
+  const moduleMeta = {
+    title,
+    user_id,
+    category,
     difficulty,
     description,
-    duration, 
+    duration,
     number_of_elements
   }
 
-  let moduleElements = [...elements]
+  const moduleElements = [...elements]
   // function to replace 'watch?v=' with 'embed/'
-
   return modulesDb.createModuleMeta(moduleMeta)
     .then(module_id => {
       moduleElements.map((item, i) => {
         item.module_id = module_id[0]
         item.order_num = i
-        // converts video links to "embed/"
-        if (item.type === 'video'){
-          let oldURL = item.content
-          let newURL = oldURL.replace("watch?v=", "embed/")
+        if (item.type === 'video') {
+          const oldURL = item.content
+          const newURL = oldURL.replace("watch?v=", "embed/")
           item.content = newURL
         }
       })
 
-
       moduleElements.map((element) => {
-        console.log(element)
-
         return modulesDb.createModuleElement(element)
           .catch(err => {
             console.log(err)
@@ -124,43 +113,34 @@ router.post('/', (req, res) => {
       console.log(err)
       res.status(500).json({ message: 'Something is broken' })
     })
-  
 })
 
-
-//Update a module 
-
-router.patch('/:id',(req,res) =>{
- 
+// Update a module
+router.patch('/:id', (req, res) => {
   const updatedModule = req.body
   const id = req.params.id
 
   modulesDb.updateModule(id, updatedModule)
-    .then(updatedItems =>{
-      res.json({updatedItems})
+    .then(updatedItems => {
+      res.json({ updatedItems })
     })
-    .catch((err)=>{
+    .catch((err) => {
       console.log(err)
-      res.status(500).json({message:'something went wrong'})
+      res.status(500).json({ message: 'Something Went Wrong' })
     })
 })
 
-
-
-
-//delete Saved module
-router.delete('/saved/:id', (req,res)=>{
-
+// delete Saved module
+router.delete('/saved/:id', (req, res) => {
   const id = req.params.id
   savedModulesDb.deleteSavedModule(id)
     .then(module =>{
-      res.json({module})
+      res.json({ module })
     })
-    .catch((err)=>{
+    .catch((err) => {
       console.log(err)
-      res.status(500).json({message:'something went wrong'})
+      res.status(500).json({ message: 'something went wrong' })
     })
 })
-
 
 module.exports = router

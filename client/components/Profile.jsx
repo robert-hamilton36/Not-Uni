@@ -1,55 +1,43 @@
 import React from 'react'
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import SavedModules from './SavedModules'
 import YourModules from './YourModules'
 import EditProfile from './EditProfile'
 import EditPassword from './EditPassword'
 
-
 class Profile extends React.Component {
   state = {
     activeModules: ''
-  }
-  componentDidMount = () => {
   }
 
   sidebarClickHandler = (whichButton) => {
     this.setState({
       activeModules: whichButton
     })
-    switch(whichButton){
-      case("saved modules"):
-      this.getSavedModules()
-      case("your modules"):
-      this.getYourModules()
+    switch (whichButton) {
+      case ('saved modules'):
+        this.getSavedModules()
+        break
+      case ('your modules'):
+        this.getYourModules()
     }
   }
 
   getYourModules = () => {
     const yourModules = this.props.modules.filter((item) => item.user_id == this.props.user.uid)
-    this.setState({yourModules: yourModules})
+    this.setState({ yourModules: yourModules })
   }
 
   getSavedModules = () => {
-    let id = this.props.savedModules.map(module => module.module_id)
-    let modules = this.props.modules.filter(module => id.includes(module.id))
+    const id = this.props.savedModules.map(module => module.module_id)
+    const modules = this.props.modules.filter(module => id.includes(module.id))
     this.setState({
-          savedModules: modules
-        })
+      savedModules: modules
+    })
   }
 
-  // getSavedModules = () => {
-  //   const savedIDs = this.props.user.saved
-  //   console.log(this.props.user.saved)
-  //   console.log(this.props.modules)
-  //   const savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id)) || null
-  //   console.log(savedModules)
-  //   this.setState({
-  //     savedModules: savedModules
-  //   })
-  // }
-  render() {
+  render () {
     return (
       <>
         <div className="profile-page">
@@ -83,18 +71,12 @@ class Profile extends React.Component {
           </div>
           <div className="middle column" >
             {this.props.hasLoaded.modulesHaveLoaded && <>
-            {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
-            {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
-            {this.state.activeModules === "edit" && <EditProfile props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
-            {this.state.activeModules === "password" && <EditPassword props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
+              {this.state.activeModules === 'saved modules' && <SavedModules savedModules={this.state.savedModules}/>}
+              {this.state.activeModules === 'your modules' && <YourModules yourModules={this.state.yourModules}/>}
+              {this.state.activeModules === 'edit' && <EditProfile props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
+              {this.state.activeModules === 'password' && <EditPassword props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
             </>
-
-             }
-
-            {/* {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
-            {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>} */}
-            {/* {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/> */}
-
+            }
           </div>
           <div className="right column" >
           </div>
@@ -104,7 +86,7 @@ class Profile extends React.Component {
   }
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   return {
     user: globalState.user,
     modules: globalState.modules,

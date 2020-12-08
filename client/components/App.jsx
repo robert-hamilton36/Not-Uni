@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect} from 'react'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -16,13 +16,6 @@ import ModuleCreated from './ModuleCreated'
 import ForgotPassword from './UserAuth/ForgotPassword'
 
 const App = (props) => {
-  // componentDidMount () {
-    //   // this.props.dispatch(fetchUser())
-    //   // if(this.props.user === {}){
-      //   //   this.props.dispatch(fetchSavedModules(this.props.user.uid))
-      //   // }
-      // }
-      
   useEffect(() => {
     props.dispatch(fetchModules())
   }, [])
@@ -32,7 +25,7 @@ const App = (props) => {
   }, [props.modules])
 
   useEffect(() => {
-    if(props.user.uid){
+    if (props.user.uid) {
       props.dispatch(fetchSavedModules(props.user.uid))
     }
   }, [props.hasLoaded.authHasLoaded])

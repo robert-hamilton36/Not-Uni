@@ -1,5 +1,4 @@
-
-import { 
+import {
   decreaseLikesAPI,
   getAllModulesAPI,
   increaseLikesAPI,
@@ -9,16 +8,10 @@ import {
   removeSavedModuleAPI
 } from '../apis/modules'
 
-
-
-// do we need to import request from 'superagent
-
 export const SET_MODULES = 'SET_MODULES'
 export const SET_SEARCH_MODULES ='SET_SEARCH_MODULES'
 
 export const MODULES_HAVE_LOADED = 'MODULES_HAVE_LOADED'
-// export const ADD_TO_SAVED_MODULES = 'ADD_TO_SAVED_MODULES'
-// export const SET_SAVED_MODULES = 'SET_SAVED_MODULES'
 export const SET_SAVED_MODULES_FROM_DATA_BASE = 'SET_SAVED_MODULES_FROM_DATA_BASE'
 export const ADD_SINGLE_MODULE_TO_SAVED_MODULES = 'ADD_SINGLE_MODULE_TO_SAVED_MODULES'
 export const REMOVE_SAVED_MODULE = 'REMOVE_SAVED_MODULE'
@@ -27,9 +20,7 @@ export const SET_LIKES = 'SET_LIKES'
 export const DECREASE_LIKES = 'DECREASE_LIKES'
 export const INCREASE_LIKES = 'INCREASE_LIKES'
 
-
-
-//GET ALL MODULES
+// GET ALL MODULES
 export const setModules = (modules) => {
   return {
     type: SET_MODULES,
@@ -47,9 +38,6 @@ export const fetchModules = () => {
   }
 }
 
-
-
-
 export const modulesHaveLoaded = (boolean) => {
   return {
     type: MODULES_HAVE_LOADED,
@@ -57,15 +45,11 @@ export const modulesHaveLoaded = (boolean) => {
   }
 }
 
-
-
-
 //ADD TO SAVED MODULES
-
 
 export const setSingleModuleToSavedModules = (module) => {
   return {
-    type:ADD_SINGLE_MODULE_TO_SAVED_MODULES,
+    type: ADD_SINGLE_MODULE_TO_SAVED_MODULES,
     module
   }
 }
@@ -73,94 +57,74 @@ export const setSingleModuleToSavedModules = (module) => {
 export const addSavedModules = (userID, moduleID) => {
   return dispatch => {
     return addSavedModuleAPI(userID, moduleID)
-      .then((module)=>
-        {
-        return dispatch(setSingleModuleToSavedModules(module))
+      .then((module) =>
+      { return dispatch(setSingleModuleToSavedModules(module))
       })
       .catch(err => {
         console.log(err)
       })
-    }
   }
+}
 
-  // REMOVE SAVED MODULE
+// REMOVE SAVED MODULE
 
-  export const removeSingleModuleFromSavedModules = (id) => {
-    return {
-      type:REMOVE_SAVED_MODULE,
-      id
-    }
+export const removeSingleModuleFromSavedModules = (id) => {
+  return {
+    type: REMOVE_SAVED_MODULE,
+    id
   }
-  
-  export const removeSavedModule = (savedModuleID) => {
-    return dispatch => {
-      return removeSavedModuleAPI(savedModuleID)
-        .then(()=>
-          {
-          return dispatch(removeSingleModuleFromSavedModules(savedModuleID))
-        })
-        .catch(err => {
-          console.log(err)
-        })
-      }
-    }
-    
-  
+}
 
+export const removeSavedModule = (savedModuleID) => {
+  return dispatch => {
+    return removeSavedModuleAPI(savedModuleID)
+      .then(() => { return dispatch(removeSingleModuleFromSavedModules(savedModuleID))
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+}
 
+// SET SEARCHED MODULES
 
-
-
-//SET SEARCHED MODULES
-
-
-export const setSearchedModules = (modules) =>{
-  return{
+export const setSearchedModules = (modules) => {
+  return {
     type: SET_SEARCH_MODULES,
     modules
   }
 }
 
-
-
-//GET SAVED MODULES
-
+// GET SAVED MODULES
 
 export const setSavedModulesFromDatabase = (modules) => {
   return {
-    type:SET_SAVED_MODULES_FROM_DATA_BASE,
+    type: SET_SAVED_MODULES_FROM_DATA_BASE,
     modules: modules
   }
 }
 
-
-
 export const fetchSavedModules = (userID) => {
   return dispatch => {
     return getSavedModulesAPI(userID)
-      .then(modules=>
-        {
+      .then(modules=> {
         return dispatch(setSavedModulesFromDatabase(modules))
       })
       .catch(err => {
         console.log(err)
       })
-    }
   }
-  
-  export const setUser = (user) => {
-    return {
-      type: SET_USER,
-      user: user
-    }
+}
+
+export const setUser = (user) => {
+  return {
+    type: SET_USER,
+    user: user
   }
+}
 
+// Update Module Likes
 
-
-
-
-//Update Module Likes
-  
 export const increaseLikes = (module) => {
   return {
     type: INCREASE_LIKES,
@@ -171,32 +135,30 @@ export const increaseLikes = (module) => {
 export const increaseModuleLikes = (module) => {
   return dispatch => {
     return increaseLikesAPI(module)
-    .then(()=> {
-      dispatch(increaseLikes(module))
-    })
-    .catch(err => {
-      console.log(err)
+      .then(() => {
+        dispatch(increaseLikes(module))
       })
-    }
+      .catch(err => {
+        console.log(err)
+      })
   }
+}
 
-
-
-  export const decreaseLikes = (module) => {
-    return {
-      type: DECREASE_LIKES,
-      module
-    }
+export const decreaseLikes = (module) => {
+  return {
+    type: DECREASE_LIKES,
+    module
   }
-  
-  export const decreaseModuleLikes = (module) => {
-    return dispatch => {
-      return decreaseLikesAPI(module)
+}
+
+export const decreaseModuleLikes = (module) => {
+  return dispatch => {
+    return decreaseLikesAPI(module)
       .then(()=> {
         dispatch(decreaseLikes(module))
       })
       .catch(err => {
         console.log(err)
-        })
-      }
-    }
+      })
+  }
+}

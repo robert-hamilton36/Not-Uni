@@ -1,15 +1,12 @@
 import { SET_SAVED_MODULES, SET_USER, ADD_TO_SAVED_MODULES } from '../actions'
 import { REMOVE_USER } from '../actions/authenticated'
-const initialState = 
- {
 
-}
-
+const initialState = { }
 
 const reducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case SET_USER:
-      return {...state, ...action.user}
+      return { ...state, ...action.user }
     case REMOVE_USER:
       return {}
     case SET_SAVED_MODULES:
@@ -22,13 +19,8 @@ const reducer = (state = initialState, action) => {
       })
 
       return preSavedModuleState
-    // case ADD_TO_SAVED_MODULES:
-    //   let preAddToSavedModuleState = state
-    //   preAddToSavedModuleState.saved.push(action.module)
-    //   return preAddToSavedModuleState
-
-      default:
-        return state
+    default:
+      return state
   }
 }
 

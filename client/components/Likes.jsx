@@ -3,23 +3,17 @@ import { connect } from 'react-redux'
 import { addSavedModules, decreaseModuleLikes, increaseModuleLikes, removeSavedModule } from '../actions'
 import MessageSaved from './MessageSaved'
 
-
-
-
 class Likes extends React.Component {
-
   state = {
     saved: false,
     savedMessage: false
   }
 
-
-  componentDidMount() {
-
+  componentDidMount () {
     this.props.savedModules.map((module) => {
       if (module.id === this.props.module.id) {
         this.setState({
-          saved: true,
+          saved: true
         })
       }
     })
@@ -29,24 +23,23 @@ class Likes extends React.Component {
     this.setState({
       saved: (this.state.saved) ? false : true,
     }, () => {
-      this.afterSetStateFinished();
-      this.setMessage();
+      this.afterSetStateFinished()
+      this.setMessage()
     })
   }
 
   setMessage = () => {
     this.setState({
       savedMessage: (this.state.saved) ? true : false
-    });
+    })
     setTimeout(function () {
-      this.setState({ savedMessage: false });
-    }.bind(this), 1500);
+      this.setState({ savedMessage: false })
+    }.bind(this), 1500)
   }
-
 
   afterSetStateFinished = () => {
     const thisModule = this.props.module
-    const alreadySaved = this.props.savedModules.find((module)=>{
+    const alreadySaved = this.props.savedModules.find((module) => {
       return module.module_id === thisModule.id
     })
 
@@ -57,8 +50,7 @@ class Likes extends React.Component {
     }
   }
 
-
-  addToSavedModules = () =>{
+  addToSavedModules = () => {
     const userID = this.props.user.uid
     const thisModule = this.props.module
 
@@ -66,19 +58,15 @@ class Likes extends React.Component {
     this.props.dispatch(increaseModuleLikes(thisModule))
   }
 
-  removeFromSavedModules = () =>{
+  removeFromSavedModules = () => {
     const thisModule = this.props.module
 
     this.props.dispatch(removeSavedModule(thisModule.id))
     this.props.dispatch(decreaseModuleLikes(thisModule))
   }
 
-
-
-
-
-  render() {
-     const imageSource = this.state.saved ? "/images/bookmark-white.svg" : "/images/bookmark-border.svg"
+  render () {
+    const imageSource = this.state.saved ? '/images/bookmark-white.svg' : '/images/bookmark-border.svg'
     return (
       <div className='likes'>
         <img onClick={() => this.clickHandler()} src={imageSource} alt="like button" />
@@ -87,10 +75,9 @@ class Likes extends React.Component {
       </div>
     )
   }
-
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   return {
     modules: globalState.modules,
     user: globalState.user,

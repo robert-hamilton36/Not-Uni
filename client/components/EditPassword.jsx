@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { updateFirebasePassword } from '../actions/authenticated'
-
 
 const EditProfile = (props) => {
   const [password, setPassword] = useState('')
@@ -9,54 +8,50 @@ const EditProfile = (props) => {
   const [error, setError] = useState('')
   // const [photoURL, setPhotoURL] = useState('')
 
-  function submit(e){
+  function submit (e) {
     e.preventDefault()
-  
-    if(password === confirmationPassword){
-      try{
-       updateFirebasePassword(password, props.sidebarClickHandler,setError)
-      }catch (e) {
-      console.log(e)
-      setError("Failed to edit")
-      return "Failed to registrate"
-     }
-    }else {
-      setError("Passwords do not match")
+    if (password === confirmationPassword) {
+      try {
+        updateFirebasePassword(password, props.sidebarClickHandler, setError)
+      } catch (e) {
+        console.log(e)
+        setError('Failed to edit')
+        return 'Failed to registrate'
+      }
+    } else {
+      setError('Passwords do not match')
       setconfirmationPassword('')
       setPassword('')
     }
-
   }
 
-
-
-    return (
+  return (
+    <>
+      {props.hasLoaded &&
       <>
-      {props.hasLoaded && 
-      <>
-      <h1>{error}</h1>
-      <div className='Register-card'>
-        <form onSubmit={submit}>
+        <h1>{error}</h1>
+        <div className='Register-card'>
+          <form onSubmit={submit}>
 
-        <input className='Input-R' type="password"name="password"  onChange={e => setPassword(e.target.value)}  value={password} placeholder="password"/>
-        <input className='Input-R' type="password" name="passwordConfirm" onChange={e => setconfirmationPassword(e.target.value)} value={confirmationPassword} placeholder="password-confirmation"/>
-        <input className='button' type='submit' value='Edit'/>
-        </form>
-      </div>
+            <input className='Input-R' type="password"name="password" onChange={e => setPassword(e.target.value)} value={password} placeholder="password"/>
+            <input className='Input-R' type="password" name="passwordConfirm" onChange={e => setconfirmationPassword(e.target.value)} value={confirmationPassword} placeholder="password-confirmation"/>
+            <input className='button' type='submit' value='Edit'/>
+          </form>
+        </div>
       </>
       }
-      </>
-    )
+    </>
+  )
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   return {
     dispatch: globalState.dispatch,
     hasLoaded: globalState.hasLoaded.authHasLoaded,
     user: globalState.user,
     modules: globalState.modules,
-    savedModules: globalState.savedModules,
-    hasLoaded: globalState.hasLoaded
+    savedModules: globalState.savedModules
+
   }
 }
 

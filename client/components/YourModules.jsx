@@ -12,8 +12,6 @@ class YourModules extends React.Component {
       </>
     )
   }
-
-
 }
 
 export default connect()(YourModules)

@@ -1,7 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
-import ReactDOM from 'react-dom'
 import { createModuleAPI } from '../apis/modules'
 import CategoryCard from './CategoryCard'
 
@@ -129,7 +127,7 @@ class CreateModule extends React.Component {
   }
 
   render () {
-    {this.props.authHasLoaded && this.props.isAuthenticated !== true && this.props.history.push('/login')}
+    { this.props.authHasLoaded && this.props.isAuthenticated !== true && this.props.history.push('/login') }
     return (
       <div className='create-module'>
         <div className="meta-input">
@@ -151,26 +149,26 @@ class CreateModule extends React.Component {
           </div>
 
           <h3> Difficulty </h3>
-          <div className="radio-container"> 
-            <div className={this.state.difficulty === "Beginner" ? 'green radio selected' : 'green radio'} onClick={() => this.difficultyChangeHandler("Beginner")} >
+          <div className='radio-container'>
+            <div className={this.state.difficulty === 'Beginner' ? 'green radio selected' : 'green radio'} onClick={() => this.difficultyChangeHandler('Beginner')} >
               <span> {'<Beginner>'} </span>
             </div>
 
-            <div className={this.state.difficulty === "Intermediate" ? 'yellow radio selected' : 'yellow radio'} onClick={() => this.difficultyChangeHandler("Intermediate")} >
+            <div className={this.state.difficulty === 'Intermediate' ? 'yellow radio selected' : 'yellow radio'} onClick={() => this.difficultyChangeHandler('Intermediate')} >
               <span>  {'<(Intermediate)>'} </span>
             </div>
 
-            <div className={this.state.difficulty === "Advanced" ? 'red radio selected' : 'red radio'} onClick={() => this.difficultyChangeHandler("Advanced")} >
+            <div className={this.state.difficulty === 'Advanced' ? 'red radio selected' : 'red radio'} onClick={() => this.difficultyChangeHandler('Advanced')} >
               <span>  {'<({Advanced})>'} </span>
             </div>
           </div>
 
-          <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type="number" placeholder="Approximate Duration (Minutes)"/>
+          <input className='input-box duration-input' onChange={(evt) => this.metaChangeHandler(evt, 'duration')} type='number' placeholder='Approximate Duration (Minutes)'/>
         </div>
 
-        <div className="element-input-div-container" >
+        <div className='element-input-div-container' >
           {this.state.elements.map((element, i) => {
-            const spacer = <div className="step-spacer"> <div/> </div>
+            const spacer = <div className='step-spacer'> <div/> </div>
             let needsSpacer = false
 
             if (i > 0 && element.type == 'heading') {
@@ -220,7 +218,7 @@ class CreateModule extends React.Component {
   }
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   return {
     searchModules: globalState.searchModules,
     modules: globalState.modules,

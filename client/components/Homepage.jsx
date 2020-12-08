@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import ModulesFeed from './SearchResults'
 import Search from './Search'
 import { Route } from 'react-router-dom'
 

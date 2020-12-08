@@ -1,60 +1,54 @@
-import { Breadcrumbs } from '@material-ui/core'
 import React from 'react'
-import { connect } from 'react-redux'
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
+import { BrowserRouter as Link } from 'react-router-dom'
 
 class ModuleCard extends React.Component {
   render () {
-   
-      let moduleDifficulty = ''
-      let difficultyColor = ''
-      switch (this.props.module.difficulty) {
-        case 'Beginner':
-          moduleDifficulty = '<Beginner>';
-          difficultyColor = '#2A881B';
-          break;
-        case 'Intermediate':
-          moduleDifficulty = '<(Intermediate)>';
-          difficultyColor = 'rgb(216, 194, 0)';
-          break;
-        case 'Advanced':
-          moduleDifficulty = '<({Advanced})>';
-          difficultyColor = 'rgb(216, 0, 0)';
-          break;
+    let moduleDifficulty = ''
+    let difficultyColor = ''
+    switch (this.props.module.difficulty) {
+      case 'Beginner':
+        moduleDifficulty = '<Beginner>'
+        difficultyColor = '#2A881B'
+        break
+      case 'Intermediate':
+        moduleDifficulty = '<(Intermediate)>'
+        difficultyColor = 'rgb(216, 194, 0)'
+        break
+      case 'Advanced':
+        moduleDifficulty = '<({Advanced})>'
+        difficultyColor = 'rgb(216, 0, 0)'
+        break
     }
-
 
     const findHeader = this.props.module.elements.filter((element) => {
       return (element.type === 'heading')
     })
 
-
     let cardColor = ''
 
     switch (this.props.module.category) {
       case 'HTML':
-        cardColor = 'HTML';
-        break;
+        cardColor = 'HTML'
+        break
       case 'C':
-        cardColor = 'C';
-        break;
+        cardColor = 'C'
+        break
       case 'JavaScript':
-        cardColor = 'JavaScript';
-        break;
+        cardColor = 'JavaScript'
+        break
       case 'Python':
-        cardColor = 'Python';
-        break;
+        cardColor = 'Python'
+        break
       case 'Ruby':
-        cardColor = 'Ruby';
-        break;
+        cardColor = 'Ruby'
+        break
       case 'C++':
-        cardColor = 'Cplus';
-        break;
+        cardColor = 'Cplus'
+        break
       default:
         cardColor = ''
     }
 
-   
     return (
       <>
 
@@ -74,12 +68,11 @@ class ModuleCard extends React.Component {
                 )
               })}
             </ul>
-            <div className='module-card-difficulty'> 
-              <h4 className='colored-difficulty' style={{color: difficultyColor}}> {moduleDifficulty}</h4>
+            <div className='module-card-difficulty'>
+              <h4 className='colored-difficulty' style={{ color: difficultyColor }}> {moduleDifficulty}</h4>
             </div>
           </div>
           <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
-          
         </div>
       </>
     )

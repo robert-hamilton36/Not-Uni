@@ -1,4 +1,4 @@
-import {  SET_SEARCH_MODULES } from '../actions'
+import { SET_SEARCH_MODULES } from '../actions'
 
 const initialState = []
 

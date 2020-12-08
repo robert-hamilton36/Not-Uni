@@ -1,21 +1,15 @@
 const connection = require('./connection')
 
 // register a new user
-
 function createUser (user, db = connection) {
   console.log(user)
   return userExists(user.user_name, db)
     .then(exists => {
-      console.log('then exists')
       if (exists) {
         throw new Error('User already exists')
       }
       return null
     })
-    // .then(() => {
-    // generate hash here
-    // return generateHash(user.password)
-    // })
     .then(passwordHash => {
       return db('users').insert({ user_name: user.user_name, hash: passwordHash })
     })
@@ -39,10 +33,8 @@ function getUserByName (userName, db = connection) {
     .first()
 }
 
-
-
 module.exports = {
   createUser,
   getUserByName,
-  userExists,
+  userExists
 }

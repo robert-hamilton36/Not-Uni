@@ -11,14 +11,14 @@ function getSavedModules (id, db = connection) {
 
 // add a module to a users saved modules
 function addSavedModule (newSave, db = connection) {
-  return db ('saved_modules')
-  .insert(newSave)
+  return db('saved_modules')
+    .insert(newSave)
 }
 
-function deleteSavedModule (id, db=connection){
+function deleteSavedModule (id, db = connection) {
   return db('saved_modules')
-  .where('saved_modules.id', id)
-  .delete()
+    .where('saved_modules.id', id)
+    .delete()
 }
 
 module.exports = {

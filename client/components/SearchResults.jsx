@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom'
 import { setSearchedModules } from '../actions'
 import ModuleCard from './ModuleCard'
 
-
 class SearchResults extends React.Component {
-
-
   componentDidMount () {
     const q = this.props.match.params.q
     const filteredModules = this.props.modules.filter(module => {
@@ -31,8 +28,7 @@ class SearchResults extends React.Component {
   render () {
     return (
       <div className='results-page'>
-
-        <div className="left column"> 
+        <div className="left column">
           <div className='categories-table'>
             <div className='title'>
               <h2>Categories</h2>
@@ -43,28 +39,28 @@ class SearchResults extends React.Component {
               <Link to={'/categories/results/HTML'}>
                 <div className='single-category'>
                   <img src='/images/icons/HTML.png'/>
-                  <span> HTML</span> 
+                  <span> HTML</span>
                 </div>
               </Link>
 
               <Link to={'/categories/results/CSS'}>
                 <div className='single-category'>
                   <img src='/images/icons/CSS.png'/>
-                  <span> CSS</span> 
+                  <span> CSS</span>
                 </div>
               </Link>
 
               <Link to={'/categories/results/JavaScript'}>
                 <div className='single-category'>
                   <img src='/images/icons/Javascript.png'/>
-                  <span> JavaScript</span> 
+                  <span> JavaScript</span>
                 </div>
               </Link>
 
               <Link to={'/categories/results/Ruby'}>
                 <div className='single-category'>
                   <img src='/images/icons/Ruby.png'/>
-                  <span> Ruby</span> 
+                  <span> Ruby</span>
                 </div>
               </Link>
 
@@ -90,7 +86,6 @@ class SearchResults extends React.Component {
               </Link>
 
             </div>
-            
           </div>
         </div>
 

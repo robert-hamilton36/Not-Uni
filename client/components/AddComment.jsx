@@ -3,11 +3,9 @@ import { connect } from 'react-redux'
 import { addCommentAPI } from '../apis/modules'
 import { fetchModules } from '../actions'
 
-
 class AddComment extends React.Component {
-
   state = {
-    text: ""
+    text: ''
   }
 
   textHandler = (evt) => {
@@ -31,19 +29,17 @@ class AddComment extends React.Component {
       })
   }
 
-  render (){ 
+  render () {
     return (
-      // this.props.isAuthenticated && 
       <div className="add-comment">
         <h1 className = 'title'> Add Your Comment </h1>
         <textarea rows='2' cols='70' onChange={this.textHandler} className="add-comment-input" value={this.state.text} placeholder="place a comment..." />
         <div className="button submit" onClick={this.sumbitHandler}> Post Comment </div>
-        </div>
-      
+      </div>
+
     )
   }
 }
-
 
 function mapStateToProps (globalState) {
   return {

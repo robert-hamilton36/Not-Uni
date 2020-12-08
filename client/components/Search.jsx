@@ -1,7 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchModules, setSearchedModules } from '../actions/index'
-import { Redirect } from 'react-router'
 
 class Search extends React.Component {
   state={
@@ -13,9 +11,9 @@ class Search extends React.Component {
       searchValue: event.target.value
     })
   }
-  
-  handleSubmit = (event)=>{
-    this.setState({fireRedirect: false})
+
+  handleSubmit = (event) => {
+    this.setState({ fireRedirect: false })
     event.preventDefault()
     this.props.history.push('/categories/results/' + this.state.searchValue)
   }
@@ -23,7 +21,6 @@ class Search extends React.Component {
   render () {
     return (
       <>
-
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="search"></label>
           <input className='search' type="text" placeholder='Search' value={this.props.searchValue} onChange={this.handleChange}/>

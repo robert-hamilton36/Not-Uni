@@ -1,9 +1,9 @@
-import {IS_AUTHENTICATED} from '../actions/authenticated'
+import { IS_AUTHENTICATED } from '../actions/authenticated'
 
 const intialState = null
 
 const reducer = (state = intialState, action) => {
-  switch(action.type){
+  switch (action.type) {
     case IS_AUTHENTICATED:
       return action.auth
     default:
