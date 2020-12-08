@@ -7,12 +7,12 @@ const EditProfile = (props) => {
   const [userName, setUserName] = useState(props.user.userName)
   const [email, setEmail] = useState(props.user.email)
   const [error, setError] = useState('')
-  // const [photoURL, setPhotoURL] = useState('')
+  const [pokemon, setPokemon] = useState(0)
 
   function submit(e){
     e.preventDefault()
       try{
-        props.dispatch(updateFirebase(userName, email , props.sidebarClickHandler))
+        props.dispatch(updateFirebase(userName, email , pokemon, props.sidebarClickHandler))
       }catch (e) {
       console.log(e)
       // setError("Failed to edit")
@@ -32,6 +32,7 @@ const EditProfile = (props) => {
 
         <input className='Input-R' type="text" onChange={e => setUserName(e.target.value)} value={userName}/>
         <input className='Input-R' type="text" onChange={e => setEmail(e.target.value)} value={email}/>
+        <input className='Input-R' type="number" onChange={e => setPokemon(e.target.value)} value={pokemon}/>
         <input className='button' type='submit' value='Edit'/>
         </form>
         

@@ -65,17 +65,23 @@ export const  signIn = (email, password, callback, setError) => {
   }
 }
 
-export const updateFirebase = (userName, email, handler) => {
+export const updateFirebase = (userName, email, pokemon, handler) => {
   return dispatch =>{
+    let photoURL= null
+    if(pokemon != 0){
+       photoURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon}.png`
+    } 
     let user = auth.currentUser
     user.updateProfile({
         email:email,
-        displayName: userName
+        displayName: userName,
+        photoURL: photoURL
       })
 
     dispatch(setUser({
       userName: userName,
-      email: user.email
+      email: user.email,
+      photoURL: photoURL
     }))
     handler('')
   }

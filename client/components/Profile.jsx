@@ -56,7 +56,8 @@ class Profile extends React.Component {
           <div className="left column" >
             <div className="profile-options-box">
               <div className="heading">
-                <h1> Welcome {this.props.user.userName} </h1>
+                <h1 className='Welcome'> Welcome {this.props.user.userName} </h1>
+                {this.props.user.photoURL && <img className='pokemon' src={this.props.user.photoURL}/>}
               </div>
               <div className="options">
                 <div onClick={() => this.sidebarClickHandler('your modules') }className="single-option">
