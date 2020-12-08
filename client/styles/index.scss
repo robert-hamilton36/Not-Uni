@@ -191,23 +191,25 @@ body{
     a {
       color: white;
       text-decoration: none;
+      padding: 0px;
+      font-size: 20px;
     }
   }
 
-  .HTML{    
+  .HTML{
     background-color: red;
   }
 
-  .JavaScript{    
+  .JavaScript{
     background-color: rgb(232, 181, 14, 1);
   }
 
-  .Python{    
+  .Python{
     background-color: rgb(34, 79, 163);
     color: white;
   }
 
-  .Ruby{    
+  .Ruby{
     background-color: rgb(165, 16, 16);
     color: white;
   }
@@ -537,7 +539,7 @@ padding-bottom: 10px;
 
   
   .duration-input {
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     width: auto;
     font-size: 16pt;
   }
@@ -598,6 +600,7 @@ padding-bottom: 10px;
       border: none;
       border-radius: 2px;
       padding: 3px;
+      width: 75%;
     }
   }
 

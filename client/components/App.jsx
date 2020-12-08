@@ -41,9 +41,7 @@ class App extends React.Component {
             <Route exact path="/modulecreated" component={ModuleCreated} />
             <Route exact path="/forgotpassword" component={ForgotPassword} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/edit/:id" render={(props) => (
-              <CreateModule {...props} editing={true} />
-            )}/>
+            <Route exact path="/edit/:id" component= {CreateModule} />
           </Switch>
         </Router>
       </div>

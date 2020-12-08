@@ -20,6 +20,16 @@ export function createModuleAPI (module) {
     .then(res => res.body)
 }
 
+export function updateModuleAPI (updatedModule) {
+
+  updatedModule.number_of_elements = updatedModule.elements.length
+
+  const id = updatedModule.id
+
+  return request.patch('/api/modules/' + id ).send(updatedModule)
+    .then(res => res.body)
+}
+
 export function addSavedModuleAPI (user_id, module_id) {
   const module = {user_id: user_id, module_id: module_id}
   return request.post('/api/modules/saved').send(module)

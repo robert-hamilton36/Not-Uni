@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import ReactDOM from 'react-dom'
-import { createModuleAPI } from '../apis/modules'
+import { createModuleAPI, updateModuleAPI } from '../apis/modules'
 import CategoryCard from './CategoryCard'
 
 class CreateModule extends React.Component {
@@ -13,11 +13,14 @@ class CreateModule extends React.Component {
     category: '',
     duration: '',
     number_of_elements: '', // this is calculated later
-    elements: []
+    elements: [],
+    deletedElements: []
   }
 
+  editing = this.props.match.path === '/edit/:id'
+
   componentDidMount () {
-    if (this.props.editing) {
+    if (this.editing) {
 
       const currentModuleId = Number(this.props.match.params.id)
       const currentModule = this.props.modules.find((module) => module.id == currentModuleId)
@@ -27,7 +30,7 @@ class CreateModule extends React.Component {
   }
 
   componentDidUpdate (prevProps) {
-    if (this.props.editing) {
+    if (this.editing) {
       if (!prevProps || prevProps.match.params.id !== this.props.match.params.id || prevProps.modules.length !== this.props.modules.length || prevProps !== this.props) {
 
         console.log("update if");
@@ -122,12 +125,18 @@ class CreateModule extends React.Component {
     })
   }
 
-  deleteElementHandler = (i) => {
+  deleteElementHandler = (i, id) => {
     const tempElements = this.state.elements
     tempElements.splice(i, 1)
     this.setState({
       elements: tempElements
     })
+
+    if (this.editing && id) {
+      this.setState({
+        deletedElements: [...this.state.deletedElements, id]
+      })
+    } 
   }
 
   positionChanger = (direction, i) => {
@@ -146,10 +155,17 @@ class CreateModule extends React.Component {
   }
 
   submitHandler = () => {
-    createModuleAPI(this.state)
+    if (this.editing) {
+      updateModuleAPI(this.state)
+        // .then(() => {
+        //   this.props.history.push('/')
+        // })
+    } else { 
+      createModuleAPI(this.state)
       .then(() => {
         this.props.history.push('/modulecreated')
       })
+    }
   }
 
   render () {
@@ -157,7 +173,7 @@ class CreateModule extends React.Component {
     return (
       <div className='create-module'>
         <div className="meta-input">
-          {this.props.editing ?
+          {this.editing ?
             <h1> Edit Your Module </h1> :
             <h1> Create A Module </h1>
           }
@@ -165,6 +181,8 @@ class CreateModule extends React.Component {
           <input className="input-box title-input" onChange={(evt) => this.metaChangeHandler(evt, 'title')} value={this.state.title} type="text" placeholder="Title"/>
 
           <textarea className="input-box description-input" onChange={(evt) => this.metaChangeHandler(evt, 'description')} value={this.state.description} placeholder="Short Desciption" />
+
+          <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} value={this.state.duration} type="number" placeholder="Approximate Duration (Minutes)"/>
 
           <h3> Category </h3>
           <div className="radio-container">
@@ -191,13 +209,13 @@ class CreateModule extends React.Component {
               <span>  {'<({})>'} Advanced </span>
             </div>
           </div>
+          <div className="step-spacer" /> 
 
-          <input className="input-box duration-input" onChange={(evt) => this.metaChangeHandler(evt, 'duration')} value={this.state.duration} type="number" placeholder="Approximate Duration (Minutes)"/>
         </div>
 
         <div className="element-input-div-container" >
           {this.state.elements.map((element, i) => {
-            const spacer = <div className="step-spacer"> <div/> </div>
+            const spacer = <div className="step-spacer"> </div>
             let needsSpacer = false
 
             if (i > 0 && element.type == 'heading') {
@@ -207,12 +225,12 @@ class CreateModule extends React.Component {
             return (
               <>
                 {needsSpacer && spacer}
-                <div className="element-input-div" style={{ display: 'flex', flexDirection: 'row' }}>
+                <div key={i} className="element-input-div" style={{ display: 'flex', flexDirection: 'row' }}>
                   {this.renderElement(element, i)}
                   <div className="edit-element-div">
                     <div className="edit-element-button" onClick={() => this.positionChanger('up', i)}> Up </div>
                     <div className="edit-element-button" onClick={() => this.positionChanger('down', i)}> Down </div>
-                    <div className="edit-element-button" onClick={() => this.deleteElementHandler(i)}> Delete</div>
+                    <div className="edit-element-button" onClick={() => this.deleteElementHandler(i, element.id)}> Delete</div>
                   </div>
                 </div>
               </>
@@ -239,7 +257,7 @@ class CreateModule extends React.Component {
         </div>
 
         <div className="submit-button" onClick={() => this.submitHandler()} >
-          Create Module
+          {this.editing ? 'Update' : 'Create Module' } 
         </div>
 
       </div>
