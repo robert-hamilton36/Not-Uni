@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { textSpanIsEmpty } from 'typescript'
 import SavedModules from './SavedModules'
 import YourModules from './YourModules'
 

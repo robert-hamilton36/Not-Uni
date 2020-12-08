@@ -36,7 +36,7 @@ class Module extends React.Component {
       this.state.currentModule ? 
       <div className = 'module' >
         <div className='h-module' >
-          <Likes module={this.state.currentModule}/> 
+         {this.props.hasLoaded.authHasLoaded && <Likes module={this.state.currentModule}/>}
           <h1> {this.state.currentModule.title} </h1>
           <div id='duration-and-saved'>
             <h5 id='num-users-saved'> {this.state.currentModule.likes ? this.state.currentModule.likes : 0} Users Have Saved This Module</h5>
@@ -83,9 +83,10 @@ class Module extends React.Component {
           })}
         </div>
 
-        <AddComments moduleID = {this.props.match.params.id}/>
-
+        <div className="comments">
         <Comments comments={this.state.currentModule.comments}/>
+        <AddComments moduleID = {this.props.match.params.id}/>
+        </div>
       </div> : ''
     )
   }
@@ -93,7 +94,8 @@ class Module extends React.Component {
 
 function mapStateToProps (globalState) {
   return {
-    modules: globalState.modules
+    modules: globalState.modules,
+    hasLoaded: globalState.hasLoaded
   }
 }
 export default connect(mapStateToProps)(Module)

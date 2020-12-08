@@ -1,7 +1,18 @@
+
 import { updateLanguageServiceSourceFile } from "typescript"
 import { decreaseLikesAPI, getAllModulesAPI, increaseLikesAPI } from "../apis/modules"
 import { getSavedModulesAPI } from '../apis/modules'
-import { displayCommentsAPi } from '../apis/modules'
+
+import { 
+  decreaseLikesAPI,
+  getAllModulesAPI,
+  increaseLikesAPI,
+  getSavedModulesAPI,
+  displayCommentsAPi,
+  addSavedModuleAPI,
+  removeSavedModuleAPI
+} from '../apis/modules'
+
 
 
 // do we need to import request from 'superagent
@@ -14,40 +25,21 @@ export const MODULES_HAVE_LOADED = 'MODULES_HAVE_LOADED'
 // export const SET_SAVED_MODULES = 'SET_SAVED_MODULES'
 export const SET_SAVED_MODULES_FROM_DATA_BASE = 'SET_SAVED_MODULES_FROM_DATA_BASE'
 export const ADD_SINGLE_MODULE_TO_SAVED_MODULES = 'ADD_SINGLE_MODULE_TO_SAVED_MODULES'
+export const REMOVE_SAVED_MODULE = 'REMOVE_SAVED_MODULE'
 export const SET_USER = 'SET_USER'
 export const SET_LIKES = 'SET_LIKES'
 export const DECREASE_LIKES = 'DECREASE_LIKES'
 export const INCREASE_LIKES = 'INCREASE_LIKES'
 
 
+
+//GET ALL MODULES
 export const setModules = (modules) => {
   return {
     type: SET_MODULES,
     modules
   }
 }
-
-export const modulesHaveLoaded = (boolean) => {
-  return {
-    type: MODULES_HAVE_LOADED,
-    loaded: boolean
-  }
-}
-
-export const setSavedModulesFromDatabase = (modules) => {
-  return {
-    type:SET_SAVED_MODULES_FROM_DATA_BASE,
-    modules: modules
-  }
-}
-export const setSingleModuleToSavedModules = (module) => {
-  return {
-    type:ADD_SINGLE_MODULE_TO_SAVED_MODULES,
-    modules: module
-  }
-}
-
-
 
 export const fetchModules = () => {
   return dispatch => {
@@ -62,6 +54,70 @@ export const fetchModules = () => {
 
 
 
+export const modulesHaveLoaded = (boolean) => {
+  return {
+    type: MODULES_HAVE_LOADED,
+    loaded: boolean
+  }
+}
+
+
+
+
+//ADD TO SAVED MODULES
+
+
+export const setSingleModuleToSavedModules = (module) => {
+  return {
+    type:ADD_SINGLE_MODULE_TO_SAVED_MODULES,
+    module
+  }
+}
+
+export const addSavedModules = (userID, moduleID) => {
+  return dispatch => {
+    return addSavedModuleAPI(userID, moduleID)
+      .then((module)=>
+        {
+        return dispatch(setSingleModuleToSavedModules(module))
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+  }
+
+  // REMOVE SAVED MODULE
+
+  export const removeSingleModuleFromSavedModules = (id) => {
+    return {
+      type:REMOVE_SAVED_MODULE,
+      id
+    }
+  }
+  
+  export const removeSavedModule = (savedModuleID) => {
+    return dispatch => {
+      return removeSavedModuleAPI(savedModuleID)
+        .then(()=>
+          {
+          return dispatch(removeSingleModuleFromSavedModules(savedModuleID))
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      }
+    }
+    
+  
+
+
+
+
+
+//SET SEARCHED MODULES
+
+
 export const setSearchedModules = (modules) =>{
   return{
     type: SET_SEARCH_MODULES,
@@ -71,23 +127,17 @@ export const setSearchedModules = (modules) =>{
 
 
 
+//GET SAVED MODULES
 
 
-// saved Modules
+export const setSavedModulesFromDatabase = (modules) => {
+  return {
+    type:SET_SAVED_MODULES_FROM_DATA_BASE,
+    modules: modules
+  }
+}
 
-// export const addToSavedModules = (module) => {
-//   return {
-//     type: ADD_TO_SAVED_MODULES,
-//     module
-//   }
-// }
 
-// export const setSavedModules = (modules) => {
-//   return {
-//     type: SET_SAVED_MODULES,
-//     modules
-//   }
-// }
 
 export const fetchSavedModules = (userID) => {
   return dispatch => {
