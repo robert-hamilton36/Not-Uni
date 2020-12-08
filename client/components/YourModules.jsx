@@ -13,11 +13,9 @@ class YourModules extends React.Component {
   handleDelete = (boolean, module) => {
     this.setState({delete:boolean,
       moduleToDel:module})
-    console.log(module)
   }
 
   render () {
-    console.log(this.props)
     return (
       <>  
       {this.state.delete && <DeleteModule module={this.state.moduleToDel.id} setDelete={this.handleDelete}/>}

@@ -26,7 +26,7 @@ class AddComment extends React.Component {
 
     addCommentAPI(moduleID, comment)
       .then(() => {
-        console.log('then')
+    
         this.props.dispatch(fetchModules())
       })
   }

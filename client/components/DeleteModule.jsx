@@ -13,8 +13,6 @@ export default function Delete(props) {
       return "Failed to delete"
      }
   }
-
-  console.log(props)
   return (
     <div className ="popup">
        <div className="popup-inner">

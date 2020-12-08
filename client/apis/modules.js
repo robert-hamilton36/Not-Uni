@@ -15,7 +15,6 @@ export function getSavedModulesAPI (id) {
 
 export function createModuleAPI (module) {
   module.number_of_elements = module.elements.length
-  console.log(module);
   return request.post('/api/modules').send(module)
     .then(res => res.body)
 }
@@ -39,7 +38,6 @@ export function removeSavedModuleAPI (savedModuleID) {
 }
 
 export function deleteModule(moduleToDelID) {
-  console.log('/api/modules/del/'+ moduleToDelID)
   return request.delete('/api/modules/del/'+ moduleToDelID)
   .then( response => response.body)
 }

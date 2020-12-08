@@ -12,7 +12,6 @@ class Login extends React.Component {
   }
 
   setLoading = (boolean) => {
-    console.log("Loading")
     this.setState({loading:boolean})
   }
 
