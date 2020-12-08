@@ -85,7 +85,8 @@ class Module extends React.Component {
 
         <div className="comments">
         <Comments comments={this.state.currentModule.comments}/>
-        <AddComments moduleID = {this.props.match.params.id}/>
+       {this.props.isAuthenticated && 
+       <AddComments moduleID = {this.props.match.params.id}/>}
         </div>
       </div> : ''
     )
@@ -95,7 +96,8 @@ class Module extends React.Component {
 function mapStateToProps (globalState) {
   return {
     modules: globalState.modules,
-    hasLoaded: globalState.hasLoaded
+    hasLoaded: globalState.hasLoaded,
+    isAuthenticated: globalState.isAuthenticated
   }
 }
 export default connect(mapStateToProps)(Module)
