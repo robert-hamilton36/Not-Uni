@@ -171,7 +171,7 @@ body{
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
     border-radius: 10%/50%;
     cursor: pointer;
-    padding: 12px;
+    padding: 15px;
 
     img {
       height: 30px;
@@ -318,7 +318,8 @@ body{
     background-color: #2A881B;
     height: 80px;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
     background: rgba(0, 130, 127, 1);
     border-radius: 3px 3px 0 0;
     position: relative;
@@ -343,6 +344,8 @@ body{
   margin-left: 50px;
   font-family: roboto;
   margin-top: 10px;
+  margin-block-end: 5px;
+
   }
 
   h5{
@@ -428,6 +431,31 @@ body{
   }
 }
 
+.comments{
+padding-bottom: 10px;
+
+.title{
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: bold;
+  font-weight: 400;
+  line-height: 19px;
+
+}
+
+.user-name{
+  font-style: Light;
+  font-weight: 300;
+}
+
+.single-comment{
+  padding-top: 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  }
+}
 
 
 //   _____ _____  ______       _______ ______   __  __  ____  _____  _    _ _      ______ 
@@ -436,6 +464,28 @@ body{
 // | |    |  _  /|  __|   / /\ \ | |  |  __|   | |\/| | |  | | |  | | |  | | |    |  __|  
 // | |____| | \ \| |____ / ____ \| |  | |____  | |  | | |__| | |__| | |__| | |____| |____ 
 //  \_____|_|  \_\______/_/    \_\_|  |______| |_|  |_|\____/|_____/ \____/|______|______|
+
+.module-card-difficulty {
+  text-align: right;
+  float: right;
+  margin-bottom: 0.5em;
+
+
+  .colored-difficulty {
+    margin-right: 3em;
+  }
+  h5 {
+    margin-bottom: 0px;
+    margin-right: 2em;
+
+  }
+  h2 {
+    margin-right: 2em;
+    margin-left: 2em;
+    margin-top: 0.3em;
+    text-align: center;
+  }
+}
 
 .create-module {
   width: 1000px;
@@ -538,6 +588,7 @@ body{
     margin-bottom: 20px;
   }
 
+  
   .duration-input {
     margin-bottom: 100px;
     width: auto;
@@ -657,6 +708,25 @@ body{
     top: 2px;
   }
 }
+
+
+#duration-and-saved {
+  margin-top: 0;
+}
+  
+  #duration-display {
+    text-align: right;
+    float: right;
+    margin-top: 0;
+    margin-right: 4em;
+
+  }
+  
+  #num-users-saved{
+    text-align: left;
+    float: left;
+    margin-top: 0;
+  }
 
 //CATEGORIES TABLE
 
@@ -917,4 +987,21 @@ body{
 input{
   font-family: roboto;
   font-size: 20px;
+}
+
+
+.add-comment {
+
+
+  .button{
+    height: 43px;
+    width: 149px;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    background: #2A881B;
+    border-radius: 2px;
+    color: #FFFFFF;
+    border: none;
+    margin-bottom: 40px;
+  }
 }
