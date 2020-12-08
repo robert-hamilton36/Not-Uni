@@ -65,6 +65,35 @@ export const  signIn = (email, password, callback, setError) => {
   }
 }
 
+export const updateFirebase = (userName, email, handler) => {
+  return dispatch =>{
+    let user = auth.currentUser
+    user.updateProfile({
+        email:email,
+        displayName: userName
+      })
+
+    dispatch(setUser({
+      userName: userName,
+      email: user.email
+    }))
+    handler('')
+  }
+}
+
+export const updateFirebasePassword = (password, handler) => {
+    let user = auth.currentUser
+    try{
+      user.updatePassword(password)
+    }
+    catch(e){
+      setError(e)
+    }
+    handler('')
+}
+
+
+
 export const register = (userName, email, password, callback, setError) => {
   return dispatch => {
   auth.createUserWithEmailAndPassword(email, password)
