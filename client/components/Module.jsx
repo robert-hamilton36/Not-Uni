@@ -17,6 +17,7 @@ class Module extends React.Component {
     const currentModuleId = Number(this.props.match.params.id)
     const currentModule = this.props.modules.find((module) => module.id == currentModuleId)
     this.setState({ currentModule })
+    
   }
 
   componentDidUpdate(prevProps) {
