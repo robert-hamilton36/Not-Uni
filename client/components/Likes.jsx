@@ -40,7 +40,7 @@ class Likes extends React.Component {
     });
     setTimeout(function () {
       this.setState({ savedMessage: false });
-    }.bind(this), 1500);
+    }.bind(this), 1800);
   }
 
 
@@ -82,7 +82,7 @@ class Likes extends React.Component {
     return (
       <div className='likes'>
         <img onClick={() => this.clickHandler()} src={imageSource} alt="like button" />
-        {this.state.savedMessage && <MessageSaved />}
+        {this.state.savedMessage && <MessageSaved />  }
 
       </div>
     )
