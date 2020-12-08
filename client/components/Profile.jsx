@@ -58,12 +58,15 @@ class Profile extends React.Component {
                 <h1 className='Welcome'> Welcome {this.props.user.userName} </h1>
                 {this.props.user.photoURL && <img className='pokemon' src={this.props.user.photoURL}/>}
               </div>
+
               <div className="options">
-                <div disbaled={!this.props.hasLoaded.authHasLoaded && !this.props.user} onClick={() => this.sidebarClickHandler('your modules') }className="single-option">
+
+              {this.props.hasLoaded.authHasLoaded && <>{this.props.user && <>
+                <div onClick={() => this.sidebarClickHandler('your modules') }className="single-option">
                   <img src="/images/folder-24px-blue.svg"/>
                   <span> Your Created Modules </span>
                 </div>
-                <div disbaled={!this.props.hasLoaded.authHasLoaded && !this.props.user} onClick={() => { this.sidebarClickHandler('saved modules') }} className="single-option">
+                <div onClick={() => { this.sidebarClickHandler('saved modules') }} className="single-option">
                   <img src="/images/folder-24px-green.svg"/>
                   <span> Your Saved Modules </span>
                 </div>
@@ -73,11 +76,15 @@ class Profile extends React.Component {
                     <span> Create A Module </span>
                   </div>
                 </Link>
-                <div disbaled={!this.props.hasLoaded.authHasLoaded && !this.props.user} onClick={() => this.sidebarClickHandler('edit') }className="single-option">
+                <div onClick={() => this.sidebarClickHandler('edit') }className="single-option">
                   <img src="/images/edit-24px.svg"/>
                   <span> Edit Profile </span>
                 </div>
+                </>}</>}
+
               </div>
+
+
             </div>
           </div>
           <div className="middle column" >
