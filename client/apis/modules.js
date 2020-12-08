@@ -34,13 +34,14 @@ export function addSavedModuleAPI (userID, moduleID) {
 
 
 export function removeSavedModuleAPI (savedModuleID) {
-  
   return request.delete('/api/modules/saved/' + savedModuleID)
     
 }
 
 export function deleteModule(moduleToDelID) {
-  return request.delete(`api/modules/del/${moduleToDelID}`)
+  console.log('/api/modules/del/'+ moduleToDelID)
+  return request.delete('/api/modules/del/'+ moduleToDelID)
+  .then( response => response.body)
 }
 
 
