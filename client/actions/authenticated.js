@@ -43,11 +43,13 @@ export const  signIn = (email, password, callback, setError) => {
     dispatch(setUser({
     // userName: userName,
     uid: user.uid,
-    email: user.email
+    email: user.email,
+    photoURL: user.photoURL
   }))
   return user
 })
   .then((user)=> {
+    console.log(user)
     dispatch(fetchSavedModules(user.user.uid))})
   .then(() => dispatch(isAuthenticated(true)))
   .then(() => dispatch(authIsLoaded(true)))
@@ -70,15 +72,22 @@ export const register = (userName, email, password, callback, setError) => {
     return user
   })
   .then(user => {
+    console.log(user)
     user.user.updateProfile({
-      displayName: userName
+      displayName: userName,
+      photoURL: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png'
     })
+    return user
+  })
+  .then((user) => {
+    console.log(user)
     return user
   })
   .then(user => dispatch(setUser({
     userName: userName,
     uid: user.uid,
-    email: user.email
+    email: user.email,
+    photoURL: user.photoURL
   }
     )))
   .then(() => dispatch(isAuthenticated(true)))
@@ -110,7 +119,8 @@ export const fetchUser = () => {
         dispatch(setUser({
           userName: user.displayName,
           uid: user.uid,
-          email: user.email
+          email: user.email,
+          photoURL: user.photoURL
 
         }
           ))
