@@ -44,7 +44,12 @@ body{
     // top: 29px;
     // border-radius: 0px;
   }
-  
+  .pokemon{
+    position: fixed;
+    height: auto;
+    width: auto;
+    margin-right: 60px;
+  }  
   .search{
     height: 42px;
     width: 630px;
