@@ -45,10 +45,17 @@ body{
     // border-radius: 0px;
   }
   .pokemon{
-    position: fixed;
+    flex: 0 0 auto;
+    flex-direction: row-reverse;
+    // width: 100px;
+    justify-self: right;
+    // position: fixed;
+    padding-right: 5em;
     height: auto;
     width: auto;
     margin-right: 60px;
+    margin-top: 2px;
+    padding-top: 0px;
   }  
   .search{
     height: 42px;
