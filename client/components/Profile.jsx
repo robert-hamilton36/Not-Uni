@@ -6,11 +6,13 @@ import YourModules from './YourModules'
 import EditProfile from './EditProfile'
 import EditPassword from './EditPassword'
 import EditAvatar from './EditAvatar'
+import Delete from './UserAuth/Delete'
 
 
 class Profile extends React.Component {
   state = {
-    activeModules: ''
+    activeModules: '',
+    deleteProfile: false,
   }
   componentDidMount = () => {
   }
@@ -40,17 +42,13 @@ class Profile extends React.Component {
         })
   }
 
-  // getSavedModules = () => {
-  //   const savedIDs = this.props.user.saved
-  //   console.log(this.props.user.saved)
-  //   console.log(this.props.modules)
-  //   const savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id)) || null
-  //   console.log(savedModules)
-  //   this.setState({
-  //     savedModules: savedModules
-  //   })
-  // }
+  setDelete = (boolean) => {
+    this.setState({
+      deleteProfile:boolean
+    })
+  }
   render() {
+    console.log(this.props)
     return (
       <>
         <div className="profile-page">
@@ -86,10 +84,10 @@ class Profile extends React.Component {
             {this.props.hasLoaded.modulesHaveLoaded && <>
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
             {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
-            {this.state.activeModules === "edit" && <EditProfile props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
+            {this.state.activeModules === "edit" && <EditProfile props={this.state.user} sidebarClickHandler={this.sidebarClickHandler} setDelete={this.setDelete}/>}
             {this.state.activeModules === "password" && <EditPassword props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
             {this.state.activeModules === "avatar" && <EditAvatar props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
-      
+            {this.state.deleteProfile === true && <Delete setDelete={this.setDelete} dispatch={this.props.dispatch} history={this.props.history}/>}
             </>
 
              }

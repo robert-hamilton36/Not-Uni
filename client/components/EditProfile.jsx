@@ -20,8 +20,6 @@ const EditProfile = (props) => {
      }
   }
 
-
-
     return (
       <>
       {props.hasLoaded && 
@@ -41,6 +39,7 @@ const EditProfile = (props) => {
         
         <a><p className='button' type='submit' onClick={() => props.sidebarClickHandler("password")}>Edit password</p></a>
         <a><p className='button' type='submit' onClick={() => props.sidebarClickHandler("avatar")}>Edit avatar</p></a>
+        <a><p className='button' type='submit' onClick={() => props.setDelete(true)}>Delete profile</p></a>
 
     
       </div>

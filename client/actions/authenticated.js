@@ -49,7 +49,6 @@ export const  signIn = (email, password, callback, setError) => {
   return user
 })
   .then((user)=> {
-    console.log(user)
     dispatch(fetchSavedModules(user.user.uid))})
   .then(() => dispatch(isAuthenticated(true)))
   .then(() => dispatch(authIsLoaded(true)))
@@ -62,6 +61,17 @@ export const  signIn = (email, password, callback, setError) => {
     console.log(error.code)
       return error
     })
+  }
+}
+
+export const deleteFirebase = (handler) => {
+  return dispatch =>{
+    let user = auth.currentUser
+    user.delete()
+    dispatch(removeUser({}))
+    dispatch(isAuthenticated(null))
+    dispatch(authIsLoaded(false))
+    handler.push('/')
   }
 }
 
@@ -107,15 +117,10 @@ export const register = (userName, email, password, callback, setError) => {
     return user
   })
   .then(user => {
-    console.log(user)
     user.user.updateProfile({
       displayName: userName,
       photoURL: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png'
     })
-    return user
-  })
-  .then((user) => {
-    console.log(user)
     return user
   })
   .then(user => dispatch(setUser({
@@ -204,7 +209,6 @@ export const resetPassword = (email, callback, setError) => {
   .then((user) => {
     return user
   })
-  .then(log => console.log(log))
   .then(() => {
     callback()
   })
