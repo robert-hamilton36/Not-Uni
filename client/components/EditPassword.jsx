@@ -1,23 +1,31 @@
 import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
-import { updateFirebase } from '../actions/authenticated'
+import { updateFirebasePassword } from '../actions/authenticated'
 
 
 const EditProfile = (props) => {
-  const [userName, setUserName] = useState(props.user.userName)
-  const [email, setEmail] = useState(props.user.email)
+  const [password, setPassword] = useState('')
+  const [confirmationPassword, setconfirmationPassword] = useState('')
   const [error, setError] = useState('')
   // const [photoURL, setPhotoURL] = useState('')
 
   function submit(e){
     e.preventDefault()
+  
+    if(password === confirmationPassword){
       try{
-        props.dispatch(updateFirebase(userName, email , props.sidebarClickHandler))
+       updateFirebasePassword(password, props.sidebarClickHandler,setError)
       }catch (e) {
       console.log(e)
-      // setError("Failed to edit")
+      setError("Failed to edit")
       return "Failed to registrate"
      }
+    }else {
+      setError("Passwords do not match")
+      setconfirmationPassword('')
+      setPassword('')
+    }
+
   }
 
 
@@ -30,13 +38,10 @@ const EditProfile = (props) => {
       <div className='Register-card'>
         <form onSubmit={submit}>
 
-        <input className='Input-R' type="text" onChange={e => setUserName(e.target.value)} value={userName}/>
-        <input className='Input-R' type="text" onChange={e => setEmail(e.target.value)} value={email}/>
+        <input className='Input-R' type="password"name="password"  onChange={e => setPassword(e.target.value)}  value={password} placeholder="password"/>
+        <input className='Input-R' type="password" name="passwordConfirm" onChange={e => setconfirmationPassword(e.target.value)} value={confirmationPassword} placeholder="password-confirmation"/>
         <input className='button' type='submit' value='Edit'/>
         </form>
-        
-        <a><p className='button' type='submit' onClick={() => props.sidebarClickHandler("password")}>Edit password</p></a>
-    
       </div>
       </>
       }

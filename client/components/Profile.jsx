@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import SavedModules from './SavedModules'
 import YourModules from './YourModules'
 import EditProfile from './EditProfile'
+import EditPassword from './EditPassword'
+
 
 class Profile extends React.Component {
   state = {
@@ -83,6 +85,7 @@ class Profile extends React.Component {
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
             {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
             {this.state.activeModules === "edit" && <EditProfile props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
+            {this.state.activeModules === "password" && <EditPassword props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
             </>
 
              }
