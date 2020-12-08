@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { textSpanIsEmpty } from 'typescript'
 import SavedModules from './SavedModules'
 import YourModules from './YourModules'
 
@@ -30,16 +29,23 @@ class Profile extends React.Component {
   }
 
   getSavedModules = () => {
-    const savedIDs = this.props.user.saved
-    console.log(this.props.user.saved)
-    console.log(this.props.modules)
-    const savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id)) || null
-    console.log(savedModules)
+    let id = this.props.savedModules.map(module => module.module_id)
+    let modules = this.props.modules.filter(module => id.includes(module.id))
     this.setState({
-      savedModules: savedModules
-    })
+          savedModules: modules
+        })
   }
 
+  // getSavedModules = () => {
+  //   const savedIDs = this.props.user.saved
+  //   console.log(this.props.user.saved)
+  //   console.log(this.props.modules)
+  //   const savedModules = this.props.modules.filter((item) => savedIDs.includes(item.id)) || null
+  //   console.log(savedModules)
+  //   this.setState({
+  //     savedModules: savedModules
+  //   })
+  // }
   render() {
     return (
       <>
@@ -92,6 +98,7 @@ function mapStateToProps(globalState) {
   return {
     user: globalState.user,
     modules: globalState.modules,
+    savedModules: globalState.savedModules,
     hasLoaded: globalState.hasLoaded
   }
 }
