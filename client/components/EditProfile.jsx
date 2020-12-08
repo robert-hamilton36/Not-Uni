@@ -37,9 +37,9 @@ const EditProfile = (props) => {
         <input className='button' type='submit' value='Edit'/>
         </form>
         
-        <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("password")}>Edit password</p></a>
-        <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("avatar")}>Edit avatar</p></a>
-        <a><p className='link' type='submit' onClick={() => props.setDelete(true)}>Delete profile</p></a>
+        <a className='link' ><p  type='submit' onClick={() => props.sidebarClickHandler("password")}>Edit password</p></a>
+        <a className='link' ><p  type='submit' onClick={() => props.sidebarClickHandler("avatar")}>Edit avatar</p></a>
+        <a className='link' ><p  type='submit' onClick={() => props.setDelete(true)}>Delete profile</p></a>
 
     
       </div>
