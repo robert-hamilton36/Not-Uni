@@ -63,7 +63,7 @@ class ModuleCard extends React.Component {
 
           <div className={'s-c-heading ' + cardColor}>
             <h1>{this.props.module.title}</h1>
-            {this.props.hasLoaded.authHasLoaded && <> {this.props.isAuthenticated && <Likes module={this.props.module} />}</>}
+            {/* {this.props.hasLoaded.authHasLoaded && <> {this.props.isAuthenticated && <Likes module={this.props.module} />}</>} */}
           </div>
           <div className='s-c-info'>
 
