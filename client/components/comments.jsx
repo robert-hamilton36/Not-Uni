@@ -6,10 +6,12 @@ class Comments extends React.Component {
   render (){ 
     return (
       <div className="comments"> 
+            <p className='title'>Comments</p>
         {this.props.comments.map(comment => {
           return (
-            <div className="single-comment">
-              <p >{comment.content}</p>
+              <div >
+                  <p className="user-name" >{comment.user_id}</p>
+              <p className="single-comment" >{comment.content}</p>
             </div>
           )
         })}

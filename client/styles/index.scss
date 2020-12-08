@@ -397,6 +397,33 @@ body{
   }
 }
 
+.comments{
+padding-bottom: 10px;
+
+.title{
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: bold;
+  font-weight: 400;
+  line-height: 19px;
+
+}
+
+.user-name{
+  font-style: Light;
+  font-weight: 300;
+}
+
+.single-comment{
+  padding-top: 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  }
+}
+
+
 //   _____ _____  ______       _______ ______   __  __  ____  _____  _    _ _      ______ 
 //  / ____|  __ \|  ____|   /\|__   __|  ____| |  \/  |/ __ \|  __ \| |  | | |    |  ____|
 // | |    | |__| | |__     /  \  | |  | |__    | \  / | |  | | |  | | |  | | |    | |__   
