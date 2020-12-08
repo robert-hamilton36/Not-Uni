@@ -39,7 +39,7 @@ class Module extends React.Component {
          {this.props.hasLoaded.authHasLoaded && <Likes module={this.state.currentModule}/>}
           <h1> {this.state.currentModule.title} </h1>
           <div id='duration-and-saved'>
-            <h5 id='num-users-saved'> {this.state.currentModule.likes ? this.state.currentModule.likes : 0} User(s) Have Saved This Module</h5>
+            <h5 id='num-users-saved'> {this.state.currentModule.likes ? this.state.currentModule.likes : 0} Users Have Saved This Module</h5>
             <h5 id='duration-display'>Duration: Approximately {this.state.currentModule.duration} minutes </h5>
           </div>
         </div>
@@ -83,9 +83,10 @@ class Module extends React.Component {
           })}
         </div>
 
-        <AddComments moduleID = {this.props.match.params.id}/>
-
+        <div className="comments">
         <Comments comments={this.state.currentModule.comments}/>
+        <AddComments moduleID = {this.props.match.params.id}/>
+        </div>
       </div> : ''
     )
   }
