@@ -42,6 +42,9 @@ const EditProfile = (props) => {
         <input className='Input-R' type="password" name="passwordConfirm" onChange={e => setconfirmationPassword(e.target.value)} value={confirmationPassword} placeholder="password-confirmation"/>
         <input className='button' type='submit' value='Edit'/>
         </form>
+
+        <a><p className='button' type='submit' onClick={() => props.sidebarClickHandler("edit")}>Edit profile</p></a>
+        <a><p className='button' type='submit' onClick={() => props.sidebarClickHandler("avatar")}>Edit avatar</p></a>
       </div>
       </>
       }
