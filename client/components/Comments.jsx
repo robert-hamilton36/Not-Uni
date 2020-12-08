@@ -5,6 +5,8 @@ class Comments extends React.Component {
 
   render (){ 
     return (
+
+      <div className="comments"> 
       <div > 
         <p className='title'>Comments</p>
         
