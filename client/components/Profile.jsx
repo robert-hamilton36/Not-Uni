@@ -75,7 +75,7 @@ class Profile extends React.Component {
                   </div>
                 </Link>
                 <div onClick={() => this.sidebarClickHandler('edit') }className="single-option">
-                  {/* <img src="/images/folder-24px-blue.svg"/> */}
+                  <img src="/images/edit-24px.svg"/>
                   <span> Edit Profile </span>
                 </div>
               </div>
