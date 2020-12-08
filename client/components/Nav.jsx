@@ -36,7 +36,7 @@ class Nav extends React.Component {
                 <span> Register </span> 
               </div>
             </Link>
-            <Link to="/login"> 
+            <Link to="/login">
               <div className ='text' > 
                 <span> Login </span> 
               </div>
