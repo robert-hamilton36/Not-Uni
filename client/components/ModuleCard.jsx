@@ -76,7 +76,7 @@ class ModuleCard extends React.Component {
             </ul>
             <div className='module-card-difficulty'> 
               <h5>Difficulty: {this.props.module.difficulty} </h5>
-              <h2 classname='colored-difficulty' style={{color: difficultyColor}}> {moduleDifficulty}</h2>
+              <h2 className='colored-difficulty' style={{color: difficultyColor}}> {moduleDifficulty}</h2>
             </div>
           </div>
           <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
