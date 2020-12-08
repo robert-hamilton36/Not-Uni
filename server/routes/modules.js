@@ -42,6 +42,19 @@ router.get('/created', (req, res) => {
   })
 })
 
+//DEL /api/module/del/id
+
+router.delete('/del/:id', (req, res) => {
+  return modulesDb.deleteModule(req.params.id)
+    .then(savedModules => {
+      res.json(savedModules)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Something is broken' })
+    })
+})
+
 
 //  GET /api/modules/saved
 // shows the logged in person saved modules

@@ -10,13 +10,11 @@ const reducer = (state = initialState, action) => {
       return action.modules
 
     case ADD_SINGLE_MODULE_TO_SAVED_MODULES:
-      console.log('at reducer!')
       let oldSavedModules = [...state]
       oldSavedModules.push(action.module)
       return oldSavedModules
 
     case REMOVE_SAVED_MODULE:
-      console.log(action)
       return state.filter((module)=> module.module_id !== action.id)
       
     default:
