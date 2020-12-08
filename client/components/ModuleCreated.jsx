@@ -8,7 +8,7 @@ class ModuleCreated extends React.Component {
       <div className='module-created'>
         <div className="module-created-card" >
           <h1>Success!</h1>
-          <img class="module-created-success" src='/images/success.png' alt='success'></img>
+          <img className="module-created-success" src='/images/success.png' alt='success'></img>
           <span> Your module has been created</span>
           <Link to="profile"><span> See all your created modules</span> </Link>
         </div>
