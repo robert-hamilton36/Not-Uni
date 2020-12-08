@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import Likes from './Likes'
 
 import { ReactTinyLink } from 'react-tiny-link'
+import { commentsFetched } from '../actions'
+
+import Comments from './Comments'
 
 class Module extends React.Component {
   state = {
@@ -27,7 +30,8 @@ class Module extends React.Component {
   render () {
     return (
 
-      this.state.currentModule ? <div className = 'module' >
+      this.state.currentModule ? 
+      <div className = 'module' >
         {/* <h1>Module View</h1> */}
 
         <div className='h-module' >
@@ -74,8 +78,11 @@ class Module extends React.Component {
                 )
             }
           })}
+          {/* <Likes module={this.state.currentModule}/> likes:{this.state.currentModule.likes} */}
+
           
         </div>
+        <Comments comments={this.state.currentModule.comments}/>
       </div> : ''
     )
   }
