@@ -39,6 +39,10 @@ export function removeSavedModuleAPI (savedModuleID) {
     
 }
 
+export function deleteModule(moduleToDelID) {
+  return request.delete(`api/modules/del/${moduleToDelID}`)
+}
+
 
 export function increaseLikesAPI(module){
   let updatedModule ={
