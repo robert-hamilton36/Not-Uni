@@ -6,6 +6,24 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 class ModuleCard extends React.Component {
   render () {
    
+      let moduleDifficulty = ''
+      let difficultyColor = ''
+      switch (this.props.module.difficulty) {
+        case 'Beginner':
+          moduleDifficulty = '<>';
+          difficultyColor = '#2A881B';
+          break;
+        case 'Intermediate':
+          moduleDifficulty = '<()>';
+          difficultyColor = 'rgb(216, 194, 0)';
+          break;
+        case 'Advanced':
+          moduleDifficulty = '<({})>';
+          difficultyColor = 'rgb(216, 0, 0)';
+          break;
+    }
+
+
     const findHeader = this.props.module.elements.filter((element) => {
       return (element.type === 'heading')
     })
@@ -36,6 +54,7 @@ class ModuleCard extends React.Component {
         cardColor = ''
     }
 
+   
     return (
       <>
 
@@ -55,8 +74,13 @@ class ModuleCard extends React.Component {
                 )
               })}
             </ul>
+            <div className='module-card-difficulty'> 
+              <h5>Difficulty: {this.props.module.difficulty} </h5>
+              <h2 classname='colored-difficulty' style={{color: difficultyColor}}> {moduleDifficulty}</h2>
+            </div>
           </div>
           <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
+          
         </div>
       </>
     )
