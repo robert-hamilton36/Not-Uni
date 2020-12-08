@@ -544,6 +544,16 @@ body{
     font-size: 16pt;
   }
 
+  .duration-display {
+    float: right;
+    display: inline;
+  }
+
+  .num_users_saved{
+    float: left;
+    display: inline;
+  }
+
   .add-element-button-div {
     display: flex;
     justify-content: flex-start;

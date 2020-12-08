@@ -33,8 +33,9 @@ class Module extends React.Component {
         <div className='h-module' >
           <Likes module={this.state.currentModule}/> 
           <h1> {this.state.currentModule.title} </h1>
-          <h5> {this.state.currentModule.duration} minutes</h5>
-          <h6>{this.state.currentModule.likes} people have saved this module</h6>
+          <h5 className='duration-display'> {this.state.currentModule.duration} minutes. </h5>
+          <h5 className='num-users-saved'> {this.state.currentModule.likes} user(s) have saved this module</h5>
+          {/* <h6></h6> */}
         </div>
         
         <div className="B-I-module">
