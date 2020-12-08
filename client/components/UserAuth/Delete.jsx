@@ -14,10 +14,12 @@ export default function Delete(props) {
   }
 
   return (
-    <div>
-      <h1>Are you sure you want to delete your profile</h1>
-      <button onClick={() => submit()}>Delete</button>
-      <button onClick={() => props.setDelete(false)}>Cancel</button>
+    <div className ="popup">
+       <div className="popup-inner">
+        <h1>Are you sure you want to delete your profile?</h1>
+        <button className="button" onClick={() => submit()}>Delete</button>
+        <button className="button delete" onClick={() => props.setDelete(false)}>Cancel</button>
+        </div>
     </div>
   )
 }
