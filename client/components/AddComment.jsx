@@ -28,7 +28,7 @@ class AddComment extends React.Component {
   render (){ 
     return (
       <div className="add-comment">
-        <h1> add a comment </h1>
+        <h1 className = 'title'> Add Your Comment </h1>
         <textarea onChange={this.textHandler} className="add-comment-input" value={this.state.text} placeholder="place a comment..." />
         <div className="button submit" onClick={this.sumbitHandler}> Comment </div>
       </div>
