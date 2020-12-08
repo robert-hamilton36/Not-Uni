@@ -51,6 +51,16 @@ function deleteElement (id, db = connection) {
   return db('module_elements').where('id', id).del()
 }
 
+function deleteModule (id, db = connection){
+  return db('modules')
+  .where('id', id)
+  .then (()=> {
+    return db('modules')
+    .where('id', id)
+    .del()
+  })
+}
+
 module.exports = {
   getAllModules,
   getModuleElements,
@@ -59,5 +69,6 @@ module.exports = {
   getModulesByUserId,
   updateModuleMeta,
   updateElement,
-  deleteElement
+  deleteElement,
+  deleteModule
 }

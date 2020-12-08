@@ -5,7 +5,9 @@ class Comments extends React.Component {
 
   render (){ 
     return (
+
       <div className="comments"> 
+      <div > 
         <p className='title'>Comments</p>
         
         {this.props.comments.map((comment, i) => {
@@ -16,6 +18,7 @@ class Comments extends React.Component {
             </div>
           )
         })}
+       </div>
        </div>
     )
   }

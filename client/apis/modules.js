@@ -8,14 +8,13 @@ export function getAllModulesAPI () {
 
 export function getSavedModulesAPI (id) {
   return request.get(`/api/modules/saved/${id}`)
-  // .query({id:id})
   .then(res => { 
     return res.body })
 }
 
+
 export function createModuleAPI (module) {
   module.number_of_elements = module.elements.length
-  console.log(module);
   return request.post('/api/modules').send(module)
     .then(res => res.body)
 }
@@ -30,10 +29,26 @@ export function updateModuleAPI (updatedModule) {
     .then(res => res.body)
 }
 
-export function addSavedModuleAPI (user_id, module_id) {
-  const module = {user_id: user_id, module_id: module_id}
-  return request.post('/api/modules/saved').send(module)
+export function addSavedModuleAPI (userID, moduleID) {
+  const module = {
+    user_id: userID,
+    module_id: moduleID
+  }
+  return request.post('/api/modules/saved')
+    .send(module)
     .then(res=>res.body)
+}
+
+
+
+export function removeSavedModuleAPI (savedModuleID) {
+  return request.delete('/api/modules/saved/' + savedModuleID)
+    
+}
+
+export function deleteModule(moduleToDelID) {
+  return request.delete('/api/modules/del/'+ moduleToDelID)
+  .then( response => response.body)
 }
 
 
@@ -89,8 +104,7 @@ export function addCommentAPI (moduleID, comment) {
 
 // Get comments on a Module
 
-export function displayCommentsAPi(id){;
+export function displayCommentsAPi(id) {
   return request.get('/api/comments/' + id)
     .then(res => res.body)
-  }
-
+}

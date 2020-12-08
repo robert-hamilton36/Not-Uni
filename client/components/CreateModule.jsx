@@ -157,14 +157,14 @@ class CreateModule extends React.Component {
   submitHandler = () => {
     if (this.editing) {
       updateModuleAPI(this.state)
-        // .then(() => {
-        //   this.props.history.push('/')
-        // })
+        .then(() => {
+          this.props.history.push('/module/' + this.props.match.params.id)
+        })
     } else { 
       createModuleAPI(this.state)
-      .then(() => {
-        this.props.history.push('/modulecreated')
-      })
+        .then(() => {
+          this.props.history.push('/modulecreated')
+        })
     }
   }
 
@@ -198,15 +198,15 @@ class CreateModule extends React.Component {
           <h3> Difficulty </h3>
           <div className="radio-container"> 
             <div className={this.state.difficulty === "Beginner" ? 'green radio selected' : 'green radio'} onClick={() => this.difficultyChangeHandler("Beginner")} >
-              <span> {'<>'} Beginner </span>
+              <span> {'<Beginner>'} </span>
             </div>
 
             <div className={this.state.difficulty === "Intermediate" ? 'yellow radio selected' : 'yellow radio'} onClick={() => this.difficultyChangeHandler("Intermediate")} >
-              <span>  {'<()>'} Intermediate </span>
+              <span>  {'<(Intermediate)>'} </span>
             </div>
 
             <div className={this.state.difficulty === "Advanced" ? 'red radio selected' : 'red radio'} onClick={() => this.difficultyChangeHandler("Advanced")} >
-              <span>  {'<({})>'} Advanced </span>
+              <span>  {'<({Advanced})>'} </span>
             </div>
           </div>
           <div className="step-spacer" /> 

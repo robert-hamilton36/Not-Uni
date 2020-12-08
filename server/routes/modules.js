@@ -42,6 +42,19 @@ router.get('/created', (req, res) => {
   })
 })
 
+//DEL /api/module/del/id
+
+router.delete('/del/:id', (req, res) => {
+  return modulesDb.deleteModule(req.params.id)
+    .then(savedModules => {
+      res.json(savedModules)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Something is broken' })
+    })
+})
+
 
 //  GET /api/modules/saved
 // shows the logged in person saved modules
@@ -63,8 +76,9 @@ router.get('/saved/:id', (req, res) => {
 router.post('/saved', (req, res) => {
   const newSave = req.body
   return savedModulesDb.addSavedModule(newSave)
-  .then((whatever) => {
-    res.json(whatever)
+  .then((id) => {
+    newSave.id = id[0]
+    res.json(newSave)
   })
   .catch(err => {
     console.log(err)
@@ -188,5 +202,23 @@ router.patch('/:id',(req,res) =>{
     })
 
 })
+
+
+
+
+//delete Saved module
+router.delete('/saved/:id', (req,res)=>{
+
+  const id = req.params.id
+  savedModulesDb.deleteSavedModule(id)
+    .then(module =>{
+      res.json({module})
+    })
+    .catch((err)=>{
+      console.log(err)
+      res.status(500).json({message:'something went wrong'})
+    })
+})
+
 
 module.exports = router
