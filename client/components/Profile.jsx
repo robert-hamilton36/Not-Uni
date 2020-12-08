@@ -3,10 +3,11 @@ import { Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import SavedModules from './SavedModules'
 import YourModules from './YourModules'
+import EditProfile from './EditProfile'
 
 class Profile extends React.Component {
   state = {
-    activeModules: null
+    activeModules: ''
   }
   componentDidMount = () => {
   }
@@ -70,6 +71,10 @@ class Profile extends React.Component {
                     <span> Create A Module </span>
                   </div>
                 </Link>
+                <div onClick={() => this.sidebarClickHandler('edit') }className="single-option">
+                  {/* <img src="/images/folder-24px-blue.svg"/> */}
+                  <span> Edit Profile </span>
+                </div>
               </div>
             </div>
           </div>
@@ -77,6 +82,7 @@ class Profile extends React.Component {
             {this.props.hasLoaded.modulesHaveLoaded && <>
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
             {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
+            {this.state.activeModules === "edit" && <EditProfile props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
             </>
 
              }
