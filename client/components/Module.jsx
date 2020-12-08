@@ -22,20 +22,20 @@ class Module extends React.Component {
       const currentModule = this.props.modules.find((module) => module.id === currentModuleId)
       this.setState({ currentModule })
     }
-  }
+  }  
 
   render () {
     return (
 
-      this.state.currentModule ? <div className = 'module' >
-        {/* <h1>Module View</h1> */}
-
+      this.state.currentModule ? 
+      <div className = 'module' >
         <div className='h-module' >
           <Likes module={this.state.currentModule}/> 
           <h1> {this.state.currentModule.title} </h1>
-          <h5 className='duration-display'> {this.state.currentModule.duration} minutes. </h5>
-          <h5 className='num-users-saved'> {this.state.currentModule.likes} user(s) have saved this module</h5>
-          {/* <h6></h6> */}
+          <div id='duration-and-saved'>
+            <h5 id='num-users-saved'> {this.state.currentModule.likes ? this.state.currentModule.likes : 0} User(s) Have Saved This Module</h5>
+            <h5 id='duration-display'>Duration: Approximately {this.state.currentModule.duration} minutes </h5>
+          </div>
         </div>
         
         <div className="B-I-module">
