@@ -8,7 +8,7 @@ import CategoryCard from './CategoryCard'
 class CreateModule extends React.Component {
   state = {
     title: '',
-    user_id: '',
+    user_id: this.props.user.uid,
     description: '',
     category: '',
     duration: '',
@@ -169,7 +169,7 @@ class CreateModule extends React.Component {
   }
 
   render () {
-    {this.props.authHasLoaded && this.props.isAuthenticated !== true && this.props.history.push('/login')}
+    {this.props.hasLoaded.authHasLoaded && this.props.isAuthenticated !== true && this.props.history.push('/login')}
     return (
       <div className='create-module'>
         <div className="meta-input">
@@ -270,7 +270,10 @@ function mapStateToProps(globalState) {
     searchModules: globalState.searchModules,
     modules: globalState.modules,
     isAuthenticated: globalState.isAuthenticated,
-    authHasLoaded: globalState.authHasLoaded
+    authHasLoaded: globalState.authHasLoaded,
+    user: globalState.user,
+    hasLoaded: globalState.hasLoaded
+
   }
 }
 

@@ -117,9 +117,10 @@ export const register = (userName, email, password, callback, setError) => {
     return user
   })
   .then(user => {
+    let num = Math.floor(Math.random() * 898)
     user.user.updateProfile({
       displayName: userName,
-      photoURL: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png'
+      photoURL: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${num}.png`
     })
     return user
   })

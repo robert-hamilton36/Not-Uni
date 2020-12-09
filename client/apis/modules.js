@@ -1,4 +1,5 @@
 import request from 'superagent'
+import { fetchModules } from '../actions'
 
 export function getAllModulesAPI () {
   return request.get('/api/modules')
@@ -47,6 +48,7 @@ export function removeSavedModuleAPI (savedModuleID) {
 }
 
 export function deleteModule(moduleToDelID) {
+
   return request.delete('/api/modules/del/'+ moduleToDelID)
   .then( response => response.body)
 }
