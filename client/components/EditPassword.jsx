@@ -1,13 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { updateFirebasePassword } from '../actions/authenticated'
-
 
 const EditProfile = (props) => {
   const [password, setPassword] = useState('')
   const [confirmationPassword, setconfirmationPassword] = useState('')
   const [error, setError] = useState('')
-  // const [photoURL, setPhotoURL] = useState('')
 
   function submit(e){
     e.preventDefault()
@@ -25,10 +23,7 @@ const EditProfile = (props) => {
       setconfirmationPassword('')
       setPassword('')
     }
-
   }
-
-
 
     return (
       <>
@@ -37,12 +32,10 @@ const EditProfile = (props) => {
       <h1>{error}</h1>
       <div className='Register-card'>
         <form onSubmit={submit}>
-
         <input className='Input-R' type="password"name="password"  onChange={e => setPassword(e.target.value)}  value={password} placeholder="password"/>
         <input className='Input-R' type="password" name="passwordConfirm" onChange={e => setconfirmationPassword(e.target.value)} value={confirmationPassword} placeholder="password-confirmation"/>
         <input className='button' type='submit' value='Edit'/>
         </form>
-
         <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("edit")}>Edit profile</p></a>
         <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("avatar")}>Edit avatar</p></a>
       </div>

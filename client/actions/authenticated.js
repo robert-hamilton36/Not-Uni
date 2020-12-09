@@ -41,7 +41,6 @@ export const  signIn = (email, password, callback, setError) => {
   })
   .then(user => {
     dispatch(setUser({
-    // userName: userName,
     uid: user.uid,
     email: user.email,
     photoURL: user.photoURL
@@ -108,8 +107,6 @@ export const updateFirebasePassword = (password, handler) => {
     handler('')
 }
 
-
-
 export const register = (userName, email, password, callback, setError) => {
   return dispatch => {
   auth.createUserWithEmailAndPassword(email, password)
@@ -161,7 +158,6 @@ export const fetchUser = () => {
           uid: user.uid,
           email: user.email,
           photoURL: user.photoURL
-
         }
           ))
         dispatch(isAuthenticated(true))
@@ -173,7 +169,6 @@ export const fetchUser = () => {
           ))
         dispatch(isAuthenticated(true))
       } else {
-        
       }
       dispatch(authIsLoaded(true))
 
@@ -204,7 +199,6 @@ export const signInWithOutsideProvider = (provider, callback) => {
 }
 
 export const resetPassword = (email, callback, setError) => {
-
   auth.sendPasswordResetEmail(email)
   .then((user) => {
     return user

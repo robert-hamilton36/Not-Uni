@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { updateFirebase } from '../actions/authenticated'
-
 
 const EditProfile = (props) => {
   const [userName, setUserName] = useState(props.user.userName)
@@ -19,8 +18,6 @@ const EditProfile = (props) => {
       return "Failed to registrate"
      }
   }
-
-
 
     return (
       <>
@@ -40,9 +37,6 @@ const EditProfile = (props) => {
 
         <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("edit")}>Edit profile</p></a>
         <a><p className='link' type='submit' onClick={() => props.sidebarClickHandler("password")}>Edit password</p></a>
-      
-
-    
       </div>
       </>
       }
