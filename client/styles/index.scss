@@ -466,24 +466,14 @@ body{
     }
   }
 
-  .message-saved{
-    // z-index: 100;
-    // position: absolute;
-    // top: 200px;
-    // left: 50%;
-    // margin-left: -160px;
-    // height: auto;
-    // border-radius: 3px;
-    // background: rgba(252, 252, 252, 1);
-    // box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-    // width: 30%;
+
+  .message {
     display:flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
     background-color: rgba(255, 255, 255, 0.5);
-    ;
     backdrop-filter: blur(10px);
     position: fixed;
     top:0;
@@ -491,27 +481,20 @@ body{
     z-index: 10; 
     padding: 50px;
   
-
-    .message-heading {
-      padding: 20px 20px 10px;
-      border-radius: 3px 3px 0 0;
-      background: #2A881B;
-      border-radius: 3px 3px 0 0;
-      position: relative;
+  
+    &-content{
+      background: #ffffff;
+      height: auto;
+      width:40vw;
+      font-family: roboto;
+      text-align: center;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+      padding-right:15px;
+      width:20%;
+      padding-right: 30px;
 
     }
-
-    h3{
-      padding-left: 20px;
-    }
-
   
-    
-  
-    // img{
-    //   height: 500px;
-    //   width: 500px;
-    // }
   }
 }
 

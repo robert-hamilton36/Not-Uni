@@ -17,8 +17,9 @@ function addSavedModule (newSave, db = connection) {
 
 function deleteSavedModule (id, db=connection){
   return db('saved_modules')
-  .where('saved_modules.id', id)
+  .where('saved_modules.module_id', id)
   .delete()
+  .debug()
 }
 
 module.exports = {
