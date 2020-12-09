@@ -1,11 +1,9 @@
-import { Breadcrumbs } from '@material-ui/core'
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
-import Likes from './Likes'
+import { BrowserRouter as Link } from 'react-router-dom'
 
 class ModuleCard extends React.Component {
-state={delete:this.props.delete}
+state = { delete:this.props.delete }
 
   render () {
    
@@ -26,11 +24,9 @@ state={delete:this.props.delete}
           break;
     }
 
-
     const findHeader = this.props.module.elements.filter((element) => {
       return (element.type === 'heading')
     })
-
 
     let cardColor = ''
 
@@ -53,6 +49,12 @@ state={delete:this.props.delete}
       case 'C++':
         cardColor = 'Cplus';
         break;
+      case 'CSS':
+        cardColor = 'CSS';
+        break;
+      case 'Csharp':
+        cardColor = 'CSharp';
+        break;
       default:
         cardColor = ''
     }
@@ -60,7 +62,6 @@ state={delete:this.props.delete}
    console.log(this.props)
     return (
       <>
-
         <div className='module-card'>
 
           <div className={'s-c-heading ' + cardColor}>
@@ -74,12 +75,10 @@ state={delete:this.props.delete}
             {/* {this.props.hasLoaded.authHasLoaded && <> {this.props.isAuthenticated && <Likes module={this.props.module} />}</>} */}
           </div>
           <div className='s-c-info'>
-
             <p> {this.props.module.description}</p>
             <ul className="steps-list">
               {findHeader.map((header) => {
                 return (
-
                   <li key={header.id}> {header.content}</li>
                 )
               })}
@@ -89,7 +88,6 @@ state={delete:this.props.delete}
             </div>
           </div>
           <Link to={`/module/${this.props.module.id}`}> Learn More</Link>
-          
         </div>
       </>
     )

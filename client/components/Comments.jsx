@@ -1,15 +1,12 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 class Comments extends React.Component {
 
   render (){ 
     return (
-
       <div className="comments"> 
       <div > 
         <p className='title'>Comments</p>
-        
         {this.props.comments.map((comment, i) => {
           return (
             <div key={i}>
@@ -23,6 +20,5 @@ class Comments extends React.Component {
     )
   }
 }
-
 
 export default Comments

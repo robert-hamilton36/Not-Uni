@@ -5,13 +5,11 @@ import {connect} from 'react-redux'
 import { signOut } from '../actions/authenticated'
 
 class Nav extends React.Component {
-
   handleClick= () =>{
     this.props.dispatch(signOut())
   }
 
   render () {
-    
     return (
       <>
         <nav className="top-nav">
@@ -20,13 +18,11 @@ class Nav extends React.Component {
               <img src="/images/not_uni.png" />
             </Link>
           </div>
-
           {this.props.location.pathname === '/'
             ? '' : <div >
               <Route path = '/' component={Search}/>
             </div>
           }
-          
           {/* if user is NOT signed in */}
           {this.props.hasLoaded.authHasLoaded &&
          <div className='text' >
@@ -42,7 +38,6 @@ class Nav extends React.Component {
               </div>
             </Link>
             </>}
-
           {/* if user is signed in */}
           { this.props.isAuthenticated === true && <>
           <Link to="/profile"> 
@@ -55,7 +50,6 @@ class Nav extends React.Component {
           </>}
          </div>
           }
-
         </nav>
       </>
     )

@@ -16,13 +16,7 @@ import ModuleCreated from './ModuleCreated'
 import ForgotPassword from './UserAuth/ForgotPassword'
 
 const App = (props) => {
-  // componentDidMount () {
-    //   // this.props.dispatch(fetchUser())
-    //   // if(this.props.user === {}){
-      //   //   this.props.dispatch(fetchSavedModules(this.props.user.uid))
-      //   // }
-      // }
-      
+
   useEffect(() => {
     props.dispatch(fetchModules())
   }, [])
