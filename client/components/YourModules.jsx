@@ -20,7 +20,7 @@ class YourModules extends React.Component {
       <>  
       {this.state.delete && <DeleteModule module={this.state.moduleToDel.id} setDelete={this.handleDelete}/>}
         {this.props.yourModules.map((module, idx) => {
-          return( <><ModuleCard handleDelete={this.handleDelete} delete={true} key={idx} module={module} /> </>)
+          return( <><ModuleCard handleDelete={this.handleDelete} isYourModule={true} delete={true} key={idx} module={module} /> </>)
         })}
       </>
     )
