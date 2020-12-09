@@ -1,10 +1,5 @@
 const connection = require('./connection')
 
-// function getAllModules (db = connection) {
-//   return db('modules')
-//     .select()
-// }
-
 function getAllModules(db = connection) {
   return db('modules').select()
     .then(modules => Promise.all(modules.map(module => {
@@ -51,10 +46,14 @@ function deleteElement (id, db = connection) {
   return db('module_elements').where('id', id).del()
 }
 
+function updateModule (id, updatedModule, db = connection) {
+  return db('modules').update(updatedModule).where('id', id)
+}
+
 function deleteModule (id, db = connection){
   return db('modules')
   .where('id', id)
-  .then (()=> {
+  .then (() => {
     return db('modules')
     .where('id', id)
     .del()
@@ -68,6 +67,7 @@ module.exports = {
   createModuleElement,
   getModulesByUserId,
   updateModuleMeta,
+  updateModule,
   updateElement,
   deleteElement,
   deleteModule

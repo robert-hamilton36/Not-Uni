@@ -1,9 +1,6 @@
 import React, {useEffect} from 'react'
 import { connect } from 'react-redux'
-import { fetchModules, fetchSavedModules } from '../actions'
-
-
-import ModulesFeed from './SearchResults'
+import { fetchModules } from '../actions'
 import Search from './Search'
 import { Route } from 'react-router-dom'
 
@@ -11,7 +8,6 @@ const HomePage = (props) => {
   useEffect(() => {
     props.dispatch(fetchModules())
   }, [])
-
     return (
       <div className='homepage'>
         <div className='homepage-logo'>
@@ -23,7 +19,6 @@ const HomePage = (props) => {
         </div>
       </div>
     )
-
 }
 
 function mapStateToProps (globalState) {

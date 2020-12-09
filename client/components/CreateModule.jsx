@@ -94,7 +94,6 @@ class CreateModule extends React.Component {
     }
   }
 
-  // TODO: make these three into one function
   titleChangeHandler = (evt) => {
     this.setState({
       title: evt.target.value
@@ -194,17 +193,14 @@ class CreateModule extends React.Component {
             <CategoryCard displayName="C++" category="C++" isActive = {this.state.category === 'C++'} callBack={() => this.categoryChangeHandler('C++')}/>
             <CategoryCard displayName="C#" category="Csharp" isActive = {this.state.category === 'Csharp'} callBack={() => this.categoryChangeHandler('Csharp')}/>
           </div>
-
           <h3> Difficulty </h3>
           <div className="radio-container"> 
             <div className={this.state.difficulty === "Beginner" ? 'green radio selected' : 'green radio'} onClick={() => this.difficultyChangeHandler("Beginner")} >
               <span> {'<Beginner>'} </span>
             </div>
-
             <div className={this.state.difficulty === "Intermediate" ? 'yellow radio selected' : 'yellow radio'} onClick={() => this.difficultyChangeHandler("Intermediate")} >
               <span>  {'<(Intermediate)>'} </span>
             </div>
-
             <div className={this.state.difficulty === "Advanced" ? 'red radio selected' : 'red radio'} onClick={() => this.difficultyChangeHandler("Advanced")} >
               <span>  {'<({Advanced})>'} </span>
             </div>
@@ -242,20 +238,16 @@ class CreateModule extends React.Component {
           <div className="add-element-button" onClick={() => this.addElementHandler('heading')}>
             + Add Step
           </div>
-
           <div className="add-element-button" onClick={() => this.addElementHandler('paragraph')} >
             + Add Paragraph
           </div>
-
           <div className="add-element-button" onClick={() => this.addElementHandler('link')} >
             + Add Link
           </div>
-
           <div className="add-element-button" onClick={() => this.addElementHandler('video')} >
             + Add Video
           </div>
         </div>
-
         <div className="submit-button" onClick={() => this.submitHandler()} >
           {this.editing ? 'Update' : 'Create Module' } 
         </div>

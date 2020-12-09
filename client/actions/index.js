@@ -4,22 +4,14 @@ import {
   getAllModulesAPI,
   increaseLikesAPI,
   getSavedModulesAPI,
-  displayCommentsAPi,
   addSavedModuleAPI,
   removeSavedModuleAPI,
   createModuleAPI
 } from '../apis/modules'
 
-
-
-// do we need to import request from 'superagent
-
 export const SET_MODULES = 'SET_MODULES'
 export const SET_SEARCH_MODULES ='SET_SEARCH_MODULES'
-
 export const MODULES_HAVE_LOADED = 'MODULES_HAVE_LOADED'
-// export const ADD_TO_SAVED_MODULES = 'ADD_TO_SAVED_MODULES'
-// export const SET_SAVED_MODULES = 'SET_SAVED_MODULES'
 export const SET_SAVED_MODULES_FROM_DATA_BASE = 'SET_SAVED_MODULES_FROM_DATA_BASE'
 export const ADD_SINGLE_MODULE_TO_SAVED_MODULES = 'ADD_SINGLE_MODULE_TO_SAVED_MODULES'
 export const REMOVE_SAVED_MODULE = 'REMOVE_SAVED_MODULE'
@@ -28,9 +20,7 @@ export const SET_LIKES = 'SET_LIKES'
 export const DECREASE_LIKES = 'DECREASE_LIKES'
 export const INCREASE_LIKES = 'INCREASE_LIKES'
 
-
-
-//GET ALL MODULES
+// GET ALL MODULES
 export const setModules = (modules) => {
   return {
     type: SET_MODULES,
@@ -55,38 +45,7 @@ export const modulesHaveLoaded = (boolean) => {
   }
 }
 
-
-
-
-
-// CREATE A MODULE
-// export const createModule = (module) => {
-//   return dispatch => {
-//     return createModuleAPI(module)
-//       .then(response => {
-//         console.log(response)
-//         dispatch(moduleCreated(module))
-//       })
-//   }
-// }
-
-// export const moduleCreated = () => {
-//   return {
-//     type: MODULE_CREATED,
-//     module: module,
-//   }
-// }
-
-// UPDATE A MODULE
-
-// export const updateModule = (id, module) => {
-//   return ''
-// }
-
-
-//ADD TO SAVED MODULES
-
-
+// ADD TO SAVED MODULES
 export const setSingleModuleToSavedModules = (module) => {
   return {
     type:ADD_SINGLE_MODULE_TO_SAVED_MODULES,
@@ -108,7 +67,6 @@ export const addSavedModules = (userID, moduleID) => {
   }
 
   // REMOVE SAVED MODULE
-
   export const removeSingleModuleFromSavedModules = (id) => {
     return {
       type:REMOVE_SAVED_MODULE,
@@ -128,16 +86,8 @@ export const addSavedModules = (userID, moduleID) => {
         })
       }
     }
-    
-  
 
-
-
-
-
-//SET SEARCHED MODULES
-
-
+// SET SEARCHED MODULES
 export const setSearchedModules = (modules) =>{
   return{
     type: SET_SEARCH_MODULES,
@@ -145,19 +95,13 @@ export const setSearchedModules = (modules) =>{
   }
 }
 
-
-
-//GET SAVED MODULES
-
-
+// GET SAVED MODULES
 export const setSavedModulesFromDatabase = (modules) => {
   return {
     type:SET_SAVED_MODULES_FROM_DATA_BASE,
     modules: modules
   }
 }
-
-
 
 export const fetchSavedModules = (userID) => {
   return dispatch => {
@@ -172,19 +116,14 @@ export const fetchSavedModules = (userID) => {
     }
   }
   
-  export const setUser = (user) => {
-    return {
-      type: SET_USER,
-      user: user
-    }
+export const setUser = (user) => {
+  return {
+    type: SET_USER,
+    user: user
   }
+}
 
-
-
-
-
-//Update Module Likes
-  
+// Update Module Likes
 export const increaseLikes = (module) => {
   return {
     type: INCREASE_LIKES,
@@ -203,8 +142,6 @@ export const increaseModuleLikes = (module) => {
       })
     }
 }
-
-
 
 export const decreaseLikes = (module) => {
   return {

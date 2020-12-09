@@ -3,16 +3,12 @@ import { connect } from 'react-redux'
 import { addSavedModules, decreaseModuleLikes, increaseModuleLikes, removeSavedModule } from '../actions'
 import MessageSaved from './MessageSaved'
 
-
-
-
 class Likes extends React.Component {
 
   state = {
     saved: false,
     savedMessage: false
   }
-
 
   componentDidMount() {
     this.setSaved()
@@ -34,9 +30,6 @@ class Likes extends React.Component {
     })
   }
 
-
-
-
   clickHandler = () => {
     this.setState({
       saved: (this.state.saved) ? false : true,
@@ -52,23 +45,20 @@ class Likes extends React.Component {
     });
     setTimeout(function () {
       this.setState({ savedMessage: false });
-    }.bind(this), 1500);
+    }.bind(this), 1300);
   }
-
 
   afterSetStateFinished = () => {
     const thisModule = this.props.module
     const alreadySaved = this.props.savedModules.find((module) => {
       return module.module_id === thisModule.id
     })
-
     if (alreadySaved) {
       this.removeFromSavedModules()
     } else {
       this.addToSavedModules()
     }
   }
-
 
   addToSavedModules = () => {
     const userID = this.props.user.uid
@@ -85,17 +75,12 @@ class Likes extends React.Component {
     this.props.dispatch(decreaseModuleLikes(thisModule))
   }
 
-
-
-
-
   render() {
     const imageSource = this.state.saved ? "/images/bookmark-white.svg" : "/images/bookmark-border.svg"
     return (
       <div className='likes'>
         <img onClick={() => this.clickHandler()} src={imageSource} alt="like button" />
         {this.state.savedMessage && <MessageSaved />}
-
       </div>
     )
   }

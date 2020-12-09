@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Likes from './Likes'
-
 import { ReactTinyLink } from 'react-tiny-link'
 import { commentsFetched } from '../actions'
 import { fetchModules } from '../actions'
@@ -20,7 +19,6 @@ class Module extends React.Component {
     const currentModuleId = Number(this.props.match.params.id)
     const currentModule = this.props.modules.find((module) => module.id == currentModuleId)
     this.setState({ currentModule })
-    
   }
 
   componentDidUpdate(prevProps) {
@@ -47,17 +45,13 @@ class Module extends React.Component {
               <h5 id='duration-display'>Duration: Approximately {this.state.currentModule.duration} minutes </h5>
             </div>
           </div>
-
           <div className="B-I-module">
-
             {this.state.currentModule.elements.map((item, i) => {
               switch (item.type) {
                 case 'heading':
                   return <h3 key={i}> {item.content} </h3>
-
                 case 'paragraph':
                   return <p key={i}> {item.content} </p>
-
                 case 'link':
                   return (
                     <div className="react-tiny-link" key={i}>
@@ -85,7 +79,6 @@ class Module extends React.Component {
               }
             })}
           </div>
-
           <div className="comments">
             <Comments comments={this.state.currentModule.comments} />
             {this.props.isAuthenticated &&
