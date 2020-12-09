@@ -129,7 +129,7 @@ class CreateModule extends React.Component {
   }
 
   render () {
-    {this.props.authHasLoaded && this.props.isAuthenticated !== true && this.props.history.push('/login')}
+    {this.props.hasLoaded.authHasLoaded && this.props.isAuthenticated !== true && this.props.history.push('/login')}
     return (
       <div className='create-module'>
         <div className="meta-input">
@@ -226,7 +226,9 @@ function mapStateToProps(globalState) {
     modules: globalState.modules,
     isAuthenticated: globalState.isAuthenticated,
     authHasLoaded: globalState.authHasLoaded,
-    user: globalState.user
+    user: globalState.user,
+    hasLoaded: globalState.hasLoaded
+
   }
 }
 
