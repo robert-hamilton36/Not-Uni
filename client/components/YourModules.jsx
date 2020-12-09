@@ -10,7 +10,6 @@ class YourModules extends React.Component {
   }
 
   handleDelete = (boolean, module) => {
-    console.log(module)
     this.setState({delete:boolean,
       moduleToDel:module})
   }
