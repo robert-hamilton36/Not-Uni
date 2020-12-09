@@ -1,6 +1,8 @@
 import React, {useRef, useState} from 'react'
 import { connect } from 'react-redux'
-import { register } from '../../actions/authenticated'
+import { register, signInWithOutsideProvider } from '../../actions/authenticated'
+import { google } from '../../firebase'
+
 
 
 export class Register extends React.Component {
@@ -50,6 +52,17 @@ export class Register extends React.Component {
       console.log(e)
       this.setError("Failed to login")
       return "Failed to registrate"
+    }
+  }
+
+  handleGoogle = (google) => {
+    try{
+      const onSuccess = () => { 
+        this.props.history.push("/")
+      }
+      this.props.dispatch(signInWithOutsideProvider(google, onSuccess))
+    }catch {
+      return "Failed to login"
     }
   }
 
