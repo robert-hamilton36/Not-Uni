@@ -922,8 +922,7 @@ body{
 
 // MODULE CREATED
 .module-created-card {
-  margin-top: 200px;
-  // border: 1px black solid;
+  margin-top: 22%;
   padding: 60px;
   align-items: center;
   display: flex;
@@ -939,8 +938,16 @@ body{
   justify-content: center;
   max-height: 6em;
   max-width: 6em;
-  margin-bottom: 2em;
+ 
 }
+
+  a{
+    color:rgb(34, 117, 21);
+    text-decoration: none;
+  }
+  a:visited{
+    color: rgb(34, 117, 21);
+  }
 
 // PROFILE PAGE 
 
