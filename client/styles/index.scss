@@ -1,5 +1,3 @@
-// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body{
@@ -8,7 +6,6 @@ body{
 }
 
 // Nav Bar
-
 .top-nav {
   display: flex;
   flex: 1 1 auto;
@@ -28,14 +25,12 @@ body{
     margin: auto 20px;
     align-items: center;
   }
-  
   .text {
     flex: 0 0 auto;
     flex-direction: row-reverse;
     width: 100px;
     justify-self: right;
   }
-  
   img {
     // height: 50pt;
     height: 29.909408569335938px;
@@ -73,7 +68,6 @@ body{
 
 .text a {
   text-decoration: none ;
-  
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
@@ -82,33 +76,9 @@ body{
   color: rgba(42, 136, 27, 1);
   
 }
-// register
 
-// .Register-card{
-//   background-color: rgba(252, 252, 252, 1);
-//   height: 352px;
-//   width: 643px;
-//   border-radius: 3px;
-//   flex: left 50%;
-//   margin: auto;
 
-//   .h1style{
-//     margin-left: 5%;
-//   }
-//   .Input-R{
-//     border: 1px solid rgba(0, 0, 0, 0.4);
-//     background: rgba(255, 255, 255, 1);
-//     height: 50px;
-//     width: 205px;
-//     margin-left: 5%;
-//     margin-right: 5%;
-//     margin-top: 10px;
-//     font-size:20px;
-//   }
-// }
-
-// register
-
+// Register
 .Register-card {
   background-color: rgba(252, 252, 252, 1);
   height: auto;
@@ -118,7 +88,6 @@ body{
   margin-top: 100px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   padding: 50px;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,9 +97,6 @@ body{
     margin-block-end: 0px;
     margin-bottom: 20px;
   }
-  
-
-
   form {
     display: flex;
     flex-direction: column;
@@ -146,7 +112,6 @@ body{
       margin-bottom: 20px;
       font-size:20px;
     }
-
     .button{
       height: 43px;
       width: 149px;
@@ -159,17 +124,14 @@ body{
       margin-top: 10px;
       margin-bottom: 10px;
     }
-    
     span {
       color: #C00;
       margin-bottom: 20px;
     }
-
     .button:disabled{
       background-color: #cccccc;
       color: #666666;
     }
-
   }
 
   a {
@@ -177,7 +139,6 @@ body{
     color: #333;
     align-self: flex-start;
   }
-
   .google-sign-in-div {
     background-color: #FFFFFF;
     display: flex;
@@ -190,23 +151,15 @@ body{
     img {
       height: 30px;
     }
-
     span {
       font-size: 20px;
       font: bold;
       margin-left: 20px;
     }
-
   }
 }
 
-
-
-
-
 // Module Card
-
-
 .module-card {
   height: auto;
   width: 100%;
@@ -230,13 +183,11 @@ body{
       border-radius: 3px 3px 0 0;
       position: relative;
     }
-
     h3{
       padding-left: 20px;
       padding-bottom: 10%;
     }
   }
-
   .s-c-heading {
     padding: 20px 20px 10px;
     background: rgba(0, 130, 127, 1);
@@ -245,16 +196,12 @@ body{
     border-radius: 3px 3px 0 0;
     position: relative;
 
-    
     .likes{
       position: absolute;
       z-index: 50;
       top: 0px;
       right:0px;
     }
-
-  
-
     h1 {
       font-family: Roboto;
       margin-block-start: none;
@@ -273,46 +220,35 @@ body{
   .HTML{    
     background-color: red;
   }
-
   .JavaScript{    
     background-color: rgb(232, 181, 14, 1);
   }
-
   .Python{    
     background-color: rgb(42, 86, 168);
     color: white;
   }
-
   .Ruby{    
     background-color: rgb(170, 15, 15);
     color: white;
   }
-
   .Cplus{    
-    
     background-color: rgb(116, 3, 3);
   }
-
   .C{    
     background-color: rgb(144, 163, 199) ;
   }
-
   .CSS{    
     background-color:rgb(0, 61, 173);
   }
-
   .CSharp{
     background-color: rgb(79, 23, 151);
   }
-
   .s-c-info{
     margin-bottom: 10px;
   }
-
   .steps-list{
     margin-left: 20px;
   }
-
   li{
     font-size: 16px;
     font-style: normal;
@@ -323,21 +259,17 @@ body{
     margin-top: 5px;
     margin-bottom: 5px;
   }
-
   ul {
     list-style-type: none;
     font-family: roboto;
   } 
-
   p {
     font-family: Roboto;
     margin: 20px;
   }
-    
   a{
     font-family: roboto;
     text-decoration: none;
-    // font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
@@ -350,13 +282,9 @@ body{
     margin-top: 1.5em;
     margin-bottom: 10px;
   }
-
 }
 
-
-
 // Module Design
-
 .module{
   height: auto;
   min-width: 900px;
@@ -386,9 +314,7 @@ body{
     .savedNumber{
       float: right;
     }
- 
   }
-
 
   h1{
   color: rgba(255, 255, 255, 1);
@@ -396,33 +322,22 @@ body{
   font-family: roboto;
   margin-top: 10px;
   margin-block-end: 5px;
-
   }
-
   h5{
   color: rgba(255, 255, 255, 1);
   margin-left: 50px;
   font-family: roboto;
-  // padding-bottom: 10px;
-
   }
-
-
-
-
   h3{
     font-family: roboto;
     padding-left: 50px;
   }
-
   p{
     font-family: roboto;
     padding-left: 50px;
     padding-right: 50px;
   }
-
   a{
-    // padding-left: 50px;
     text-decoration: none;
     font-size: 22px;
     font-style: normal;
@@ -431,22 +346,13 @@ body{
     letter-spacing: 0em;
     color: rgba(42, 136, 27, 1); 
     font-family: roboto;
-    // padding-bottom: 10px;
-
   }
-
   .text{
     padding-left: 50px;
   }
-  // .video-container{
-  //   width: 100%;
-  //   height: auto;
-  //   padding-top: 10px;
-  // }
-
   .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     
     iframe {
@@ -466,8 +372,6 @@ body{
       color: black;
     }
   }
-
-
   .message {
     display:flex;
     justify-content: center;
@@ -482,7 +386,6 @@ body{
     z-index: 10; 
     padding: 50px;
   
-  
     &-content{
       background: #ffffff;
       height: auto;
@@ -493,17 +396,12 @@ body{
       padding-right:15px;
       width:20%;
       padding-right: 30px;
-
     }
-  
   }
 }
 
-
 // Comments
-
 .comments{
-
   .title{
     font-family: Roboto;
     font-size: 20px;
@@ -512,7 +410,6 @@ body{
     line-height: 19px;
     color: #333;
   }
-
   .user-name{
     font-style: Light;
     font-weight: 300;
@@ -520,7 +417,6 @@ body{
     margin-bottom: 2px;
     text-decoration: underline;
   }
-
   .single-comment{
     padding-top: 10px;
     font-size: 16px;
@@ -531,57 +427,37 @@ body{
     padding-top: 0px;
     margin-bottom: 10px;
     }
-
   .add-comment{
     padding-top: 10px;
     padding-bottom: 5px;
     }
- 
   .add-comment-input{
     padding-left: 5px;
     margin-left: 50px;
     font-family: roboto;
-   
-    
     overflow: auto;
-
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-
     resize: none;
-  
   }
-
-
-  
   .button{
-
     height: 35px;
     width: 149px;
-
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
     cursor: pointer;
-
     background: #2A881B;
     border-radius: 2px;
     color: #FFFFFF;
     border: none;
-
     margin-bottom: 20px;
     margin-left: 5.5%;
     margin-top: 10px;
-    
     padding-top: 16px;
-    
     text-align: center;
   }
 }
   
-
-
-
-
 //   _____ _____  ______       _______ ______   __  __  ____  _____  _    _ _      ______ 
 //  / ____|  __ \|  ____|   /\|__   __|  ____| |  \/  |/ __ \|  __ \| |  | | |    |  ____|
 // | |    | |__| | |__     /  \  | |  | |__    | \  / | |  | | |  | | |  | | |    | |__   
@@ -594,14 +470,12 @@ body{
   float: right;
   margin-bottom: 0.5em;
 
-
   .colored-difficulty {
     margin-right: 3em;
   }
   h5 {
     margin-bottom: 0px;
     margin-right: 2em;
-
   }
   h2 {
     margin-right: 2em;
@@ -629,7 +503,6 @@ body{
     margin-bottom: 20px;
     color: #424242;
   }
-
   h3 {
     margin-block-start: 0px;
     margin-block-end: 0px;
@@ -637,20 +510,17 @@ body{
     margin-bottom: 20px;
     color: #424242;
   }
-
   .title-input {
     width: 100%;
     font-size: 30pt;
     margin-bottom: 20px;
   }
-
   .description-input {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     min-height: 100px;
     margin-bottom: 20px;
   }
-
   .radio {
     width: auto;
     height: 30px;
@@ -673,30 +543,24 @@ body{
       margin-right: 10px;
     }
   }
-
   .red {
     color: rgb(216, 0, 0);
   }
-  
   .yellow {
     color: rgb(216, 194, 0);
   }
-  
   .green {
     color: #2A881B;
   }
-
   .radio:hover {
     background-color: #c9c9c9;
   }
-
   .radio:active {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
     background-color: white;
     position: relative;
     top: 2px;
   }
-
   .selected {
     background-color: rgb(255, 255, 255) !important;
     opacity: 100% !important;
@@ -743,29 +607,24 @@ body{
       margin-right: 20px;
     }
   }
-
   .step-spacer {
     height: 70px;
   }
-
   .element-input-div {
     display: flex;
     flex-direction: row;
     align-items: center;
     position: relative;
   }
-
   .heading-input{
     font-size: 18pt;
     margin: 5px 0px;
   }
-
   .paragraph-input{
     font-family: 'Roboto', sans-serif;
     min-height: 100px;
     margin: 5px 0px;
   }
-
   .link-input {
     margin: 5px 0px;
 
@@ -791,7 +650,6 @@ body{
     padding-top: 30px;
     padding-bottom: 15px;
   }
-
   .edit-element-div {
     position: absolute;
     top: 0px;
@@ -835,7 +693,6 @@ body{
   }
 }
 
-
 #duration-and-saved {
   margin-top: 0;
 }
@@ -855,7 +712,6 @@ body{
   }
 
 //CATEGORIES TABLE
-
 .results-page{
   display: grid;
   grid-template-columns: [start]30% [line1] 40% [line2]30%[end];
@@ -863,17 +719,14 @@ body{
   .column {
     padding: 30px;
   }
-
   .left {
     grid-column-start: start;
     grid-column-end: line1;
 
     .categories-table{
-
       background-color: #FFFFFF;
       border-radius: 3px;
       box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-
       width: 60%;
 
       .title {
@@ -889,7 +742,6 @@ body{
         }
       }
     }
-
       
     .categories {
       padding: 10px;
@@ -900,7 +752,6 @@ body{
         display: flex;
         align-items: center;
       }
-
       .single-category {
         padding: 10px;
         margin-bottom: 10px;
@@ -916,20 +767,16 @@ body{
           margin-block-start: 0px;
           margin-block-end: 0px;
         }
-
         img {
           height: 24px;
         }
       }
-      
       .single-category:hover {
         background-color: rgb(219, 219, 219);
         cursor: pointer;
-
       }
     }
   } 
-  
     .search-results{
       grid-column-start: line1;
       grid-column-end: line2;
@@ -946,8 +793,6 @@ body{
     }
   }
 }
-  
-
 
 // MODULE CREATED
 .module-created-card {
@@ -957,17 +802,14 @@ body{
   display: flex;
   flex-direction: column;
 }
-
 .module-created {
   display: flex;
   justify-content: center;
 }
-
 .module-created-success {
   justify-content: center;
   max-height: 6em;
   max-width: 6em;
- 
 }
 
   a{
@@ -979,16 +821,10 @@ body{
   }
 
 // PROFILE PAGE 
-
 .profile-page {
   display: grid;
   grid-template-columns: 2fr 4fr 2fr;
   grid-template-areas: "left middle right";
-  
-
-
-
-  // -----------
 
   .left {
     grid-area: left;
@@ -1010,7 +846,6 @@ body{
           color: black;
         }
       }
-
       .options {
         padding: 10px;
         
@@ -1018,7 +853,6 @@ body{
           text-decoration: none;
           color: black;
         }
-
         .single-option {
           padding: 10px;
           margin: 5px;
@@ -1033,52 +867,35 @@ body{
             margin-block-start: 0px;
             margin-block-end: 0px;
           }
-
           img {
             height: 24px;
           }
         }
-
         .single-option:hover {
           background-color: rgb(219, 219, 219);
           cursor: pointer;
-
         }
       }
     }
   }
-
-  //________
 
   .middle {
     display: flex; 
     flex-direction: column;
     align-items: center;
     grid-area: middle;
-    // background-color: rgb(203, 203, 255);
   }
-
   .right {
     grid-area: right;
-    // background-color: rgb(230, 255, 230);
   }
-
   .column {
     padding: 30px;
     height: 100vw;
   }
 }
 
-
-
-
-
 //HomePage
-
 .homepage{
-  // display: grid;
-  // grid-template-columns: [start]30% [line1] 40% [line2]30%[end];
-  // grid-template-rows: [start]30% [line1] 40% [line2]30%[end];;
   form {
     display: flex;
     flex-direction: column;
@@ -1087,57 +904,27 @@ body{
   .search{
     height: 42px;
     width: 630px;
-    // left: 28.12%;
-    // right: 28.12%;
     top: 25.84%;
     bottom: 26.97%;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.4);
-    // box-sizing: border-box;
-    // grid-column-start: line1;
-    // grid-column-end: line2;
-    // grid-row-start: line1;
-    // grid-row-end: line2;
-
     margin-top: 50px;
     text-align: center;
-    // margin-left: 33vw;
     border-radius: 3px;
     }
-
     h1{
-      // margin-top: 10vh;
       text-align: center;
     }
-
     .homepage-logo{
      text-align: center;
      margin-top: 5vh;
     }
-
 }
 
 input{
   font-family: roboto;
   font-size: 20px;
 }
-
-
-// .add-comment {
-
-
-//   .button{
-//     height: 43px;
-//     width: 149px;
-//     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.15);
-//     cursor: pointer;
-//     background: #2A881B;
-//     border-radius: 2px;
-//     color: #FFFFFF;
-//     border: none;
-//     margin-bottom: 40px;
-//   }
-// }
 
 .popup {
   display:flex;
@@ -1154,8 +941,6 @@ input{
   z-index: 10; 
   padding: 50px;
 
-
-
   &-inner{
     background: #ffffff;
     height: auto;
@@ -1163,8 +948,6 @@ input{
     font-family: roboto;
     text-align: center;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-
-    
   }
 
   .button{
@@ -1183,18 +966,15 @@ input{
     background: #2A881B;
 
   }
-
 }
 
-
 .link{
-
   margin-bottom: 0px;
   p{color: #2A881B;
     cursor: pointer;
     text-align: center;
   }
-a{
+  a{
   text-align: center;
-}
+  }
 }
