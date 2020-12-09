@@ -5,7 +5,8 @@ import {
   increaseLikesAPI,
   getSavedModulesAPI,
   addSavedModuleAPI,
-  removeSavedModuleAPI
+  removeSavedModuleAPI,
+  createModuleAPI
 } from '../apis/modules'
 
 export const SET_MODULES = 'SET_MODULES'
@@ -140,23 +141,23 @@ export const increaseModuleLikes = (module) => {
       console.log(err)
       })
     }
-  }
+}
 
-  export const decreaseLikes = (module) => {
-    return {
-      type: DECREASE_LIKES,
-      module
-    }
+export const decreaseLikes = (module) => {
+  return {
+    type: DECREASE_LIKES,
+    module
   }
-  
-  export const decreaseModuleLikes = (module) => {
-    return dispatch => {
-      return decreaseLikesAPI(module)
-      .then(()=> {
-        dispatch(decreaseLikes(module))
+}
+
+export const decreaseModuleLikes = (module) => {
+  return dispatch => {
+    return decreaseLikesAPI(module)
+    .then(()=> {
+      dispatch(decreaseLikes(module))
+    })
+    .catch(err => {
+      console.log(err)
       })
-      .catch(err => {
-        console.log(err)
-        })
-      }
     }
+}

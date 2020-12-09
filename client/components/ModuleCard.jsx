@@ -1,9 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Link } from 'react-router-dom'
+import { BrowserRouter , Link } from 'react-router-dom'
 
 class ModuleCard extends React.Component {
-state = { delete:this.props.delete }
+  
+  isYourModule = this.props.module.user_id === this.props.user.uid
+  
+  state={
+    delete: this.props.delete
+  }
 
   render () {
    
@@ -66,11 +71,17 @@ state = { delete:this.props.delete }
 
           <div className={'s-c-heading ' + cardColor}>
             <h1>{this.props.module.title}</h1>
+            {this.isYourModule &&
+              <Link to={'/edit/' + this.props.module.id } >
+                Edit This Module
+              </Link> 
+            }
+
             {this.state.delete &&
             <svg className='trashCan' onClick={() => this.props.handleDelete(true, this.props.module)}width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM8.46 11.88L9.87 10.47L12 12.59L14.12 10.47L15.53 11.88L13.41 14L15.53 16.12L14.12 17.53L12 15.41L9.88 17.53L8.47 16.12L10.59 14L8.46 11.88ZM15.5 4L14.5 3H9.5L8.5 4H5V6H19V4H15.5Z" fill="white"/>
             </svg>
-             }
+            }
 
             {/* {this.props.hasLoaded.authHasLoaded && <> {this.props.isAuthenticated && <Likes module={this.props.module} />}</>} */}
           </div>
@@ -94,8 +105,10 @@ state = { delete:this.props.delete }
   }
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   return {
+    user: globalState.user,
+    modules: globalState.modules,
     hasLoaded: globalState.hasLoaded,
     isAuthenticated: globalState.isAuthenticated
   }

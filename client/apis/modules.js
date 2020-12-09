@@ -17,6 +17,16 @@ export function createModuleAPI (module) {
     .then(res => res.body)
 }
 
+export function updateModuleAPI (updatedModule) {
+
+  updatedModule.number_of_elements = updatedModule.elements.length
+
+  const id = updatedModule.id
+
+  return request.patch('/api/modules/' + id ).send(updatedModule)
+    .then(res => res.body)
+}
+
 export function addSavedModuleAPI (userID, moduleID) {
   const module = {
     user_id: userID,
@@ -81,7 +91,8 @@ export function addCommentAPI (moduleID, comment) {
 }
 
 // Get comments on a Module
-export function displayCommentsAPi(id){;
+
+export function displayCommentsAPi(id) {
   return request.get('/api/comments/' + id)
     .then(res => res.body)
-  }
+}

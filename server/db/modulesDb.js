@@ -31,6 +31,21 @@ function getModulesByUserId (user_id, db = connection) {
   .select()
 }
 
+
+function updateModuleMeta (moduleID, updatedModuleMeta, db = connection){
+  return db('modules').update(updatedModuleMeta).where('id', moduleID)
+}
+
+function updateElement (element, db = connection) {
+  // console.log(element);
+  return db('module_elements').update(element).where('id', element.id)
+}
+
+function deleteElement (id, db = connection) {
+  console.log(id);
+  return db('module_elements').where('id', id).del()
+}
+
 function updateModule (id, updatedModule, db = connection) {
   return db('modules').update(updatedModule).where('id', id)
 }
@@ -51,6 +66,9 @@ module.exports = {
   createModuleMeta,
   createModuleElement,
   getModulesByUserId,
+  updateModuleMeta,
   updateModule,
+  updateElement,
+  deleteElement,
   deleteModule
 }

@@ -32,12 +32,8 @@ body{
     justify-self: right;
   }
   img {
-    // height: 50pt;
     height: 29.909408569335938px;
     width: 74px;
-    // left: 56px;
-    // top: 29px;
-    // border-radius: 0px;
   }
   .pokemon{
     flex: 0 0 auto;
@@ -215,9 +211,15 @@ body{
       margin: 0;
       display: inline-block;
     }
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 0px;
+      font-size: 20px;
+    }
   }
 
-  .HTML{    
+  .HTML{
     background-color: red;
   }
   .JavaScript{    
@@ -579,7 +581,7 @@ body{
 
   
   .duration-input {
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     width: auto;
     font-size: 16pt;
   }
@@ -635,6 +637,7 @@ body{
       border: none;
       border-radius: 2px;
       padding: 3px;
+      width: 75%;
     }
   }
 
@@ -982,6 +985,10 @@ input{
 
 
 .trashCan{
-    z-index: 50;
-    float: right;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 50;
+  float: right;
+  cursor: pointer;
 }

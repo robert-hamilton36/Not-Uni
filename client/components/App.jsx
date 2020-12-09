@@ -14,6 +14,7 @@ import { fetchUser } from '../actions/authenticated'
 import { fetchModules, fetchSavedModules } from '../actions'
 import ModuleCreated from './ModuleCreated'
 import ForgotPassword from './UserAuth/ForgotPassword'
+import { createModuleAPI } from '../apis/modules'
 
 const App = (props) => {
 
@@ -45,6 +46,7 @@ const App = (props) => {
           <Route exact path="/create" component={CreateModule} />
           <Route exact path="/modulecreated" component={ModuleCreated} />
           <Route exact path="/forgotpassword" component={ForgotPassword} />
+          <Route exact path="/edit/:id" component= {CreateModule} />
         </Switch>
         <Route exact path="/profile" component={Profile} />
       </Router>
