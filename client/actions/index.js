@@ -6,7 +6,8 @@ import {
   getSavedModulesAPI,
   displayCommentsAPi,
   addSavedModuleAPI,
-  removeSavedModuleAPI
+  removeSavedModuleAPI,
+  createModuleAPI
 } from '../apis/modules'
 
 
@@ -47,9 +48,6 @@ export const fetchModules = () => {
   }
 }
 
-
-
-
 export const modulesHaveLoaded = (boolean) => {
   return {
     type: MODULES_HAVE_LOADED,
@@ -58,6 +56,32 @@ export const modulesHaveLoaded = (boolean) => {
 }
 
 
+
+
+
+// CREATE A MODULE
+// export const createModule = (module) => {
+//   return dispatch => {
+//     return createModuleAPI(module)
+//       .then(response => {
+//         console.log(response)
+//         dispatch(moduleCreated(module))
+//       })
+//   }
+// }
+
+// export const moduleCreated = () => {
+//   return {
+//     type: MODULE_CREATED,
+//     module: module,
+//   }
+// }
+
+// UPDATE A MODULE
+
+// export const updateModule = (id, module) => {
+//   return ''
+// }
 
 
 //ADD TO SAVED MODULES
@@ -178,25 +202,25 @@ export const increaseModuleLikes = (module) => {
       console.log(err)
       })
     }
+}
+
+
+
+export const decreaseLikes = (module) => {
+  return {
+    type: DECREASE_LIKES,
+    module
   }
+}
 
-
-
-  export const decreaseLikes = (module) => {
-    return {
-      type: DECREASE_LIKES,
-      module
-    }
-  }
-  
-  export const decreaseModuleLikes = (module) => {
-    return dispatch => {
-      return decreaseLikesAPI(module)
-      .then(()=> {
-        dispatch(decreaseLikes(module))
+export const decreaseModuleLikes = (module) => {
+  return dispatch => {
+    return decreaseLikesAPI(module)
+    .then(()=> {
+      dispatch(decreaseLikes(module))
+    })
+    .catch(err => {
+      console.log(err)
       })
-      .catch(err => {
-        console.log(err)
-        })
-      }
     }
+}
