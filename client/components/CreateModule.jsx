@@ -8,7 +8,7 @@ import CategoryCard from './CategoryCard'
 class CreateModule extends React.Component {
   state = {
     title: '',
-    user_id: '',
+    user_id: this.props.user.uid,
     description: '',
     category: '',
     duration: '',
@@ -225,7 +225,8 @@ function mapStateToProps(globalState) {
     searchModules: globalState.searchModules,
     modules: globalState.modules,
     isAuthenticated: globalState.isAuthenticated,
-    authHasLoaded: globalState.authHasLoaded
+    authHasLoaded: globalState.authHasLoaded,
+    user: globalState.user
   }
 }
 
