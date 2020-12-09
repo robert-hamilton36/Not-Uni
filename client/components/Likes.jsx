@@ -45,7 +45,7 @@ class Likes extends React.Component {
     });
     setTimeout(function () {
       this.setState({ savedMessage: false });
-    }.bind(this), 1800);
+    }.bind(this), 1300);
   }
 
   afterSetStateFinished = () => {

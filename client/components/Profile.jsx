@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import SavedModules from './SavedModules'
 import YourModules from './YourModules'
@@ -7,13 +7,14 @@ import EditProfile from './EditProfile'
 import EditPassword from './EditPassword'
 import EditAvatar from './EditAvatar'
 import Delete from './UserAuth/Delete'
-
+import { fetchModules } from '../actions'
 class Profile extends React.Component {
   state = {
     activeModules: '',
     deleteProfile: false,
   }
   componentDidMount = () => {
+    this.props.dispatch(fetchModules())
   }
 
   sidebarClickHandler = (whichButton) => {
@@ -100,6 +101,7 @@ class Profile extends React.Component {
 
 function mapStateToProps(globalState) {
   return {
+    dispatch: globalState.dispatch,
     user: globalState.user,
     modules: globalState.modules,
     savedModules: globalState.savedModules,

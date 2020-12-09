@@ -49,6 +49,12 @@ state = { delete:this.props.delete }
       case 'C++':
         cardColor = 'Cplus';
         break;
+      case 'CSS':
+        cardColor = 'CSS';
+        break;
+      case 'Csharp':
+        cardColor = 'CSharp';
+        break;
       default:
         cardColor = ''
     }

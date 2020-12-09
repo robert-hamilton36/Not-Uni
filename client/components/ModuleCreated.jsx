@@ -6,10 +6,10 @@ class ModuleCreated extends React.Component {
     return (
       <div className='module-created'>
         <div className="module-created-card" >
+          <img className="module-created-success" src='/images/tick.svg' alt='success'></img>
           <h1>Success!</h1>
-          <img className="module-created-success" src='/images/success.png' alt='success'></img>
           <span> Your module has been created</span>
-          <Link to="profile"><span> See all your created modules</span> </Link>
+          <Link to="profile"><span> See your created modules</span> </Link>
         </div>
       </div>
     )

@@ -279,30 +279,31 @@ body{
   }
 
   .Python{    
-    background-color: rgb(34, 79, 163);
+    background-color: rgb(42, 86, 168);
     color: white;
   }
 
   .Ruby{    
-    background-color: rgb(165, 16, 16);
+    background-color: rgb(170, 15, 15);
     color: white;
   }
 
   .Cplus{    
-    background-color: rgb(98, 0, 128);
-    color: white;
+    
+    background-color: rgb(116, 3, 3);
   }
 
   .C{    
     background-color: rgb(144, 163, 199) ;
   }
 
-
   .CSS{    
-    background-color:#002482;
-    color: white;
+    background-color:rgb(0, 61, 173);
   }
 
+  .CSharp{
+    background-color: rgb(79, 23, 151);
+  }
 
   .s-c-info{
     margin-bottom: 10px;
@@ -950,8 +951,7 @@ body{
 
 // MODULE CREATED
 .module-created-card {
-  margin-top: 200px;
-  // border: 1px black solid;
+  margin-top: 22%;
   padding: 60px;
   align-items: center;
   display: flex;
@@ -967,8 +967,16 @@ body{
   justify-content: center;
   max-height: 6em;
   max-width: 6em;
-  margin-bottom: 2em;
+ 
 }
+
+  a{
+    color:rgb(34, 117, 21);
+    text-decoration: none;
+  }
+  a:visited{
+    color: rgb(34, 117, 21);
+  }
 
 // PROFILE PAGE 
 
