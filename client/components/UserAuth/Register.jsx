@@ -1,9 +1,7 @@
-import React, {useRef, useState} from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { register, signInWithOutsideProvider } from '../../actions/authenticated'
 import { google } from '../../firebase'
-
-
 
 export class Register extends React.Component {
   state={
@@ -47,7 +45,6 @@ export class Register extends React.Component {
       this.setLoading(true)
       const callback = () => { this.props.history.push("/") }
       this.props.dispatch(register(this.state.userName, this.state.email, this.state.password, callback, this.setError))
-      // this.props.dispatch(setUser(user))
     }catch (e) {
       console.log(e)
       this.setError("Failed to login")
@@ -70,9 +67,7 @@ export class Register extends React.Component {
 
   render(){
     return (
-
       <div className='Register-card'>
-
         <h1>Register</h1>
         <form onSubmit={this.handleSubmit}>
           <input className='Input-R' type="text" name="userName" onChange={this.handleChange} value={this.state.userName} placeholder="userName"/>
@@ -80,10 +75,8 @@ export class Register extends React.Component {
           <input className='Input-R' type="password"name="password"  onChange={this.handleChange} value={this.state.password} placeholder="password"/>
           <input className='Input-R' type="password" name="passwordConfirm" onChange={this.handleChange} value={this.state.passwordConfirm} placeholder="password-confirmation"/>
           {this.state.error && <span className="error">{this.state.error}</span>}
-
           <input className='button' type="submit" disabled={this.state.loading} value="Register"/>
         </form>
-  
         <div className="google-sign-in-div" onClick={() => this.handleGoogle(google)}> 
           {this.googleIcon}
           <span>Sign In With Google</span>
@@ -92,7 +85,6 @@ export class Register extends React.Component {
     )
   }
 }
-
 
 function mapStateToProps (globalState) {
   return {

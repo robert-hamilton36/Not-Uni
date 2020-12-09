@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
 import { updateFirebase } from '../actions/authenticated'
 
-
 const EditProfile = (props) => {
   const [userName, setUserName] = useState(props.user.userName)
   const [email, setEmail] = useState(props.user.email)
@@ -19,7 +18,6 @@ const EditProfile = (props) => {
       return "Failed to registrate"
      }
   }
-
     return (
       <>
       {props.hasLoaded && 
@@ -27,23 +25,13 @@ const EditProfile = (props) => {
       <h1>{error}</h1>
       <div className='Register-card'>
         <form onSubmit={submit}>
-
         <input className='Input-R' type="text" onChange={e => setUserName(e.target.value)} value={userName}/>
         <input className='Input-R' type="text" onChange={e => setEmail(e.target.value)} value={email}/>
-        {/* <label>
-        Avatar
-        <input className='Input-R' type="number" max='898' min='0' onChange={e => setPokemon(e.target.value)} value={pokemon}/>
-        </label> */}
         <input className='button' type='submit' value='Edit'/>
         </form>
-        
         <a className='link' ><p type='submit' onClick={() => props.sidebarClickHandler("password")}>Edit password</p></a>
-
         <a className='link' ><p  type='submit' onClick={() => props.sidebarClickHandler("avatar")}>Edit avatar</p></a>
-
         <a className='link' ><p  type='submit' onClick={() => props.setDelete(true)}>Delete profile</p></a>
-
-    
       </div>
       </>
       }

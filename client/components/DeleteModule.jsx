@@ -9,7 +9,7 @@ function Delete(props) {
     try{
         deleteModule(props.module)
           history.push('/')
-      }catch (e) {
+       } catch (e) {
       console.log(e)
       return "Failed to delete"
      }

@@ -9,7 +9,6 @@ class YourModules extends React.Component {
       moduleToDel: null
   }
 
-
   handleDelete = (boolean, module) => {
     console.log(module)
     this.setState({delete:boolean,
@@ -26,8 +25,6 @@ class YourModules extends React.Component {
       </>
     )
   }
-
-
 }
 
 export default connect()(YourModules)
