@@ -1,6 +1,6 @@
 # Not-Uni
 
- ``` http://not-uni.herokuapp.com/ ```
+ http://not-uni.herokuapp.com/ 
 
 ## Getting Started
 
