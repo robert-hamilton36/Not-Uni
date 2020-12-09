@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { fetchModules } from '../actions'
+
 
 export function getAllModulesAPI () {
   return request.get('/api/modules')
