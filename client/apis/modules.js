@@ -50,7 +50,7 @@ export function increaseLikesAPI(module){
     likes: module.likes + 1
   }
   return request
-  .patch('/api/modules/' + updatedModule.id)
+  .patch('/api/modules/likes/' + updatedModule.id)
   .send(updatedModule)
   .then (res => res.body)
 }
@@ -68,7 +68,7 @@ export function decreaseLikesAPI(module){
     likes: module.likes -1
   }
   return request
-  .patch('/api/modules/' + updatedModule.id)
+  .patch('/api/modules/likes/' + updatedModule.id)
   .send(updatedModule)
   .then (res => res.body)
 }
