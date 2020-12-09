@@ -11,7 +11,7 @@ class CreateModule extends React.Component {
     user_id: this.props.user.uid,
     description: '',
     category: '',
-    duration: '',
+    duration: 0,
     number_of_elements: '', // this is calculated later
     elements: [],
     deletedElements: []

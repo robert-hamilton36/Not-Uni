@@ -18,7 +18,7 @@ class YourModules extends React.Component {
   render () {
     return (
       <>  
-      {this.state.delete && <DeleteModule module={this.state.moduleToDel.id} setDelete={this.handleDelete}/>}
+      {this.state.delete && <DeleteModule title={this.state.moduleToDel.title} module={this.state.moduleToDel.id} setDelete={this.handleDelete}/>}
         {this.props.yourModules.map((module, idx) => {
           return( <><ModuleCard handleDelete={this.handleDelete} delete={true} key={idx} module={module} /> </>)
         })}
