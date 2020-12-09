@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
       return Promise.all(modules)
     })
     .then(modules => {
-      res.json(modules)
+      res.json(modules)git add
     })
     .catch(err => {
       console.log(err)

@@ -24,9 +24,10 @@ class Module extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    this.props.dispatch(fetchModules())
 
     if (!prevProps || prevProps.match.params.id !== this.props.match.params.id || prevProps.modules.length !== this.props.modules.length || prevProps !== this.props) {
+      // this.props.dispatch(fetchModules())
+
       const currentModuleId = Number(this.props.match.params.id)
       const currentModule = this.props.modules.find((module) => module.id === currentModuleId)
       this.setState({ currentModule })
