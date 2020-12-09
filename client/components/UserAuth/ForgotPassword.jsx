@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { resetPassword } from '../../actions/authenticated'
 
-
 class Login extends React.Component {
   state={
     email:'',
@@ -38,9 +37,6 @@ class Login extends React.Component {
   
   }
 
-
-
-
   render () {
     return (
       <div className='Register-card'>
@@ -52,8 +48,6 @@ class Login extends React.Component {
           <input className='Input-R' type="text" name="email" onChange={this.handleChange} value={this.state.email} placeholder="email"/>
           <input className='button' type="submit" disabled={this.state.loading} value="Reset"/>
         </form>
-
-
       </div>
     )
   }

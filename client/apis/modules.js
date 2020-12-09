@@ -1,11 +1,9 @@
 import request from 'superagent'
 
-
 export function getAllModulesAPI () {
   return request.get('/api/modules')
     .then(res => res.body)
 }
-
 
 export function getSavedModulesAPI (id) {
   return request.get(`/api/modules/saved/${id}`)
@@ -13,13 +11,11 @@ export function getSavedModulesAPI (id) {
     return res.body })
 }
 
-
 export function createModuleAPI (module) {
   module.number_of_elements = module.elements.length
   return request.post('/api/modules').send(module)
     .then(res => res.body)
 }
-
 
 export function addSavedModuleAPI (userID, moduleID) {
   const module = {
@@ -31,8 +27,6 @@ export function addSavedModuleAPI (userID, moduleID) {
     .then(res=>res.body)
 }
 
-
-
 export function removeSavedModuleAPI (savedModuleID) {
   return request.delete('/api/modules/saved/' + savedModuleID)
     
@@ -43,7 +37,6 @@ export function deleteModule(moduleToDelID) {
   return request.delete('/api/modules/del/'+ moduleToDelID)
   .then( response => response.body)
 }
-
 
 export function increaseLikesAPI(module){
   let updatedModule ={
@@ -61,8 +54,6 @@ export function increaseLikesAPI(module){
   .send(updatedModule)
   .then (res => res.body)
 }
-
-
 
 export function decreaseLikesAPI(module){
   console.log(module)
@@ -82,13 +73,7 @@ export function decreaseLikesAPI(module){
   .then (res => res.body)
 }
 
-
-// get created modules API?
-
-
-
 // Create comment on a module
-
 export function addCommentAPI (moduleID, comment) {
   console.log(moduleID);
   return request.post('/api/comments/' + moduleID).send(comment)
@@ -96,9 +81,7 @@ export function addCommentAPI (moduleID, comment) {
 }
 
 // Get comments on a Module
-
 export function displayCommentsAPi(id){;
   return request.get('/api/comments/' + id)
     .then(res => res.body)
   }
-
