@@ -4,7 +4,7 @@ import { BrowserRouter , Link } from 'react-router-dom'
 
 class ModuleCard extends React.Component {
   
-  isYourModule = this.props.module.user_id === this.props.user.uid
+  isYourModule = (this.props.isYourModule)
   
   state={
     delete: this.props.delete
