@@ -7,8 +7,8 @@ import { signIn, signInWithOutsideProvider } from '../../actions/authenticated'
 
 class Login extends React.Component {
   state={
-    email:'jistross@test.com',
-    password:'gopher',
+    email:'',
+    password:'',
     error:'',
     loading: false,
   }
