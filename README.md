@@ -158,7 +158,7 @@ searchModules:[
 Helper info: https://medium.com/firebase-developers/how-to-setup-firebase-authentication-with-react-in-5-minutes-maybe-10-bb8bb53e8834
 
 ## Git Protocol
-curtosey of Hortense:
+courtesy of Hortense:
 
 * Clone & Make a branch Steps 1 - 4
 * Merge your feature Steps 5 - 11
@@ -229,7 +229,7 @@ git checkout -b feature/myNextFeature
 code .  
 ```
 
-* Reset datase
+* Reset database
 ```
 rm server/db/dev.sqlite3
 npm run knex migrate:latest
