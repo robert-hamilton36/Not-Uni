@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import { connect } from 'react-redux'
-import { updateFirebase } from '../actions/authenticated'
+import { updateFirebase } from '../../actions/authenticated'
 
 const EditProfile = (props) => {
   const [userName, setUserName] = useState(props.user.userName)
