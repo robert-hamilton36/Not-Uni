@@ -5,7 +5,7 @@ import SavedModules from './Profile/SavedModules'
 import YourCreatedModules from './Profile/YourCreatedModules'
 import EditProfile from './Profile/EditProfile'
 import EditPassword from './Profile/EditPassword'
-import EditAvatar from './EditAvatar'
+import EditAvatar from './Profile/EditAvatar'
 import Delete from './UserAuth/Delete'
 import { fetchModules } from '../actions'
 class Profile extends React.Component {
