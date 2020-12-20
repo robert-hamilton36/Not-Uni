@@ -5,8 +5,8 @@ import { ReactTinyLink } from 'react-tiny-link'
 import { commentsFetched } from '../actions'
 import { fetchModules } from '../actions'
 
-import Comments from './Comments'
-import AddComments from './AddComment'
+import Comments from './Comments/Comments'
+import AddComments from './Comments/AddComment'
 
 class Module extends React.Component {
   state = {

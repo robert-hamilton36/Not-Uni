@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addCommentAPI } from '../apis/modules'
-import { fetchModules } from '../actions'
+import { addCommentAPI } from '../../apis/modules'
+import { fetchModules } from '../../actions'
 
+//TODO remove state when comment added
 
 class AddComment extends React.Component {
 
