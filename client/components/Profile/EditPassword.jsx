@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { updateFirebasePassword } from '../actions/authenticated'
+import { updateFirebasePassword } from '../../actions/authenticated'
+
+//TODO confirmation of password change
 
 const EditProfile = (props) => {
   const [password, setPassword] = useState('')
