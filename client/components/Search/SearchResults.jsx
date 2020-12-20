@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { setSearchedModules } from '../../actions'
 import ModuleCard from '../ModuleCard'
 
+//TODO refactor links into module??
+
 class SearchResults extends React.Component {
 
   componentDidMount () {

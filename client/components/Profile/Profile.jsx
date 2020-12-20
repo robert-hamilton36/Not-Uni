@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import SavedModules from './Profile/SavedModules'
-import YourCreatedModules from './Profile/YourCreatedModules'
-import EditProfile from './Profile/EditProfile'
-import EditPassword from './Profile/EditPassword'
-import EditAvatar from './Profile/EditAvatar'
-import Delete from './UserAuth/Delete'
-import { fetchModules } from '../actions'
+import SavedModules from './SavedModules'
+import YourCreatedModules from './YourCreatedModules'
+import EditProfile from './EditProfile'
+import EditPassword from './EditPassword'
+import EditAvatar from './EditAvatar'
+import Delete from '../UserAuth/Delete'
+import { fetchModules } from '../../actions'
 class Profile extends React.Component {
   state = {
     activeModules: '',
