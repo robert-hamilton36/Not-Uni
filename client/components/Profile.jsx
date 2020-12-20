@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import SavedModules from './SavedModules'
+import SavedModules from './Profile/SavedModules'
 import YourModules from './YourModules'
 import EditProfile from './EditProfile'
 import EditPassword from './EditPassword'
