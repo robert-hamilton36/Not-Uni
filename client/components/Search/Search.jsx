@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchModules, setSearchedModules } from '../actions/index'
+import { fetchModules, setSearchedModules } from '../../actions/index'
 import { Redirect } from 'react-router'
 
 class Search extends React.Component {

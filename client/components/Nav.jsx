@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
-import Search from './Search'
+import Search from './Search/Search'
 import {connect} from 'react-redux'
 import { signOut } from '../actions/authenticated'
 

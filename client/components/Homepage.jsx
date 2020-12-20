@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { connect } from 'react-redux'
 import { fetchModules } from '../actions'
-import Search from './Search'
+import Search from './Search/Search'
 import { Route } from 'react-router-dom'
 
 const HomePage = (props) => {

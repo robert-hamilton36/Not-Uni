@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Nav from './Nav'
 import Login from './UserAuth/Login'
-import SearchResults from './SearchResults'
+import SearchResults from './Search/SearchResults'
 import Module from './Module'
 import Register from './UserAuth/Register'
 import CreateModule from './CreateModule'

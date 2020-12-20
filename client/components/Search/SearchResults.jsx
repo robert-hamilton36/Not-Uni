@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { setSearchedModules } from '../actions'
-import ModuleCard from './ModuleCard'
+import { setSearchedModules } from '../../actions'
+import ModuleCard from '../ModuleCard'
 
 class SearchResults extends React.Component {
 
