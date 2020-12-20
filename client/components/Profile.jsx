@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import SavedModules from './Profile/SavedModules'
-import YourModules from './Profile/YourCreatedModules'
+import YourCreatedModules from './Profile/YourCreatedModules'
 import EditProfile from './EditProfile'
 import EditPassword from './EditPassword'
 import EditAvatar from './EditAvatar'
@@ -84,7 +84,7 @@ class Profile extends React.Component {
           <div className="middle column" >
             {this.props.hasLoaded.modulesHaveLoaded && <>
             {this.state.activeModules === "saved modules" && <SavedModules savedModules={this.state.savedModules}/>}
-            {this.state.activeModules === "your modules" && <YourModules yourModules={this.state.yourModules}/>}
+            {this.state.activeModules === "your modules" && <YourCreatedModules yourModules={this.state.yourModules}/>}
             {this.state.activeModules === "edit" && <EditProfile props={this.state.user} sidebarClickHandler={this.sidebarClickHandler} setDelete={this.setDelete}/>}
             {this.state.activeModules === "password" && <EditPassword props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}
             {this.state.activeModules === "avatar" && <EditAvatar props={this.state.user} sidebarClickHandler={this.sidebarClickHandler}/>}

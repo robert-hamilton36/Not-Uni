@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import ModuleCard from '../ModuleCard'
 import DeleteModule from '../DeleteModule'
 
-class YourModules extends React.Component {
+class YourCreatedModules extends React.Component {
   state = {
       delete:false,
       moduleToDel: null
@@ -27,4 +27,4 @@ class YourModules extends React.Component {
   }
 }
 
-export default connect()(YourModules)
+export default connect()(YourCreatedModules)
