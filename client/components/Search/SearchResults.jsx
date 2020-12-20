@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 import { setSearchedModules } from '../../actions'
 import ModuleCard from '../Modules/ModuleCard'
 
-//TODO refactor links into module??
+//TODO refactor links into module lines 43 to 84??
+//TODO on refresh search result persist?? or redirect to homepage??
+
 
 class SearchResults extends React.Component {
 

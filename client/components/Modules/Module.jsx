@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Likes from './Likes'
+import Likes from '../Likes'
 import { ReactTinyLink } from 'react-tiny-link'
-import { commentsFetched } from '../actions'
-import { fetchModules } from '../actions'
+import { commentsFetched } from '../../actions'
+import { fetchModules } from '../../actions'
 
-import Comments from './Comments/Comments'
-import AddComments from './Comments/AddComment'
+import Comments from '../Comments/Comments'
+import AddComments from '../Comments/AddComment'
 
 class Module extends React.Component {
   state = {
