@@ -8,6 +8,9 @@ import EditPassword from './EditPassword'
 import EditAvatar from './EditAvatar'
 import Delete from '../UserAuth/Delete'
 import { fetchModules } from '../../actions'
+
+//TODO figure out and remove scroll bar from profile view and potentially others
+
 class Profile extends React.Component {
   state = {
     activeModules: '',

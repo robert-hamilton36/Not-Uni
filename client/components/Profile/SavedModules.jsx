@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ModuleCard from '../ModuleCard'
+import ModuleCard from '../Modules/ModuleCard'
 
 class SavedModules extends React.Component {
   render () {

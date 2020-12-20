@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ModuleCard from '../ModuleCard'
+import ModuleCard from '../Modules/ModuleCard'
 import DeleteModule from '../DeleteModule'
 
 class YourCreatedModules extends React.Component {
