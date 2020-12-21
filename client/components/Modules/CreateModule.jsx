@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import ReactDOM from 'react-dom'
-import { createModuleAPI, updateModuleAPI } from '../apis/modules'
-import CategoryCard from './CategoryCard'
+import { createModuleAPI, updateModuleAPI } from '../../apis/modules'
+import CategoryCard from '../CategoryCard'
 
 class CreateModule extends React.Component {
   state = {
