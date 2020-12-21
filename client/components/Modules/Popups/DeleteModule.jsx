@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
-import {deleteModule} from '../../apis/modules'
+import {deleteModule} from '../../../apis/modules'
 
 function Delete(props) {
   let history = useHistory()

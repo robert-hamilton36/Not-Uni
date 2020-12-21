@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addSavedModules, decreaseModuleLikes, increaseModuleLikes, removeSavedModule } from '../actions'
-import MessageSaved from './MessageSaved'
+import MessageSaved from './Saves/MessageSaved'
 
 class Likes extends React.Component {
 
