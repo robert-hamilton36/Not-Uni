@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import { createModuleAPI, updateModuleAPI } from '../../apis/modules'
-import CategoryCard from '../CategoryCard'
+import CategoryCard from './CategoryCard'
 
 //TODO validate inputs
 
