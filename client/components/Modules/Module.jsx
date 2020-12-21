@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Likes from '../Likes'
+import Likes from '../Saves/Likes'
 import { ReactTinyLink } from 'react-tiny-link'
 import { commentsFetched } from '../../actions'
 import { fetchModules } from '../../actions'
