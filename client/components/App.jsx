@@ -12,7 +12,7 @@ import Profile from './Profile/Profile'
 import HomePage from './Homepage'
 import { fetchUser } from '../actions/authenticated'
 import { fetchModules, fetchSavedModules } from '../actions'
-import ModuleCreated from './ModuleCreated'
+import ModuleCreated from './Modules/ModuleCreated'
 import ForgotPassword from './UserAuth/ForgotPassword'
 import { createModuleAPI } from '../apis/modules'
 

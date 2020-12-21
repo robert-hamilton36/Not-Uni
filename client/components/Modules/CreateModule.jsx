@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom'
 import { createModuleAPI, updateModuleAPI } from '../../apis/modules'
 import CategoryCard from '../CategoryCard'
 
+//TODO validate inputs
+
 class CreateModule extends React.Component {
   state = {
     title: '',
