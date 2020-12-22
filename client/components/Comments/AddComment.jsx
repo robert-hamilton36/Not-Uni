@@ -30,6 +30,8 @@ class AddComment extends React.Component {
     
         this.props.dispatch(fetchModules())
       })
+
+    this.setState({text:''})
   }
 
   render (){ 
